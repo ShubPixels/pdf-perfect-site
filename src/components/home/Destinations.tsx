@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import japanImage from "@/assets/japan-tour.jpg";
 import dubaiImage from "@/assets/dubai-tour.jpg";
 import europeImage from "@/assets/europe-tour.jpg";
@@ -16,7 +17,7 @@ export const Destinations = () => {
 
   const destinations = [
     {
-      id: 1,
+      id: "japan",
       name: "Japan",
       region: "Asia",
       theme: "Seniors",
@@ -25,7 +26,7 @@ export const Destinations = () => {
       image: japanImage,
     },
     {
-      id: 2,
+      id: "dubai",
       name: "Dubai & Abu Dhabi",
       region: "Middle East",
       theme: "Family",
@@ -34,7 +35,7 @@ export const Destinations = () => {
       image: dubaiImage,
     },
     {
-      id: 3,
+      id: "europe",
       name: "Europe",
       region: "Europe",
       theme: "Family",
@@ -43,7 +44,7 @@ export const Destinations = () => {
       image: europeImage,
     },
     {
-      id: 4,
+      id: "bali",
       name: "Bali",
       region: "Asia",
       theme: "Honeymoon",
@@ -113,43 +114,44 @@ export const Destinations = () => {
         {/* Destination Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {filteredDestinations.map((destination) => (
-            <Card
-              key={destination.id}
-              className="group overflow-hidden cursor-pointer border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={destination.image}
-                  alt={destination.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="font-bold text-xl mb-2">{destination.name}</h3>
-                  <div className="flex flex-wrap gap-1">
-                    {destination.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="secondary"
-                        className="text-xs bg-white/20 text-white border-white/40"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
+            <Link key={destination.id} to={`/destination/${destination.id}`}>
+              <Card
+                className="group overflow-hidden cursor-pointer border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={destination.image}
+                    alt={destination.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                  
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h3 className="font-bold text-xl mb-2">{destination.name}</h3>
+                    <div className="flex flex-wrap gap-1">
+                      {destination.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          variant="secondary"
+                          className="text-xs bg-white/20 text-white border-white/40"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="p-4">
-                <p className="text-sm text-muted-foreground mb-3">
-                  {destination.description}
-                </p>
-                <span className="text-sm text-primary font-medium group-hover:underline">
-                  View stories & tips →
-                </span>
-              </div>
-            </Card>
+                <div className="p-4">
+                  <p className="text-sm text-muted-foreground mb-3">
+                    {destination.description}
+                  </p>
+                  <span className="text-sm text-primary font-medium group-hover:underline">
+                    View stories & tips →
+                  </span>
+                </div>
+              </Card>
+            </Link>
           ))}
         </div>
 
