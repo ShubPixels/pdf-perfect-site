@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Calendar, MapPin, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import japanImage from "@/assets/japan-tour.jpg";
 
 export const CurrentTours = () => {
@@ -67,12 +68,14 @@ export const CurrentTours = () => {
                 </div>
 
                 <div className="p-4">
-                  <Button
-                    variant="ghost"
-                    className="w-full text-primary hover:text-primary-foreground hover:bg-primary"
-                  >
-                    View Tour Diary →
-                  </Button>
+                  <Link to={`/tour-diary/${tour.id}`}>
+                    <Button
+                      variant="ghost"
+                      className="w-full text-primary hover:text-primary-foreground hover:bg-primary"
+                    >
+                      View Tour Diary →
+                    </Button>
+                  </Link>
                 </div>
               </Card>
             ))}
