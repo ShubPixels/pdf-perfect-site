@@ -7,8 +7,23 @@ import { Destinations } from "@/components/home/Destinations";
 import { Community } from "@/components/home/Community";
 import { LearnLifestyle } from "@/components/home/LearnLifestyle";
 import { Quote } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Index = () => {
+  const bridge1 = useScrollReveal();
+  const tours = useScrollReveal();
+  const bridge2 = useScrollReveal();
+  const bridge3 = useScrollReveal();
+  const departures = useScrollReveal();
+  const bridge4 = useScrollReveal();
+  const destinations = useScrollReveal();
+  const bridge5 = useScrollReveal();
+  const community = useScrollReveal();
+  const bridge6 = useScrollReveal();
+  const bridge7 = useScrollReveal();
+  const learnLifestyle = useScrollReveal();
+  const finalBridge = useScrollReveal();
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -16,7 +31,12 @@ const Index = () => {
         <Hero />
         
         {/* Story Bridge 1 */}
-        <div className="relative py-12 bg-gradient-to-b from-background to-secondary/10">
+        <div 
+          ref={bridge1.ref}
+          className={`relative py-12 bg-gradient-to-b from-background to-secondary/10 transition-all duration-1000 ${
+            bridge1.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="container mx-auto px-4 text-center max-w-3xl">
             <p className="text-lg md:text-xl text-foreground/80 italic leading-relaxed">
               Right now, at this very moment, someone from our community is waking up in a new country,
@@ -25,10 +45,22 @@ const Index = () => {
           </div>
         </div>
 
-        <CurrentTours />
+        <div 
+          ref={tours.ref}
+          className={`transition-all duration-1000 ${
+            tours.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <CurrentTours />
+        </div>
 
         {/* Story Bridge 2 - Traveler Quote */}
-        <div className="relative py-16 bg-gradient-to-b from-secondary/10 via-background to-primary/5">
+        <div 
+          ref={bridge2.ref}
+          className={`relative py-16 bg-gradient-to-b from-secondary/10 via-background to-primary/5 transition-all duration-1000 ${
+            bridge2.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <Quote className="h-12 w-12 text-primary/40 mb-6 mx-auto" />
@@ -46,7 +78,12 @@ const Index = () => {
         </div>
 
         {/* Story Bridge 3 */}
-        <div className="relative py-12 bg-gradient-to-b from-primary/5 to-background">
+        <div 
+          ref={bridge3.ref}
+          className={`relative py-12 bg-gradient-to-b from-primary/5 to-background transition-all duration-1000 ${
+            bridge3.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="container mx-auto px-4 text-center max-w-3xl">
             <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
               And Soon, It Could Be You
@@ -57,10 +94,22 @@ const Index = () => {
           </div>
         </div>
 
-        <UpcomingDepartures />
+        <div 
+          ref={departures.ref}
+          className={`transition-all duration-1000 ${
+            departures.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <UpcomingDepartures />
+        </div>
 
         {/* Story Bridge 4 - Inspiration */}
-        <div className="relative py-16 bg-gradient-to-b from-background to-accent/10 overflow-hidden">
+        <div 
+          ref={bridge4.ref}
+          className={`relative py-16 bg-gradient-to-b from-background to-accent/10 overflow-hidden transition-all duration-1000 ${
+            bridge4.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
@@ -75,10 +124,22 @@ const Index = () => {
           </div>
         </div>
 
-        <Destinations />
+        <div
+          ref={destinations.ref}
+          className={`transition-all duration-1000 ${
+            destinations.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <Destinations />
+        </div>
 
         {/* Story Bridge 5 - Community Lead */}
-        <div className="relative py-16 bg-gradient-to-b from-accent/10 via-background to-secondary/20">
+        <div 
+          ref={bridge5.ref}
+          className={`relative py-16 bg-gradient-to-b from-accent/10 via-background to-secondary/20 transition-all duration-1000 ${
+            bridge5.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
@@ -92,10 +153,22 @@ const Index = () => {
           </div>
         </div>
 
-        <Community />
+        <div
+          ref={community.ref}
+          className={`transition-all duration-1000 ${
+            community.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <Community />
+        </div>
 
         {/* Story Bridge 6 - Learning Transition */}
-        <div className="relative py-16 bg-gradient-to-b from-secondary/20 via-background to-primary/5">
+        <div 
+          ref={bridge6.ref}
+          className={`relative py-16 bg-gradient-to-b from-secondary/20 via-background to-primary/5 transition-all duration-1000 ${
+            bridge6.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <Quote className="h-12 w-12 text-primary/40 mb-6 mx-auto" />
@@ -113,7 +186,12 @@ const Index = () => {
         </div>
 
         {/* Story Bridge 7 - Final CTA */}
-        <div className="relative py-12 bg-gradient-to-b from-primary/5 to-background">
+        <div 
+          ref={bridge7.ref}
+          className={`relative py-12 bg-gradient-to-b from-primary/5 to-background transition-all duration-1000 ${
+            bridge7.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="container mx-auto px-4 text-center max-w-3xl">
             <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
               Start Your Journey with Knowledge
@@ -125,10 +203,22 @@ const Index = () => {
           </div>
         </div>
 
-        <LearnLifestyle />
+        <div 
+          ref={learnLifestyle.ref}
+          className={`transition-all duration-1000 ${
+            learnLifestyle.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <LearnLifestyle />
+        </div>
 
         {/* Final Story Close */}
-        <div className="relative py-20 bg-gradient-to-b from-background to-secondary/10">
+        <div 
+          ref={finalBridge.ref}
+          className={`relative py-20 bg-gradient-to-b from-background to-secondary/10 transition-all duration-1000 ${
+            finalBridge.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto">
               <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
