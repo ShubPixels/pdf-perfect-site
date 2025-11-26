@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Plane } from "lucide-react";
+import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -21,16 +22,20 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo and Brand */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="bg-primary text-primary-foreground p-2 rounded-lg transition-transform group-hover:scale-105">
-              <Plane className="h-5 w-5" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-foreground text-sm lg:text-base">
-                All Tours Ghar Se Ghar Tak
-              </span>
-              <span className="text-xs text-muted-foreground">by Sun Tourism Pune</span>
-            </div>
-          </Link>
+          <img 
+            src={logo} 
+            alt="Sun Tourism Logo" 
+            className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+          />
+
+          <div className="flex flex-col">
+            <span className="font-bold text-foreground text-sm lg:text-base">
+              All Tours Ghar Se Ghar Tak
+            </span>
+            <span className="text-xs text-muted-foreground">by Sun Tourism Pune</span>
+          </div>
+        </Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-2">

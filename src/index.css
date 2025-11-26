@@ -111,6 +111,26 @@ All colors MUST be HSL.
 }
 
 @layer base {
+  html {
+    font-size: 18px;
+  }
+}
+
+
+@layer base {
+  html {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif;
+    font-weight: bold;
+    font-style: italic;
+  }
+}
+
+
+@layer base {
   * {
     @apply border-border;
   }
