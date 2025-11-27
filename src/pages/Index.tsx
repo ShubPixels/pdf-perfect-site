@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/home/Hero";
@@ -23,6 +24,24 @@ const Index = () => {
   const bridge7 = useScrollReveal();
   const learnLifestyle = useScrollReveal();
   const finalBridge = useScrollReveal();
+  const [bridge1Done, setBridge1Done] = useState(false);
+  const [showStory, setShowStory] = useState(false);
+  const [showCurrentTours, setShowCurrentTours] = useState(false);
+
+
+useEffect(() => {
+  if (bridge1.isVisible) {
+    setShowStory(true);
+
+    // Duration matches typing (3s) + fade (0.7s)
+    const timer = setTimeout(() => {
+      setShowStory(false);          // fade story card OUT
+      setShowCurrentTours(true);    // fade current tours IN
+    }, 3700);
+
+    return () => clearTimeout(timer);
+  }
+}, [bridge1.isVisible]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -31,28 +50,30 @@ const Index = () => {
         <Hero />
         
         {/* Story Bridge 1 */}
-        <div 
-          ref={bridge1.ref}
-          className={`relative py-12 bg-gradient-to-b from-background to-secondary/10 transition-all duration-1000 ${
-            bridge1.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <div className="container mx-auto px-4 text-center max-w-3xl">
-            <p className="text-lg md:text-xl text-foreground/80 italic leading-relaxed">
-              Right now, at this very moment, someone from our community is waking up in a new country,
-              camera in hand, ready to create memories that will last a lifetime...
+        <div className="relative">
+          {/* Story card (top layer) */}
+          <div
+            ref={bridge1.ref}
+            className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
+              showStory ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+          >
+            <p className="text-xl md:text-2xl font-heading typewriter text-center px-4">
+              Right now, at this very moment, someone from our community is waking up in a new country, <br/>camera in hand, ready to create memories that will last a lifetime...
             </p>
+          </div>
+
+          {/* Current Tours (bottom layer) */}
+          <div
+            className={`transition-all duration-700 ${
+              showCurrentTours ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <CurrentTours />
           </div>
         </div>
 
-        <div 
-          ref={tours.ref}
-          className={`transition-all duration-1000 ${
-            tours.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <CurrentTours />
-        </div>
+
 
         {/* Story Bridge 2 - Traveler Quote */}
         <div 

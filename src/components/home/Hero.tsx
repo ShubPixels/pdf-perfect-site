@@ -26,12 +26,12 @@ export const Hero = () => {
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
         
         {/* Heading (Georgia Bold Italic) */}
-        <h1 className="text-3xl md:text-5xl font-heading text-black font-bold italic text-foreground mb-4">
+        <h1 className="text-3xl md:text-5xl font-heading text-black font-bold italic  mb-4">
           All Tours Ghar Se Ghar Tak
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-muted-foreground text-black  mb-8">
+        <p className="text-lg md:text-xl  text-black  mb-8">
           Stories, live moments & memories from Sun Tourism travellers.
         </p>
 

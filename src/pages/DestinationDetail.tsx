@@ -179,13 +179,13 @@ export default function DestinationDetail() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navigation />
       
-      <main className="flex-1 pt-20">
+      <main className="flex-1 ">
         {/* Hero Section */}
         <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
           <img
             src={destination.image}
             alt={destination.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
           <div className="absolute inset-0 flex items-end">
