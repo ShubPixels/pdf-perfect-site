@@ -6,10 +6,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, MapPin, Users, Plane, Hotel, Camera, Utensils, Clock, TrendingUp } from "lucide-react";
+import { ImmersiveGallery } from "@/components/destination/ImmersiveGallery";
 import japanImage from "@/assets/japan-tour.jpg";
 import dubaiImage from "@/assets/dubai-tour.jpg";
 import europeImage from "@/assets/europe-tour.jpg";
-
+import baliImage from "@/assets/bali-tour.jpg";
+import heroImage from "@/assets/hero-travel.jpg";
+import communityImage from "@/assets/community-1.jpg";
 export default function DestinationDetail() {
   const { destinationId } = useParams();
 
@@ -91,6 +94,16 @@ export default function DestinationDetail() {
         "Rich cultural experiences without language barriers",
         "Perfect mix of modern cities and traditional culture"
       ],
+      gallery: [
+        { id: 1, src: japanImage, alt: "Cherry blossoms at Mount Fuji", caption: "Spring cherry blossoms frame the iconic Mount Fuji", category: "nature" },
+        { id: 2, src: heroImage, alt: "Tokyo Shibuya crossing", caption: "The famous Shibuya crossing at night", category: "city" },
+        { id: 3, src: communityImage, alt: "Traditional tea ceremony", caption: "Experience authentic Japanese hospitality", category: "culture" },
+        { id: 4, src: baliImage, alt: "Kyoto bamboo grove", caption: "Walking through the mystical Arashiyama bamboo forest", category: "nature" },
+        { id: 5, src: europeImage, alt: "Golden Pavilion temple", caption: "The stunning Kinkaku-ji in Kyoto", category: "culture" },
+        { id: 6, src: japanImage, alt: "Japanese cuisine spread", caption: "Fresh sushi and local delicacies", category: "food" },
+        { id: 7, src: heroImage, alt: "Bullet train experience", caption: "Traveling at 300km/h on the Shinkansen", category: "city" },
+        { id: 8, src: communityImage, alt: "Geisha district", caption: "Evening stroll in Gion, Kyoto", category: "culture" },
+      ],
       relatedDestinations: [
         { id: "dubai", name: "Dubai & Abu Dhabi", image: dubaiImage, price: "₹95,000" },
         { id: "bali", name: "Bali", image: japanImage, price: "₹78,000" }
@@ -165,6 +178,16 @@ export default function DestinationDetail() {
         "Indian-friendly with many vegetarian options",
         "Short flight from India - ideal for short breaks",
         "Safe, clean, and family-friendly destination"
+      ],
+      gallery: [
+        { id: 1, src: dubaiImage, alt: "Burj Khalifa at sunset", caption: "The world's tallest building glowing at dusk", category: "architecture" },
+        { id: 2, src: heroImage, alt: "Desert safari adventure", caption: "Thrilling dune bashing in the Arabian desert", category: "adventure" },
+        { id: 3, src: communityImage, alt: "Sheikh Zayed Mosque", caption: "The magnificent Grand Mosque in Abu Dhabi", category: "culture" },
+        { id: 4, src: baliImage, alt: "Dubai Marina skyline", caption: "Stunning waterfront views at Marina", category: "architecture" },
+        { id: 5, src: europeImage, alt: "Traditional souks", caption: "Gold and spice souks in old Dubai", category: "culture" },
+        { id: 6, src: dubaiImage, alt: "Palm Jumeirah", caption: "Aerial view of the iconic man-made island", category: "architecture" },
+        { id: 7, src: heroImage, alt: "Dubai Fountain show", caption: "Spectacular water and light performance", category: "entertainment" },
+        { id: 8, src: communityImage, alt: "Camel ride experience", caption: "Traditional desert experience at sunset", category: "adventure" },
       ],
       relatedDestinations: [
         { id: "europe", name: "Europe Grand Tour", image: europeImage, price: "₹2,15,000" },
@@ -404,6 +427,14 @@ export default function DestinationDetail() {
                 </Card>
               </TabsContent>
             </Tabs>
+
+            {/* Immersive Gallery */}
+            {destination.gallery && destination.gallery.length > 0 && (
+              <ImmersiveGallery 
+                images={destination.gallery} 
+                destinationName={destination.name}
+              />
+            )}
 
             {/* Related Destinations */}
             <div>
