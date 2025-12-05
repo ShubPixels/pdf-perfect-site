@@ -44,9 +44,19 @@ useEffect(() => {
 }, [bridge1.isVisible]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-primary/10 relative overflow-hidden">
+      {/* Page-level decorative patterns */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-0 w-80 h-80 bg-cta/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cta/5 rounded-full blur-3xl" />
+        {/* Subtle dot pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+      </div>
       <Navigation />
-      <main className="relative">
+      <main className="relative z-10">
         <Hero />
         
         {/* Story Bridge 1 */}
@@ -78,7 +88,7 @@ useEffect(() => {
         {/* Story Bridge 2 - Traveler Quote */}
         <div 
           ref={bridge2.ref}
-          className={`relative py-16 bg-gradient-to-b from-secondary/10 via-background to-primary/5 transition-all duration-1000 ${
+          className={`relative py-16 transition-all duration-1000 ${
             bridge2.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -101,7 +111,7 @@ useEffect(() => {
         {/* Story Bridge 3 */}
         <div 
           ref={bridge3.ref}
-          className={`relative py-12 bg-gradient-to-b from-primary/5 to-background transition-all duration-1000 ${
+          className={`relative py-12 transition-all duration-1000 ${
             bridge3.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -127,7 +137,7 @@ useEffect(() => {
         {/* Story Bridge 4 - Inspiration */}
         <div 
           ref={bridge4.ref}
-          className={`relative py-16 bg-gradient-to-b from-background to-accent/10 overflow-hidden transition-all duration-1000 ${
+          className={`relative py-16 overflow-hidden transition-all duration-1000 ${
             bridge4.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -157,7 +167,7 @@ useEffect(() => {
         {/* Story Bridge 5 - Community Lead */}
         <div 
           ref={bridge5.ref}
-          className={`relative py-16 bg-gradient-to-b from-accent/10 via-background to-secondary/20 transition-all duration-1000 ${
+          className={`relative py-16 transition-all duration-1000 ${
             bridge5.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -186,7 +196,7 @@ useEffect(() => {
         {/* Story Bridge 6 - Learning Transition */}
         <div 
           ref={bridge6.ref}
-          className={`relative py-16 bg-gradient-to-b from-secondary/20 via-background to-primary/5 transition-all duration-1000 ${
+          className={`relative py-16 transition-all duration-1000 ${
             bridge6.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -209,7 +219,7 @@ useEffect(() => {
         {/* Story Bridge 7 - Final CTA */}
         <div 
           ref={bridge7.ref}
-          className={`relative py-12 bg-gradient-to-b from-primary/5 to-background transition-all duration-1000 ${
+          className={`relative py-12 transition-all duration-1000 ${
             bridge7.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -236,7 +246,7 @@ useEffect(() => {
         {/* Final Story Close */}
         <div 
           ref={finalBridge.ref}
-          className={`relative py-20 bg-gradient-to-b from-background to-secondary/10 transition-all duration-1000 ${
+          className={`relative py-20 transition-all duration-1000 ${
             finalBridge.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
