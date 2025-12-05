@@ -56,6 +56,8 @@ export default {
         "sunset-orange": "hsl(var(--sunset-orange))",
         "earth-brown": "hsl(var(--earth-brown))",
         "success-green": "hsl(var(--success-green))",
+        "highlight": "hsl(var(--highlight))",
+        "cta": "hsl(var(--cta))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

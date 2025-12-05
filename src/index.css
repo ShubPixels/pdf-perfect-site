@@ -50,6 +50,10 @@ All colors MUST be HSL.
     --earth-brown: 25 35% 35%;
     --success-green: 142 70% 45%;
     
+    /* Brand colors */
+    --highlight: 205 100% 34%; /* #005CAB */
+    --cta: 48 100% 68%; /* #FFDE59 */
+    
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
