@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { MapPin, Users, Globe, Award, Linkedin, Mail } from "lucide-react";
+import { MapPin, Users, Globe, Award, Linkedin, Mail, Briefcase, GraduationCap, Heart, Quote, Star, Calendar, Plane } from "lucide-react";
 
 const About = () => {
   const { ref: missionRef, isVisible: missionVisible } = useScrollReveal();
@@ -11,22 +11,38 @@ const About = () => {
 
   const leaders = [
     {
-      name: "Arjun Mehta",
-      role: "Founder & CEO",
+      name: "Mr. Sunil Kale",
+      role: "Founder & Managing Director",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      bio: "With over 15 years of experience in curating luxury travel experiences, Arjun founded Traveo with a vision to transform how people explore the world. His passion for authentic cultural immersion has led thousands of travelers to discover hidden gems across continents.",
-      quote: "Travel is not about the destination, it's about the transformation.",
+      bio: "A visionary entrepreneur who transformed the travel industry in Pune, Mr. Sunil Kale founded Sun Tourism in 2007 with a dream to make international travel accessible and comfortable for every family.",
+      thoughts: "Travel should never be a luxury reserved for a few. My mission has always been to ensure that every family, regardless of their travel experience, can explore the world with confidence, comfort, and care. When a 65-year-old grandmother tells me Japan was the best experience of her life, I know we've succeeded.",
+      career: [
+        { year: "1995", milestone: "Started career in hospitality industry", icon: Briefcase },
+        { year: "2002", milestone: "Completed Tourism Management certification", icon: GraduationCap },
+        { year: "2007", milestone: "Founded Sun Tourism with 'Ghar Se Ghar Tak' vision", icon: Star },
+        { year: "2015", milestone: "Expanded to 25+ international destinations", icon: Globe },
+        { year: "2020", milestone: "Pioneered group travel model for senior citizens", icon: Heart },
+        { year: "2024", milestone: "Crossed 10,000+ happy travelers milestone", icon: Users }
+      ],
       linkedin: "#",
-      email: "arjun@traveo.com"
+      email: "sunil@suntourismpune.com"
     },
     {
-      name: "Priya Sharma",
-      role: "Chief Experience Officer",
+      name: "Mrs. Snehal Kale",
+      role: "Director of Operations & Guest Experience",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
-      bio: "Priya brings her expertise in hospitality and her love for adventure to craft unforgettable journeys. Having traveled to over 80 countries, she ensures every Traveo experience exceeds expectations and creates lasting memories.",
-      quote: "Every journey should leave you richer in stories and experiences.",
+      bio: "The heart behind Sun Tourism's legendary hospitality, Mrs. Snehal Kale ensures every traveler feels like family. Her meticulous attention to detail and genuine care has made 'Ghar Se Ghar Tak' a reality for thousands.",
+      thoughts: "Every traveler who joins us becomes part of our family. I believe the success of a trip isn't measured by the destinations covered, but by the smiles created, friendships formed, and memories treasured. When our guests return and immediately ask about the next tour, that's when I know we've touched their hearts.",
+      career: [
+        { year: "1998", milestone: "Degree in Hospitality Management", icon: GraduationCap },
+        { year: "2005", milestone: "Led customer experience at leading travel agency", icon: Briefcase },
+        { year: "2007", milestone: "Co-founded Sun Tourism operations", icon: Star },
+        { year: "2012", milestone: "Developed signature guest care protocols", icon: Heart },
+        { year: "2018", milestone: "Introduced women-only group tours", icon: Users },
+        { year: "2023", milestone: "Recognized for excellence in travel hospitality", icon: Award }
+      ],
       linkedin: "#",
-      email: "priya@traveo.com"
+      email: "snehal@suntourismpune.com"
     }
   ];
 
@@ -62,12 +78,11 @@ const About = () => {
             </span>
             <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6">
               Crafting <span className="text-highlight">Unforgettable</span>
-              <br />Journeys Since 2015
+              <br />Journeys Since 2007
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              What began as a passion project has evolved into one of the most trusted 
-              travel communities, connecting adventurers with extraordinary experiences 
-              across the globe.
+              What began as a passion to make travel accessible has evolved into Pune's most trusted 
+              travel community, connecting families with extraordinary experiences across the globe.
             </p>
           </motion.div>
 
@@ -82,7 +97,7 @@ const About = () => {
               { number: "50+", label: "Destinations" },
               { number: "10K+", label: "Happy Travelers" },
               { number: "500+", label: "Tours Completed" },
-              { number: "9", label: "Years of Excellence" }
+              { number: "17", label: "Years of Excellence" }
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-highlight">{stat.number}</div>
@@ -109,7 +124,7 @@ const About = () => {
                 className="relative rounded-3xl w-full h-[400px] object-cover"
               />
               <div className="absolute -bottom-6 -right-6 bg-cta text-foreground p-6 rounded-2xl shadow-xl">
-                <div className="text-3xl font-bold">2015</div>
+                <div className="text-3xl font-bold">2007</div>
                 <div className="text-sm">Founded</div>
               </div>
             </div>
@@ -124,12 +139,11 @@ const About = () => {
                 and fellow travelers.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Our curated experiences go beyond sightseeing. We immerse you in local traditions, 
-                introduce you to hidden gems, and build a community of like-minded explorers 
-                who share your wanderlust.
+                Our "Ghar Se Ghar Tak" promise means complete care from your doorstep to your destination 
+                and back—flights, visas, hotels, meals, and memories, all taken care of.
               </p>
               <div className="flex flex-wrap gap-3">
-                {["Authentic Experiences", "Local Connections", "Sustainable Travel"].map((tag) => (
+                {["Ghar Se Ghar Tak", "Family-Friendly", "Hassle-Free Travel"].map((tag) => (
                   <span 
                     key={tag}
                     className="px-4 py-2 bg-highlight/10 text-highlight rounded-full text-sm font-medium"
@@ -143,7 +157,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Leaders Section */}
+      {/* Leaders Section - Enhanced with Career Timeline */}
       <section ref={leadersRef} className="py-20 px-4">
         <div className="container mx-auto">
           <div className={`text-center mb-16 transition-all duration-1000 ${
@@ -155,57 +169,105 @@ const About = () => {
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
               Meet The <span className="text-highlight">Visionaries</span>
             </h2>
+            <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+              The passionate leaders behind Sun Tourism's commitment to making travel dreams come true
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="space-y-24 max-w-6xl mx-auto">
             {leaders.map((leader, index) => (
               <div 
                 key={leader.name}
-                className={`group relative transition-all duration-1000 delay-${index * 200} ${
+                className={`transition-all duration-1000 ${
                   leadersVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="absolute -inset-1 bg-gradient-to-r from-highlight/30 to-cta/30 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 h-full">
-                  {/* Quote mark */}
-                  <div className="absolute top-6 right-8 text-8xl text-highlight/10 font-serif leading-none">
-                    "
+                {/* Leader Card */}
+                <div className={`grid lg:grid-cols-2 gap-8 items-start ${index % 2 === 1 ? "lg:grid-flow-dense" : ""}`}>
+                  {/* Profile Side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
+                    <div className="relative group">
+                      <div className="absolute -inset-2 bg-gradient-to-r from-highlight/30 to-cta/30 rounded-3xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8">
+                        {/* Quote mark */}
+                        <Quote className="absolute top-6 right-8 h-16 w-16 text-highlight/10" />
+                        
+                        <div className="flex flex-col sm:flex-row gap-6 mb-6">
+                          <div className="relative flex-shrink-0">
+                            <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-highlight/20">
+                              <img 
+                                src={leader.image} 
+                                alt={leader.name}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-cta rounded-full flex items-center justify-center">
+                              <Award className="w-5 h-5 text-foreground" />
+                            </div>
+                          </div>
+                          <div>
+                            <h3 className="font-heading text-2xl font-bold text-foreground">{leader.name}</h3>
+                            <p className="text-highlight font-medium mb-2">{leader.role}</p>
+                            <div className="flex gap-3">
+                              <a href={leader.linkedin} className="text-muted-foreground hover:text-highlight transition-colors">
+                                <Linkedin className="w-5 h-5" />
+                              </a>
+                              <a href={`mailto:${leader.email}`} className="text-muted-foreground hover:text-highlight transition-colors">
+                                <Mail className="w-5 h-5" />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <p className="text-muted-foreground leading-relaxed mb-6">
+                          {leader.bio}
+                        </p>
+
+                        {/* Thoughts/Philosophy */}
+                        <div className="bg-highlight/5 border-l-4 border-cta rounded-r-xl p-5">
+                          <p className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Their Philosophy</p>
+                          <blockquote className="italic text-foreground leading-relaxed">
+                            "{leader.thoughts}"
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-6 mb-6">
+                  {/* Career Timeline Side */}
+                  <div className={`${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
                     <div className="relative">
-                      <div className="w-28 h-28 rounded-2xl overflow-hidden border-4 border-highlight/20">
-                        <img 
-                          src={leader.image} 
-                          alt={leader.name}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-cta rounded-full flex items-center justify-center">
-                        <Award className="w-4 h-4 text-foreground" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="font-heading text-2xl font-bold text-foreground">{leader.name}</h3>
-                      <p className="text-highlight font-medium">{leader.role}</p>
-                      <div className="flex gap-3 mt-3">
-                        <a href={leader.linkedin} className="text-muted-foreground hover:text-highlight transition-colors">
-                          <Linkedin className="w-5 h-5" />
-                        </a>
-                        <a href={`mailto:${leader.email}`} className="text-muted-foreground hover:text-highlight transition-colors">
-                          <Mail className="w-5 h-5" />
-                        </a>
+                      <h4 className="font-heading text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+                        <Briefcase className="h-5 w-5 text-cta" />
+                        Career Journey
+                      </h4>
+                      
+                      <div className="relative">
+                        {/* Timeline line */}
+                        <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-highlight via-cta to-highlight/20" />
+                        
+                        <div className="space-y-6">
+                          {leader.career.map((item, idx) => (
+                            <div 
+                              key={idx} 
+                              className="relative pl-14 group"
+                            >
+                              {/* Timeline dot */}
+                              <div className="absolute left-0 w-10 h-10 rounded-full bg-card border-2 border-highlight/50 flex items-center justify-center group-hover:border-cta group-hover:bg-cta/10 transition-all duration-300">
+                                <item.icon className="h-4 w-4 text-highlight group-hover:text-cta transition-colors" />
+                              </div>
+                              
+                              <div className="bg-card/30 backdrop-blur-sm rounded-xl p-4 border border-border/30 group-hover:border-highlight/30 transition-all duration-300">
+                                <span className="text-xs font-bold text-cta">{item.year}</span>
+                                <p className="text-foreground text-sm mt-1">{item.milestone}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {leader.bio}
-                  </p>
-
-                  <blockquote className="italic text-foreground border-l-4 border-cta pl-4">
-                    "{leader.quote}"
-                  </blockquote>
                 </div>
               </div>
             ))}
