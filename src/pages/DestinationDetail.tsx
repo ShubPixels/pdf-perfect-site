@@ -8,7 +8,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, MapPin, Users, Plane, Hotel, Camera, Utensils, Clock, TrendingUp } from "lucide-react";
 import { ImmersiveGallery } from "@/components/destination/ImmersiveGallery";
 import japanImage from "@/assets/japan-tour.jpg";
-import dubaiImage from "@/assets/dubai-tour.jpg";
+//dubai imports
+import dubaiImage from "@/assets/hero-travel.jpg";
+import Onedubai from "@/assets/Dubai/1.png";
+import Twodubai from "@/assets/Dubai/2.png";
+import Threedubai from "@/assets/Dubai/3.png";
+import Fourdubai from "@/assets/Dubai/4.png";
+import Fivedubai from "@/assets/Dubai/5.png";
+import Sixdubai from "@/assets/Dubai/6.png";
+import Eightdubai from "@/assets/Dubai/8.png";
+import Tendubai from "@/assets/Dubai/10.png";
+import Elevendubai from "@/assets/Dubai/11.png";
+import Ninedubai from "@/assets/Dubai/9.png";
 import europeImage from "@/assets/europe-tour.jpg";
 import baliImage from "@/assets/bali-tour.jpg";
 import heroImage from "@/assets/hero-travel.jpg";
@@ -110,7 +121,7 @@ export default function DestinationDetail() {
       ]
     },
     dubai: {
-      name: "Dubai & Abu Dhabi",
+      name: "Dubai-Abu Dhabi-Sharjah",
       region: "Middle East",
       tagline: "Luxury, Adventure & Desert Magic",
       description: "Experience the epitome of modern luxury in the UAE. From towering skyscrapers to golden deserts, world-class shopping to cultural heritage, Dubai and Abu Dhabi offer an unforgettable Arabian adventure.",
@@ -180,14 +191,14 @@ export default function DestinationDetail() {
         "Safe, clean, and family-friendly destination"
       ],
       gallery: [
-        { id: 1, src: dubaiImage, alt: "Burj Khalifa at sunset", caption: "The world's tallest building glowing at dusk", category: "architecture" },
-        { id: 2, src: heroImage, alt: "Desert safari adventure", caption: "Thrilling dune bashing in the Arabian desert", category: "adventure" },
-        { id: 3, src: communityImage, alt: "Sheikh Zayed Mosque", caption: "The magnificent Grand Mosque in Abu Dhabi", category: "culture" },
-        { id: 4, src: baliImage, alt: "Dubai Marina skyline", caption: "Stunning waterfront views at Marina", category: "architecture" },
-        { id: 5, src: europeImage, alt: "Traditional souks", caption: "Gold and spice souks in old Dubai", category: "culture" },
-        { id: 6, src: dubaiImage, alt: "Palm Jumeirah", caption: "Aerial view of the iconic man-made island", category: "architecture" },
-        { id: 7, src: heroImage, alt: "Dubai Fountain show", caption: "Spectacular water and light performance", category: "entertainment" },
-        { id: 8, src: communityImage, alt: "Camel ride experience", caption: "Traditional desert experience at sunset", category: "adventure" },
+        { id: 1, src: Tendubai, alt: "Burj Khalifa at sunset", caption: "The world's tallest building glowing at dusk", category: "architecture" },
+        { id: 2, src: Fourdubai, alt: "Desert safari adventure", caption: "Thrilling dune bashing in the Arabian desert", category: "adventure" },
+        { id: 3, src: Eightdubai, alt: "Sheikh Zayed Mosque", caption: "The magnificent Grand Mosque in Abu Dhabi", category: "culture" },
+        { id: 4, src: Sixdubai, alt: "Dubai Marina skyline", caption: "Stunning waterfront views at Marina", category: "architecture" },
+        { id: 5, src: Ninedubai, alt: "Traditional souks", caption: "Gold and spice souks in old Dubai", category: "culture" },
+        { id: 6, src: Onedubai, alt: "Palm Jumeirah", caption: "Aerial view of the iconic man-made island", category: "architecture" },
+        { id: 7, src: Fivedubai, alt: "Dubai Fountain show", caption: "Spectacular water and light performance", category: "entertainment" },
+        { id: 8, src: Elevendubai, alt: "Camel ride experience", caption: "Traditional desert experience at sunset", category: "adventure" },
       ],
       relatedDestinations: [
         { id: "europe", name: "Europe Grand Tour", image: europeImage, price: "₹2,15,000" },

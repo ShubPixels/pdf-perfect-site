@@ -76,7 +76,7 @@ export const Community = () => {
   };
 
   return (
-    <section id="community" className="py-24 bg-black text-white scroll-mt-20 overflow-hidden">
+    <section id="community" className="py-24 bg-black/20 text-white scroll-mt-20 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
