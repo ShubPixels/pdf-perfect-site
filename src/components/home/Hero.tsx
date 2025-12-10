@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { ArrowDown, Play, MapPin, Plane } from "lucide-react";
 import heroImage from "@/assets/hero-travel.jpg";
 import japanImage from "@/assets/japan-tour.jpg";
-import dubaiImage from "@/assets/dubai-tour.jpg";
-import europeImage from "@/assets/europe-tour.jpg";
+import dubaiImage from "@/assets/Dubai/12.png";
+import europeImage from "@/assets/europe-tour.png";
 
 const destinations = [
   { name: "Japan", image: japanImage, tagline: "Where tradition meets tomorrow" },
@@ -60,7 +60,7 @@ export const Hero = () => {
       {/* Main Content */}
       <div className="relative z-10 min-h-[600px] sm:min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-12 pt-24 pb-20 sm:pt-24 md:pt-28">
         {/* Animated Badge */}
-        <div
+        {/* <div
           className={`mb-6 sm:mb-8 transition-all duration-1000 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
           }`}
@@ -71,7 +71,7 @@ export const Hero = () => {
               NOW TRAVELING: {destinations[activeDestination].name.toUpperCase()}
             </span>
           </div>
-        </div>
+        </div> */}
 
         {/* Main Heading & Text */}
         <div
@@ -84,11 +84,11 @@ export const Hero = () => {
             <span className="block text-accent">Ghar Se Ghar Tak</span>
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-white/80 mb-3 sm:mb-4 font-light">
+          <p className="text-lg sm:text-xl md:text-2xl text-white mb-3 sm:mb-4 font-light">
             {destinations[activeDestination].tagline}
           </p>
 
-          <p className="text-sm sm:text-base md:text-lg text-white/60 max-w-2xl mx-auto mb-10 sm:mb-12">
+          <p className="text-sm sm:text-base md:text-lg text-white max-w-2xl mx-auto mb-10 sm:mb-12">
             Stories, live moments & memories from Sun Tourism travellers exploring the world together.
           </p>
         </div>

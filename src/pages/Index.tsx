@@ -10,6 +10,11 @@ import { LearnLifestyle } from "@/components/home/LearnLifestyle";
 import { Quote, Compass, Map, Heart, Sparkles, Plane, Globe, Camera } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { motion } from "framer-motion";
+import img1 from "../assets/Dubai/1.png";
+import img2 from "../assets/Dubai/2.png";
+import img3 from "../assets/Dubai/3.png";
+import img4 from "../assets/Dubai/4.png";
+
 
 const Index = () => {
   const bridge1 = useScrollReveal();
@@ -98,7 +103,7 @@ useEffect(() => {
               <div className="bg-card/20 backdrop-blur-xl border border-border/30 rounded-3xl p-8 md:p-12">
                 <Sparkles className="h-8 w-8 text-cta mx-auto mb-6" />
                 <p className="text-xl md:text-3xl font-heading typewriter text-center leading-relaxed">
-                  Right now, at this very moment, someone from our community is waking up in a new country, <br className="hidden md:block"/>camera in hand, ready to create memories that will last a lifetime...
+                  Right now, at this moment, someone from our community is waking up in a new country, <br className="hidden md:block"/>camera in hand, create memories that will last a lifetime...
                 </p>
               </div>
             </div>
@@ -146,18 +151,20 @@ useEffect(() => {
               <blockquote className="relative text-center mt-8">
                 <Quote className="h-16 w-16 text-highlight/20 mx-auto mb-4" />
                 <p className="text-2xl md:text-3xl font-medium text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-                  "I never thought I'd travel internationally at 65. But Sun Tourism made it so comfortable and easy.
-                  The group became my travel family, and Japan became the trip of a lifetime."
+                  "We planned Personalised Bali tour and Sun tour help us planned and executed as we planned
+                  Once tour is planned, Sun tour gives experience of sit back, relax and enjoy tour.
+                  Very well communication, very well execution
+                  Always dil se dil tak❤️"
                 </p>
                 <div className="flex items-center justify-center gap-4">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-highlight to-cta p-0.5">
                     <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                      <span className="text-2xl font-bold text-highlight">SM</span>
+                      <span className="text-2xl font-bold text-highlight">MP</span>
                     </div>
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-foreground">Sunita Mehta</p>
-                    <p className="text-sm text-muted-foreground">Pune • Japan Tour, October 2024</p>
+                    <p className="font-semibold text-foreground">Mandar Patil</p>
+                    <p className="text-sm text-muted-foreground">Bali, 2025</p>
                   </div>
                 </div>
               </blockquote>
@@ -223,23 +230,52 @@ useEffect(() => {
                 <div className="relative">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-4">
-                      <div className="h-32 bg-gradient-to-br from-highlight/20 to-highlight/5 rounded-2xl flex items-center justify-center">
-                        <span className="text-4xl">🗼</span>
+                      <div className="relative h-32 rounded-2xl overflow-hidden bg-white/60 shadow-sm ring-1 ring-black/5">
+                        <img
+                          src={img1}
+                          alt="Travel highlight 1"
+                          className="absolute inset-0 w-full h-full object-cover [object-position:center_top]"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/15" />
                       </div>
-                      <div className="h-48 bg-gradient-to-br from-cta/20 to-cta/5 rounded-2xl flex items-center justify-center">
-                        <span className="text-5xl">🏔️</span>
+
+                      <div className="relative h-48 rounded-2xl overflow-hidden bg-white/60 shadow-sm ring-1 ring-black/5">
+                        <img
+                          src={img2}
+                          alt="Travel highlight 2"
+                          className="absolute inset-0 w-full h-full object-cover [object-position:center]"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/15" />
                       </div>
                     </div>
+
                     <div className="space-y-4 pt-8">
-                      <div className="h-48 bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
-                        <span className="text-5xl">🌊</span>
+                      <div className="relative h-48 rounded-2xl overflow-hidden bg-white/60 shadow-sm ring-1 ring-black/5">
+                        <img
+                          src={img3}
+                          alt="Travel highlight 3"
+                          className="absolute inset-0 w-full h-full object-cover [object-position:center_35%]"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/15" />
                       </div>
-                      <div className="h-32 bg-gradient-to-br from-highlight/20 to-highlight/5 rounded-2xl flex items-center justify-center">
-                        <span className="text-4xl">🏛️</span>
+
+                      <div className="relative h-32 rounded-2xl overflow-hidden bg-white/60 shadow-sm ring-1 ring-black/5">
+                        <img
+                          src={img4}
+                          alt="Travel highlight 4"
+                          className="absolute inset-0 w-full h-full object-cover [object-position:center]"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-black/15" />
                       </div>
                     </div>
+
                   </div>
                 </div>
+
                 
                 {/* Right side - Text */}
                 <div>

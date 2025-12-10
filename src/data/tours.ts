@@ -67,7 +67,7 @@ export const tours: Tour[] = [
     price: 105919,
     originalPrice: 115919,
     discountPercent: 9,
-    departureDates: ['25 Dec 2025', '27 Dec 2025', '21 Jan 2026', '13 Feb 2026'],
+    departureDates: ['27 Dec 2025', '21 Jan 2026', '13 Feb 2026'],
     departureLocation: 'Pune',
     type: 'international',
     categories: ['Adventure tour', 'Ghar se Ghar tak Group Tours', 'International Tours', 'Senior Citizens'],
@@ -656,22 +656,22 @@ export const tours: Tour[] = [
 // Upcoming departures for the homepage calendar
 export const upcomingDepartures: Departure[] = [
   // December 2025
-  {
-    id: 'dep-dubai-dec-25',
-    tourId: 'dubai-2025',
-    destination: 'Dubai & Abu Dhabi',
-    duration: '7 Days',
-    departureDate: '25 Dec 2025',
-    departureLocation: 'Ex Pune',
-    price: 105919,
-    originalPrice: 115919,
-    discountPercent: 9,
-    spotsLeft: 8,
-    tags: ['X-Mas Special', 'Ghar Se Ghar Tak'],
-    image: '/dubai-tour.jpg',
-    month: 'Dec 2025',
-    type: 'international'
-  },
+  // {
+  //   id: 'dep-dubai-dec-25',
+  //   tourId: 'dubai-2025',
+  //   destination: 'Dubai & Abu Dhabi',
+  //   duration: '7 Days',
+  //   departureDate: '25 Dec 2025',
+  //   departureLocation: 'Ex Pune',
+  //   price: 105919,
+  //   originalPrice: 115919,
+  //   discountPercent: 9,
+  //   spotsLeft: 8,
+  //   tags: ['X-Mas Special', 'Ghar Se Ghar Tak'],
+  //   image: '/dubai-tour.jpg',
+  //   month: 'Dec 2025',
+  //   type: 'international'
+  // },
   {
     id: 'dep-dubai-dec-27',
     tourId: 'dubai-2025',
@@ -684,6 +684,7 @@ export const upcomingDepartures: Departure[] = [
     spotsLeft: 6,
     tags: ['New Year Special', 'Ghar Se Ghar Tak'],
     image: '/dubai-tour.jpg',
+    // link: 'https://suntourismpune.co.in/trip/dubai-tour-packages-2025-26-flights-visa-ghar-se-ghar-tak/',
     month: 'Dec 2025',
     type: 'international'
   },

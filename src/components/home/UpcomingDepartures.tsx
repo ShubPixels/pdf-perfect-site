@@ -109,10 +109,10 @@ export const UpcomingDepartures = () => {
                           <Clock className="w-4 h-4" />
                           {departure.duration}
                         </span>
-                        <span className="flex items-center gap-1">
+                        {/* <span className="flex items-center gap-1">
                           <MapPin className="w-4 h-4" />
                           {departure.departureLocation}
-                        </span>
+                        </span> */}
                         <span className="flex items-center gap-1 text-primary font-medium">
                           <Calendar className="w-4 h-4" />
                           {departure.departureDate}
@@ -131,7 +131,7 @@ export const UpcomingDepartures = () => {
 
                     {/* Price & CTA */}
                     <div className="flex flex-row md:flex-col items-center md:items-end gap-4">
-                      <div className="text-right">
+                      {/* <div className="text-right">
                         <p className="text-sm text-muted-foreground">Starting from</p>
                         {departure.originalPrice && (
                           <p className="text-lg text-muted-foreground line-through">
@@ -140,7 +140,7 @@ export const UpcomingDepartures = () => {
                         )}
                         <p className="text-3xl font-bold text-foreground">{formatPrice(departure.price)}</p>
                         <p className="text-xs text-muted-foreground">per person + GST</p>
-                      </div>
+                      </div> */}
                       <Link to={`/explore/${departure.tourId}`}>
                         <Button className="bg-accent text-black hover:bg-accent/90 font-bold px-6 py-5 rounded-full group/btn">
                           View Details

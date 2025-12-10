@@ -195,7 +195,7 @@ export default function DestinationDetail() {
             {/* Quick Info Bar */}
             <Card className="mb-12 border-primary/20">
               <div className="p-6">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 ">
                   <div className="text-center">
                     <Calendar className="h-8 w-8 mx-auto mb-2 text-primary" />
                     <div className="text-sm text-muted-foreground">Duration</div>
@@ -211,11 +211,11 @@ export default function DestinationDetail() {
                     <div className="text-sm text-muted-foreground">Group Size</div>
                     <div className="font-semibold text-foreground">15-25 people</div>
                   </div>
-                  <div className="text-center">
+                  {/* <div className="text-center">
                     <TrendingUp className="h-8 w-8 mx-auto mb-2 text-primary" />
                     <div className="text-sm text-muted-foreground">Starting From</div>
                     <div className="font-semibold text-primary text-lg">{formatPrice(tour.price)}</div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Card>
@@ -374,7 +374,7 @@ export default function DestinationDetail() {
                               </div>
                             </div>
                             <div className="flex items-center gap-4">
-                              <div className="text-right">
+                              {/* <div className="text-right">
                                 <div className="text-sm text-muted-foreground">Starting from</div>
                                 <div className="text-2xl font-bold text-primary">
                                   {formatPrice(departure?.price || tour.price)}
@@ -384,7 +384,7 @@ export default function DestinationDetail() {
                                     {formatPrice(tour.originalPrice)}
                                   </div>
                                 )}
-                              </div>
+                              </div> */}
                               <Button size="lg" className="bg-cta hover:bg-cta/90 text-cta-foreground">
                                 Enquire Now
                               </Button>
@@ -397,19 +397,19 @@ export default function DestinationDetail() {
                 </div>
 
                 {/* Booking Info */}
-                <Card className="mt-6 bg-accent/10 border-accent">
-                  <div className="p-6">
+                {/* <Card className="mt-6 bg-accent/10 border-accent">
+                  {/* <div className="p-6">
                     <h3 className="text-lg font-bold text-foreground mb-4">Booking Information</h3>
                     <ul className="space-y-2">
-                      {tour.notes.map((note, idx) => (
+                      {/* {tour.notes.map((note, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-muted-foreground">
                           <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
                           <span>{note}</span>
                         </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Card>
+                      ))} */}
+                    {/* </ul>
+                  </div> */}
+                {/* </Card> */} 
               </TabsContent>
 
               <TabsContent value="inclusions" className="mt-8">

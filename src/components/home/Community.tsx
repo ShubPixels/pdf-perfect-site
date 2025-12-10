@@ -142,17 +142,17 @@ export const Community = () => {
           <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-accent/20 flex items-center justify-center">
             <MessageCircle className="h-8 w-8 text-accent" />
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+          <h3 className="text-2xl md:text-3xl font-bold text-black mb-3">
             Share Your Travel Story
           </h3>
-          <p className="text-white/60 mb-8 max-w-lg mx-auto">
+          <p className="=text-black mb-8 max-w-lg mx-auto">
             Travelled with us? Your photos and stories inspire others. Share via WhatsApp or Instagram and get featured!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-accent text-black hover:bg-accent/90 font-bold px-8 py-6 text-lg rounded-full">
               Share via WhatsApp
             </Button>
-            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-full">
+            <Button variant="outline" className="border-white/30 text-black hover:bg-white/10 px-8 py-6 text-lg rounded-full">
               Tag us on Instagram
             </Button>
           </div>
