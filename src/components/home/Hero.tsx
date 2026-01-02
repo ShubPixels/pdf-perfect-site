@@ -99,13 +99,13 @@ export const Hero = () => {
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <button
+          {/* <button
             onClick={() => scrollToSection("current-tours")}
             className="group w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 bg-accent text-black text-sm sm:text-base font-bold rounded-full shadow-lg hover:shadow-accent/30 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 sm:gap-3"
           >
             <Play className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse" />
             Watch Live Tours
-          </button>
+          </button> */}
 
           <button
             onClick={() => scrollToSection("upcoming-departures")}
@@ -150,9 +150,9 @@ export const Hero = () => {
           }`}
         >
           {[
-            { value: "150+", label: "Tours" },
-            { value: "2.5K+", label: "Travelers" },
-            { value: "25+", label: "Countries" },
+            { value: "15k+", label: "Tours" },
+            { value: "75K+", label: "Travelers" },
+            { value: "30+", label: "Countries" },
           ].map((stat) => (
             <div key={stat.label}>
               <div className="text-xl sm:text-2xl font-bold text-accent">
@@ -184,9 +184,9 @@ export const Hero = () => {
       {/* Desktop Side Stats */}
       <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col gap-8 text-white">
         {[
-          { value: "150+", label: "Tours" },
-          { value: "2.5K+", label: "Travelers" },
-          { value: "25+", label: "Countries" },
+          { value: "15k+", label: "Tours" },
+          { value: "75K+", label: "Travelers" },
+          { value: "30+", label: "Countries" },
         ].map((stat, index) => (
           <div
             key={stat.label}

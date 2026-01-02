@@ -10,8 +10,6 @@ export interface Tour {
   duration: string;
   nights: number;
   days: number;
-  price: number;
-  originalPrice?: number;
   discountPercent?: number;
   departureDates: string[];
   departureLocation: string;
@@ -43,8 +41,6 @@ export interface Departure {
   duration: string;
   departureDate: string;
   departureLocation: string;
-  price: number;
-  originalPrice?: number;
   discountPercent?: number;
   spotsLeft?: number;
   tags: string[];
@@ -64,8 +60,6 @@ export const tours: Tour[] = [
     duration: '7 Days - 6 Nights',
     nights: 6,
     days: 7,
-    price: 105919,
-    originalPrice: 115919,
     discountPercent: 9,
     departureDates: ['27 Dec 2025', '21 Jan 2026', '13 Feb 2026'],
     departureLocation: 'Pune',
@@ -179,8 +173,6 @@ export const tours: Tour[] = [
     duration: '16 Days - 15 Nights',
     nights: 15,
     days: 16,
-    price: 394919,
-    originalPrice: 419919,
     discountPercent: 6,
     departureDates: ['07 May 2026'],
     departureLocation: 'Pune',
@@ -266,8 +258,6 @@ export const tours: Tour[] = [
     duration: '7 Days - 6 Nights',
     nights: 6,
     days: 7,
-    price: 52919,
-    originalPrice: 62919,
     discountPercent: 16,
     departureDates: ['23 Dec 2025'],
     departureLocation: 'Pune',
@@ -345,14 +335,13 @@ export const tours: Tour[] = [
     duration: '8 Days - 7 Nights',
     nights: 7,
     days: 8,
-    price: 259919,
     departureDates: ['24 Mar 2026'],
     departureLocation: 'Pune',
     type: 'international',
     categories: ['Adventure tour', 'Ghar se Ghar tak Group Tours', 'International Tours', 'Senior Citizens'],
     accommodation: 'Stay in 3–4 star deluxe hotels across Japan.',
     bestSeason: 'Perfectly timed for cherry blossom (Sakura) viewing in late March 2026.',
-    transportation: 'Luxury AC coach, Shinkansen bullet train experience (2 rides), and flights included.',
+    transportation: 'Luxury AC coach,and flights',
     region: 'Asia',
     tagline: 'Where Ancient Tradition Meets Modern Wonder – Sakura Special',
     idealFor: ['Families', 'Seniors', 'Culture Lovers', 'First-time Asia Travelers', 'Photography Enthusiasts'],
@@ -426,7 +415,6 @@ export const tours: Tour[] = [
     duration: '9 Days - 8 Nights',
     nights: 8,
     days: 9,
-    price: 129919,
     departureDates: ['24 Dec 2025'],
     departureLocation: 'Pune',
     type: 'international',
@@ -502,7 +490,6 @@ export const tours: Tour[] = [
     duration: '10 Days - 9 Nights',
     nights: 9,
     days: 10,
-    price: 62919,
     departureDates: ['25 Dec 2025'],
     departureLocation: 'Pune',
     type: 'domestic',
@@ -583,7 +570,6 @@ export const tours: Tour[] = [
     duration: '6 Days - 5 Nights',
     nights: 5,
     days: 6,
-    price: 65919,
     departureDates: ['28 Dec 2025', '25 Feb 2026'],
     departureLocation: 'Pune',
     type: 'domestic',
@@ -679,8 +665,8 @@ export const upcomingDepartures: Departure[] = [
     duration: '7 Days',
     departureDate: '27 Dec 2025',
     departureLocation: 'Ex Pune',
-    price: 105919,
-    originalPrice: 115919,
+    // price: 105919,
+    // originalPrice: 115919,
     spotsLeft: 6,
     tags: ['New Year Special', 'Ghar Se Ghar Tak'],
     image: '/dubai-tour.jpg',
@@ -695,8 +681,8 @@ export const upcomingDepartures: Departure[] = [
     duration: '7 Days',
     departureDate: '23 Dec 2025',
     departureLocation: 'Ex Pune',
-    price: 52919,
-    originalPrice: 62919,
+    // price: 52919,
+    // originalPrice: 62919,
     discountPercent: 16,
     spotsLeft: 12,
     tags: ['Winter Special', 'Heritage'],
@@ -711,7 +697,7 @@ export const upcomingDepartures: Departure[] = [
     duration: '9 Days',
     departureDate: '24 Dec 2025',
     departureLocation: 'Ex Pune',
-    price: 129919,
+    // price: 129919,
     spotsLeft: 10,
     tags: ['3 Countries', 'X-Mas & New Year'],
     image: '/singapore-tour.jpg',
@@ -725,7 +711,7 @@ export const upcomingDepartures: Departure[] = [
     duration: '10 Days',
     departureDate: '25 Dec 2025',
     departureLocation: 'Ex Pune',
-    price: 62919,
+    // price: 62919,
     spotsLeft: 15,
     tags: ['God\'s Own Country', 'Backwaters'],
     image: '/kerala-tour.jpg',
@@ -739,7 +725,7 @@ export const upcomingDepartures: Departure[] = [
     duration: '6 Days',
     departureDate: '28 Dec 2025',
     departureLocation: 'Ex Pune',
-    price: 70919,
+    // price: 70919,
     spotsLeft: 5,
     tags: ['New Year Beach Bash', 'Island Hopping'],
     image: '/andaman-tour.jpg',
@@ -754,8 +740,8 @@ export const upcomingDepartures: Departure[] = [
     duration: '7 Days',
     departureDate: '21 Jan 2026',
     departureLocation: 'Ex Pune',
-    price: 105919,
-    originalPrice: 115919,
+    // price: 105919,
+    // originalPrice: 115919,
     spotsLeft: 18,
     tags: ['Winter Escape', 'Ghar Se Ghar Tak'],
     image: '/dubai-tour.jpg',
@@ -770,8 +756,8 @@ export const upcomingDepartures: Departure[] = [
     duration: '7 Days',
     departureDate: '13 Feb 2026',
     departureLocation: 'Ex Pune',
-    price: 105919,
-    originalPrice: 115919,
+    // price: 105919,
+    // originalPrice: 115919,
     spotsLeft: 20,
     tags: ['Valentine Special', 'Ghar Se Ghar Tak'],
     image: '/dubai-tour.jpg',
@@ -785,7 +771,7 @@ export const upcomingDepartures: Departure[] = [
     duration: '6 Days',
     departureDate: '25 Feb 2026',
     departureLocation: 'Ex Pune',
-    price: 65919,
+    // price: 65919,
     spotsLeft: 16,
     tags: ['Beach Paradise', 'Island Hopping'],
     image: '/andaman-tour.jpg',
@@ -800,7 +786,7 @@ export const upcomingDepartures: Departure[] = [
     duration: '8 Days',
     departureDate: '24 Mar 2026',
     departureLocation: 'Ex Pune',
-    price: 259919,
+    // price: 259919,
     spotsLeft: 14,
     tags: ['Sakura Special', 'Once in a Lifetime'],
     image: '/japan-tour.jpg',
@@ -815,9 +801,9 @@ export const upcomingDepartures: Departure[] = [
     duration: '16 Days',
     departureDate: '07 May 2026',
     departureLocation: 'Ex Pune',
-    price: 394919,
-    originalPrice: 419919,
-    discountPercent: 6,
+    // price: 394919,
+    // originalPrice: 419919,
+    // discountPercent: 6,
     spotsLeft: 22,
     tags: ['Trip of the Month', '7 Countries'],
     image: '/europe-tour.jpg',
@@ -827,13 +813,13 @@ export const upcomingDepartures: Departure[] = [
 ];
 
 // Helper function to format price in Indian format
-export const formatPrice = (price: number): string => {
-  return new Intl.NumberFormat('en-IN', {
-    style: 'currency',
-    currency: 'INR',
-    maximumFractionDigits: 0
-  }).format(price);
-};
+// export const formatPrice = (price: number): string => {
+//   return new Intl.NumberFormat('en-IN', {
+//     style: 'currency',
+//     currency: 'INR',
+//     maximumFractionDigits: 0
+//   }).format(price);
+// };
 
 // Get tours by type
 export const getToursByType = (type: 'international' | 'domestic'): Tour[] => {

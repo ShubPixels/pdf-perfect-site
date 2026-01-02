@@ -65,18 +65,26 @@ useEffect(() => {
       <main className="relative z-10">
         <Hero />
         
+        <div
+          ref={destinations.ref}
+          className={`transition-all duration-1000 ${
+            destinations.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <Destinations />
+        </div>
         {/* Story Bridge 1 - Immersive Transition */}
-        <div className="relative min-h-[60vh]">
+        {/* <div className="relative min-h-[60vh]"> */}
           {/* Story card (top layer) */}
-          <div
+          {/* <div
             ref={bridge1.ref}
             className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
               showStory ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="relative max-w-4xl mx-auto px-4">
+            <div className="relative max-w-4xl mx-auto px-4"> */}
               {/* Floating icons around the quote */}
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: showStory ? 1 : 0 }}
                 className="absolute -top-8 -left-8 md:-left-16"
@@ -107,17 +115,17 @@ useEffect(() => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Current Tours (bottom layer) */}
-          <div
+          {/* <div
             className={`transition-all duration-700 ${
               showCurrentTours ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
             <CurrentTours />
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
 
 
 
@@ -294,14 +302,7 @@ useEffect(() => {
           </div>
         </div>
 
-        <div
-          ref={destinations.ref}
-          className={`transition-all duration-1000 ${
-            destinations.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <Destinations />
-        </div>
+        
 
         {/* Story Bridge 5 - Community Lead */}
         <div 

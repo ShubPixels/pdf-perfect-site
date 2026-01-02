@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import { MapPin, ArrowRight, Globe } from "lucide-react";
 import japanImage from "@/assets/japan-tour.jpg";
 import dubaiImage from "@/assets/dubai-tour.jpg";
-import europeImage from "@/assets/europe-tour.jpg";
-import baliImage from "@/assets/bali-tour.jpg";
+import europeImage from "@/assets/europe-tour.jpg"; 
+import singaporeimage from "@/assets/Singapore/1.png";
+import southafrica from "@/assets/SA/1.png";
 
 export const Destinations = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -40,12 +41,21 @@ export const Destinations = () => {
       stats: { tours: 24, travelers: 890 },
     },
     {
-      id: "bali",
-      name: "Bali",
+      id: "singapore",
+      name: "SINGAPORE & MALAYASIA",
       region: "Asia",
-      tags: ["Beach", "Culture", "Relaxed"],
-      description: "Island paradise where spirituality meets serenity",
-      image: baliImage,
+      tags: ["Citylines", "Culture", "Relaxed"],
+      description: "Paradise where spirituality meets serenity",
+      image: singaporeimage,
+      stats: { tours: 8, travelers: 320 },
+    },
+    {
+      id: "africa",
+      name: "Sunny South Africa",
+      region: "Africa",
+      tags: ["Mountains", "Wildlife", "Nature"],
+      description: "Essence of nature, wildlife, and modern marvels.",
+      image: southafrica,
       stats: { tours: 8, travelers: 320 },
     },
   ];
