@@ -45,7 +45,11 @@ const slugToTourId: Record<string, string> = {
   'rajasthan': 'rajasthan-2025',
   'singapore': 'singapore-malaysia-2025',
   'kerala': 'kerala-2025',
-  'andaman': 'andaman-2025'
+  'andaman': 'andaman-2025',
+  'nepal': 'nepal-2026',
+  'bali': 'bali-2026',
+  'baku': 'baku-2026',
+  'australia': 'australia-2026'
 };
 
 // Gallery images for each destination
@@ -119,7 +123,7 @@ const getMainImage = (slug: string): string => {
 // Get related destinations
 const getRelatedDestinations = (
   currentSlug: string
-): Array<{ id: string; name: string; image: string; price: string }> => {
+): Array<{ id: string; name: string; image: string; duration: string }> => {
   const allDestinations = Object.keys(slugToTourId);
 
   return allDestinations
@@ -128,16 +132,11 @@ const getRelatedDestinations = (
     .map((slug) => {
       const tour = tours.find((t) => t.id === slugToTourId[slug]);
 
-      const price =
-        tour?.price != null
-          ? `$${Number(tour.price).toLocaleString()}`
-          : "Contact for price";
-
       return {
         id: slug,
         name: tour?.shortTitle ?? slug,
         image: getMainImage(slug),
-        price,
+        duration: tour?.duration ?? "Contact for details",
       };
     });
 };
@@ -542,7 +541,7 @@ export default function DestinationDetail() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                         <div className="absolute bottom-4 left-4 right-4 text-white">
                           <h3 className="font-bold text-xl mb-1">{related.name}</h3>
-                          <div className="text-sm">Starting from {related.price}</div>
+                          <div className="text-sm">{related.duration}</div>
                         </div>
                       </div>
                       <div className="p-4">
