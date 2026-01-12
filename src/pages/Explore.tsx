@@ -37,7 +37,7 @@ const Explore = () => {
           </div>
         </section>
 
-        <Destinations />
+        <Destinations showAll={true} />
       </main>
       <Footer />
     </div>
