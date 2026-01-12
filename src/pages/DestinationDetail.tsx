@@ -35,7 +35,11 @@ const tourIdToSlug: Record<string, string> = {
   'rajasthan-2025': 'rajasthan',
   'singapore-malaysia-2025': 'singapore',
   'kerala-2025': 'kerala',
-  'andaman-2025': 'andaman'
+  'andaman-2025': 'andaman',
+  'nepal-2025': 'nepal',
+  'bali-2025': 'bali',
+  'baku-2025': 'baku',
+  'australia-2026': 'australia'
 };
 
 const slugToTourId: Record<string, string> = {
@@ -46,9 +50,9 @@ const slugToTourId: Record<string, string> = {
   'singapore': 'singapore-malaysia-2025',
   'kerala': 'kerala-2025',
   'andaman': 'andaman-2025',
-  'nepal': 'nepal-2026',
-  'bali': 'bali-2026',
-  'baku': 'baku-2026',
+  'nepal': 'nepal-2025',
+  'bali': 'bali-2025',
+  'baku': 'baku-2025',
   'australia': 'australia-2026'
 };
 

@@ -3,62 +3,65 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight, Globe } from "lucide-react";
+import { tours } from "@/data/tours";
+
+// Import images
 import japanImage from "@/assets/japan-tour.jpg";
 import dubaiImage from "@/assets/dubai-tour.jpg";
 import europeImage from "@/assets/europe-tour.jpg"; 
 import singaporeimage from "@/assets/Singapore/1.png";
 import southafrica from "@/assets/SA/1.png";
+import baliImage from "@/assets/bali-tour.jpg";
 
-export const Destinations = () => {
+// Map tour IDs to images and display data
+const destinationImages: Record<string, string> = {
+  'japan-2026': japanImage,
+  'dubai-2025': dubaiImage,
+  'europe-2026': europeImage,
+  'singapore-malaysia-2025': singaporeimage,
+  'rajasthan-2025': southafrica, // Using SA image for Rajasthan temporarily
+  'kerala-2025': baliImage, // Using bali image for Kerala temporarily
+  'andaman-2025': baliImage,
+  'nepal-2025': japanImage, // Reusing images temporarily
+  'bali-2025': baliImage,
+  'baku-2025': dubaiImage,
+  'australia-2026': europeImage,
+};
+
+const destinationMeta: Record<string, { region: string; tags: string[]; stats: { tours: number; travelers: number } }> = {
+  'japan-2026': { region: 'Asia', tags: ['Culture', 'Scenic', 'Heritage'], stats: { tours: 12, travelers: 450 } },
+  'dubai-2025': { region: 'Middle East', tags: ['Modern', 'Shopping', 'Luxury'], stats: { tours: 18, travelers: 680 } },
+  'europe-2026': { region: 'Europe', tags: ['Historic', 'Scenic', 'First-time'], stats: { tours: 24, travelers: 890 } },
+  'singapore-malaysia-2025': { region: 'Asia', tags: ['Citylines', 'Culture', 'Relaxed'], stats: { tours: 8, travelers: 320 } },
+  'rajasthan-2025': { region: 'India', tags: ['Heritage', 'Culture', 'Royal'], stats: { tours: 15, travelers: 520 } },
+  'kerala-2025': { region: 'India', tags: ['Backwaters', 'Nature', 'Relaxing'], stats: { tours: 10, travelers: 380 } },
+  'andaman-2025': { region: 'India', tags: ['Beach', 'Islands', 'Adventure'], stats: { tours: 8, travelers: 290 } },
+  'nepal-2025': { region: 'Asia', tags: ['Spiritual', 'Mountains', 'Heritage'], stats: { tours: 6, travelers: 180 } },
+  'bali-2025': { region: 'Asia', tags: ['Beach', 'Culture', 'Romantic'], stats: { tours: 10, travelers: 420 } },
+  'baku-2025': { region: 'Asia', tags: ['Modern', 'Historic', 'Unique'], stats: { tours: 5, travelers: 150 } },
+  'australia-2026': { region: 'Oceania', tags: ['Wildlife', 'Nature', 'Adventure'], stats: { tours: 4, travelers: 120 } },
+};
+
+interface DestinationsProps {
+  showAll?: boolean;
+}
+
+export const Destinations = ({ showAll = false }: DestinationsProps) => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const destinations = [
-    {
-      id: "japan",
-      name: "Japan",
-      region: "Asia",
-      tags: ["Culture", "Scenic", "Heritage"],
-      description: "Where ancient traditions meet cutting-edge innovation",
-      image: japanImage,
-      stats: { tours: 12, travelers: 450 },
-    },
-    {
-      id: "dubai",
-      name: "Dubai & Abu Dhabi",
-      region: "Middle East",
-      tags: ["Modern", "Shopping", "Luxury"],
-      description: "A playground of architectural wonders and desert dreams",
-      image: dubaiImage,
-      stats: { tours: 18, travelers: 680 },
-    },
-    {
-      id: "europe",
-      name: "Europe",
-      region: "Europe",
-      tags: ["Historic", "Scenic", "First-time"],
-      description: "Timeless cities, art, and culinary treasures await",
-      image: europeImage,
-      stats: { tours: 24, travelers: 890 },
-    },
-    {
-      id: "singapore",
-      name: "SINGAPORE & MALAYASIA",
-      region: "Asia",
-      tags: ["Citylines", "Culture", "Relaxed"],
-      description: "Paradise where spirituality meets serenity",
-      image: singaporeimage,
-      stats: { tours: 8, travelers: 320 },
-    },
-    {
-      id: "africa",
-      name: "Sunny South Africa",
-      region: "Africa",
-      tags: ["Mountains", "Wildlife", "Nature"],
-      description: "Essence of nature, wildlife, and modern marvels.",
-      image: southafrica,
-      stats: { tours: 8, travelers: 320 },
-    },
-  ];
+  // Get destinations from tours data
+  const allDestinations = tours.map(tour => ({
+    id: tour.id,
+    name: tour.shortTitle,
+    region: destinationMeta[tour.id]?.region || tour.region,
+    tags: destinationMeta[tour.id]?.tags || tour.categories.slice(0, 3),
+    description: tour.tagline,
+    image: destinationImages[tour.id] || dubaiImage,
+    stats: destinationMeta[tour.id]?.stats || { tours: 5, travelers: 200 },
+  }));
+
+  // Show 5 on home, all on explore
+  const destinations = showAll ? allDestinations : allDestinations.slice(0, 5);
 
   return (
     <section id="destinations" className="py-24 bg-secondary/30 scroll-mt-20">
