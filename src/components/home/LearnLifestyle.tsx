@@ -71,7 +71,8 @@ export const LearnLifestyle = () => {
             Learn • Plan • <span className="text-primary">Enjoy</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Tips, guides, and lifestyle content to enhance your travel experience
+            Whether you're a first-time traveler or a seasoned explorer, there's always something new to learn.
+              Our guides and tips will help you prepare for the adventure of a lifetime.
           </p>
         </div>
 

@@ -12,7 +12,7 @@ export const UpcomingDepartures = () => {
   const filteredDepartures = upcomingDepartures.filter((dep) => dep.month === selectedMonth);
 
   return (
-    <section id="upcoming-departures" className="py-24 bg-background scroll-mt-20 overflow-hidden">
+    <section id="upcoming-departures" className="py-24  scroll-mt-20 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

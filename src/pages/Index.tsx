@@ -127,103 +127,6 @@ useEffect(() => {
           </div> */}
         {/* </div> */}
 
-
-
-        {/* Story Bridge 2 - Creative Testimonial */}
-        <div 
-          ref={bridge2.ref}
-          className={`relative py-20 transition-all duration-1000 ${
-            bridge2.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto relative">
-              {/* Background decorative element */}
-              <div className="absolute inset-0 bg-gradient-to-r from-highlight/5 via-cta/10 to-highlight/5 rounded-3xl blur-2xl" />
-              
-              <div className="relative grid md:grid-cols-[1fr_auto_1fr] gap-8 items-center">
-                {/* Left decorative line */}
-                <div className="hidden md:block h-px bg-gradient-to-r from-transparent via-border to-border" />
-                
-                <div className="text-center">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-cta/20 rounded-full mb-6">
-                    <Heart className="h-4 w-4 text-cta" />
-                    <span className="text-sm font-medium text-foreground">Traveler Story</span>
-                  </div>
-                </div>
-                
-                {/* Right decorative line */}
-                <div className="hidden md:block h-px bg-gradient-to-l from-transparent via-border to-border" />
-              </div>
-              
-              <blockquote className="relative text-center mt-8">
-                <Quote className="h-16 w-16 text-highlight/20 mx-auto mb-4" />
-                <p className="text-2xl md:text-3xl font-medium text-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-                  "We planned Personalised Bali tour and Sun tour help us planned and executed as we planned
-                  Once tour is planned, Sun tour gives experience of sit back, relax and enjoy tour.
-                  Very well communication, very well execution
-                  Always dil se dil tak❤️"
-                </p>
-                <div className="flex items-center justify-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-highlight to-cta p-0.5">
-                    <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                      <span className="text-2xl font-bold text-highlight">MP</span>
-                    </div>
-                  </div>
-                  <div className="text-left">
-                    <p className="font-semibold text-foreground">Mandar Patil</p>
-                    <p className="text-sm text-muted-foreground">Bali, 2025</p>
-                  </div>
-                </div>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-
-        {/* Story Bridge 3 - Invitation */}
-        <div 
-          ref={bridge3.ref}
-          className={`relative py-16 transition-all duration-1000 ${
-            bridge3.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="relative bg-card/30 backdrop-blur-sm border border-border/30 rounded-3xl p-10 text-center overflow-hidden">
-                {/* Background pattern */}
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-highlight rounded-tl-3xl" />
-                  <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-highlight rounded-br-3xl" />
-                </div>
-                
-                <div className="relative">
-                  <Compass className="h-12 w-12 text-cta mx-auto mb-6" />
-                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-                    And Soon, It Could Be <span className="text-highlight">You</span>
-                  </h3>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Your next adventure is closer than you think. Take a look at what's coming up...
-                  </p>
-                  <div className="flex justify-center gap-2 mt-6">
-                    {[...Array(3)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 rounded-full bg-cta animate-pulse" style={{ animationDelay: `${i * 0.3}s` }} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div 
-          ref={departures.ref}
-          className={`transition-all duration-1000 ${
-            departures.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <UpcomingDepartures />
-        </div>
-
         {/* Story Bridge 4 - Destination Intro */}
         <div 
           ref={bridge4.ref}
@@ -301,6 +204,52 @@ useEffect(() => {
             </div>
           </div>
         </div>
+
+        {/* Story Bridge 3 - Invitation */}
+        <div 
+          ref={bridge3.ref}
+          className={`relative py-16 transition-all duration-1000 ${
+            bridge3.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="relative bg-card/30 backdrop-blur-sm border border-border/30 rounded-3xl p-10 text-center overflow-hidden">
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-0 left-0 w-32 h-32 border-t-2 border-l-2 border-highlight rounded-tl-3xl" />
+                  <div className="absolute bottom-0 right-0 w-32 h-32 border-b-2 border-r-2 border-highlight rounded-br-3xl" />
+                </div>
+                
+                <div className="relative">
+                  <Compass className="h-12 w-12 text-cta mx-auto mb-6" />
+                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+                    And Soon, It Could Be <span className="text-highlight">You</span>
+                  </h3>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Your next adventure is closer than you think. Take a look at what's coming up...
+                  </p>
+                  <div className="flex justify-center gap-2 mt-6">
+                    {[...Array(3)].map((_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-cta animate-pulse" style={{ animationDelay: `${i * 0.3}s` }} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div 
+          ref={departures.ref}
+          className={`transition-all duration-1000 ${
+            departures.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <UpcomingDepartures />
+        </div>
+
+        
 
         
 
@@ -518,7 +467,7 @@ useEffect(() => {
         </div>
 
         {/* Story Bridge 6 - Learning Transition */}
-        <div 
+        {/* <div 
           ref={bridge6.ref}
           className={`relative py-20 transition-all duration-1000 ${
             bridge6.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -527,7 +476,7 @@ useEffect(() => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <div className="relative bg-gradient-to-r from-card/50 via-card/80 to-card/50 backdrop-blur-sm border border-border/30 rounded-3xl p-10 overflow-hidden">
-                {/* Decorative background */}
+                
                 <div className="absolute top-0 right-0 w-64 h-64 bg-cta/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                 
                 <div className="relative grid md:grid-cols-[auto_1fr] gap-8 items-center">
@@ -554,10 +503,10 @@ useEffect(() => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Story Bridge 7 - Learning Intro */}
-        <div 
+        {/* <div 
           ref={bridge7.ref}
           className={`relative py-16 transition-all duration-1000 ${
             bridge7.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -576,7 +525,7 @@ useEffect(() => {
               Our guides and tips will help you prepare for the adventure of a lifetime.
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div 
           ref={learnLifestyle.ref}

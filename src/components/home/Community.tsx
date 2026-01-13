@@ -76,18 +76,18 @@ export const Community = () => {
   };
 
   return (
-    <section id="community" className="py-24 bg-black/20 text-white scroll-mt-20 overflow-hidden">
+    <section id="community" className="py-24  text-white scroll-mt-20 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/50 mb-6">
             <Camera className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium">Real moments, Real memories</span>
+            <span className="text-sm text-black font-medium">Real moments, Real memories</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
+          <h2 className="text-4xl text-black md:text-6xl font-bold mb-4">
             From Our <span className="text-accent">Community</span>
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto text-lg">
+          <p className="text-black max-w-2xl mx-auto text-lg">
             Click on any destination to explore photos from our travelers' journeys
           </p>
         </div>
