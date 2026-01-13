@@ -65,26 +65,18 @@ useEffect(() => {
       <main className="relative z-10">
         <Hero />
         
-        <div
-          ref={destinations.ref}
-          className={`transition-all duration-1000 ${
-            destinations.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <Destinations />
-        </div>
         {/* Story Bridge 1 - Immersive Transition */}
-        {/* <div className="relative min-h-[60vh]"> */}
+        <div className="relative min-h-[60vh]">
           {/* Story card (top layer) */}
-          {/* <div
+          <div
             ref={bridge1.ref}
             className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ${
               showStory ? "opacity-100" : "opacity-0 pointer-events-none"
             }`}
           >
-            <div className="relative max-w-4xl mx-auto px-4"> */}
+            <div className="relative max-w-4xl mx-auto px-4">
               {/* Floating icons around the quote */}
-              {/* <motion.div
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: showStory ? 1 : 0 }}
                 className="absolute -top-8 -left-8 md:-left-16"
@@ -115,17 +107,17 @@ useEffect(() => {
                 </p>
               </div>
             </div>
-          </div> */}
+          </div>
 
           {/* Current Tours (bottom layer) */}
-          {/* <div
+          <div
             className={`transition-all duration-700 ${
               showCurrentTours ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
             <CurrentTours />
-          </div> */}
-        {/* </div> */}
+          </div>
+        </div>
 
 
 
@@ -302,207 +294,51 @@ useEffect(() => {
           </div>
         </div>
 
-        
+        <div
+          ref={destinations.ref}
+          className={`transition-all duration-1000 ${
+            destinations.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <Destinations />
+        </div>
 
-        {/* Story Bridge 5 - Enhanced Testimonials Section */}
+        {/* Story Bridge 5 - Community Lead */}
         <div 
           ref={bridge5.ref}
-          className={`relative py-24 transition-all duration-1000 ${
+          className={`relative py-20 transition-all duration-1000 ${
             bridge5.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              {/* Section Header */}
-              <div className="text-center mb-16">
-                <div className="relative inline-block mb-8">
-                  <div className="absolute inset-0 bg-gradient-to-r from-highlight/20 to-cta/20 rounded-full blur-xl" />
-                  <div className="relative bg-card/50 backdrop-blur-sm border border-border/30 rounded-full px-6 py-3">
-                    <span className="text-sm font-medium text-muted-foreground">⭐ 500+ Happy Travelers</span>
-                  </div>
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="relative inline-block mb-8">
+                <div className="absolute inset-0 bg-gradient-to-r from-highlight/20 to-cta/20 rounded-full blur-xl" />
+                <div className="relative bg-card/50 backdrop-blur-sm border border-border/30 rounded-full px-6 py-3">
+                  <span className="text-sm font-medium text-muted-foreground">Real Stories from Real Travelers</span>
                 </div>
-                
-                <h3 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
-                  But Don't Just Take Our <span className="text-highlight">Word For It</span>
-                </h3>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                  Real stories from real travelers. These memories were made with Sun Tourism.
-                </p>
               </div>
-
-              {/* Testimonial Cards Grid */}
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
-                {/* Testimonial 1 - Featured Large */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="md:col-span-2 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/30 rounded-3xl p-8 relative overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-cta/10 rounded-full blur-2xl" />
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-highlight/10 rounded-full blur-xl" />
-                  
-                  <div className="relative">
-                    <div className="flex items-center gap-1 mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400 text-xl">★</span>
-                      ))}
-                    </div>
-                    <Quote className="h-10 w-10 text-highlight/30 mb-4" />
-                    <p className="text-xl md:text-2xl font-medium text-foreground mb-6 leading-relaxed">
-                      "We planned Personalised Bali tour and Sun Tourism helped us plan and execute exactly as we wanted. 
-                      Once tour is planned, Sun Tour gives experience of sit back, relax and enjoy. 
-                      Very well communication, very well execution. Always dil se dil tak ❤️"
-                    </p>
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-highlight to-cta p-0.5">
-                        <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
-                          <span className="text-xl font-bold text-highlight">MP</span>
-                        </div>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Mandar Patil</p>
-                        <p className="text-sm text-muted-foreground">Bali Customized Tour • 2024</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Testimonial 2 */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400">★</span>
-                      ))}
-                    </div>
-                    <p className="text-foreground mb-4 leading-relaxed">
-                      "Best tour experience ever! The Ghar Se Ghar Tak service is absolutely amazing. 
-                      No stress from start to end. Highly recommended for families!"
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/30">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span className="font-bold text-primary text-sm">SJ</span>
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground text-sm">Suresh Joshi</p>
-                      <p className="text-xs text-muted-foreground">Dubai Tour • Dec 2024</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Testimonial 3 */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400">★</span>
-                      ))}
-                    </div>
-                    <p className="text-foreground mb-4 leading-relaxed">
-                      "Tour managers didn't just show us places, they taught us how to travel smart. 
-                      Now I feel confident exploring on my own too!"
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/30">
-                    <div className="w-10 h-10 rounded-full bg-highlight/20 flex items-center justify-center">
-                      <span className="font-bold text-highlight text-sm">RK</span>
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground text-sm">Rajesh Kulkarni</p>
-                      <p className="text-xs text-muted-foreground">Europe Tour • Aug 2024</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Testimonial 4 */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400">★</span>
-                      ))}
-                    </div>
-                    <p className="text-foreground mb-4 leading-relaxed">
-                      "As senior citizens, we were worried about long tours. But Sun Tourism made our 
-                      Kerala trip so comfortable. Everything was taken care of!"
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/30">
-                    <div className="w-10 h-10 rounded-full bg-cta/20 flex items-center justify-center">
-                      <span className="font-bold text-cta text-sm">PD</span>
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground text-sm">Prakash & Deepa</p>
-                      <p className="text-xs text-muted-foreground">Kerala Tour • Jan 2025</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Testimonial 5 */}
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="flex items-center gap-1 mb-3">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400">★</span>
-                      ))}
-                    </div>
-                    <p className="text-foreground mb-4 leading-relaxed">
-                      "Singapore Malaysia trip with free Sri Lanka was unbelievable value! 
-                      Three countries, zero hassle. Will definitely book again!"
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/30">
-                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                      <span className="font-bold text-green-600 text-sm">AM</span>
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground text-sm">Amit Mehta</p>
-                      <p className="text-xs text-muted-foreground">Singapore Malaysia • 2024</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Stats Row */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl md:text-4xl font-bold text-highlight mb-1">500+</p>
-                  <p className="text-sm text-muted-foreground">Happy Travelers</p>
-                </div>
-                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl md:text-4xl font-bold text-cta mb-1">18+</p>
-                  <p className="text-sm text-muted-foreground">Years Experience</p>
-                </div>
-                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl md:text-4xl font-bold text-primary mb-1">25+</p>
-                  <p className="text-sm text-muted-foreground">Destinations</p>
-                </div>
-                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl md:text-4xl font-bold text-green-500 mb-1">4.9</p>
-                  <p className="text-sm text-muted-foreground">Google Rating</p>
-                </div>
+              
+              <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+                But Don't Just Take Our <span className="text-highlight">Word For It</span>
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+                The best stories come from those who've traveled with us. Real photos, real moments, 
+                real friendships formed thousands of miles from home.
+              </p>
+              
+              {/* Decorative photo stack preview */}
+              <div className="flex justify-center items-center gap-4 mt-10">
+                {[...Array(5)].map((_, i) => (
+                  <div 
+                    key={i}
+                    className="w-16 h-16 rounded-xl bg-gradient-to-br from-highlight/30 to-cta/30 border border-border/50"
+                    style={{ 
+                      transform: `rotate(${(i - 2) * 8}deg)`,
+                      zIndex: 5 - Math.abs(i - 2)
+                    }}
+                  />
+                ))}
               </div>
             </div>
           </div>
