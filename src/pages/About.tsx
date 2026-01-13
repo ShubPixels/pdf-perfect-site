@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import Ashoksir from "@/assets/Ashok Sir.jpg";
+import Nishitamaam from "@/assets/Nishita Maam.jpg";
 import { MapPin, Users, Globe, Award, Linkedin, Mail, Briefcase, GraduationCap, Heart, Quote, Star, Calendar, Plane } from "lucide-react";
 
 const About = () => {
@@ -11,11 +13,11 @@ const About = () => {
 
   const leaders = [
     {
-      name: "Mr. Sunil Kale",
-      role: "Founder & Managing Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      bio: "A visionary entrepreneur who transformed the travel industry in Pune, Mr. Sunil Kale founded Sun Tourism in 2007 with a dream to make international travel accessible and comfortable for every family.",
-      thoughts: "Travel should never be a luxury reserved for a few. My mission has always been to ensure that every family, regardless of their travel experience, can explore the world with confidence, comfort, and care. When a 65-year-old grandmother tells me Japan was the best experience of her life, I know we've succeeded.",
+      name: "Mrs. Nishitta Ghaatge",
+      role: "Specialist for Dubai, Singapore, Japan & Europe Tours",
+      img: Nishitamaam,
+      bio: "A travel expert who has led thousands of travelers on memorable tours across Dubai, Singapore, Japan, and Europe. Her practical knowledge comes from years of exploring these destinations personally, making her guidance both insightful and real. From Dubai’s luxury malls to its lively street shopping, and the vibrant spirit of Global Village, she knows exactly where travelers find the best experiences. Having visited Japan in every season, she can tell you which park blooms with the most beautiful cherry blossoms or where autumn colors are most magical.",
+      thoughts:"",
       career: [
         { year: "1995", milestone: "Started career in hospitality industry", icon: Briefcase },
         { year: "2002", milestone: "Completed Tourism Management certification", icon: GraduationCap },
@@ -28,11 +30,11 @@ const About = () => {
       email: "sunil@suntourismpune.com"
     },
     {
-      name: "Mrs. Snehal Kale",
-      role: "Director of Operations & Guest Experience",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",
-      bio: "The heart behind Sun Tourism's legendary hospitality, Mrs. Snehal Kale ensures every traveler feels like family. Her meticulous attention to detail and genuine care has made 'Ghar Se Ghar Tak' a reality for thousands.",
-      thoughts: "Every traveler who joins us becomes part of our family. I believe the success of a trip isn't measured by the destinations covered, but by the smiles created, friendships formed, and memories treasured. When our guests return and immediately ask about the next tour, that's when I know we've touched their hearts.",
+      name: "Mr. Ashok Malik",
+      role: "Expert in Australia, New Zealand, Europe, Canada & Rajasthan Tours",
+      img: Ashoksir,
+      thoughts:"",
+      bio: "Meet Mr. Ashok Malik, a seasoned travel expert with nearly two decades of experience curating unforgettable journeys across Australia, New Zealand, Canada, Europe, and Rajasthan. Having traveled to Europe more than 100 times, he knows the continent’s culture, cuisine, and charm inside out.",
       career: [
         { year: "1998", milestone: "Degree in Hospitality Management", icon: GraduationCap },
         { year: "2005", milestone: "Led customer experience at leading travel agency", icon: Briefcase },
@@ -197,7 +199,7 @@ const About = () => {
                           <div className="relative flex-shrink-0">
                             <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-highlight/20">
                               <img 
-                                src={leader.image} 
+                                src={leader.img} 
                                 alt={leader.name}
                                 className="w-full h-full object-cover"
                               />

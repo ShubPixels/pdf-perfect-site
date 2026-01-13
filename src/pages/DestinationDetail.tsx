@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, MapPin, Users, Plane, Hotel, Camera, Utensils, Clock, TrendingUp, Check, X } from "lucide-react";
 import { ImmersiveGallery } from "@/components/destination/ImmersiveGallery";
-import { tours, getDeparturesByTourId, formatPrice, Tour } from "@/data/tours";
+import { tours, getDeparturesByTourId, Tour } from "@/data/tours";
 
 // Image imports
 import japanImage from "@/assets/japan-tour.jpg";
@@ -35,7 +35,11 @@ const tourIdToSlug: Record<string, string> = {
   'rajasthan-2025': 'rajasthan',
   'singapore-malaysia-2025': 'singapore',
   'kerala-2025': 'kerala',
-  'andaman-2025': 'andaman'
+  'andaman-2025': 'andaman',
+  'nepal-2025': 'nepal',
+  'bali-2025': 'bali',
+  'baku-2025': 'baku',
+  'australia-2026': 'australia'
 };
 
 const slugToTourId: Record<string, string> = {
@@ -45,7 +49,11 @@ const slugToTourId: Record<string, string> = {
   'rajasthan': 'rajasthan-2025',
   'singapore': 'singapore-malaysia-2025',
   'kerala': 'kerala-2025',
-  'andaman': 'andaman-2025'
+  'andaman': 'andaman-2025',
+  'nepal': 'nepal-2025',
+  'bali': 'bali-2025',
+  'baku': 'baku-2025',
+  'australia': 'australia-2026'
 };
 
 // Gallery images for each destination
@@ -117,22 +125,26 @@ const getMainImage = (slug: string): string => {
 };
 
 // Get related destinations
-const getRelatedDestinations = (currentSlug: string): Array<{ id: string; name: string; image: string; price: string }> => {
+const getRelatedDestinations = (
+  currentSlug: string
+): Array<{ id: string; name: string; image: string; duration: string }> => {
   const allDestinations = Object.keys(slugToTourId);
-  const related = allDestinations
-    .filter(slug => slug !== currentSlug)
+
+  return allDestinations
+    .filter((slug) => slug !== currentSlug)
     .slice(0, 2)
-    .map(slug => {
-      const tour = tours.find(t => t.id === slugToTourId[slug]);
+    .map((slug) => {
+      const tour = tours.find((t) => t.id === slugToTourId[slug]);
+
       return {
         id: slug,
-        name: tour?.shortTitle || slug,
+        name: tour?.shortTitle ?? slug,
         image: getMainImage(slug),
-        price: tour ? formatPrice(tour.price) : '₹0'
+        duration: tour?.duration ?? "Contact for details",
       };
     });
-  return related;
 };
+
 
 export default function DestinationDetail() {
   const { destinationId } = useParams();
@@ -190,32 +202,46 @@ export default function DestinationDetail() {
           </div>
         </section>
 
+        {/* Immersive Gallery */}
+            {gallery.length > 0 && (
+              <ImmersiveGallery 
+                images={gallery} 
+                destinationName={tour.destination}
+              />
+            )}
+            
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
             {/* Quick Info Bar */}
             <Card className="mb-12 border-primary/20">
               <div className="p-6">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 ">
-                  <div className="text-center">
-                    <Calendar className="h-8 w-8 mx-auto mb-2 text-primary" />
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
+                  <div className="flex flex-col items-center text-center">
+                    <Calendar className="h-8 w-8 mb-2 text-primary" />
                     <div className="text-sm text-muted-foreground">Duration</div>
-                    <div className="font-semibold text-foreground">{tour.duration}</div>
+                    <div className="mt-1 min-h-[3rem] flex items-center justify-center font-semibold text-foreground">
+                      {tour.duration}
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <Clock className="h-8 w-8 mx-auto mb-2 text-primary" />
+
+                  <div className="flex flex-col items-center text-center">
+                    <Clock className="h-8 w-8 mb-2 text-primary" />
                     <div className="text-sm text-muted-foreground">Best Time</div>
-                    <div className="font-semibold text-foreground text-sm">{tour.bestSeason.split('.')[0]}</div>
+                    <div className="mt-1 min-h-[3rem] flex items-center justify-center font-semibold text-foreground">
+                      <span className="text-sm leading-snug text-balance">
+                        {tour.bestSeason.split(".")[0]}
+                      </span>
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <Users className="h-8 w-8 mx-auto mb-2 text-primary" />
+
+                  {/* centers the 3rd item on small screens (2-col layout) */}
+                  <div className="flex flex-col items-center text-center col-span-2 md:col-span-1">
+                    <Users className="h-8 w-8 mb-2 text-primary" />
                     <div className="text-sm text-muted-foreground">Group Size</div>
-                    <div className="font-semibold text-foreground">15-25 people</div>
+                    <div className="mt-1 min-h-[3rem] flex items-center justify-center font-semibold text-foreground">
+                      25-35 people
+                    </div>
                   </div>
-                  {/* <div className="text-center">
-                    <TrendingUp className="h-8 w-8 mx-auto mb-2 text-primary" />
-                    <div className="text-sm text-muted-foreground">Starting From</div>
-                    <div className="font-semibold text-primary text-lg">{formatPrice(tour.price)}</div>
-                  </div> */}
                 </div>
               </div>
             </Card>
@@ -501,14 +527,6 @@ export default function DestinationDetail() {
               </TabsContent>
             </Tabs>
 
-            {/* Immersive Gallery */}
-            {gallery.length > 0 && (
-              <ImmersiveGallery 
-                images={gallery} 
-                destinationName={tour.destination}
-              />
-            )}
-
             {/* Related Destinations */}
             <div className="mt-12">
               <h2 className="text-2xl font-bold text-foreground mb-6">
@@ -527,7 +545,7 @@ export default function DestinationDetail() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                         <div className="absolute bottom-4 left-4 right-4 text-white">
                           <h3 className="font-bold text-xl mb-1">{related.name}</h3>
-                          <div className="text-sm">Starting from {related.price}</div>
+                          <div className="text-sm">{related.duration}</div>
                         </div>
                       </div>
                       <div className="p-4">

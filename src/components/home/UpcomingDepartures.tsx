@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Clock, ArrowRight, Plane, Percent, Users } from "lucide-react";
-import { upcomingDepartures, getAvailableMonths, formatPrice } from "@/data/tours";
+import { upcomingDepartures, getAvailableMonths } from "@/data/tours";
 import { Link } from "react-router-dom";
 
 export const UpcomingDepartures = () => {
