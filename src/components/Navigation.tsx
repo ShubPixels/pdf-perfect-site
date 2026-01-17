@@ -13,7 +13,7 @@ export const Navigation = () => {
     { name: "Explore", path: "/explore" },
     { name: "Community", path: "/community" },
     { name: "Learn", path: "/learn" },
-    { name: "Lifestyle", path: "/lifestyle" },
+    // { name: "Lifestyle", path: "/lifestyle" },
     { name: "About", path: "/about" },
     { name: "Contact", path: "/contact" },
   ];
@@ -34,7 +34,7 @@ export const Navigation = () => {
             <span className="font-bold text-foreground text-sm lg:text-base">
               All Tours Ghar Se Ghar Tak
             </span>
-            <span className="text-xs text-muted-foreground">by Sun Tourism Pune</span>
+            <span className="text-xs text-muted-foreground">by Sun Touriism Pune</span>
           </div>
         </Link>
 

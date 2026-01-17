@@ -10,7 +10,7 @@ export const Footer = () => {
       <div className="bg-cta py-3">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between items-center gap-4">
-            <div className="flex flex-wrap items-center gap-6 text-sm font-medium text-foreground">
+            {/* <div className="flex flex-wrap items-center gap-6 text-sm font-medium text-foreground">
               <span>Rajasthan</span>
               <span className="hidden sm:inline">|</span>
               <span>Dubai & Abu Dhabi</span>
@@ -20,12 +20,12 @@ export const Footer = () => {
               <span>Europe</span>
               <span className="hidden sm:inline">|</span>
               <span>Japan</span>
-            </div>
+            </div> */}
             <div className="flex items-center gap-4">
               <a href="https://www.facebook.com/suntouriismpune/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-80 transition-opacity">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://instagram.com/suntourisminternationall" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-80 transition-opacity">
+              <a href="https://www.instagram.com/suntourismpune/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-80 transition-opacity">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="https://www.youtube.com/@suntourismpune6312" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-80 transition-opacity">
@@ -43,9 +43,9 @@ export const Footer = () => {
       </div>
 
       {/* Main Footer */}
-      <div className="bg-secondary/50 border-t border-border">
+      <div className="bg-white border-t border-border">
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* About Section */}
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -73,7 +73,7 @@ export const Footer = () => {
             {/* Contact - PCMC Office */}
             <div>
               <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-cta" />
+                <MapPin className="h-4 w-4 text-accent" />
                 P.C.M.C Head Office
               </h4>
               <a 
@@ -85,15 +85,15 @@ export const Footer = () => {
                 Sun Touriism Internationall Pvt.Ltd, Prestige Plaza, Office No. 3, Ground Floor, Old Mumbai - Pune Hwy, Akurdi, Pune 411035
               </a>
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                <Phone className="h-4 w-4 text-cta" />
+                <Phone className="h-4 w-4 text-accent" />
                 <a href="tel:+917722000888" className="hover:text-primary transition-colors">+91 7722000888</a>
               </div>
             </div>
 
             {/* Contact - Pune Office */}
-            <div>
+            {/* <div>
               <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-cta" />
+                <MapPin className="h-4 w-4 text-accent" />
                 Pune Regional Office
               </h4>
               <a 
@@ -114,7 +114,7 @@ export const Footer = () => {
                   <a href="tel:+917602727555" className="hover:text-primary transition-colors">Mumbai: +91 7602727555</a>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Quick Links & Email */}
             <div>
@@ -147,7 +147,7 @@ export const Footer = () => {
                 </li>
               </ul>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4 text-cta" />
+                <Mail className="h-4 w-4 text-accent" />
                 <a href="mailto:enquiry@suntourismpune.com" className="hover:text-primary transition-colors">
                   enquiry@suntourismpune.com
                 </a>
@@ -174,7 +174,7 @@ export const Footer = () => {
                 Copyright © 2025 All rights reserved with Sun Touriism Internationall Private Limited.
               </p>
               <p className="flex items-center gap-1">
-                Made with <Heart className="h-3 w-3 text-accent fill-accent" /> by Sun Tourism Pune
+                Website developed by Advybes Media LLP
               </p>
             </div>
           </div>

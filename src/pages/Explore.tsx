@@ -9,27 +9,27 @@ const Explore = () => {
       <Navigation />
       <main>
         {/* Hero */}
-        <section className="relative py-16 w-full h-full overflow-hidden">
+        <section className="relative min-h-[72vh] md:min-h-[82vh] flex items-center overflow-hidden">
           {/* Background image */}
           <div
-            className="absolute inset-0 bg-cover bg-center w-full h-full bg-no-repeat"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${heroExplore})` }}
             aria-hidden="true"
           />
 
-          {/* Overlay for readability */}
+          {/* Overlay */}
           <div
-            className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/50 to-background"
+            className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/50 to-background"
             aria-hidden="true"
           />
 
           {/* Content */}
           <div className="relative container mx-auto px-4">
-            <div className="text-center mb-8">
+            <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Explore Destinations
+                <span className="text-accent">Explore</span> Destinations
               </h1>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
                 Discover the world through the eyes of our travelers. Find your next adventure with detailed insights,
                 authentic stories, and practical tips from real group tour experiences.
               </p>

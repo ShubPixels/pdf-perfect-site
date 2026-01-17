@@ -1,5 +1,18 @@
 // Tour data extracted from suntourismpune.co.in - the parent website
 // This is the central hub for all tour information
+import amritsarImg from "@/assets/upcoming departure images/amritsar.png";
+import andamanImg from "@/assets/upcoming departure images/andaman.png";
+import baliImg from "@/assets/upcoming departure images/bali.png";
+import dubaiImg from "@/assets/upcoming departure images/dubai.png";
+import europeanGlimpsImg from "@/assets/upcoming departure images/european glimps.png";
+import hongKongImg from "@/assets/upcoming departure images/hong kong.png";
+import japanImg from "@/assets/upcoming departure images/japan.png";
+import kashmirImg from "@/assets/upcoming departure images/kashmir.png";
+import restOfEuropeImg from "@/assets/upcoming departure images/rest of europe.png";
+import varanasiImg from "@/assets/upcoming departure images/varanasi.png";
+import vietnamImg from "@/assets/upcoming departure images/vietnam.png";
+import europeImg from "@/assets/upcoming departure images/europe.png";
+
 
 export interface Tour {
   id: string;
@@ -47,6 +60,7 @@ export interface Departure {
   image: string;
   month: string;
   type: 'international' | 'domestic';
+  link?: string;
 }
 
 // Featured tours from Sun Tourism
@@ -951,28 +965,45 @@ export const tours: Tour[] = [
   }
 ];
 
-// Upcoming departures for the homepage calendar
+// upcoming departures images for the homepage calendar
 export const upcomingDepartures: Departure[] = [
   // January 2026
-  {
-    id: 'dep-dubai-jan',
-    tourId: 'dubai-2025',
-    destination: 'Dubai & Abu Dhabi',
+  // {
+  //   id: 'dep-dubai-jan',
+  //   tourId: 'dubai-2025',
+  //   destination: 'Dubai & Abu Dhabi',
+  //   duration: '7 Days',
+  //   departureDate: '21 Jan 2026',
+  //   departureLocation: 'Ex Pune',
+  //   // price: 105919,
+  //   // originalPrice: 115919,
+  //   spotsLeft: 18,
+  //   tags: ['Winter Escape', 'Ghar Se Ghar Tak'],
+  //   image: dubaiImg,
+  //   month: 'Jan 2026',
+  //   type: 'international',
+  //   link: 'https://suntourismpune.co.in/trip/dubai-tour-packages-2025-26-flights-visa-ghar-se-ghar-tak/'
+  // },
+  // February 2026
+  { 
+    id: 'dep-varanasi-feb',
+    tourId: 'varanasi-2026',
+    destination: 'Lucknow Ayodhya Prayagraj Varanasi',
     duration: '7 Days',
-    departureDate: '21 Jan 2026',
+    departureDate: '05 Feb 2026',
     departureLocation: 'Ex Pune',
     // price: 105919,
     // originalPrice: 115919,
-    spotsLeft: 18,
-    tags: ['Winter Escape', 'Ghar Se Ghar Tak'],
-    image: '/dubai-tour.jpg',
-    month: 'Jan 2026',
-    type: 'international'
+    spotsLeft: 20,
+    tags: ['Spiritual', 'Ghar Se Ghar Tak'],
+    image: varanasiImg,
+    month: 'Feb 2026',
+    type: 'domestic',
+    link: 'https://suntourismpune.co.in/trip/ayodhya-varanasi-tour-package/'
   },
-  // February 2026
-  {
+  { 
     id: 'dep-dubai-feb',
-    tourId: 'dubai-2025',
+    tourId: 'dubai-2026',
     destination: 'Dubai & Abu Dhabi',
     duration: '7 Days',
     departureDate: '13 Feb 2026',
@@ -981,13 +1012,14 @@ export const upcomingDepartures: Departure[] = [
     // originalPrice: 115919,
     spotsLeft: 20,
     tags: ['Valentine Special', 'Ghar Se Ghar Tak'],
-    image: '/dubai-tour.jpg',
+    image: dubaiImg,
     month: 'Feb 2026',
-    type: 'international'
+    type: 'international',
+    link: 'https://suntourismpune.co.in/trip/dubai-tour-packages-2025-26-flights-visa-ghar-se-ghar-tak/'
   },
   {
     id: 'dep-andaman-feb',
-    tourId: 'andaman-2025',
+    tourId: 'andaman-2026',
     destination: 'Andaman Islands',
     duration: '6 Days',
     departureDate: '25 Feb 2026',
@@ -995,11 +1027,56 @@ export const upcomingDepartures: Departure[] = [
     // price: 65919,
     spotsLeft: 16,
     tags: ['Beach Paradise', 'Island Hopping'],
-    image: '/andaman-tour.jpg',
+    image: andamanImg,
     month: 'Feb 2026',
-    type: 'domestic'
+    type: 'domestic',
+    link: 'https://suntourismpune.co.in/trip/andaman-tour-packages-06-days/'
   },
   // March 2026
+  {
+    id: 'dep-bali-mar',
+    tourId: 'bali-2026',
+    destination: 'Bali with Nusa Penida',
+    duration: '7 Days',
+    departureDate: '5 Mar 2026',
+    departureLocation: 'Ex Pune',
+    // price: 259919,
+    spotsLeft: 14,
+    tags: ['Natural Landscapes', 'Wildlife & Leisure'],
+    image: baliImg,
+    month: 'Mar 2026',
+    type: 'international',
+  },
+  {
+    id: 'dep-veitnam-mar',
+    tourId: 'vietnam-2026',
+    destination: 'Iconic Vietnam',
+    duration: '10 Days',
+    departureDate: '13 Mar 2026',
+    departureLocation: 'Ex Pune',
+    // price: 259919,
+    spotsLeft: 14,
+    tags: ['Rich Heritage', 'Panoramic Views'],
+    image: vietnamImg,
+    month: 'Mar 2026',
+    type: 'international',
+  },
+  {
+    id: 'dep-varanasi-mar',
+    tourId: 'varanasi-2026',
+    destination: 'Lucknow Ayodhya Prayagraj Varanasi',
+    duration: '7 Days',
+    departureDate: '20 Mar 2026',
+    departureLocation: 'Ex Pune',
+    // price: 105919,
+    // originalPrice: 115919,
+    spotsLeft: 20,
+    tags: ['Spiritual', 'Ghar Se Ghar Tak'],
+    image: varanasiImg,
+    month: 'Mar 2026',
+    type: 'domestic',
+    link: 'https://suntourismpune.co.in/trip/ayodhya-varanasi-tour-package/'
+  },
   {
     id: 'dep-japan-mar',
     tourId: 'japan-2026',
@@ -1010,15 +1087,100 @@ export const upcomingDepartures: Departure[] = [
     // price: 259919,
     spotsLeft: 14,
     tags: ['Sakura Special', 'Once in a Lifetime'],
-    image: '/japan-tour.jpg',
+    image: japanImg,
     month: 'Mar 2026',
-    type: 'international'
+    type: 'international',
+    link:'https://suntourismpune.co.in/trip/japan-cherry-blossom-tour-2026/'
+  },
+  {
+    id: 'dep-kashmmir-vaishnodevi-mar',
+    tourId: 'kashmmir-vaishnodevi-2026',
+    destination: 'Kashmir Vaishnodevi Amritsar',
+    duration: '9 Days',
+    departureDate: '25 Mar 2026',
+    departureLocation: 'Ex Pune',
+    // price: 259919,
+    spotsLeft: 14,
+    tags: ['Spiritual Tour', 'Scenic Beauty'],
+    image: amritsarImg,
+    month: 'Mar 2026',
+    type: 'domestic',
+    link:'https://suntourismpune.co.in/trip/kashmir-vaishno-devi-amritsar-tour-package-summer-2026/'
+  },
+  // April 2026
+  {
+    id: 'dep-kashmir-april',
+    tourId: 'kashmir-2026',
+    destination: 'kashmir',
+    duration: '6 Days',
+    departureDate: '01 & 07 April 2026',
+    departureLocation: 'Ex Pune',
+    // price: 394919,
+    // originalPrice: 419919,
+    // discountPercent: 6,
+    spotsLeft: 22,
+    tags: ['Trip of the Month', 'Mountain Escape'],
+    image: kashmirImg,
+    month: 'April 2026',
+    type: 'domestic',
+    link: 'https://suntourismpune.co.in/trip/kashmir-tour-packages/'
+  },
+  {
+    id: 'dep-kashmmir-vaishnodevi-april',
+    tourId: 'kashmmir-vaishnodevi-2026',
+    destination: 'Kashmir Vaishnodevi Amritsar',
+    duration: '9 Days',
+    departureDate: '02 & 11 April 2026',
+    departureLocation: 'Ex Pune',
+    // price: 394919,
+    // originalPrice: 419919,
+    // discountPercent: 6,
+    spotsLeft: 22,
+    tags: ['Spiritual Tour', 'Scenic Beauty'],
+    image: amritsarImg,
+    month: 'April 2026',
+    type: 'domestic',
+    link: 'https://suntourismpune.co.in/trip/kashmir-tour-packages/'
   },
   // May 2026
   {
+    id: 'dep-kashmir-may',
+    tourId: 'kashmir-2026',
+    destination: 'kashmir',
+    duration: '6 Days',
+    departureDate: '03 May 2026',
+    departureLocation: 'Ex Pune',
+    // price: 394919,
+    // originalPrice: 419919,
+    // discountPercent: 6,
+    spotsLeft: 22,
+    tags: ['Scenic Beauty', 'Mountain Escape'],
+    image: kashmirImg,
+    month: 'May 2026',
+    type: 'domestic',
+    link: 'https://suntourismpune.co.in/trip/kashmir-tour-packages/'
+  },
+  {
+    id: 'dep-hong-kong-may',
+    tourId: 'hong-kong-2026',
+    destination: 'Hong Kong Macau Shenzhen',
+    duration: '8 Days',
+    departureDate: '05 & 15 May 2026',
+    departureLocation: 'Ex Pune',
+    // price: 394919,
+    // originalPrice: 419919,
+    // discountPercent: 6,
+    spotsLeft: 22,
+    tags: ['City Lights', 'Cultural Fusion'],
+    image: hongKongImg,
+    month: 'May 2026',
+    type: 'international',
+    link: 'https://suntourismpune.co.in/trip/hong-kong-macau-shenzhen-tour-package-from-india/'
+  },
+  {
     id: 'dep-europe-may',
     tourId: 'europe-2026',
-    destination: 'Grand Europe',
+    destination: 'Grand Europe with Cruise',
     duration: '16 Days',
     departureDate: '07 May 2026',
     departureLocation: 'Ex Pune',
@@ -1026,11 +1188,63 @@ export const upcomingDepartures: Departure[] = [
     // originalPrice: 419919,
     // discountPercent: 6,
     spotsLeft: 22,
-    tags: ['Trip of the Month', '7 Countries'],
-    image: '/europe-tour.jpg',
+    tags: ['Trip of the Month', 'Alpine Aadventures'],
+    image: europeImg,
     month: 'May 2026',
-    type: 'international'
-  }
+    type: 'international',
+    link: 'https://suntourismpune.co.in/trip/europe-tour-packages/'
+  },
+  {
+  id: 'dep-kashmmir-vaishnodevi-april',
+    tourId: 'kashmmir-vaishnodevi-2026',
+    destination: 'Kashmir Vaishnodevi Amritsar',
+    duration: '9 Days',
+    departureDate: '08 May 2026',
+    departureLocation: 'Ex Pune',
+    // price: 394919,
+    // originalPrice: 419919,
+    // discountPercent: 6,
+    spotsLeft: 22,
+    tags: ['Spiritual Tour', 'Scenic Beauty'],
+    image: amritsarImg,
+    month: 'May 2026',
+    type: 'domestic',
+    link: 'https://suntourismpune.co.in/trip/kashmir-tour-packages/'
+  },
+  {
+    id: 'dep-rest-of-europe-may',
+    tourId: 'rest-of-europe',
+    destination: 'Europe',
+    duration: '14 Days',
+    departureDate: '09 May 2026',
+    departureLocation: 'Ex Pune',
+    // price: 394919,
+    // originalPrice: 419919,
+    // discountPercent: 6,
+    spotsLeft: 22,
+    tags: ['Trip of the Month', '9 Countries'],
+    image: restOfEuropeImg,
+    month: 'May 2026',
+    type: 'international',
+    link: 'https://suntourismpune.co.in/trip/europe-tour-package-from-pune/'
+  },
+  {
+    id: 'dep-european-glimps-may',
+    tourId: 'european-glimps',
+    destination: 'European-Glimps',
+    duration: '9 Days',
+    departureDate: '10 May 2026',
+    departureLocation: 'Ex Pune',
+    // price: 394919,
+    // originalPrice: 419919,
+    // discountPercent: 6,
+    spotsLeft: 22,
+    tags: ['Elegant', 'Historic'],
+    image: europeanGlimpsImg,
+    month: 'May 2026',
+    type: 'international',
+    link: 'https://suntourismpune.co.in/trip/european-glimps-tour-2026-paris-switzerland-germany-tour/'
+  },
 ];
 
 // Helper function to format price in Indian format

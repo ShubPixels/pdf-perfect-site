@@ -147,10 +147,21 @@ const getRelatedDestinations = (
 
 
 export default function DestinationDetail() {
-  const { destinationId } = useParams();
-  const slug = destinationId || 'dubai';
-  const tourId = slugToTourId[slug];
-  const tour = tours.find(t => t.id === tourId);
+  const { destinationId } = useParams<{ destinationId: string }>();
+
+  // param can be either:
+  // - tourId like "dubai-2025" (coming from Destinations.tsx)
+  // - slug like "dubai" (used by your related links + older logic)
+  const param = destinationId || "dubai";
+
+  // 1) try direct tour id match
+  const directTour = tours.find((t) => t.id === param);
+
+  // 2) fallback: treat it as slug and map to tour id
+  const mappedTourId = slugToTourId[param];
+  const mappedTour = mappedTourId ? tours.find((t) => t.id === mappedTourId) : undefined;
+
+  const tour = directTour ?? mappedTour;
 
   if (!tour) {
     return (
@@ -159,7 +170,9 @@ export default function DestinationDetail() {
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Destination Not Found</h1>
-            <p className="text-muted-foreground mb-8">The destination you're looking for doesn't exist.</p>
+            <p className="text-muted-foreground mb-8">
+              The destination you're looking for doesn't exist.
+            </p>
             <Link to="/explore">
               <Button>Explore All Destinations</Button>
             </Link>
@@ -169,6 +182,10 @@ export default function DestinationDetail() {
       </div>
     );
   }
+
+  // Normalize everything downstream to use the actual tour.id + a clean slug
+  const tourId = tour.id;
+  const slug = tourIdToSlug[tourId] ?? param;
 
   const departures = getDeparturesByTourId(tourId);
   const gallery = destinationGalleries[slug] || [];

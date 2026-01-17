@@ -10,10 +10,10 @@ import { LearnLifestyle } from "@/components/home/LearnLifestyle";
 import { Quote, Compass, Map, Heart, Sparkles, Plane, Globe, Camera } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { motion } from "framer-motion";
-import img1 from "../assets/Dubai/1.png";
-import img2 from "../assets/Dubai/2.png";
-import img3 from "../assets/Dubai/3.png";
-import img4 from "../assets/Dubai/4.png";
+import img1 from "../assets/homepage/1.png";
+import img2 from "../assets/homepage/2.png";
+import img3 from "../assets/homepage/3.png";
+import img4 from "../assets/homepage/4.png";
 
 
 const Index = () => {
@@ -192,7 +192,7 @@ useEffect(() => {
                 <div>
                   <Map className="h-10 w-10 text-highlight mb-6" />
                   <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-                    Where Will Your Story <span className="text-cta">Take You?</span>
+                    Where Will Your Story <span className="text-accent">Take You?</span>
                   </h3>
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     Every destination has its own story to tell. From the bustling streets of Tokyo to the 
@@ -222,7 +222,7 @@ useEffect(() => {
                 </div>
                 
                 <div className="relative">
-                  <Compass className="h-12 w-12 text-cta mx-auto mb-6" />
+                  <Compass className="h-12 w-12 text-accent mx-auto mb-6" />
                   <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
                     And Soon, It Could Be <span className="text-highlight">You</span>
                   </h3>
@@ -231,7 +231,7 @@ useEffect(() => {
                   </p>
                   <div className="flex justify-center gap-2 mt-6">
                     {[...Array(3)].map((_, i) => (
-                      <div key={i} className="w-2 h-2 rounded-full bg-cta animate-pulse" style={{ animationDelay: `${i * 0.3}s` }} />
+                      <div key={i} className="w-2 h-2 rounded-full bg-accent animate-pulse" style={{ animationDelay: `${i * 0.3}s` }} />
                     ))}
                   </div>
                 </div>
@@ -294,7 +294,7 @@ useEffect(() => {
                   <div className="relative">
                     <div className="flex items-center gap-1 mb-4">
                       {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400 text-xl">★</span>
+                        <span key={i} className="text-accent  text-xl">★</span>
                       ))}
                     </div>
                     <Quote className="h-10 w-10 text-highlight/30 mb-4" />
@@ -356,7 +356,7 @@ useEffect(() => {
                   <div>
                     <div className="flex items-center gap-1 mb-3">
                       {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400">★</span>
+                        <span key={i} className="text-accent">★</span>
                       ))}
                     </div>
                     <p className="text-foreground mb-4 leading-relaxed">
@@ -414,7 +414,7 @@ useEffect(() => {
                   <div>
                     <div className="flex items-center gap-1 mb-3">
                       {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400">★</span>
+                        <span key={i} className="text-accent">★</span>
                       ))}
                     </div>
                     <p className="text-foreground mb-4 leading-relaxed">
@@ -441,7 +441,7 @@ useEffect(() => {
                   <p className="text-sm text-muted-foreground">Happy Travelers</p>
                 </div>
                 <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl md:text-4xl font-bold text-cta mb-1">18+</p>
+                  <p className="text-3xl md:text-4xl font-bold text-accent mb-1">18+</p>
                   <p className="text-sm text-muted-foreground">Years Experience</p>
                 </div>
                 <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
@@ -546,16 +546,17 @@ useEffect(() => {
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-4xl mx-auto relative">
               {/* Background decoration */}
-              <div className="absolute inset-0 bg-gradient-to-r from-highlight/10 via-cta/20 to-highlight/10 rounded-3xl blur-3xl" />
-              
-              <div className="relative bg-card/40 backdrop-blur-xl border border-border/30 rounded-3xl p-12">
+              {/* <div className="absolute inset-0 bg-gradient-to-r from-highlight/10 via-cta/20 to-highlight/10 rounded-3xl blur-3xl" /> */}
+              <div className="absolute inset-0 rounded-3xl blur-3xl" />
+              {/* <div className="relative bg-card/40 backdrop-blur-xl border border-border/30 rounded-3xl p-12"> */}
+              <div className="relative bg-card backdrop-blur-xl border border-border/30 rounded-3xl p-12">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-cta/20 rounded-full mb-8">
                   <Plane className="h-4 w-4 text-cta" />
                   <span className="text-sm font-medium text-foreground">Your Adventure Awaits</span>
                 </div>
                 
                 <h3 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
-                  Your Story <span className="text-highlight">Starts Here</span>
+                  Your Story <span className="text-accent">Starts Here</span>
                 </h3>
                 <p className="text-xl text-muted-foreground mb-10 leading-relaxed max-w-2xl mx-auto">
                   Every great journey begins with a single step. Hundreds of travelers have already taken theirs with us.
