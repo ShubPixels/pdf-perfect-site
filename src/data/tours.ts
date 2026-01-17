@@ -9,9 +9,12 @@ import hongKongImg from "@/assets/upcoming departure images/hong kong.png";
 import japanImg from "@/assets/upcoming departure images/japan.png";
 import kashmirImg from "@/assets/upcoming departure images/kashmir.png";
 import restOfEuropeImg from "@/assets/upcoming departure images/rest of europe.png";
+import southAfricaImg from "@/assets/upcoming departure images/south-africa.png";
 import varanasiImg from "@/assets/upcoming departure images/varanasi.png";
 import vietnamImg from "@/assets/upcoming departure images/vietnam.png";
 import europeImg from "@/assets/upcoming departure images/europe.png";
+
+import andamanIMg from "@/assets/upcoming departure images/andaman-tour.png";
 
 
 export interface Tour {
@@ -97,7 +100,7 @@ export const tours: Tour[] = [
       'Dubai Aquarium',
       'Traditional Abra Ride'
     ],
-    overview: 'Sun Tourism brings you the ultimate Dubai group tour package for 2025 — a 7-day adventure with sky-high towers, golden deserts, and that effortless Ghar Se Ghar Tak comfort. From Burj Khalifa selfies and desert dune adventures to Marina yacht rides and world-class shopping, this package covers every iconic Dubai experience. Plus, enjoy a bonus Abu Dhabi day trip with SeaWorld and the majestic Sheikh Zayed Grand Mosque.',
+    overview: 'Sun Tourism brings you the ultimate Dubai group tour package - a 7-day adventure with sky-high towers, golden deserts, and that effortless Ghar Se Ghar Tak comfort. From Burj Khalifa selfies and desert dune adventures to Marina yacht rides and world-class shopping, this package covers every iconic Dubai experience. Plus, enjoy a bonus Abu Dhabi day trip with SeaWorld and the majestic Sheikh Zayed Grand Mosque.',
     itinerary: [
       { 
         day: 1, 
@@ -640,7 +643,7 @@ export const tours: Tour[] = [
       'Ferry timings subject to weather and availability'
     ],
     bookingAmount: 20000,
-    image: '/andaman-tour.jpg',
+    image: andamanIMg,
     featured: true,
     whyPopular: [
       'Pristine untouched beaches',
@@ -803,9 +806,9 @@ export const tours: Tour[] = [
   },
   {
     id: 'baku-2026',
-    title: 'Baku Azerbaijan Tour Package 2026 – Land of Fire | 7 Days',
-    shortTitle: 'Baku Azerbaijan',
-    destination: 'Azerbaijan',
+    title: 'Azerbaijan Baku Tour Package 2026 – Land of Fire | 7 Days',
+    shortTitle: 'Azerbaijan Baku',
+    destination: 'Azerbaijan Baku',
     destinations: ['Baku', 'Gabala', 'Shahdag', 'Shamakhi'],
     duration: '7 Days - 6 Nights',
     nights: 6,
@@ -878,7 +881,7 @@ export const tours: Tour[] = [
   {
     id: 'australia-2026',
     title: 'Australia Tour Package 2026 – Sydney to Melbourne | 12 Days',
-    shortTitle: 'Aussie Adventure',
+    shortTitle: 'Australia Adventure',
     destination: 'Australia',
     destinations: ['Sydney', 'Cairns', 'Gold Coast', 'Melbourne'],
     duration: '12 Days - 11 Nights',
@@ -961,6 +964,93 @@ export const tours: Tour[] = [
       'Indian-friendly food arrangements',
       'Mix of nature, adventure, and city experiences',
       'Safe and family-friendly destination'
+    ]
+  },
+
+  // South Africa Tour
+  {
+    id: 'south-africa-2026',
+    title: 'Sunny South Africa Tour 2026 – 10N/11D Ghar Se Ghar Tak | Cape Town, Sun City & Pilanesberg Safari',
+    shortTitle: 'Sunny South Africa',
+    destination: 'Sunny South Africa',
+    destinations: ['Cape Town', 'Hermanus', 'Knysna', 'Mossel Bay', 'Sun City', 'Pilanesberg', 'Johannesburg'],
+    duration: '10 Nights / 11 Days',
+    nights: 10,
+    days: 11,
+    departureDates: ['11 July 2026'],
+    departureLocation: 'Pune',
+    type: 'international',
+    categories: ['Adventure tour', 'Chota break', 'Corporate Travel', 'Culture and Heritage', 'Ghar se Ghar tak Group Tours', 'Honeymoon special', 'International Tours', 'Long Weekend'],
+    accommodation: 'Comfortable stays in 3★ deluxe and 4★ hotels throughout the tour.',
+    bestSeason: 'July offers pleasant weather, perfect for safaris and sightseeing.',
+    transportation: 'Travel in a spacious, air-conditioned luxury coach for all transfers and excursions.',
+    region: 'Africa',
+    tagline: 'Experience Adventure & Luxury with Sun Touriism\'s Sunny South Africa Tour',
+    idealFor: ['Families', 'Couples', 'Adventure Seekers', 'Nature Lovers', 'Wildlife Enthusiasts'],
+    highlights: [
+      'Table Mountain Cable Car Ride',
+      'Cape Peninsula Tour including Cape Point',
+      'Whale Watching in Hermanus',
+      'Garden Route Scenic Drive',
+      'Congo Caves Tour',
+      'Ostrich Farm Visit',
+      'Pilanesberg Big Five Safari',
+      'Sun City Resort & Valley of Waves',
+      'Johannesburg City Tour'
+    ],
+    overview: 'Step into Sun Touriism\'s Sunny South Africa Tour 2026 — an 11-day July journey that captures the essence of nature, wildlife, and modern marvels. From the breathtaking Table Mountain in Cape Town to the exciting Pilanesberg Safari, and from Hermanus Whale Watching to the luxury of Sun City, this tour blends adventure, comfort, and scenic beauty in one unforgettable experience.',
+    itinerary: [
+      { day: 1, title: 'Pune/Mumbai - Cape Town', description: 'Pickup from residence and transfer to Mumbai for flight to Cape Town. Overnight in flight.' },
+      { day: 2, title: 'Cape Town', description: 'Arrival in Cape Town. Guided city tour including Table Mountain cable car, V&A Waterfront, and more. Overnight in Cape Town.' },
+      { day: 3, title: 'Cape Town - Peninsula Tour', description: 'Full day Cape Peninsula tour including Chapman\'s Peak Drive, Cape Point, and Boulders Beach. Overnight in Cape Town.' },
+      { day: 4, title: 'Cape Town - Hermanus', description: 'Transfer to Hermanus with wine tasting en route. Whale watching tour. Overnight in Hermanus.' },
+      { day: 5, title: 'Hermanus - Knysna - Mossel Bay', description: 'Transfer to Mossel Bay via Garden Route. Visit Knysna Waterfront. Overnight in Mossel Bay.' },
+      { day: 6, title: 'Mossel Bay - Oudtshoorn - Mossel Bay', description: 'Congo Caves tour and Ostrich Farm visit. Overnight in Mossel Bay.' },
+      { day: 7, title: 'Mossel Bay - George - Johannesburg - Sun City', description: 'Flight to Johannesburg and transfer to Sun City. Evening at leisure. Overnight in Sun City.' },
+      { day: 8, title: 'Sun City - Pilanesberg - Sun City', description: 'Game drive in Pilanesberg National Park. Valley of Waves. Overnight in Sun City.' },
+      { day: 9, title: 'Sun City - Johannesburg', description: 'Optional hot air balloon. Transfer to Johannesburg for city tour. Overnight in Johannesburg.' },
+      { day: 10, title: 'Johannesburg - Mumbai - Pune', description: 'Flight back to Mumbai and transfer to Pune/residence.' },
+      { day: 11, title: 'Arrival', description: 'Arrive home. Tour ends.' }
+    ],
+    inclusions: [
+      'Residence – Airport - Residence COMPLIMENTARY Transfer (Ghar Se Ghar Tak)',
+      'Return Economy Class Airfare',
+      'Breakfast, Lunch, Dinner, Sightseeing Entry Charges, Tips, Guide Fee',
+      'All transfers and sightseeing by 2x2 A/C Luxury Coach',
+      'Tourist Visa Charges',
+      'Services of Sun Touriism Internationall Pvt. Ltd. Tour Manager',
+      'A Complimentary Travel Kit',
+      'Overseas Travel insurance (Up to 60 Years of age)',
+      'Your Tour Photo in Google drive',
+      '1 Drinking Water bottle Per Person Per Day'
+    ],
+    exclusions: [
+      'GST @ 05 % & TCS @ 05%',
+      'Any increase in Visa fees, Airport taxes, Govt Taxes, Fuel Surcharges',
+      'Any Increase in the rate of exchange',
+      'Any extra expense due to unforeseen circumstances',
+      'Porterage, laundry, telephone charges, shopping, wines and alcoholic beverages',
+      'Any extra cost incurred on behalf of an individual due to illness, accident, hospitalization',
+      'Any services or activity charges other than those included'
+    ],
+    notes: [
+      'Booking Amount Rs. 50,000/- per person (Non – Refundable)',
+      'Tour cost calculated as 1 ZAR @ 5 INR and 1 USD @ 90 INR',
+      'Complete Final payment in INR as per prevailing Market Card Rate',
+      'Balance payment 45 – 30 days before departure',
+      'If balance not paid D – 30 days, booking cancelled and amount forfeited',
+      'Visa rejection: Visa Fee and Hotel/Airline charges chargeable'
+    ],
+    bookingAmount: 50000,
+    image: southAfricaImg,
+    featured: false,
+    tripOfMonth: false,
+    whyPopular: [
+      'Comprehensive coverage of South Africa\'s highlights',
+      'Ghar Se Ghar Tak service',
+      'Big Five safari experience',
+      'Mix of adventure, nature, and luxury',
+      'Certified South Africa Tourism guide'
     ]
   }
 ];
@@ -1245,6 +1335,22 @@ export const upcomingDepartures: Departure[] = [
     type: 'international',
     link: 'https://suntourismpune.co.in/trip/european-glimps-tour-2026-paris-switzerland-germany-tour/'
   },
+
+  // July 2026
+  {
+    id: 'dep-south-africa-july',
+    tourId: 'south-africa-2026',
+    destination: 'Sunny South Africa',
+    duration: '10 Nights / 11 Days',
+    departureDate: '11 July 2026',
+    departureLocation: 'Ex Pune',
+    spotsLeft: 20,
+    tags: ['Adventure', 'Safari', 'Ghar Se Ghar Tak'],
+    image: southAfricaImg,
+    month: 'July 2026',
+    type: 'international',
+    link: 'https://suntourismpune.co.in/trip/sunny-south-africa-tour-2026/'
+  }
 ];
 
 // Helper function to format price in Indian format

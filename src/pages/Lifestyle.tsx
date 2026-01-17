@@ -11,8 +11,11 @@ import {
   Coffee,
   Sparkles,
   TrendingUp,
-  Clock
+  Clock,
+  Gamepad2,
+  Backpack
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Lifestyle = () => {
   const featuredStories = [
@@ -94,6 +97,27 @@ const Lifestyle = () => {
   ];
 
   const recentArticles = [
+    {
+      title: "5 veg-friendly dishes in Europe",
+      description: "Delicious vegetarian options across European countries that will delight your taste buds",
+      category: "Food",
+      readTime: "4 min read",
+      trending: true,
+    },
+    {
+      title: "Fun group games for buses",
+      description: "Keep the group entertained during long bus journeys with these engaging activities",
+      category: "Fun",
+      readTime: "3 min read",
+      trending: false,
+    },
+    {
+      title: "Packing light for 10-day tours",
+      description: "Master the art of packing efficiently for extended trips without the extra baggage",
+      category: "Tips",
+      readTime: "7 min read",
+      trending: true,
+    },
     {
       title: "The Art of Slow Travel: Savoring Every Moment",
       description: "Why taking your time leads to richer travel experiences",
@@ -239,30 +263,68 @@ const Lifestyle = () => {
               <Button variant="outline">View All</Button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl">
-              {recentArticles.map((article, idx) => (
-                <Card
-                  key={idx}
-                  className="p-6 border-border hover:border-primary transition-all hover:shadow-lg cursor-pointer group"
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <Badge variant="secondary">{article.category}</Badge>
-                    {article.trending && (
-                      <div className="flex items-center gap-1 text-primary">
-                        <TrendingUp className="w-4 h-4" />
-                        <span className="text-xs font-medium">Trending</span>
+              {recentArticles.map((article, idx) => {
+                const getBlogSlug = (title: string) => {
+                  switch (title) {
+                    case "5 veg-friendly dishes in Europe":
+                      return "/lifestyle/veg-friendly-dishes-europe";
+                    case "Fun group games for buses":
+                      return "/lifestyle/fun-group-games-buses";
+                    case "Packing light for 10-day tours":
+                      return "/lifestyle/packing-light-10-day-tours";
+                    default:
+                      return null;
+                  }
+                };
+
+                const blogSlug = getBlogSlug(article.title);
+                const CardComponent = blogSlug ? Link : 'div';
+                const cardProps = blogSlug ? { to: blogSlug } : {};
+
+                return (
+                  <CardComponent key={idx} {...cardProps}>
+                    <Card
+                      className={`p-6 border-border hover:border-accent transition-all duration-500 hover:shadow-2xl cursor-pointer group rounded-2xl bg-gradient-to-br from-accent/5 to-accent/10 hover:from-accent/10 hover:to-accent/20 transform hover:-translate-y-1 ${blogSlug ? 'relative overflow-hidden' : ''}`}
+                    >
+                      {blogSlug && (
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      )}
+                      <div className={`flex items-start justify-between mb-3 ${blogSlug ? 'relative' : ''}`}>
+                        <Badge variant="secondary" className={`group-hover:bg-accent group-hover:text-black transition-colors duration-300 ${blogSlug ? 'relative' : ''}`}>
+                          {article.category}
+                        </Badge>
+                        {article.trending && (
+                          <div className="flex items-center gap-1 text-accent">
+                            <TrendingUp className="w-4 h-4" />
+                            <span className="text-xs font-medium">Trending</span>
+                          </div>
+                        )}
+                        {blogSlug && (
+                          <Badge className="bg-accent text-black text-xs animate-pulse">
+                            📖 Blog
+                          </Badge>
+                        )}
                       </div>
-                    )}
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 text-sm">{article.description}</p>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="w-4 h-4" />
-                    <span>{article.readTime}</span>
-                  </div>
-                </Card>
-              ))}
+                      <h3 className={`text-lg font-bold text-foreground mb-2 group-hover:text-accent transition-colors ${blogSlug ? 'relative' : ''}`}>
+                        {article.title}
+                      </h3>
+                      <p className={`text-muted-foreground mb-4 text-sm ${blogSlug ? 'relative' : ''}`}>{article.description}</p>
+                      <div className={`flex items-center gap-2 text-sm text-muted-foreground ${blogSlug ? 'relative' : ''}`}>
+                        <Clock className="w-4 h-4" />
+                        <span>{article.readTime}</span>
+                        {blogSlug && (
+                          <span className="ml-auto text-accent font-medium group-hover:translate-x-1 transition-transform">
+                            Read →
+                          </span>
+                        )}
+                      </div>
+                      {blogSlug && (
+                        <div className="absolute bottom-0 left-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-500"></div>
+                      )}
+                    </Card>
+                  </CardComponent>
+                );
+              })}
             </div>
           </div>
         </section>

@@ -12,6 +12,8 @@ import { tours, getDeparturesByTourId, Tour } from "@/data/tours";
 // Image imports
 import japanImage from "@/assets/japan-tour.jpg";
 import dubaiImage from "@/assets/hero-travel.jpg";
+
+//dubai gallery images
 import Onedubai from "@/assets/Dubai/1.png";
 import Twodubai from "@/assets/Dubai/2.png";
 import Threedubai from "@/assets/Dubai/3.png";
@@ -22,10 +24,18 @@ import Eightdubai from "@/assets/Dubai/8.png";
 import Tendubai from "@/assets/Dubai/10.png";
 import Elevendubai from "@/assets/Dubai/11.png";
 import Ninedubai from "@/assets/Dubai/9.png";
+import Thirteendubai from "@/assets/Dubai/13.png";
+
+import southAfricaImg from "@/assets/upcoming departure images/south-africa.png";
 import europeImage from "@/assets/europe-tour.jpg";
 import baliImage from "@/assets/bali-tour.jpg";
 import heroImage from "@/assets/hero-travel.jpg";
 import communityImage from "@/assets/community-1.jpg";
+import andamanIMg from "@/assets/upcoming departure images/andaman-tour.png";
+import southAfricaGalleryImg from "@/assets/SA/1.png";
+import australiaImg from "@/assets/upcoming departure images/australia-tour.png";
+import bakuImg from "@/assets/upcoming departure images/baku-tour.png";
+import baliImg from "@/assets/upcoming departure images/bali-tour.png";
 
 // Map tour IDs to destination slugs
 const tourIdToSlug: Record<string, string> = {
@@ -37,9 +47,10 @@ const tourIdToSlug: Record<string, string> = {
   'kerala-2025': 'kerala',
   'andaman-2025': 'andaman',
   'nepal-2025': 'nepal',
-  'bali-2025': 'bali',
-  'baku-2025': 'baku',
-  'australia-2026': 'australia'
+  'bali-2026': 'bali',
+  'baku-2026': 'baku',
+  'australia-2026': 'australia',
+  'south-africa-2026': 'south-africa'
 };
 
 const slugToTourId: Record<string, string> = {
@@ -51,22 +62,24 @@ const slugToTourId: Record<string, string> = {
   'kerala': 'kerala-2025',
   'andaman': 'andaman-2025',
   'nepal': 'nepal-2025',
-  'bali': 'bali-2025',
-  'baku': 'baku-2025',
-  'australia': 'australia-2026'
+  'bali': 'bali-2026',
+  'baku': 'baku-2026',
+  'australia': 'australia-2026',
+  'south-africa': 'south-africa-2026'
 };
 
 // Gallery images for each destination
 const destinationGalleries: Record<string, Array<{ id: number; src: string; alt: string; caption: string; category: string }>> = {
   dubai: [
-    { id: 1, src: Tendubai, alt: "Burj Khalifa at sunset", caption: "The world's tallest building glowing at dusk", category: "architecture" },
-    { id: 2, src: Fourdubai, alt: "Desert safari adventure", caption: "Thrilling dune bashing in the Arabian desert", category: "adventure" },
-    { id: 3, src: Eightdubai, alt: "Sheikh Zayed Mosque", caption: "The magnificent Grand Mosque in Abu Dhabi", category: "culture" },
-    { id: 4, src: Sixdubai, alt: "Dubai Marina skyline", caption: "Stunning waterfront views at Marina", category: "architecture" },
-    { id: 5, src: Ninedubai, alt: "Traditional souks", caption: "Gold and spice souks in old Dubai", category: "culture" },
-    { id: 6, src: Onedubai, alt: "Palm Jumeirah", caption: "Aerial view of the iconic man-made island", category: "architecture" },
-    { id: 7, src: Fivedubai, alt: "Dubai Fountain show", caption: "Spectacular water and light performance", category: "entertainment" },
-    { id: 8, src: Elevendubai, alt: "Camel ride experience", caption: "Traditional desert experience at sunset", category: "adventure" },
+    { id: 1, src: Tendubai, alt: "Burj Khalifa", caption: "The world's tallest building dominating Dubai's skyline", category: "architecture" },
+    { id: 2, src: Fourdubai, alt: "Dubai Desert Safari", caption: "Thrilling desert adventure with dune bashing and traditional BBQ", category: "adventure" },
+    { id: 3, src: Eightdubai, alt: "Dubai Marina", caption: "Luxurious waterfront district with stunning high-rises", category: "architecture" },
+    { id: 4, src: Sixdubai, alt: "Palm Jumeirah", caption: "Iconic man-made island shaped like a palm tree", category: "architecture" },
+    { id: 5, src: Ninedubai, alt: "Dubai Souks", caption: "Traditional Middle Eastern markets with gold and spices", category: "culture" },
+    { id: 6, src: Onedubai, alt: "Dubai Fountain", caption: "Spectacular water, light and music show at Burj Khalifa Lake", category: "entertainment" },
+    { id: 7, src: Fivedubai, alt: "Dubai Mall", caption: "World's largest shopping and entertainment destination", category: "entertainment" },
+    { id: 8, src: Elevendubai, alt: "Dubai Creek", caption: "Historic waterway and traditional dhow boats", category: "culture" },
+    { id: 9, src: Thirteendubai, alt: "Jumeirah Beach", caption: "Pristine beach with luxury hotels and Burj Al Arab", category: "nature" },
   ],
   japan: [
     { id: 1, src: japanImage, alt: "Cherry blossoms at Mount Fuji", caption: "Spring cherry blossoms frame the iconic Mount Fuji", category: "nature" },
@@ -103,10 +116,42 @@ const destinationGalleries: Record<string, Array<{ id: number; src: string; alt:
     { id: 4, src: europeImage, alt: "Kanyakumari sunrise", caption: "Sunrise at India's southernmost point", category: "nature" },
   ],
   andaman: [
-    { id: 1, src: heroImage, alt: "Radhanagar Beach", caption: "Asia's best beach - crystal clear waters", category: "nature" },
+    { id: 1, src: andamanIMg, alt: "Radhanagar Beach", caption: "Asia's best beach - crystal clear waters", category: "nature" },
     { id: 2, src: communityImage, alt: "Cellular Jail", caption: "Historic Cellular Jail at sunset", category: "culture" },
     { id: 3, src: baliImage, alt: "Underwater corals", caption: "Vibrant coral reefs for snorkeling", category: "adventure" },
     { id: 4, src: europeImage, alt: "Neil Island sunset", caption: "Golden hour at Laxmanpur Beach", category: "nature" },
+  ],
+  'south-africa': [
+    { id: 1, src: southAfricaGalleryImg, alt: "Table Mountain", caption: "Iconic Table Mountain overlooking Cape Town", category: "nature" },
+    { id: 2, src: heroImage, alt: "Pilanesberg Safari", caption: "Big Five safari in Pilanesberg National Park", category: "adventure" },
+    { id: 3, src: communityImage, alt: "Cape Peninsula", caption: "Scenic drive along the Cape Peninsula", category: "nature" },
+    { id: 4, src: baliImage, alt: "Sun City Resort", caption: "Luxury resort with Valley of Waves", category: "entertainment" },
+    { id: 5, src: europeImage, alt: "Whale watching", caption: "Southern Right whales in Hermanus", category: "nature" },
+    { id: 6, src: japanImage, alt: "Garden Route", caption: "Beautiful coastal drive through Garden Route", category: "nature" },
+  ],
+  australia: [
+    { id: 1, src: australiaImg, alt: "Sydney Opera House", caption: "Iconic performing arts venue in Sydney Harbour", category: "architecture" },
+    { id: 2, src: heroImage, alt: "Great Barrier Reef", caption: "Vibrant coral reefs and marine life", category: "nature" },
+    { id: 3, src: communityImage, alt: "Uluru", caption: "Sacred red rock formation in the desert", category: "nature" },
+    { id: 4, src: baliImage, alt: "Melbourne CBD", caption: "Modern cityscape with historic architecture", category: "city" },
+    { id: 5, src: europeImage, alt: "Kangaroo spotting", caption: "Wildlife encounters in Australian bush", category: "adventure" },
+    { id: 6, src: japanImage, alt: "Gold Coast beaches", caption: "Beautiful beaches and coastal scenery", category: "nature" },
+  ],
+  baku: [
+    { id: 1, src: bakuImg, alt: "Baku Boulevard", caption: "Seaside promenade along the Caspian Sea", category: "city" },
+    { id: 2, src: heroImage, alt: "Old City", caption: "Historic walled city with ancient architecture", category: "culture" },
+    { id: 3, src: communityImage, alt: "Flame Towers", caption: "Modern skyscrapers resembling flames", category: "architecture" },
+    { id: 4, src: baliImage, alt: "Mud Volcanoes", caption: "Unique natural mud volcanoes in the region", category: "nature" },
+    { id: 5, src: europeImage, alt: "Caspian Sea", caption: "Beautiful coastline and waterfront views", category: "nature" },
+    { id: 6, src: japanImage, alt: "Heydar Aliyev Center", caption: "Futuristic cultural center designed by Zaha Hadid", category: "architecture" },
+  ],
+  bali: [
+    { id: 1, src: baliImg, alt: "Ubud Rice Terraces", caption: "Stunning terraced rice fields in the hills", category: "nature" },
+    { id: 2, src: heroImage, alt: "Tanah Lot Temple", caption: "Iconic sea temple on a rock formation", category: "culture" },
+    { id: 3, src: communityImage, alt: "Mount Batur", caption: "Active volcano with sunrise trekking opportunities", category: "adventure" },
+    { id: 4, src: europeImage, alt: "Seminyak Beach", caption: "Popular beach area with luxury resorts", category: "nature" },
+    { id: 5, src: japanImage, alt: "Uluwatu Temple", caption: "Cliffside temple with Kecak dance performances", category: "culture" },
+    { id: 6, src: dubaiImage, alt: "Bali beaches", caption: "Beautiful beaches and coastal scenery", category: "nature" },
   ]
 };
 
@@ -119,7 +164,11 @@ const getMainImage = (slug: string): string => {
     rajasthan: heroImage,
     singapore: heroImage,
     kerala: heroImage,
-    andaman: baliImage
+    andaman: andamanIMg,
+    'south-africa': southAfricaImg,
+    australia: australiaImg,
+    baku: bakuImg,
+    bali: baliImg
   };
   return imageMap[slug] || heroImage;
 };
@@ -265,10 +314,10 @@ export default function DestinationDetail() {
 
             {/* Main Content Tabs */}
             <Tabs defaultValue="overview" className="mb-12">
-              <TabsList className="grid w-full grid-cols-5">
+              <TabsList className="grid w-full grid-cols-4">
                 <TabsTrigger value="overview">Overview</TabsTrigger>
                 <TabsTrigger value="itinerary">Itinerary</TabsTrigger>
-                <TabsTrigger value="departures">Departures</TabsTrigger>
+                {/* <TabsTrigger value="departures">Departures</TabsTrigger> */}
                 <TabsTrigger value="inclusions">Inclusions</TabsTrigger>
                 <TabsTrigger value="why">Why This?</TabsTrigger>
               </TabsList>

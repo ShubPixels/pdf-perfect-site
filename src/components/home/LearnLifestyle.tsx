@@ -93,34 +93,48 @@ export const LearnLifestyle = () => {
               <div className="space-y-4">
                 {learnArticles.map((article) => {
                   const Icon = article.icon;
+                  const getSlug = (title: string) => {
+                    switch (title) {
+                      case "First-time Europe traveller? Start here":
+                        return "/learn/first-time-europe-traveler";
+                      case "Visa documents checklist":
+                        return "/learn/visa-documents-checklist";
+                      case "Travel insurance explained":
+                        return "/learn/travel-insurance-explained";
+                      default:
+                        return "/learn";
+                    }
+                  };
+
                   return (
-                    <Card
-                      key={article.id}
-                      className="group p-6 hover:border-primary transition-all duration-300 hover:shadow-lg cursor-pointer rounded-2xl"
-                    >
-                      <div className="flex gap-4">
-                        <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
-                          <Icon className="h-6 w-6" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                              {article.category}
-                            </span>
-                            <span className="text-xs text-muted-foreground">
-                              {article.readTime}
-                            </span>
+                    <Link key={article.id} to={getSlug(article.title)}>
+                      <Card
+                        className="group p-6 hover:border-primary transition-all duration-300 hover:shadow-lg cursor-pointer rounded-2xl"
+                      >
+                        <div className="flex gap-4">
+                          <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                            <Icon className="h-6 w-6" />
                           </div>
-                          <h4 className="font-bold text-foreground mb-1 group-hover:text-primary transition-colors line-clamp-1">
-                            {article.title}
-                          </h4>
-                          <p className="text-sm text-muted-foreground line-clamp-2">
-                            {article.description}
-                          </p>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                                {article.category}
+                              </span>
+                              <span className="text-xs text-muted-foreground">
+                                {article.readTime}
+                              </span>
+                            </div>
+                            <h4 className="font-bold text-foreground mb-1 group-hover:text-primary transition-colors line-clamp-1">
+                              {article.title}
+                            </h4>
+                            <p className="text-sm text-muted-foreground line-clamp-2">
+                              {article.description}
+                            </p>
+                          </div>
+                          <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 self-center" />
                         </div>
-                        <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0 self-center" />
-                      </div>
-                    </Card>
+                      </Card>
+                    </Link>
                   );
                 })}
               </div>
@@ -140,34 +154,48 @@ export const LearnLifestyle = () => {
               <div className="space-y-4">
                 {lifestyleArticles.map((article) => {
                   const Icon = article.icon;
+                  const getSlug = (title: string) => {
+                    switch (title) {
+                      case "5 veg-friendly dishes in Europe":
+                        return "/lifestyle/veg-friendly-dishes-europe";
+                      case "Fun group games for buses":
+                        return "/lifestyle/fun-group-games-buses";
+                      case "Packing light for 10-day tours":
+                        return "/lifestyle/packing-light-10-day-tours";
+                      default:
+                        return "/lifestyle";
+                    }
+                  };
+
                   return (
-                    <Card
-                      key={article.id}
-                      className="group p-6 hover:border-accent transition-all duration-300 hover:shadow-lg cursor-pointer rounded-2xl"
-                    >
-                      <div className="flex gap-4">
-                        <div className="shrink-0 w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:bg-accent group-hover:text-black transition-colors">
-                          <Icon className="h-6 w-6" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-accent/20 text-foreground">
-                              {article.category}
-                            </span>
-                            <span className="text-xs text-muted-foreground">
-                              {article.readTime}
-                            </span>
+                    <Link key={article.id} to={getSlug(article.title)}>
+                      <Card
+                        className="group p-6 hover:border-accent transition-all duration-300 hover:shadow-lg cursor-pointer rounded-2xl"
+                      >
+                        <div className="flex gap-4">
+                          <div className="shrink-0 w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center group-hover:bg-accent group-hover:text-black transition-colors">
+                            <Icon className="h-6 w-6" />
                           </div>
-                          <h4 className="font-bold text-foreground mb-1 group-hover:text-accent transition-colors line-clamp-1">
-                            {article.title}
-                          </h4>
-                          <p className="text-sm text-muted-foreground line-clamp-2">
-                            {article.description}
-                          </p>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 mb-1">
+                              <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-accent/20 text-foreground">
+                                {article.category}
+                              </span>
+                              <span className="text-xs text-muted-foreground">
+                                {article.readTime}
+                              </span>
+                            </div>
+                            <h4 className="font-bold text-foreground mb-1 group-hover:text-accent transition-colors line-clamp-1">
+                              {article.title}
+                            </h4>
+                            <p className="text-sm text-muted-foreground line-clamp-2">
+                              {article.description}
+                            </p>
+                          </div>
+                          <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all shrink-0 self-center" />
                         </div>
-                        <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all shrink-0 self-center" />
-                      </div>
-                    </Card>
+                      </Card>
+                    </Link>
                   );
                 })}
               </div>

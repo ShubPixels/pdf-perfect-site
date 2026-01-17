@@ -10,17 +10,23 @@ import japanImage from "@/assets/japan-tour.jpg";
 import dubaiImage from "@/assets/dubai-tour.jpg";
 import europeImage from "@/assets/europe-tour.jpg";
 import baliImage from "@/assets/bali-tour.jpg";
+import southaftricaImage from "@/assets/upcoming departure images/south-africa.png";
+import andamanIMg from "@/assets/upcoming departure images/andaman-tour.png";
+import australiaImg from "@/assets/upcoming departure images/australia-tour.png";
+import bakuImg from "@/assets/upcoming departure images/baku-tour.png";
+import baliImg from "@/assets/upcoming departure images/bali-tour.png";
 
 const destinationImages: Record<string, string> = {
   "japan-2026": japanImage,
   "dubai-2025": dubaiImage,
   "europe-2026": europeImage,
   "kerala-2025": baliImage,
-  "andaman-2025": baliImage,
+  "andaman-2025": andamanIMg,
   "nepal-2025": japanImage,
-  "bali-2025": baliImage,
-  "baku-2025": dubaiImage,
-  "australia-2026": europeImage,
+  "bali-2026": baliImg,
+  "baku-2026": bakuImg,
+  "australia-2026": australiaImg,
+  "south-africa-2026": southaftricaImage,
 };
 
 const destinationMeta: Record<
@@ -33,8 +39,8 @@ const destinationMeta: Record<
   "kerala-2025": { region: "India", tags: ["Backwaters", "Nature", "Relaxing"], stats: { tours: 10, travelers: 380 } },
   "andaman-2025": { region: "India", tags: ["Beach", "Islands", "Adventure"], stats: { tours: 8, travelers: 290 } },
   "nepal-2025": { region: "Asia", tags: ["Spiritual", "Mountains", "Heritage"], stats: { tours: 6, travelers: 180 } },
-  "bali-2025": { region: "Asia", tags: ["Beach", "Culture", "Romantic"], stats: { tours: 10, travelers: 420 } },
-  "baku-2025": { region: "Asia", tags: ["Modern", "Historic", "Unique"], stats: { tours: 5, travelers: 150 } },
+  "bali-2026": { region: "Asia", tags: ["Beach", "Culture", "Romantic"], stats: { tours: 10, travelers: 420 } },
+  "baku-2026": { region: "Asia", tags: ["Modern", "Historic", "Unique"], stats: { tours: 5, travelers: 150 } },
   "australia-2026": { region: "Oceania", tags: ["Wildlife", "Nature", "Adventure"], stats: { tours: 4, travelers: 120 } },
 };
 
@@ -48,22 +54,22 @@ interface DestinationsProps {
  * - Explore: repeatable 8-tile block that stays “shaped”
  */
 const HOME_SPANS = [
-  "md:col-span-2 md:row-span-2", // big
-  "md:col-span-2 md:row-span-1", // wide
-  "md:col-span-2 md:row-span-1", // wide
-  "md:col-span-1 md:row-span-1", // small
-  "md:col-span-3 md:row-span-1", // long
+  "col-span-2 row-span-2 md:col-span-2 md:row-span-2", // big
+  "col-span-2 row-span-1 md:col-span-2 md:row-span-1", // wide
+  "col-span-2 row-span-1 md:col-span-2 md:row-span-1", // wide
+  "col-span-2 row-span-1 md:col-span-1 md:row-span-1", // small
+  "col-span-2 row-span-1 md:col-span-3 md:row-span-1", // long
 ];
 
 const EXPLORE_SPANS = [
-  "md:col-span-2 md:row-span-2", // big
-  "md:col-span-2 md:row-span-1", // wide
-  "md:col-span-2 md:row-span-1", // wide
-  "md:col-span-1 md:row-span-1", // small
-  "md:col-span-1 md:row-span-1", // small
-  "md:col-span-1 md:row-span-1", // small
-  "md:col-span-1 md:row-span-1", // small
-  "md:col-span-4 md:row-span-1", // banner row (keeps the block shape)
+  "col-span-2 row-span-2 md:col-span-2 md:row-span-2", // big
+  "col-span-2 row-span-1 md:col-span-2 md:row-span-1", // wide
+  "col-span-2 row-span-1 md:col-span-2 md:row-span-1", // wide
+  "col-span-2 row-span-1 md:col-span-1 md:row-span-1", // small
+  "col-span-2 row-span-1 md:col-span-1 md:row-span-1", // small
+  "col-span-2 row-span-1 md:col-span-1 md:row-span-1", // small
+  "col-span-2 row-span-1 md:col-span-1 md:row-span-1", // small
+  "col-span-2 row-span-1 md:col-span-4 md:row-span-1", // banner row
 ];
 
 export const Destinations = ({ showAll = false }: DestinationsProps) => {
@@ -107,28 +113,28 @@ export const Destinations = ({ showAll = false }: DestinationsProps) => {
   const spansPattern = showAll ? EXPLORE_SPANS : HOME_SPANS;
 
   return (
-    <section id="destinations" className="py-24 bg-secondary/30 scroll-mt-20">
-      <div className="container mx-auto px-4">
+    <section id="destinations" className="py-12 sm:py-16 md:py-24 bg-secondary/30 scroll-mt-20">
+      <div className="container mx-auto px-3 sm:px-4 md:px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6">
-            <Globe className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Explore the World</span>
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary/10 mb-4 sm:mb-6">
+            <Globe className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+            <span className="text-xs sm:text-sm font-medium text-primary">Explore the World</span>
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl md:text-6xl font-bold text-foreground mb-3 sm:mb-4 px-2">
             Popular <span className="text-accent">Destinations</span>
           </h2>
 
-          <p className="text-muted-foreground max-w-xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-xs sm:max-w-sm md:max-w-xl mx-auto text-sm sm:text-base md:text-lg px-4">
             Discover where our travelers love to go, curated experiences for every journey
           </p>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 sm:mt-8 flex justify-center">
             <Link to="/explore">
-              <Button variant="outline" className="rounded-full px-6 group">
+              <Button variant="outline" className="rounded-full px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base group">
                 View All Destinations
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
@@ -137,7 +143,7 @@ export const Destinations = ({ showAll = false }: DestinationsProps) => {
 
         {/* ✅ Bento Grid (stable + shaped) */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:auto-rows-[250px] md:grid-flow-dense">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 auto-rows-[180px] sm:auto-rows-[200px] md:auto-rows-[250px] grid-flow-dense">
             {destinations.map((destination, index) => {
               const span = spansPattern[index % spansPattern.length];
               const isTall = span.includes("row-span-2") || span.includes("col-span-4");
@@ -169,21 +175,21 @@ export const Destinations = ({ showAll = false }: DestinationsProps) => {
                   </div>
 
                   {/* Region badge */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <Badge className="bg-white/10 backdrop-blur-sm text-white border-white/20">
-                      <MapPin className="w-3 h-3 mr-1" />
+                  <div className="absolute top-2 left-2 sm:top-3 sm:left-3 md:top-4 md:left-4 z-10">
+                    <Badge className="bg-white/10 backdrop-blur-sm text-white border-white/20 text-xs px-2 py-0.5 sm:px-3 sm:py-1">
+                      <MapPin className="w-2 h-2 sm:w-3 sm:h-3 mr-1" />
                       {destination.region}
                     </Badge>
                   </div>
 
                   {/* ✅ Content box pinned bottom (fixes misplaced tags/text) */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                  <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6">
                     <div className="p-0">
                     {/* <div className="rounded-2xl bg-black/25 backdrop-blur-sm border border-white/10 p-4 md:p-5"> */}
                       <h3
                         className={`
                           font-bold text-white leading-tight drop-shadow
-                          ${isTall ? "text-3xl md:text-5xl" : "text-xl md:text-2xl"}
+                          ${isTall ? "text-lg sm:text-2xl md:text-3xl md:text-5xl" : "text-sm sm:text-base md:text-xl md:text-2xl"}
                         `}
                       >
                         {destination.name}
@@ -191,23 +197,23 @@ export const Destinations = ({ showAll = false }: DestinationsProps) => {
 
                       {/* show description only if there's room */}
                       {isTall && (
-                        <p className="text-white/85 mt-2 line-clamp-2">
+                        <p className="text-white/85 mt-1 sm:mt-2 text-xs sm:text-sm md:text-base line-clamp-2">
                           {destination.description}
                         </p>
                       )}
 
-                      <div className="flex flex-wrap gap-2 mt-3">
+                      <div className="flex flex-wrap gap-1 sm:gap-2 mt-2 sm:mt-3">
                         {destination.tags.slice(0, isTall ? 4 : 3).map((tag) => (
-                          <span key={tag} className="text-xs px-3 py-1 rounded-full bg-white/10 text-white">
+                          <span key={tag} className="text-xs px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/10 text-white">
                             {tag}
                           </span>
                         ))}
                       </div>
 
                       {/* Optional subtle CTA */}
-                      <div className="mt-3 flex items-center gap-2 text-accent font-medium">
+                      <div className="mt-2 sm:mt-3 flex items-center gap-1 sm:gap-2 text-accent font-medium text-xs sm:text-sm md:text-base">
                         <span>Explore</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </div>

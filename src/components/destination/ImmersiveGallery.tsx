@@ -60,7 +60,7 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-3 mb-10">
+      {/* <div className="flex flex-wrap justify-center gap-3 mb-10">
         {categories.map((category) => (
           <button
             key={category}
@@ -77,7 +77,7 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
             {category.charAt(0).toUpperCase() + category.slice(1)}
           </button>
         ))}
-      </div>
+      </div> */}
 
       {/* ✅ Dense Bento Mosaic (no holes) */}
       <div className="grid grid-cols-12 gap-3 md:gap-4 auto-rows-[120px] md:auto-rows-[150px] grid-flow-dense">
@@ -126,7 +126,7 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
                 `}
               />
 
-              <div
+              {/* <div
                 className={`
                   absolute top-3 left-3 px-3 py-1 rounded-full
                   bg-cta text-black text-xs font-semibold
@@ -135,7 +135,7 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
                 `}
               >
                 {image.category}
-              </div>
+              </div> */}
 
               <div
                 className={`
@@ -197,9 +197,9 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
                 />
 
                 <div className="absolute bottom-0 left-6 right-6 md:left-8 md:right-8 p-6 bg-gradient-to-t from-black/90 to-transparent rounded-b-lg">
-                  <span className="inline-block px-3 py-1 rounded-full bg-cta text-black text-xs font-semibold mb-2">
+                  {/* <span className="inline-block px-3 py-1 rounded-full bg-cta text-black text-xs font-semibold mb-2">
                     {selectedImageData.category}
-                  </span>
+                  </span> */}
                   <p className="text-white text-lg font-medium">
                     {selectedImageData.caption || selectedImageData.alt}
                   </p>
