@@ -26,8 +26,99 @@ import Elevendubai from "@/assets/Dubai/11.png";
 import Ninedubai from "@/assets/Dubai/9.png";
 import Thirteendubai from "@/assets/Dubai/13.png";
 
+// Japan gallery images
+import Onejapan from "@/assets/japan/1.png";
+import Twojapan from "@/assets/japan/2.png";
+import Threejapan from "@/assets/japan/3.png";
+import Fourjapan from "@/assets/japan/4.png";
+import Fivejapan from "@/assets/japan/5.png";
+import Sixjapan from "@/assets/japan/6.png";
+import Sevenjapan from "@/assets/japan/7.png";
+import Eightjapan from "@/assets/japan/8.png";
+import Ninejapan from "@/assets/japan/9.png";
+
+// Europe gallery images
+import Oneeurope from "@/assets/Europe/1.png";
+import Twoeurope from "@/assets/Europe/2.png";
+import Threeeurope from "@/assets/Europe/3.png";
+import Fourope from "@/assets/Europe/4.png";
+import Fiveeurope from "@/assets/Europe/5.png";
+import Sixeurope from "@/assets/Europe/6.png";
+import Seveneurope from "@/assets/Europe/7.png";
+import Eighteurope from "@/assets/Europe/8.png";
+import Nineeurope from "@/assets/Europe/9.png";
+
+// Bali gallery images
+import Onebali from "@/assets/Bali/1.png";
+import Twobali from "@/assets/Bali/2.png";
+import Threebali from "@/assets/Bali/3.png";
+import Fourbali from "@/assets/Bali/4.png";
+import Fivebali from "@/assets/Bali/5.png";
+import Sixbali from "@/assets/Bali/6.png";
+import Sevenbali from "@/assets/Bali/7.png";
+import Eightbali from "@/assets/Bali/8.png";
+import Ninebali from "@/assets/Bali/9.png";
+
+// Andaman gallery images
+import Oneandaman from "@/assets/Andaman/1.png";
+import Twoandaman from "@/assets/Andaman/2.png";
+import Threeandaman from "@/assets/Andaman/3.png";
+import Fourandaman from "@/assets/Andaman/4.png";
+import Fiveandaman from "@/assets/Andaman/5.png";
+import Sixandaman from "@/assets/Andaman/6.png";
+import Sevenandaman from "@/assets/Andaman/7.png";
+import Eightandaman from "@/assets/Andaman/8.png";
+
+// Kerala gallery images
+import Onekerala from "@/assets/kerala/1.png";
+import Twokerala from "@/assets/kerala/2.png";
+import Threekerala from "@/assets/kerala/3.png";
+import Fourkerala from "@/assets/kerala/4.png";
+import Fivekerala from "@/assets/kerala/5.png";
+import Sixkerala from "@/assets/kerala/6.png";
+import Sevenkerala from "@/assets/kerala/7.png";
+import Eightkerala from "@/assets/kerala/8.png";
+import Ninekerala from "@/assets/kerala/9.png";
+
+// Nepal gallery images
+import Onenepal from "@/assets/Nepal/1.png";
+import Twonepal from "@/assets/Nepal/2.png";
+import Threenepal from "@/assets/Nepal/3.png";
+import Fournepal from "@/assets/Nepal/4.png";
+import Fivenepal from "@/assets/Nepal/5.png";
+import Sixnepal from "@/assets/Nepal/6.png";
+import Sevennepal from "@/assets/Nepal/7.png";
+import Eightnepal from "@/assets/Nepal/8.png";
+import Ninenepal from "@/assets/Nepal/9.png";
+
+// South Africa gallery images
+import Onesouthafrica from "@/assets/SA/1.png";
+import Twosouthafrica from "@/assets/SA/2.png";
+import Threesouthafrica from "@/assets/SA/3.png";
+import Foursouthafrica from "@/assets/SA/4.png";
+import Fivesouthafrica from "@/assets/SA/5.png";
+import Sixsouthafrica from "@/assets/SA/6.png";
+import Sevensouthafrica from "@/assets/SA/7.png";
+import Eightsouthafrica from "@/assets/SA/8.png";
+import Ninesouthafrica from "@/assets/SA/9.png";
+import Tensouthafrica from "@/assets/SA/10.png";
+
+// Australia gallery images
+import Oneaustralia from "@/assets/Australia/1.png";
+import Twoaustralia from "@/assets/Australia/2.png";
+import Threeaustralia from "@/assets/Australia/3.png";
+import Fouraustralia from "@/assets/Australia/4.png";
+import Fiveaustralia from "@/assets/Australia/5.png";
+import Sixaustralia from "@/assets/Australia/6.png";
+import Sevenaustralia from "@/assets/Australia/7.png";
+import Eightaustralia from "@/assets/Australia/8.png";
+import Nineaustralia from "@/assets/Australia/9.png";
+
+// Singapore gallery images
+import Onesingapore from "@/assets/Singapore/1.png";
+
 import southAfricaImg from "@/assets/upcoming departure images/south-africa.png";
-import europeImage from "@/assets/europe-tour.jpg";
+import europeImage from "@/assets/Europe/europe-tour.png";
 import baliImage from "@/assets/bali-tour.jpg";
 import heroImage from "@/assets/hero-travel.jpg";
 import communityImage from "@/assets/community-1.jpg";
@@ -36,6 +127,8 @@ import southAfricaGalleryImg from "@/assets/SA/1.png";
 import australiaImg from "@/assets/upcoming departure images/australia-tour.png";
 import bakuImg from "@/assets/upcoming departure images/baku-tour.png";
 import baliImg from "@/assets/upcoming departure images/bali-tour.png";
+import keralaImg from "@/assets/upcoming departure images/kerala-tour.png";
+import nepalImg from "@/assets/Nepal/nepal-tour.png";
 
 // Map tour IDs to destination slugs
 const tourIdToSlug: Record<string, string> = {
@@ -46,7 +139,7 @@ const tourIdToSlug: Record<string, string> = {
   'singapore-malaysia-2025': 'singapore',
   'kerala-2025': 'kerala',
   'andaman-2025': 'andaman',
-  'nepal-2025': 'nepal',
+  'nepal-2026': 'nepal',
   'bali-2026': 'bali',
   'baku-2026': 'baku',
   'australia-2026': 'australia',
@@ -61,7 +154,7 @@ const slugToTourId: Record<string, string> = {
   'singapore': 'singapore-malaysia-2025',
   'kerala': 'kerala-2025',
   'andaman': 'andaman-2025',
-  'nepal': 'nepal-2025',
+  'nepal': 'nepal-2026',
   'bali': 'bali-2026',
   'baku': 'baku-2026',
   'australia': 'australia-2026',
@@ -82,60 +175,82 @@ const destinationGalleries: Record<string, Array<{ id: number; src: string; alt:
     { id: 9, src: Thirteendubai, alt: "Jumeirah Beach", caption: "Pristine beach with luxury hotels and Burj Al Arab", category: "nature" },
   ],
   japan: [
-    { id: 1, src: japanImage, alt: "Cherry blossoms at Mount Fuji", caption: "Spring cherry blossoms frame the iconic Mount Fuji", category: "nature" },
-    { id: 2, src: heroImage, alt: "Tokyo Shibuya crossing", caption: "The famous Shibuya crossing at night", category: "city" },
-    { id: 3, src: communityImage, alt: "Traditional tea ceremony", caption: "Experience authentic Japanese hospitality", category: "culture" },
-    { id: 4, src: baliImage, alt: "Kyoto bamboo grove", caption: "Walking through the mystical Arashiyama bamboo forest", category: "nature" },
-    { id: 5, src: europeImage, alt: "Golden Pavilion temple", caption: "The stunning Kinkaku-ji in Kyoto", category: "culture" },
-    { id: 6, src: japanImage, alt: "Japanese cuisine spread", caption: "Fresh sushi and local delicacies", category: "food" },
-    { id: 7, src: heroImage, alt: "Bullet train experience", caption: "Traveling at 300km/h on the Shinkansen", category: "city" },
-    { id: 8, src: communityImage, alt: "Geisha district", caption: "Evening stroll in Gion, Kyoto", category: "culture" },
+    { id: 1, src: Onejapan, alt: "Mount Fuji", caption: "Iconic Mount Fuji with cherry blossoms in spring", category: "nature" },
+    { id: 2, src: Twojapan, alt: "Tokyo Shibuya Crossing", caption: "The world's busiest pedestrian crossing in Shibuya", category: "city" },
+    { id: 3, src: Threejapan, alt: "Traditional Tea Ceremony", caption: "Authentic Japanese tea ceremony experience", category: "culture" },
+    { id: 4, src: Fourjapan, alt: "Kyoto Bamboo Grove", caption: "Walking through the mystical Arashiyama bamboo forest", category: "nature" },
+    { id: 5, src: Fivejapan, alt: "Golden Pavilion Temple", caption: "The stunning Kinkaku-ji temple in Kyoto", category: "culture" },
+    { id: 6, src: Sixjapan, alt: "Japanese Cuisine", caption: "Fresh sushi and traditional Japanese delicacies", category: "food" },
+    { id: 7, src: Sevenjapan, alt: "Bullet Train", caption: "High-speed Shinkansen bullet train experience", category: "transport" },
+    { id: 8, src: Eightjapan, alt: "Geisha District", caption: "Evening stroll in Gion, Kyoto's geisha district", category: "culture" },
+    { id: 9, src: Ninejapan, alt: "Tokyo Tower", caption: "Iconic communications tower in Tokyo", category: "architecture" },
   ],
   europe: [
-    { id: 1, src: europeImage, alt: "Eiffel Tower", caption: "The iconic Eiffel Tower in Paris", category: "architecture" },
-    { id: 2, src: heroImage, alt: "Venice canals", caption: "Romantic gondola ride through Venice", category: "city" },
-    { id: 3, src: communityImage, alt: "Swiss Alps", caption: "Breathtaking views from Jungfraujoch", category: "nature" },
-    { id: 4, src: baliImage, alt: "London Bridge", caption: "Historic Tower Bridge in London", category: "architecture" },
+    { id: 1, src: Oneeurope, alt: "Eiffel Tower", caption: "The iconic Eiffel Tower in Paris at sunset", category: "architecture" },
+    { id: 2, src: Twoeurope, alt: "Venice Canals", caption: "Romantic gondola ride through Venice's canals", category: "city" },
+    { id: 3, src: Threeeurope, alt: "Swiss Alps", caption: "Breathtaking views from Jungfraujoch in Switzerland", category: "nature" },
+    { id: 4, src: Fourope, alt: "London Landmarks", caption: "Historic Tower Bridge and London skyline", category: "architecture" },
+    { id: 5, src: Fiveeurope, alt: "Rome Colosseum", caption: "Ancient Roman Colosseum in Rome", category: "culture" },
+    { id: 6, src: Sixeurope, alt: "Amsterdam Canals", caption: "Picturesque canals and architecture in Amsterdam", category: "city" },
+    { id: 7, src: Seveneurope, alt: "Paris Seine River", caption: "Seine River cruise in Paris", category: "city" },
+    { id: 8, src: Eighteurope, alt: "Scottish Highlands", caption: "Stunning landscapes in the Scottish Highlands", category: "nature" },
+    { id: 9, src: Nineeurope, alt: "Barcelona Gaudi", caption: "Sagrada Familia and Gaudi architecture in Barcelona", category: "architecture" },
   ],
   rajasthan: [
-    { id: 1, src: heroImage, alt: "Amber Fort", caption: "Majestic Amber Fort in Jaipur", category: "architecture" },
-    { id: 2, src: communityImage, alt: "Lake Palace", caption: "The stunning City Palace of Udaipur", category: "culture" },
-    { id: 3, src: baliImage, alt: "Hawa Mahal", caption: "The iconic Palace of Winds", category: "architecture" },
-    { id: 4, src: europeImage, alt: "Desert camp", caption: "Traditional camp in the Rajasthan desert", category: "adventure" },
+    { id: 1, src: heroImage, alt: "Amber Fort", caption: "Majestic Amber Fort in Jaipur with stunning architecture", category: "architecture" },
+    { id: 2, src: communityImage, alt: "Lake Palace", caption: "The stunning City Palace of Udaipur on Lake Pichola", category: "culture" },
+    { id: 3, src: baliImage, alt: "Hawa Mahal", caption: "The iconic Palace of Winds in Jaipur", category: "architecture" },
+    { id: 4, src: europeImage, alt: "Desert Camp", caption: "Traditional camp in the Rajasthan desert with camel safari", category: "adventure" },
   ],
   singapore: [
-    { id: 1, src: heroImage, alt: "Marina Bay Sands", caption: "The iconic Marina Bay Sands at night", category: "architecture" },
-    { id: 2, src: communityImage, alt: "Gardens by the Bay", caption: "Futuristic Supertrees light up the night", category: "nature" },
-    { id: 3, src: baliImage, alt: "Universal Studios", caption: "Thrilling rides at Universal Studios", category: "entertainment" },
-    { id: 4, src: europeImage, alt: "Petronas Towers", caption: "The magnificent twin towers of KL", category: "architecture" },
+    { id: 1, src: Onesingapore, alt: "Marina Bay Sands", caption: "The iconic Marina Bay Sands at night with infinity pool", category: "architecture" },
+    { id: 2, src: communityImage, alt: "Gardens by the Bay", caption: "Futuristic Supertrees light up the night sky", category: "nature" },
+    { id: 3, src: baliImage, alt: "Universal Studios", caption: "Thrilling rides at Universal Studios Singapore", category: "entertainment" },
+    { id: 4, src: europeImage, alt: "Petronas Towers", caption: "The magnificent twin towers of Kuala Lumpur", category: "architecture" },
   ],
   kerala: [
-    { id: 1, src: heroImage, alt: "Backwaters of Alleppey", caption: "Serene houseboat cruise on backwaters", category: "nature" },
-    { id: 2, src: communityImage, alt: "Munnar tea gardens", caption: "Rolling hills of tea plantations", category: "nature" },
-    { id: 3, src: baliImage, alt: "Kathakali dancer", caption: "Traditional Kathakali performance", category: "culture" },
-    { id: 4, src: europeImage, alt: "Kanyakumari sunrise", caption: "Sunrise at India's southernmost point", category: "nature" },
+    { id: 1, src: Onekerala, alt: "Backwaters of Alleppey", caption: "Serene houseboat cruise on the backwaters", category: "nature" },
+    { id: 2, src: Twokerala, alt: "Munnar Tea Gardens", caption: "Rolling hills of lush tea plantations", category: "nature" },
+    { id: 3, src: Threekerala, alt: "Kathakali Dancer", caption: "Traditional Kathakali dance performance", category: "culture" },
+    { id: 4, src: Fourkerala, alt: "Kanyakumari Sunrise", caption: "Sunrise at India's southernmost point", category: "nature" },
+    { id: 5, src: Fivekerala, alt: "Periyar Wildlife", caption: "Wildlife sanctuary in Periyar National Park", category: "nature" },
+    { id: 6, src: Sixkerala, alt: "Kerala Backwaters", caption: "Traditional Kerala houseboats on backwaters", category: "nature" },
+    { id: 7, src: Sevenkerala, alt: "Fort Kochi", caption: "Historic Fort Kochi with Dutch Cemetery", category: "culture" },
+    { id: 8, src: Eightkerala, alt: "Wayanad Hills", caption: "Scenic hills and waterfalls in Wayanad", category: "nature" },
+    { id: 9, src: Ninekerala, alt: "Kerala Cuisine", caption: "Traditional Kerala sadhya feast", category: "food" },
   ],
   andaman: [
-    { id: 1, src: andamanIMg, alt: "Radhanagar Beach", caption: "Asia's best beach - crystal clear waters", category: "nature" },
-    { id: 2, src: communityImage, alt: "Cellular Jail", caption: "Historic Cellular Jail at sunset", category: "culture" },
-    { id: 3, src: baliImage, alt: "Underwater corals", caption: "Vibrant coral reefs for snorkeling", category: "adventure" },
-    { id: 4, src: europeImage, alt: "Neil Island sunset", caption: "Golden hour at Laxmanpur Beach", category: "nature" },
+    { id: 1, src: Oneandaman, alt: "Radhanagar Beach", caption: "Asia's best beach with crystal clear waters", category: "nature" },
+    { id: 2, src: Twoandaman, alt: "Cellular Jail", caption: "Historic Cellular Jail at sunset", category: "culture" },
+    { id: 3, src: Threeandaman, alt: "Coral Reefs", caption: "Vibrant coral reefs for snorkeling and diving", category: "adventure" },
+    { id: 4, src: Fourandaman, alt: "Neil Island", caption: "Golden hour at Laxmanpur Beach, Neil Island", category: "nature" },
+    { id: 5, src: Fiveandaman, alt: "Havelock Island", caption: "Beautiful beaches and island scenery", category: "nature" },
+    { id: 6, src: Sixandaman, alt: "Port Blair", caption: "Port Blair harbor and waterfront", category: "city" },
+    { id: 7, src: Sevenandaman, alt: "Andaman Sea", caption: "Crystal clear waters of the Andaman Sea", category: "nature" },
+    { id: 8, src: Eightandaman, alt: "Island Hopping", caption: "Scenic boat ride between islands", category: "adventure" },
   ],
   'south-africa': [
-    { id: 1, src: southAfricaGalleryImg, alt: "Table Mountain", caption: "Iconic Table Mountain overlooking Cape Town", category: "nature" },
-    { id: 2, src: heroImage, alt: "Pilanesberg Safari", caption: "Big Five safari in Pilanesberg National Park", category: "adventure" },
-    { id: 3, src: communityImage, alt: "Cape Peninsula", caption: "Scenic drive along the Cape Peninsula", category: "nature" },
-    { id: 4, src: baliImage, alt: "Sun City Resort", caption: "Luxury resort with Valley of Waves", category: "entertainment" },
-    { id: 5, src: europeImage, alt: "Whale watching", caption: "Southern Right whales in Hermanus", category: "nature" },
-    { id: 6, src: japanImage, alt: "Garden Route", caption: "Beautiful coastal drive through Garden Route", category: "nature" },
+    { id: 1, src: Onesouthafrica, alt: "Table Mountain", caption: "Iconic Table Mountain overlooking Cape Town", category: "nature" },
+    { id: 2, src: Twosouthafrica, alt: "Pilanesberg Safari", caption: "Big Five safari in Pilanesberg National Park", category: "adventure" },
+    { id: 3, src: Threesouthafrica, alt: "Cape Peninsula", caption: "Scenic drive along the Cape Peninsula", category: "nature" },
+    { id: 4, src: Foursouthafrica, alt: "Sun City Resort", caption: "Luxury resort with Valley of Waves", category: "entertainment" },
+    { id: 5, src: Fivesouthafrica, alt: "Whale Watching", caption: "Southern Right whales in Hermanus", category: "nature" },
+    { id: 6, src: Sixsouthafrica, alt: "Garden Route", caption: "Beautiful coastal drive through Garden Route", category: "nature" },
+    { id: 7, src: Sevensouthafrica, alt: "Cape Town Waterfront", caption: "Modern waterfront development in Cape Town", category: "city" },
+    { id: 8, src: Eightsouthafrica, alt: "Kruger National Park", caption: "Safari experience in Kruger National Park", category: "adventure" },
+    { id: 9, src: Ninesouthafrica, alt: "Stellenbosch Winelands", caption: "Beautiful vineyards in Stellenbosch", category: "nature" },
+    { id: 10, src: Tensouthafrica, alt: "Drakensberg Mountains", caption: "Stunning Drakensberg mountain range", category: "nature" },
   ],
   australia: [
-    { id: 1, src: australiaImg, alt: "Sydney Opera House", caption: "Iconic performing arts venue in Sydney Harbour", category: "architecture" },
-    { id: 2, src: heroImage, alt: "Great Barrier Reef", caption: "Vibrant coral reefs and marine life", category: "nature" },
-    { id: 3, src: communityImage, alt: "Uluru", caption: "Sacred red rock formation in the desert", category: "nature" },
-    { id: 4, src: baliImage, alt: "Melbourne CBD", caption: "Modern cityscape with historic architecture", category: "city" },
-    { id: 5, src: europeImage, alt: "Kangaroo spotting", caption: "Wildlife encounters in Australian bush", category: "adventure" },
-    { id: 6, src: japanImage, alt: "Gold Coast beaches", caption: "Beautiful beaches and coastal scenery", category: "nature" },
+    { id: 1, src: Oneaustralia, alt: "Sydney Opera House", caption: "Iconic performing arts venue in Sydney Harbour", category: "architecture" },
+    { id: 2, src: Twoaustralia, alt: "Great Barrier Reef", caption: "Vibrant coral reefs and marine life", category: "nature" },
+    { id: 3, src: Threeaustralia, alt: "Uluru", caption: "Sacred red rock formation in the desert", category: "nature" },
+    { id: 4, src: Fouraustralia, alt: "Melbourne CBD", caption: "Modern cityscape with historic architecture", category: "city" },
+    { id: 5, src: Fiveaustralia, alt: "Kangaroo Spotting", caption: "Wildlife encounters in Australian bush", category: "adventure" },
+    { id: 6, src: Sixaustralia, alt: "Gold Coast Beaches", caption: "Beautiful beaches and coastal scenery", category: "nature" },
+    { id: 7, src: Sevenaustralia, alt: "Blue Mountains", caption: "Scenic Blue Mountains wilderness", category: "nature" },
+    { id: 8, src: Eightaustralia, alt: "Daintree Rainforest", caption: "Ancient rainforest and wildlife", category: "nature" },
+    { id: 9, src: Nineaustralia, alt: "Twelve Apostles", caption: "Iconic limestone stacks on Victoria's coast", category: "nature" },
   ],
   baku: [
     { id: 1, src: bakuImg, alt: "Baku Boulevard", caption: "Seaside promenade along the Caspian Sea", category: "city" },
@@ -146,12 +261,26 @@ const destinationGalleries: Record<string, Array<{ id: number; src: string; alt:
     { id: 6, src: japanImage, alt: "Heydar Aliyev Center", caption: "Futuristic cultural center designed by Zaha Hadid", category: "architecture" },
   ],
   bali: [
-    { id: 1, src: baliImg, alt: "Ubud Rice Terraces", caption: "Stunning terraced rice fields in the hills", category: "nature" },
-    { id: 2, src: heroImage, alt: "Tanah Lot Temple", caption: "Iconic sea temple on a rock formation", category: "culture" },
-    { id: 3, src: communityImage, alt: "Mount Batur", caption: "Active volcano with sunrise trekking opportunities", category: "adventure" },
-    { id: 4, src: europeImage, alt: "Seminyak Beach", caption: "Popular beach area with luxury resorts", category: "nature" },
-    { id: 5, src: japanImage, alt: "Uluwatu Temple", caption: "Cliffside temple with Kecak dance performances", category: "culture" },
-    { id: 6, src: dubaiImage, alt: "Bali beaches", caption: "Beautiful beaches and coastal scenery", category: "nature" },
+    { id: 1, src: Onebali, alt: "Ubud Rice Terraces", caption: "Stunning terraced rice fields in the hills of Ubud", category: "nature" },
+    { id: 2, src: Twobali, alt: "Tanah Lot Temple", caption: "Iconic sea temple on a rock formation at sunset", category: "culture" },
+    { id: 3, src: Threebali, alt: "Mount Batur", caption: "Active volcano with sunrise trekking opportunities", category: "adventure" },
+    { id: 4, src: Fourbali, alt: "Seminyak Beach", caption: "Popular beach area with luxury resorts and cafes", category: "nature" },
+    { id: 5, src: Fivebali, alt: "Uluwatu Temple", caption: "Cliffside temple with traditional Kecak dance performances", category: "culture" },
+    { id: 6, src: Sixbali, alt: "Bali Beaches", caption: "Beautiful beaches and coastal scenery", category: "nature" },
+    { id: 7, src: Sevenbali, alt: "Sacred Monkey Forest", caption: "Sacred monkey forest sanctuary in Ubud", category: "nature" },
+    { id: 8, src: Eightbali, alt: "Bali Rice Fields", caption: "Traditional Balinese rice field landscapes", category: "nature" },
+    { id: 9, src: Ninebali, alt: "Tirta Empul Temple", caption: "Holy water temple with traditional purification rituals", category: "culture" },
+  ],
+  nepal: [
+    { id: 1, src: Onenepal, alt: "Mount Everest", caption: "Majestic Mount Everest from base camp", category: "nature" },
+    { id: 2, src: Twonepal, alt: "Kathmandu Durbar Square", caption: "Historic royal palace square in Kathmandu", category: "culture" },
+    { id: 3, src: Threenepal, alt: "Pokhara Lakeside", caption: "Beautiful lakeside view in Pokhara", category: "nature" },
+    { id: 4, src: Fournepal, alt: "Bhaktapur", caption: "Ancient city with medieval architecture", category: "culture" },
+    { id: 5, src: Fivenepal, alt: "Annapurna Circuit", caption: "Scenic mountain trekking routes", category: "adventure" },
+    { id: 6, src: Sixnepal, alt: "Lumbini", caption: "Birthplace of Buddha with sacred gardens", category: "culture" },
+    { id: 7, src: Sevennepal, alt: "Chitwan National Park", caption: "Wildlife safari in jungle grasslands", category: "nature" },
+    { id: 8, src: Eightnepal, alt: "Nepal Himalayas", caption: "Breathtaking Himalayan mountain ranges", category: "nature" },
+    { id: 9, src: Ninenepal, alt: "Traditional Nepali Architecture", caption: "Colorful traditional houses and temples", category: "culture" },
   ]
 };
 
@@ -162,9 +291,10 @@ const getMainImage = (slug: string): string => {
     japan: japanImage,
     europe: europeImage,
     rajasthan: heroImage,
-    singapore: heroImage,
-    kerala: heroImage,
+    singapore: Onesingapore,
+    kerala: keralaImg,
     andaman: andamanIMg,
+    nepal: nepalImg,
     'south-africa': southAfricaImg,
     australia: australiaImg,
     baku: bakuImg,

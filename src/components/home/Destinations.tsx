@@ -15,14 +15,19 @@ import andamanIMg from "@/assets/upcoming departure images/andaman-tour.png";
 import australiaImg from "@/assets/upcoming departure images/australia-tour.png";
 import bakuImg from "@/assets/upcoming departure images/baku-tour.png";
 import baliImg from "@/assets/upcoming departure images/bali-tour.png";
+import keralaImg from "@/assets/upcoming departure images/kerala-tour.png";
+import nepalImg from "@/assets/Nepal/nepal-tour.png";
+import japanImg from "@/assets/upcoming departure images/japan.png";
+import dubaiImg from "@/assets/upcoming departure images/dubai.png";
+import europeImg from "@/assets/Europe/europe-tour.png";
 
 const destinationImages: Record<string, string> = {
-  "japan-2026": japanImage,
-  "dubai-2025": dubaiImage,
-  "europe-2026": europeImage,
-  "kerala-2025": baliImage,
+  "japan-2026": japanImg,
+  "dubai-2025": dubaiImg,
+  "europe-2026": europeImg,
+  "kerala-2025": keralaImg,
   "andaman-2025": andamanIMg,
-  "nepal-2025": japanImage,
+  "nepal-2026": nepalImg,
   "bali-2026": baliImg,
   "baku-2026": bakuImg,
   "australia-2026": australiaImg,
@@ -38,7 +43,7 @@ const destinationMeta: Record<
   "europe-2026": { region: "Europe", tags: ["Historic", "Scenic", "First-time"], stats: { tours: 24, travelers: 890 } },
   "kerala-2025": { region: "India", tags: ["Backwaters", "Nature", "Relaxing"], stats: { tours: 10, travelers: 380 } },
   "andaman-2025": { region: "India", tags: ["Beach", "Islands", "Adventure"], stats: { tours: 8, travelers: 290 } },
-  "nepal-2025": { region: "Asia", tags: ["Spiritual", "Mountains", "Heritage"], stats: { tours: 6, travelers: 180 } },
+  "nepal-2026": { region: "Asia", tags: ["Spiritual", "Mountains", "Heritage"], stats: { tours: 6, travelers: 180 } },
   "bali-2026": { region: "Asia", tags: ["Beach", "Culture", "Romantic"], stats: { tours: 10, travelers: 420 } },
   "baku-2026": { region: "Asia", tags: ["Modern", "Historic", "Unique"], stats: { tours: 5, travelers: 150 } },
   "australia-2026": { region: "Oceania", tags: ["Wildlife", "Nature", "Adventure"], stats: { tours: 4, travelers: 120 } },

@@ -169,64 +169,28 @@ const Learn = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl">
-                {category.articles.map((article, articleIdx) => {
-                  const getBlogSlug = (title: string) => {
-                    switch (title) {
-                      case "First-time Europe traveller? Start here":
-                        return "/learn/first-time-europe-traveler";
-                      case "Travel Insurance: What You Need to Know":
-                        return "/learn/travel-insurance-explained";
-                      case "Important Documents Checklist":
-                        return "/learn/visa-documents-checklist";
-                      default:
-                        return null;
-                    }
-                  };
-
-                  const blogSlug = getBlogSlug(article.title);
-                  const CardComponent = blogSlug ? Link : 'div';
-                  const cardProps = blogSlug ? { to: blogSlug } : {};
-
-                  return (
-                    <CardComponent key={articleIdx} {...cardProps}>
-                      <Card
-                        className={`p-6 border-border hover:border-primary transition-all duration-500 hover:shadow-2xl cursor-pointer group rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 hover:from-primary/10 hover:to-primary/20 transform hover:-translate-y-1 ${blogSlug ? 'relative overflow-hidden' : ''}`}
-                      >
-                        {blogSlug && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        )}
-                        <div className={`flex flex-wrap gap-2 mb-3 ${blogSlug ? 'relative' : ''}`}>
-                          {article.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary" className={`text-xs group-hover:bg-primary group-hover:text-white transition-colors duration-300 ${blogSlug ? 'relative' : ''}`}>
-                              {tag}
-                            </Badge>
-                          ))}
-                          {blogSlug && (
-                            <Badge className="bg-primary text-primary-foreground text-xs animate-pulse">
-                              📖 Blog Post
-                            </Badge>
-                          )}
-                        </div>
-                        <h3 className={`text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors ${blogSlug ? 'relative' : ''}`}>
-                          {article.title}
-                        </h3>
-                        <p className={`text-muted-foreground mb-4 ${blogSlug ? 'relative' : ''}`}>{article.description}</p>
-                        <div className={`flex items-center gap-2 text-sm text-muted-foreground ${blogSlug ? 'relative' : ''}`}>
-                          <Clock className="w-4 h-4" />
-                          <span>{article.readTime}</span>
-                          {blogSlug && (
-                            <span className="ml-auto text-primary font-medium group-hover:translate-x-1 transition-transform">
-                              Read →
-                            </span>
-                          )}
-                        </div>
-                        {blogSlug && (
-                          <div className="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"></div>
-                        )}
-                      </Card>
-                    </CardComponent>
-                  );
-                })}
+                {category.articles.map((article, articleIdx) => (
+                  <Card
+                    key={articleIdx}
+                    className="p-6 border-border hover:border-primary transition-all hover:shadow-lg cursor-pointer group"
+                  >
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {article.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">{article.description}</p>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Clock className="w-4 h-4" />
+                      <span>{article.readTime}</span>
+                    </div>
+                  </Card>
+                ))}
               </div>
             </div>
           </section>
