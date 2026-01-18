@@ -72,6 +72,26 @@ import andamanCommunity2 from "@/assets/andaman community/WhatsApp Image 2025-01
 import andamanCommunity3 from "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.25.39 (1).jpeg";
 import andamanCommunity4 from "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.25.40.jpeg";
 import andamanCommunity5 from "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.26.13 (1).jpeg";
+import andamanCommunity6 from "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.27.21 (1).jpeg";
+import andamanCommunity7 from "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.27.22 (2).jpeg";
+import andamanCommunity8 from "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.27.42.jpeg";
+import andamanCommunity9 from "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.27.48.jpeg";
+import andamanCommunity10 from "@/assets/andaman community/WhatsApp Image 2025-01-25 at 12.02.54.jpeg";
+import andamanCommunity11 from "@/assets/andaman community/WhatsApp Image 2025-01-25 at 12.03.40 (2).jpeg";
+import andamanCommunity12 from "@/assets/andaman community/WhatsApp Image 2025-01-25 at 12.03.46.jpeg";
+import andamanCommunity13 from "@/assets/andaman community/WhatsApp Image 2025-01-25 at 14.40.01 (1).jpeg";
+import andamanCommunity14 from "@/assets/andaman community/WhatsApp Image 2025-01-25 at 22.56.58.jpeg";
+import andamanCommunity15 from "@/assets/andaman community/WhatsApp Image 2025-01-25 at 22.57.03.jpeg";
+import andamanCommunity16 from "@/assets/andaman community/WhatsApp Image 2025-01-25 at 22.57.04 (2).jpeg";
+import andamanCommunity17 from "@/assets/andaman community/WhatsApp Image 2025-01-26 at 14.09.33.jpeg";
+import andamanCommunity18 from "@/assets/andaman community/WhatsApp Image 2025-01-26 at 14.09.44 (1).jpeg";
+import andamanCommunity19 from "@/assets/andaman community/WhatsApp Image 2025-01-27 at 20.13.13 (1).jpeg";
+import andamanCommunity20 from "@/assets/andaman community/WhatsApp Image 2025-01-27 at 20.26.02 (1).jpeg";
+import andamanCommunity21 from "@/assets/andaman community/WhatsApp Image 2025-01-27 at 20.28.48.jpeg";
+import andamanCommunity22 from "@/assets/andaman community/WhatsApp Image 2025-01-27 at 20.28.50.jpeg";
+import andamanCommunity23 from "@/assets/andaman community/WhatsApp Image 2025-01-28 at 16.06.37.jpeg";
+import andamanCommunity24 from "@/assets/andaman community/WhatsApp Image 2025-01-29 at 09.07.59.jpeg";
+
 
 import keralaCommunity1 from "@/assets/kerala community/WhatsApp Image 2025-10-24 at 10.01.14 PM.jpeg";
 import keralaCommunity2 from "@/assets/kerala community/WhatsApp Image 2025-10-24 at 10.01.23 PM.jpeg";
@@ -216,11 +236,25 @@ const makeTenPhotos = (label: string, cover: string) => {
       andamanCommunity3,
       andamanCommunity4,
       andamanCommunity5,
-      "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.27.21 (1).jpeg",
-      "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.27.22 (2).jpeg",
-      "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.27.42.jpeg",
-      "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.27.48.jpeg",
-      "@/assets/andaman community/WhatsApp Image 2025-01-25 at 12.02.54.jpeg"
+      andamanCommunity6,
+      andamanCommunity7,
+      andamanCommunity8,
+      andamanCommunity9,
+      andamanCommunity10,
+      andamanCommunity11,
+      andamanCommunity12,
+      andamanCommunity13,
+      andamanCommunity14,
+      andamanCommunity15,
+      andamanCommunity16,
+      andamanCommunity17,
+      andamanCommunity18,
+      andamanCommunity19,
+      andamanCommunity20,
+      andamanCommunity21,
+      andamanCommunity22,
+      andamanCommunity23,
+      andamanCommunity24,
     ],
     "South Africa": [
       southAfricaCommunity1,
@@ -268,10 +302,10 @@ const PAGE_SPANS = [
   "col-span-2 row-span-2 md:col-span-2 md:row-span-2",
   "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
   "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
-  "col-span-2 row-span-1 md:col-span-1 md:row-span-1",
-  "col-span-2 row-span-1 md:col-span-1 md:row-span-1",
-  "col-span-2 row-span-1 md:col-span-1 md:row-span-1",
-  "col-span-2 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-2 row-span-1 md:col-span-3 md:row-span-1",
+  "col-span-2 row-span-1 md:col-span-3 md:row-span-1",
+  "col-span-2 row-span-1 md:col-span-3 md:row-span-1",
+  "col-span-2 row-span-1 md:col-span-3 md:row-span-1",
 ];
 
 export const Community = ({ variant = "home" }: CommunityProps) => {
@@ -323,7 +357,7 @@ export const Community = ({ variant = "home" }: CommunityProps) => {
           </div>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl md:text-6xl font-bold text-black mb-3 sm:mb-4 px-2">
-            From Our <span className="text-accent">Community</span>
+            Moments from our <span className="text-accent">Happy Travellers</span>
           </h2>
 
           <p className="text-black max-w-xs sm:max-w-sm md:max-w-2xl mx-auto text-sm sm:text-base md:text-lg px-4">

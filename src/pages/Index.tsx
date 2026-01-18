@@ -209,6 +209,16 @@ useEffect(() => {
           </div>
         </div>
 
+        <div
+          ref={community.ref}
+          className={`transition-all duration-1000 ${
+            community.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <Community />
+        </div>
+
+
         {/* Story Bridge 3 - Invitation */}
         <div 
           ref={bridge3.ref}
@@ -461,14 +471,6 @@ useEffect(() => {
           </div>
         </div>
 
-        <div
-          ref={community.ref}
-          className={`transition-all duration-1000 ${
-            community.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          <Community />
-        </div>
 
         {/* Story Bridge 6 - Learning Transition */}
         {/* <div 
