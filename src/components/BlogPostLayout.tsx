@@ -3,8 +3,9 @@ import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Clock, Share2, Bookmark } from "lucide-react";
+import { ArrowLeft, Clock, Share2, Bookmark, Calendar, User, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface BlogPostLayoutProps {
   title: string;
@@ -33,110 +34,217 @@ export const BlogPostLayout = ({
   relatedArticles = []
 }: BlogPostLayoutProps) => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-primary/5 relative">
+      {/* Background decorations */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
+        <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-highlight/5 rounded-full blur-3xl -translate-x-1/2" />
+        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-cta/5 rounded-full blur-3xl" />
+      </div>
+
       <Navigation />
 
-      <main className="pt-16">
+      <main className="pt-16 relative z-10">
         {/* Hero Section */}
-        <section className="py-8 md:py-12 bg-gradient-to-b from-primary/5 to-background">
+        <motion.section 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="py-12 md:py-20"
+        >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <Link to="/learn" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-4 md:mb-6 group text-sm md:text-base">
-                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                Back to Learn
-              </Link>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <Link 
+                  to="/learn" 
+                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-6 group text-sm font-medium bg-card/50 backdrop-blur-sm px-4 py-2 rounded-full border border-border/30 hover:border-primary/30 transition-all"
+                >
+                  <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                  Back to Learn
+                </Link>
+              </motion.div>
 
-              <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                <Badge variant="secondary" className="text-xs">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex flex-wrap items-center gap-3 mb-6"
+              >
+                <Badge className="bg-primary/10 text-primary border-0 px-4 py-1.5 text-sm font-medium">
                   {category}
                 </Badge>
-                <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
                   <Clock className="w-4 h-4" />
                   {readTime}
                 </span>
-              </div>
+                {publishedDate && (
+                  <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                    <Calendar className="w-4 h-4" />
+                    {publishedDate}
+                  </span>
+                )}
+              </motion.div>
 
-              <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4 leading-tight">
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight font-heading"
+              >
                 {title}
-              </h1>
+              </motion.h1>
 
               {subtitle && (
-                <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-6">
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
+                >
                   {subtitle}
-                </p>
+                </motion.p>
               )}
 
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-sm font-medium text-primary">
-                      {author.charAt(0)}
-                    </span>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-6 border-t border-border/30"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-highlight p-0.5">
+                    <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
+                      <User className="w-5 h-5 text-primary" />
+                    </div>
                   </div>
                   <div>
-                    <p className="font-medium text-foreground">{author}</p>
-                    {publishedDate && (
-                      <p className="text-sm text-muted-foreground">{publishedDate}</p>
-                    )}
+                    <p className="font-semibold text-foreground">{author}</p>
+                    <p className="text-sm text-muted-foreground">Travel Expert</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 self-start sm:self-center">
-                  <Button variant="ghost" size="sm">
+                <div className="flex items-center gap-2">
+                  <Button variant="outline" size="sm" className="rounded-full gap-2">
                     <Share2 className="w-4 h-4" />
+                    Share
                   </Button>
-                  <Button variant="ghost" size="sm">
+                  <Button variant="outline" size="sm" className="rounded-full gap-2">
                     <Bookmark className="w-4 h-4" />
+                    Save
                   </Button>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Content Section */}
+        <motion.section 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="py-8 md:py-12"
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 md:p-10 lg:p-12 shadow-xl">
+                <div className="prose prose-lg max-w-none 
+                  prose-headings:font-heading prose-headings:text-foreground prose-headings:font-bold
+                  prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:mt-10 prose-h2:mb-6 prose-h2:pb-3 prose-h2:border-b prose-h2:border-border/30
+                  prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
+                  prose-p:text-foreground/80 prose-p:leading-relaxed
+                  prose-li:text-foreground/80
+                  prose-strong:text-foreground prose-strong:font-semibold
+                  prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                ">
+                  {children}
                 </div>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Content Section */}
-        <section className="py-8 md:py-12">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="prose prose-sm md:prose-base lg:prose-lg max-w-none">
-                {children}
-              </div>
-            </div>
-          </div>
-        </section>
+        </motion.section>
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
-          <section className="py-8 md:py-12 bg-secondary/20">
+          <section className="py-16 md:py-20">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">Related Articles</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-                  {relatedArticles.map((article) => (
-                    <Card key={article.slug} className="p-4 md:p-6 hover:shadow-lg transition-shadow">
-                      <div className="flex items-center gap-2 mb-2 md:mb-3">
-                        <Badge variant="outline" className="text-xs">
-                          {article.category}
-                        </Badge>
-                        <span className="text-xs text-muted-foreground">
-                          {article.readTime}
-                        </span>
-                      </div>
-                      <h4 className="font-bold text-foreground mb-2 hover:text-primary cursor-pointer text-sm md:text-base">
-                        {article.title}
-                      </h4>
-                      <Link to={article.slug}>
-                        <Button variant="ghost" size="sm" className="p-0 h-auto text-primary hover:text-primary/80 text-sm">
-                          Read More →
-                        </Button>
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-10 h-10 rounded-xl bg-highlight/10 flex items-center justify-center">
+                    <Sparkles className="w-5 h-5 text-highlight" />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground font-heading">
+                    Continue Reading
+                  </h3>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {relatedArticles.map((article, index) => (
+                    <motion.div
+                      key={article.slug}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <Link to={article.slug} className="block group">
+                        <Card className="p-6 h-full bg-card/60 backdrop-blur-sm border-border/30 hover:border-primary/50 hover:shadow-xl transition-all duration-300 rounded-2xl">
+                          <div className="flex items-center gap-2 mb-3">
+                            <Badge variant="secondary" className="text-xs">
+                              {article.category}
+                            </Badge>
+                            <span className="text-xs text-muted-foreground flex items-center gap-1">
+                              <Clock className="w-3 h-3" />
+                              {article.readTime}
+                            </span>
+                          </div>
+                          <h4 className="font-bold text-foreground mb-3 group-hover:text-primary transition-colors text-lg leading-snug">
+                            {article.title}
+                          </h4>
+                          <span className="inline-flex items-center gap-2 text-sm text-primary font-medium group-hover:gap-3 transition-all">
+                            Read Article <ArrowRight className="w-4 h-4" />
+                          </span>
+                        </Card>
                       </Link>
-                    </Card>
+                    </motion.div>
                   ))}
                 </div>
               </div>
             </div>
           </section>
         )}
+
+        {/* CTA Section */}
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-primary/10 via-highlight/10 to-cta/10 rounded-3xl p-8 md:p-12 text-center border border-border/30">
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-heading">
+                  Ready to Start Your Journey?
+                </h3>
+                <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
+                  Explore our curated tour packages and let us handle all the planning for your next adventure.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link to="/explore">
+                    <Button className="rounded-full px-8 py-6 text-base bg-primary hover:bg-primary/90">
+                      Explore Destinations
+                    </Button>
+                  </Link>
+                  <Link to="/contact">
+                    <Button variant="outline" className="rounded-full px-8 py-6 text-base">
+                      Contact Us
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
