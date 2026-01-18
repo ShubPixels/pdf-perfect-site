@@ -7,6 +7,8 @@ import { UpcomingDepartures } from "@/components/home/UpcomingDepartures";
 import { Destinations } from "@/components/home/Destinations";
 import { Community } from "@/components/home/Community";
 import { LearnLifestyle } from "@/components/home/LearnLifestyle";
+import { BlogsSection } from "@/components/home/BlogsSection";
+import { PhilosophySection } from "@/components/home/PhilosophySection";
 import { Quote, Compass, Map, Heart, Sparkles, Plane, Globe, Camera } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { motion } from "framer-motion";
@@ -29,6 +31,8 @@ const Index = () => {
   const bridge6 = useScrollReveal();
   const bridge7 = useScrollReveal();
   const learnLifestyle = useScrollReveal();
+  const blogs = useScrollReveal();
+  const philosophy = useScrollReveal();
   const finalBridge = useScrollReveal();
   const [bridge1Done, setBridge1Done] = useState(false);
   const [showStory, setShowStory] = useState(false);
@@ -534,6 +538,26 @@ useEffect(() => {
           }`}
         >
           <LearnLifestyle />
+        </div>
+
+        {/* Blogs Section */}
+        <div 
+          ref={blogs.ref}
+          className={`transition-all duration-1000 ${
+            blogs.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <BlogsSection />
+        </div>
+
+        {/* Philosophy Section */}
+        <div 
+          ref={philosophy.ref}
+          className={`transition-all duration-1000 ${
+            philosophy.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <PhilosophySection />
         </div>
 
         {/* Final Story Close */}
