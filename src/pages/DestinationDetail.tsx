@@ -48,6 +48,19 @@ import Seveneurope from "@/assets/Europe/7.png";
 import Eighteurope from "@/assets/Europe/8.png";
 import Nineeurope from "@/assets/Europe/9.png";
 
+//baku gallery images
+import Twobaku  from "@/assets/Baku/20250215_091615.jpg";
+import Onebaku from "@/assets/Baku/20250215_153534.jpg";
+import Threebaku from "@/assets/Baku/20250215_153822.jpg";
+import Fourbaku from "@/assets/Baku/20250216_134848.jpg";
+import Fivebaku from "@/assets/Baku/20250218_123633.jpg";
+import Sixbaku from "@/assets/Baku/20250218_125325.jpg";
+import Sevenbaku from "@/assets/Baku/20250218_131641.jpg";
+import Eightbaku from "@/assets/Baku/20250223_114453.jpg";
+import Ninebaku from "@/assets/Baku/20250223_123401.jpg";
+import Tenbaku from "@/assets/Baku/20250223_135311.jpg";
+
+
 // Bali gallery images
 import Onebali from "@/assets/Bali/1.png";
 import Twobali from "@/assets/Bali/2.png";
@@ -253,13 +266,18 @@ const destinationGalleries: Record<string, Array<{ id: number; src: string; alt:
     { id: 9, src: Nineaustralia, alt: "Twelve Apostles", caption: "Iconic limestone stacks on Victoria's coast", category: "nature" },
   ],
   baku: [
-    { id: 1, src: bakuImg, alt: "Baku Boulevard", caption: "Seaside promenade along the Caspian Sea", category: "city" },
-    { id: 2, src: heroImage, alt: "Old City", caption: "Historic walled city with ancient architecture", category: "culture" },
-    { id: 3, src: communityImage, alt: "Flame Towers", caption: "Modern skyscrapers resembling flames", category: "architecture" },
-    { id: 4, src: baliImage, alt: "Mud Volcanoes", caption: "Unique natural mud volcanoes in the region", category: "nature" },
-    { id: 5, src: europeImage, alt: "Caspian Sea", caption: "Beautiful coastline and waterfront views", category: "nature" },
-    { id: 6, src: japanImage, alt: "Heydar Aliyev Center", caption: "Futuristic cultural center designed by Zaha Hadid", category: "architecture" },
-  ],
+  { id: 1, src: Fivebaku,  alt: "I love Baku sign",         caption: "Iconic photo spot celebrating the city",                  category: "city" },
+  { id: 2, src: Twobaku,   alt: "Modern Baku skyline",      caption: "Contemporary architecture rising over the city",               category: "culture" },
+  { id: 3, src: Threebaku, alt: "Historic stone arches",    caption: "Ancient structures and layered history in the Old City",   category: "culture" },
+  // { id: 4, src: Fourbaku,  alt: "Mud volcanoes landscape",  caption: "Surreal mud volcano terrain near Baku",                   category: "nature" },
+  { id: 5, src: Onebaku,   alt: "Old City lane",            caption: "Narrow stone alleyways inside Icherisheher",           category: "architecture" },
+  { id: 6, src: Sixbaku,   alt: "Classic vintage car",      caption: "Retro automobile showcase in a museum-style display",     category: "culture" },
+  { id: 7, src: Sevenbaku, alt: "Heydar Aliyev Center",     caption: "Futuristic curves and landmark modern design",             category: "architecture" },
+  { id: 8, src: Eightbaku, alt: "City viewpoint panorama",  caption: "Wide skyline views from an elevated lookout",              category: "city" },
+  { id: 9, src: Ninebaku,  alt: "Historic fortress walls",  caption: "Old stone structures and city heritage",                   category: "culture" },
+  { id: 10, src: Tenbaku,  alt: "Palace grounds",           caption: "Grand building set within green gardens",                  category: "city" },
+],
+
   bali: [
     { id: 1, src: Onebali, alt: "Ubud Rice Terraces", caption: "Stunning terraced rice fields in the hills of Ubud", category: "nature" },
     { id: 2, src: Twobali, alt: "Tanah Lot Temple", caption: "Iconic sea temple on a rock formation at sunset", category: "culture" },
