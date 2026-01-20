@@ -281,7 +281,7 @@ useEffect(() => {
                 <div className="relative inline-block mb-8">
                   <div className="absolute inset-0 bg-gradient-to-r from-highlight/20 to-cta/20 rounded-full blur-xl" />
                   <div className="relative bg-card/50 backdrop-blur-sm border border-border/30 rounded-full px-6 py-3">
-                    <span className="text-sm font-medium text-muted-foreground">⭐ 500+ Happy Travelers</span>
+                    <span className="text-sm font-medium text-muted-foreground">⭐ 75k+ Happy Travelers</span>
                   </div>
                 </div>
                 
@@ -451,7 +451,7 @@ useEffect(() => {
               {/* Stats Row */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl md:text-4xl font-bold text-highlight mb-1">500+</p>
+                  <p className="text-3xl md:text-4xl font-bold text-highlight mb-1">75k+</p>
                   <p className="text-sm text-muted-foreground">Happy Travelers</p>
                 </div>
                 <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
@@ -463,7 +463,7 @@ useEffect(() => {
                   <p className="text-sm text-muted-foreground">Destinations</p>
                 </div>
                 <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
-                  <p className="text-3xl md:text-4xl font-bold text-green-500 mb-1">4.9</p>
+                  <p className="text-3xl md:text-4xl font-bold text-green-500 mb-1">4.7</p>
                   <p className="text-sm text-muted-foreground">Google Rating</p>
                 </div>
               </div>
