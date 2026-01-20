@@ -289,7 +289,7 @@ useEffect(() => {
                   But Don't Just Take Our <span className="text-highlight">Word For It</span>
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                  Real stories from real travelers. These memories were made with Sun Tourism.
+                  Real stories from real travelers. These memories were made with Sun Touriism.
                 </p>
               </div>
 
@@ -313,7 +313,7 @@ useEffect(() => {
                     </div>
                     <Quote className="h-10 w-10 text-highlight/30 mb-4" />
                     <p className="text-xl md:text-2xl font-medium text-foreground mb-6 leading-relaxed">
-                      "We planned Personalised Bali tour and Sun Tourism helped us plan and execute exactly as we wanted. 
+                      "We planned Personalised Bali tour and Sun Touriism helped us plan and execute exactly as we wanted. 
                       Once tour is planned, Sun Tour gives experience of sit back, relax and enjoy. 
                       Very well communication, very well execution. Always dil se dil tak ❤️"
                     </p>
@@ -403,7 +403,7 @@ useEffect(() => {
                       ))}
                     </div>
                     <p className="text-foreground mb-4 leading-relaxed">
-                      "As senior citizens, we were worried about long tours. But Sun Tourism made our 
+                      "As senior citizens, we were worried about long tours. But Sun Touriism made our 
                       Kerala trip so comfortable. Everything was taken care of!"
                     </p>
                   </div>

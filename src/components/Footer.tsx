@@ -174,7 +174,7 @@ export const Footer = () => {
                 Copyright © 2025 All rights reserved with Sun Touriism Internationall Private Limited.
               </p>
               <p className="flex items-center gap-1">
-                Website developed by Advybes Media LLP
+                Website developed by <a href="https://advybes.in/" target="_blank" rel="noopener noreferrer">Advybes Media LLP</a>
               </p>
             </div>
           </div>
