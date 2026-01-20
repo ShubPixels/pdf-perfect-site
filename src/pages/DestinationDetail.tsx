@@ -267,7 +267,7 @@ const destinationGalleries: Record<string, Array<{ id: number; src: string; alt:
   ],
   baku: [
   { id: 1, src: Fivebaku,  alt: "I love Baku sign",         caption: "Iconic photo spot celebrating the city",                  category: "city" },
-  { id: 2, src: Twobaku,   alt: "Modern Baku skyline",      caption: "Contemporary architecture rising over the city",               category: "culture" },
+  { id: 2, src: Twobaku,   alt: "Modern Baku skyline",      caption: "Contemporary architecture rising over the city",          category: "culture" },
   { id: 3, src: Threebaku, alt: "Historic stone arches",    caption: "Ancient structures and layered history in the Old City",   category: "culture" },
   // { id: 4, src: Fourbaku,  alt: "Mud volcanoes landscape",  caption: "Surreal mud volcano terrain near Baku",                   category: "nature" },
   { id: 5, src: Onebaku,   alt: "Old City lane",            caption: "Narrow stone alleyways inside Icherisheher",           category: "architecture" },
