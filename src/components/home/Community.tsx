@@ -60,12 +60,90 @@ import baliCommunity2 from "@/assets/bali community/WhatsApp Image 2025-01-04 at
 import baliCommunity3 from "@/assets/bali community/WhatsApp Image 2025-01-04 at 18.43.36.jpeg";
 import baliCommunity4 from "@/assets/bali community/WhatsApp Image 2025-01-04 at 18.43.37.jpeg";
 import baliCommunity5 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 17.10.15 (1).jpeg";
+import baliCommunity6 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.31.jpeg";
+import baliCommunity7 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.35 (1).jpeg";
+import baliCommunity8 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.38 (1).jpeg";
+import baliCommunity9 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.38 (2).jpeg";
+import baliCommunity10 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.40 (1).jpeg";
+import baliCommunity11 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.52.52 (1).jpeg";
+import baliCommunity12 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.54.27.jpeg";
+import baliCommunity13 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.54.38 (1).jpeg";
+import baliCommunity14 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.55.23.jpeg";
+import baliCommunity15 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.55.27.jpeg";
+import baliCommunity16 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.55.59.jpeg";
+import baliCommunity17 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.57.47.jpeg";
+import baliCommunity18 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.59.30.jpeg";
+import baliCommunity19 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.59.32 (2).jpeg";
+import baliCommunity20 from "@/assets/bali community/WhatsApp Image 2025-01-05 at 20.00.22.jpeg";
+import baliCommunity21 from "@/assets/bali community/WhatsApp Image 2025-01-07 at 20.32.25.jpeg";
+import baliCommunity22 from "@/assets/bali community/WhatsApp Image 2025-01-07 at 20.35.56.jpeg";
+import baliCommunity23 from "@/assets/bali community/WhatsApp Image 2025-01-07 at 20.36.22.jpeg";
+import baliCommunity24 from "@/assets/bali community/WhatsApp Image 2025-01-07 at 20.36.23 (1).jpeg";
+import baliCommunity25 from "@/assets/bali community/WhatsApp Image 2025-01-07 at 20.36.23.jpeg";
+import baliCommunity26 from "@/assets/bali community/WhatsApp Image 2025-01-08 at 20.51.46.jpeg";
+
 
 import australiaCommunity1 from "@/assets/australia community/20171030_190026.jpg";
 import australiaCommunity2 from "@/assets/australia community/20171031_031834.jpg";
 import australiaCommunity3 from "@/assets/australia community/20171031_095347.jpg";
 import australiaCommunity4 from "@/assets/australia community/20171031_095616.jpg";
 import australiaCommunity5 from "@/assets/australia community/20171031_100725.jpg";
+import australiaCommunity6 from "@/assets/australia community/20171031_100916.jpg";
+import australiaCommunity7 from "@/assets/australia community/20171031_101043.jpg";
+import australiaCommunity8 from "@/assets/australia community/20171031_101140.jpg";
+import australiaCommunity9 from "@/assets/australia community/20171031_101247.jpg";
+import australiaCommunity10 from "@/assets/australia community/20171031_101258.jpg";
+import australiaCommunity11 from "@/assets/australia community/20171031_102611.jpg";
+import australiaCommunity12 from "@/assets/australia community/20171031_102732.jpg";
+import australiaCommunity13 from "@/assets/australia community/20171031_123901.jpg";
+import australiaCommunity14 from "@/assets/australia community/20171031_134646.jpg";
+import australiaCommunity15 from "@/assets/australia community/20171031_135159.jpg";
+import australiaCommunity16 from "@/assets/australia community/20171031_135251.jpg";
+import australiaCommunity17 from "@/assets/australia community/20171031_141530.jpg";
+import australiaCommunity18 from "@/assets/australia community/20171031_141747.jpg";
+import australiaCommunity19 from "@/assets/australia community/20171101_112656.jpg";
+import australiaCommunity20 from "@/assets/australia community/20171101_113009.jpg";
+import australiaCommunity21 from "@/assets/australia community/20171101_154316.jpg";
+import australiaCommunity22 from "@/assets/australia community/20171101_154706.jpg";
+import australiaCommunity23 from "@/assets/australia community/20171101_164928.jpg";
+import australiaCommunity24 from "@/assets/australia community/20171109_104350.jpg";
+import australiaCommunity25 from "@/assets/australia community/20171109_104458.jpg";
+import australiaCommunity26 from "@/assets/australia community/20171109_112446.jpg";
+import australiaCommunity27 from "@/assets/australia community/20171111_130614.jpg";
+import australiaCommunity28 from "@/assets/australia community/20171113_163310.jpg";
+
+
+import omanCommunity1 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 1.12.45 PM.jpeg";
+import omanCommunity2 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 7.28.07 PM (1).jpeg";
+import omanCommunity3 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 7.28.08 PM (1).jpeg";
+import omanCommunity4 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 7.28.08 PM.jpeg";
+import omanCommunity5 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 7.28.09 PM (1).jpeg";
+import omanCommunity6 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.01 PM (1).jpeg";
+import omanCommunity7 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.01 PM.jpeg";
+import omanCommunity8 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.02 PM.jpeg";
+import omanCommunity9 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.03 PM (1).jpeg";
+import omanCommunity10 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.07 PM (1).jpeg";
+import omanCommunity11 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.12 PM.jpeg";
+import omanCommunity12 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.14 PM (1).jpeg";
+import omanCommunity13 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.14 PM.jpeg";
+import omanCommunity14 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.15 PM (1).jpeg";
+import omanCommunity15 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.15 PM (2).jpeg";
+import omanCommunity16 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.15 PM.jpeg";
+import omanCommunity17 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.16 PM (1).jpeg";
+import omanCommunity18 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 9.30.16 PM (2).jpeg";
+import omanCommunity19 from "@/assets/oman community/WhatsApp Image 2025-10-26 at 1.37.37 PM (5).jpeg";
+import omanCommunity20 from "@/assets/oman community/WhatsApp Image 2025-10-26 at 1.37.37 PM.jpeg";
+import omanCommunity21 from "@/assets/oman community/WhatsApp Image 2025-10-26 at 9.03.09 AM.jpeg";
+import omanCommunity22 from "@/assets/oman community/WhatsApp Image 2025-10-26 at 9.03.10 AM.jpeg";
+import omanCommunity23 from "@/assets/oman community/WhatsApp Image 2025-10-28 at 5.20.01 PM (1).jpeg";
+import omanCommunity24 from "@/assets/oman community/WhatsApp Image 2025-10-28 at 5.20.01 PM.jpeg";
+import omanCommunity25 from "@/assets/oman community/WhatsApp Image 2025-10-28 at 5.20.02 PM.jpeg";
+import omanCommunity26 from "@/assets/oman community/WhatsApp Image 2025-10-28 at 6.10.52 PM.jpeg";
+import omanCommunity27 from "@/assets/oman community/WhatsApp Image 2025-10-28 at 6.11.14 PM.jpeg";
+import omanCommunity28 from "@/assets/oman community/WhatsApp Image 2025-10-28 at 6.11.40 PM.jpeg";
+import omanCommunity29 from "@/assets/oman community/WhatsApp Image 2025-10-30 at 5.30.41 PM (2).jpeg";
+import omanCommunity30 from "@/assets/oman community/WhatsApp Image 2025-10-30 at 5.30.41 PM (3).jpeg";
+
 
 import andamanCommunity1 from "@/assets/andaman community/WhatsApp Image 2025-01-24 at 12.19.05.jpeg";
 import andamanCommunity2 from "@/assets/andaman community/WhatsApp Image 2025-01-24 at 22.25.38.jpeg";
@@ -188,23 +266,61 @@ const makeTenPhotos = (label: string, cover: string) => {
       baliCommunity3,
       baliCommunity4,
       baliCommunity5,
-      "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.31.jpeg",
-      "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.35 (1).jpeg",
-      "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.38 (1).jpeg",
-      "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.38 (2).jpeg",
-      "@/assets/bali community/WhatsApp Image 2025-01-05 at 19.26.40 (1).jpeg"
+      baliCommunity6,
+      baliCommunity7,
+      baliCommunity8,
+      baliCommunity9,
+      baliCommunity10,
+      baliCommunity11,
+      baliCommunity12,
+      baliCommunity13,
+      baliCommunity14,
+      baliCommunity15,
+      baliCommunity16,
+      baliCommunity17,
+      baliCommunity18,
+      baliCommunity19,
+      baliCommunity20,
+      baliCommunity21,
+      baliCommunity22,
+      baliCommunity23,
+      baliCommunity24,
+      baliCommunity25,
+      baliCommunity26,
+
     ],
     "Oman": [
-      dubaiCommunity1, // Using Dubai community photos as fallback for Oman
-      dubaiCommunity2,
-      dubaiCommunity3,
-      dubaiCommunity4,
-      dubaiCommunity5,
-      "@/assets/dubai community/IMG_0083.HEIC",
-      "@/assets/dubai community/IMG_0215.HEIC",
-      "@/assets/dubai community/IMG_0217.HEIC",
-      "@/assets/dubai community/IMG_0218.HEIC",
-      "@/assets/dubai community/IMG_0220.HEIC"
+      omanCommunity1,
+      omanCommunity2,
+      omanCommunity3,
+      omanCommunity4,
+      omanCommunity5,
+      omanCommunity6,
+      omanCommunity7,
+      omanCommunity8,
+      omanCommunity9,
+      omanCommunity10,
+      omanCommunity11,
+      omanCommunity12,
+      omanCommunity13,
+      omanCommunity14,
+      omanCommunity15,
+      omanCommunity16,
+      omanCommunity17,
+      omanCommunity18,
+      omanCommunity19,
+      omanCommunity20,
+      omanCommunity21,
+      omanCommunity22,
+      omanCommunity23,
+      omanCommunity24,
+      omanCommunity25,
+      omanCommunity26,
+      omanCommunity27,
+      omanCommunity28,
+      omanCommunity29,
+      omanCommunity30,
+
     ],
     "Kerala": [
       keralaCommunity1,
@@ -224,11 +340,30 @@ const makeTenPhotos = (label: string, cover: string) => {
       australiaCommunity3,
       australiaCommunity4,
       australiaCommunity5,
-      "@/assets/australia community/20171031_100916.jpg",
-      "@/assets/australia community/20171031_101043.jpg",
-      "@/assets/australia community/20171031_101140.jpg",
-      "@/assets/australia community/20171031_101247.jpg",
-      "@/assets/australia community/20171031_101258.jpg"
+      australiaCommunity6,
+      australiaCommunity7,
+      australiaCommunity8,
+      australiaCommunity9,
+      australiaCommunity10,
+      australiaCommunity11,
+      australiaCommunity12,
+      australiaCommunity13,
+      australiaCommunity14,
+      australiaCommunity15,
+      australiaCommunity16,
+      australiaCommunity17,
+      australiaCommunity18,
+      australiaCommunity19,
+      australiaCommunity20,
+      australiaCommunity21,
+      australiaCommunity22,
+      australiaCommunity23,
+      australiaCommunity24,
+      australiaCommunity25,
+      australiaCommunity26,
+      australiaCommunity27,
+      australiaCommunity28,
+
     ],
     "Andaman": [
       andamanCommunity1,
@@ -319,7 +454,7 @@ export const Community = ({ variant = "home" }: CommunityProps) => {
       { id: 2, destination: "Dubai", batch: "September 2025", coverImage: dubaiCommunity1, photos: makeTenPhotos("Dubai", dubaiCommunity1) },
       { id: 3, destination: "Europe", batch: "August 2025", coverImage: europeCommunity1, photos: makeTenPhotos("Europe", europeCommunity1) },
       { id: 4, destination: "Bali", batch: "July 2025", coverImage: baliCommunity1, photos: makeTenPhotos("Bali", baliCommunity1) },
-      { id: 5, destination: "Oman", batch: "June 2025", coverImage: dubaiCommunity1, photos: makeTenPhotos("Oman", dubaiCommunity1) },
+      { id: 5, destination: "Oman", batch: "June 2025", coverImage: omanCommunity1, photos: makeTenPhotos("Oman", dubaiCommunity1) },
       { id: 6, destination: "Kerala", batch: "May 2025", coverImage: keralaCommunity1, photos: makeTenPhotos("Kerala", keralaCommunity1) },
       { id: 7, destination: "Australia", batch: "April 2025", coverImage: australiaCommunity1, photos: makeTenPhotos("Australia", australiaCommunity1) },
       { id: 8, destination: "Andaman", batch: "March 2025", coverImage: andamanCommunity1, photos: makeTenPhotos("Andaman", andamanCommunity1) },

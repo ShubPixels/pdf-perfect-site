@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import Ashoksir from "@/assets/Ashok Sir.jpg";
 import Nishitamaam from "@/assets/Nishita Maam.jpg";
+import SunTeam from "@/assets/sun team.png";
 import { MapPin, Users, Globe, Award, Linkedin, Mail, Briefcase, GraduationCap, Heart, Quote, Star, Calendar, Plane } from "lucide-react";
 
 const About = () => {
@@ -17,7 +18,7 @@ const About = () => {
       role: "Specialist for Dubai, Singapore, Japan & Europe Tours",
       img: Nishitamaam,
       bio: "A travel expert who has led thousands of travelers on memorable tours across Dubai, Singapore, Japan, and Europe. Her practical knowledge comes from years of exploring these destinations personally, making her guidance both insightful and real. From Dubai’s luxury malls to its lively street shopping, and the vibrant spirit of Global Village, she knows exactly where travelers find the best experiences. Having visited Japan in every season, she can tell you which park blooms with the most beautiful cherry blossoms or where autumn colors are most magical.",
-      thoughts:"",
+      thoughts:"Real travel isn’t rushed - it’s felt. I plan every day so you can relax, explore confidently, and return with stories you’ll actually remember.",
       career: [
         { year: "1995", milestone: "Started career in hospitality industry", icon: Briefcase },
         { year: "2002", milestone: "Completed Tourism Management certification", icon: GraduationCap },
@@ -33,7 +34,7 @@ const About = () => {
       name: "Mr. Ashok Malik",
       role: "Expert in Australia, New Zealand, Europe, Canada & Rajasthan Tours",
       img: Ashoksir,
-      thoughts:"",
+      thoughts:"Travel is best when it’s effortless. My job is to handle the details, so you can focus on the experience - with care, pace, and trust.",
       bio: "Meet Mr. Ashok Malik, a seasoned travel expert with nearly two decades of experience curating unforgettable journeys across Australia, New Zealand, Canada, Europe, and Rajasthan. Having traveled to Europe more than 100 times, he knows the continent’s culture, cuisine, and charm inside out.",
       career: [
         { year: "1998", milestone: "Degree in Hospitality Management", icon: GraduationCap },
@@ -79,7 +80,7 @@ const About = () => {
               Our Story
             </span>
             <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6">
-              Crafting <span className="text-highlight">Unforgettable</span>
+              Crafting <span className="text-accent">Unforgettable</span>
               <br />Journeys Since 2007
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -97,12 +98,12 @@ const About = () => {
           >
             {[
               { number: "50+", label: "Destinations" },
-              { number: "10K+", label: "Happy Travelers" },
-              { number: "500+", label: "Tours Completed" },
-              { number: "17", label: "Years of Excellence" }
+              { number: "75K+", label: "Happy Travelers" },
+              { number: "15k+", label: "Tours Completed" },
+              { number: "19", label: "Years of Excellence" }
             ].map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-highlight">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-bold text-accent">{stat.number}</div>
                 <div className="text-muted-foreground mt-1">{stat.label}</div>
               </div>
             ))}
@@ -121,8 +122,8 @@ const About = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-highlight/20 to-cta/20 rounded-3xl blur-2xl" />
               <img 
-                src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=500&fit=crop"
-                alt="Travel adventure"
+                src={SunTeam}
+                alt="Sun Tourism Team"
                 className="relative rounded-3xl w-full h-[400px] object-cover"
               />
               <div className="absolute -bottom-6 -right-6 bg-cta text-foreground p-6 rounded-2xl shadow-xl">
@@ -133,7 +134,7 @@ const About = () => {
 
             <div>
               <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Our <span className="text-highlight">Mission</span>
+                Our <span className="text-accent">Mission</span>
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                 We believe travel should be transformative, not transactional. Every journey 
@@ -169,7 +170,7 @@ const About = () => {
               Leadership
             </span>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground">
-              Meet The <span className="text-highlight">Visionaries</span>
+              Meet The <span className="text-accent">Visionaries</span>
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
               The passionate leaders behind Sun Tourism's commitment to making travel dreams come true
@@ -241,7 +242,7 @@ const About = () => {
                   <div className={`${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
                     <div className="relative">
                       <h4 className="font-heading text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                        <Briefcase className="h-5 w-5 text-cta" />
+                        <Briefcase className="h-5 w-5 text-accent" />
                         Career Journey
                       </h4>
                       
@@ -261,7 +262,7 @@ const About = () => {
                               </div>
                               
                               <div className="bg-card/30 backdrop-blur-sm rounded-xl p-4 border border-border/30 group-hover:border-highlight/30 transition-all duration-300">
-                                <span className="text-xs font-bold text-cta">{item.year}</span>
+                                <span className="text-xs font-bold text-accent">{item.year}</span>
                                 <p className="text-foreground text-sm mt-1">{item.milestone}</p>
                               </div>
                             </div>
