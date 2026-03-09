@@ -122,21 +122,13 @@ export const Footer = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm mb-6">
-                <li>
-                  <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="/explore" className="text-muted-foreground hover:text-primary transition-colors">
-                    Explore Destinations
-                  </a>
-                </li>
-                <li>
-                  <a href="/community" className="text-muted-foreground hover:text-primary transition-colors">
-                    Community Stories
-                  </a>
-                </li>
+                {navLinks.map((link) => (
+                  <li key={link.path}>
+                    <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors">
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
                 <li>
                   <a
                     href="https://suntourismpune.co.in"

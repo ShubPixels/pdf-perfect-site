@@ -1,22 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Plane } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { navLinks } from "@/config/navigation";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Explore", path: "/explore" },
-    { name: "Community", path: "/community" },
-    { name: "Learn", path: "/learn" },
-    // { name: "Lifestyle", path: "/lifestyle" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
-  ];
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
