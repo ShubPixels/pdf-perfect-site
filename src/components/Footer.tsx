@@ -1,5 +1,7 @@
 import { Heart, Phone, Mail, MapPin, Instagram, Facebook, Youtube, Linkedin, MessageCircle, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useVisitorCounter } from "@/hooks/use-visitor-counter";
+import { navLinks } from "@/config/navigation";
 
 export const Footer = () => {
   const { count, loading } = useVisitorCounter();
