@@ -34,7 +34,9 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<PageTransition><Index /></PageTransition>} />
         <Route path="/tour-diary/:tourId" element={<PageTransition><TourDiary /></PageTransition>} />
         <Route path="/destination/:destinationId" element={<PageTransition><DestinationDetail /></PageTransition>} />
-        <Route path="/explore" element={<PageTransition><Explore /></PageTransition>} />
+        <Route path="/stories" element={<PageTransition><Community /></PageTransition>} />
+        {/* Redirects for old routes */}
+        <Route path="/explore" element={<PageTransition><Community /></PageTransition>} />
         <Route path="/community" element={<PageTransition><Community /></PageTransition>} />
         <Route path="/learn" element={<PageTransition><Learn /></PageTransition>} />
         <Route path="/learn/first-time-europe-traveler" element={<PageTransition><FirstTimeEuropeTraveler /></PageTransition>} />
