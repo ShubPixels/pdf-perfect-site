@@ -501,9 +501,9 @@ export const Community = ({ variant = "home" }: CommunityProps) => {
 
           {variant === "home" && (
             <div className="flex justify-center mt-4 sm:mt-6">
-              <Link to="/community">
+              <Link to="/stories">
                 <Button variant="outline" className="rounded-full px-4 py-2 sm:px-6 sm:py-3 group text-black text-sm sm:text-base">
-                  View Community
+                  View All Stories
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
