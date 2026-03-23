@@ -9,8 +9,8 @@ import { PageTransition } from "@/components/PageTransition";
 import Index from "./pages/Index";
 import TourDiary from "./pages/TourDiary";
 import DestinationDetail from "./pages/DestinationDetail";
-import Explore from "./pages/Explore";
 import Community from "./pages/Community";
+import StoriesDestination from "./pages/StoriesDestination";
 import Learn from "./pages/Learn";
 import Lifestyle from "./pages/Lifestyle";
 import About from "./pages/About";
@@ -35,6 +35,7 @@ const AnimatedRoutes = () => {
         <Route path="/tour-diary/:tourId" element={<PageTransition><TourDiary /></PageTransition>} />
         <Route path="/destination/:destinationId" element={<PageTransition><DestinationDetail /></PageTransition>} />
         <Route path="/stories" element={<PageTransition><Community /></PageTransition>} />
+        <Route path="/stories/:destinationSlug" element={<PageTransition><StoriesDestination /></PageTransition>} />
         {/* Redirects for old routes */}
         <Route path="/explore" element={<PageTransition><Community /></PageTransition>} />
         <Route path="/community" element={<PageTransition><Community /></PageTransition>} />

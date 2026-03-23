@@ -50,7 +50,7 @@ const About = () => {
   ];
 
   const values = [
-    { icon: Globe, title: "Global Reach", desc: "Curated experiences across 50+ destinations worldwide" },
+    { icon: Globe, title: "Global Reach", desc: "Curated experiences across 30+ destinations worldwide" },
     { icon: Users, title: "Community First", desc: "Building connections that last beyond the journey" },
     { icon: Award, title: "Excellence", desc: "Award-winning service recognized globally" },
     { icon: MapPin, title: "Local Expertise", desc: "Deep partnerships with local guides and experts" }
@@ -97,10 +97,10 @@ const About = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
           >
             {[
-              { number: "50+", label: "Destinations" },
-              { number: "75K+", label: "Happy Travelers" },
-              { number: "15k+", label: "Tours Completed" },
-              { number: "19", label: "Years of Excellence" }
+              { number: "30+", label: "Destinations" },
+              { number: "100K+", label: "Happy Travellers" },
+              { number: "15K+", label: "Tours Completed" },
+              { number: "18+", label: "Years of Experience" }
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-accent">{stat.number}</div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { ArrowDown, Play, MapPin, Plane } from "lucide-react";
-import heroImage from "@/assets/hero-travel.jpg";
+import { useNavigate } from "react-router-dom";
+import { MapPin, Plane, Users } from "lucide-react";
 import japanImage from "@/assets/japan-tour.jpg";
 import dubaiImage from "@/assets/Dubai/12.png";
 import europeImage from "@/assets/europe-tour.png";
@@ -11,7 +11,29 @@ const destinations = [
   { name: "Europe", image: europeImage, tagline: "History at every corner" },
 ];
 
+const heroStats = [
+  {
+    value: "100K+",
+    label: "Travellers",
+    detail: "Families, couples, and groups who keep coming back.",
+    icon: Users,
+  },
+  {
+    value: "30+",
+    label: "Destinations",
+    detail: "Curated escapes across India and around the world.",
+    icon: MapPin,
+  },
+  {
+    value: "15K+",
+    label: "Tours Completed",
+    detail: "Planned end to end with our Ghar Se Ghar Tak service.",
+    icon: Plane,
+  },
+];
+
 export const Hero = () => {
+  const navigate = useNavigate();
   const [activeDestination, setActiveDestination] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -22,13 +44,6 @@ export const Hero = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
 
   return (
     <section className="relative min-h-[600px] sm:min-h-screen overflow-hidden bg-black">
@@ -52,7 +67,6 @@ export const Hero = () => {
       {/* Floating Decorative Elements (hidden on very small screens) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
         <Plane className="absolute top-20 right-[15%] w-10 h-10 md:w-12 md:h-12 text-white/20 animate-float" />
-        <MapPin className="absolute bottom-40 left-[10%] w-7 h-7 md:w-8 md:h-8 text-accent/40 animate-float-delayed" />
         <div className="absolute top-1/4 left-[5%] w-24 h-24 md:w-32 md:h-32 rounded-full bg-primary/10 blur-3xl animate-pulse-slow" />
         <div className="absolute bottom-1/4 right-[5%] w-32 h-32 md:w-40 md:h-40 rounded-full bg-accent/10 blur-3xl animate-pulse-slow" />
       </div>
@@ -89,7 +103,7 @@ export const Hero = () => {
           </p>
 
           <p className="text-sm sm:text-base md:text-lg text-white max-w-2xl mx-auto mb-10 sm:mb-12">
-            Stories, live moments & memories from Sun Tourism travellers exploring the world together.
+            Stories & memories from Sun Tourism travellers exploring the world together.
           </p>
         </div>
 
@@ -108,98 +122,59 @@ export const Hero = () => {
           </button> */}
 
           <button
-            onClick={() => scrollToSection("upcoming-departures")}
+            onClick={() => navigate("/stories")}
             className="w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 bg-white/10 backdrop-blur-sm text-white text-sm sm:text-base font-semibold rounded-full border border-white/30 hover:bg-white hover:text-black transition-all duration-300"
           >
-            Upcoming Departures
+            Explore Stories
           </button>
         </div>
 
-        {/* Destination Selector */}
+        {/* Hero Stats */}
         <div
-          className={`flex flex-wrap justify-center items-center gap-4 sm:gap-5 transition-all duration-1000 delay-600 ${
+          className={`mt-1 mb-10 sm:mb-12 w-full max-w-6xl transition-all duration-1000 delay-500 ${
             isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          {destinations.map((dest, index) => (
-            <button
-              key={dest.name}
-              onClick={() => setActiveDestination(index)}
-              className={`relative w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full overflow-hidden transition-all duration-300 ${
-                index === activeDestination
-                  ? "ring-4 ring-accent scale-110"
-                  : "ring-2 ring-white/30 hover:ring-white/60 opacity-70 hover:opacity-100"
-              }`}
-            >
-              <img
-                src={dest.image}
-                alt={dest.name}
-                className="w-full h-full object-cover"
-              />
-              {index === activeDestination && (
-                <div className="absolute inset-0 bg-accent/20" />
-              )}
-            </button>
-          ))}
-        </div>
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
+            {heroStats.map((stat, index) => {
+              const Icon = stat.icon;
 
-        {/* Mobile / Tablet Stats */}
-        <div
-          className={`mt-10 w-full max-w-md grid grid-cols-3 gap-4 text-center text-white lg:hidden transition-all duration-700 ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          {[
-            { value: "15k+", label: "Tours" },
-            { value: "75K+", label: "Travelers" },
-            { value: "30+", label: "Countries" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <div className="text-xl sm:text-2xl font-bold text-accent">
-                {stat.value}
-              </div>
-              <div className="text-xs sm:text-sm text-white/70">{stat.label}</div>
-            </div>
-          ))}
-        </div>
+              return (
+                <div
+                  key={stat.label}
+                  className="group relative overflow-hidden rounded-[26px] border border-white/20 bg-gradient-to-br from-slate-950/72 via-slate-900/60 to-slate-700/44 p-4 text-left shadow-[0_20px_65px_rgba(0,0,0,0.3)] backdrop-blur-2xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/45 sm:p-5"
+                  style={{ transitionDelay: `${600 + index * 120}ms` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-transparent to-accent/8" />
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/80 to-transparent" />
+                  <div className="absolute -right-8 -top-10 h-20 w-20 rounded-full bg-accent/18 blur-3xl transition-transform duration-500 group-hover:scale-125" />
 
-        {/* Scroll Indicator */}
-        <div
-          className={`absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000 delay-800 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <button
-            onClick={() => scrollToSection("current-tours")}
-            className="flex flex-col items-center gap-1.5 sm:gap-2 text-white/60 hover:text-white transition-colors"
-          >
-            <span className="text-xs sm:text-sm tracking-widest uppercase">
-              Scroll
-            </span>
-            <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 animate-bounce-subtle" />
-          </button>
-        </div>
-      </div>
+                  <div className="relative z-10 flex items-start justify-between gap-4">
+                    <div>
+                      <p className="text-[2rem] font-bold leading-none text-white drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)] sm:text-[2.4rem] lg:text-[2.8rem]">
+                        {stat.value}
+                      </p>
+                      <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.32em] text-accent drop-shadow-[0_6px_18px_rgba(0,0,0,0.25)] sm:text-xs">
+                        {stat.label}
+                      </p>
+                    </div>
 
-      {/* Desktop Side Stats */}
-      <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col gap-8 text-white">
-        {[
-          { value: "15k+", label: "Tours" },
-          { value: "75K+", label: "Travelers" },
-          { value: "30+", label: "Countries" },
-        ].map((stat, index) => (
-          <div
-            key={stat.label}
-            className={`text-right transition-all duration-700 ${
-              isLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-            }`}
-            style={{ transitionDelay: `${600 + index * 100}ms` }}
-          >
-            <div className="text-3xl font-bold text-accent">{stat.value}</div>
-            <div className="text-sm text-white/60">{stat.label}</div>
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-slate-900/35 text-accent shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+                      <Icon className="h-4.5 w-4.5" />
+                    </div>
+                  </div>
+
+                  <p className="relative z-10 mt-3 max-w-[26ch] text-sm leading-7 text-white drop-shadow-[0_8px_20px_rgba(0,0,0,0.32)]">
+                    {stat.detail}
+                  </p>
+                </div>
+              );
+            })}
           </div>
-        ))}
+        </div>
+
       </div>
+
     </section>
   );
 };

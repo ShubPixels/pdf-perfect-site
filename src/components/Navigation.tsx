@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,26 @@ import { navLinks } from "@/config/navigation";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const isActiveLink = (path: string) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+
+    if (path === "/stories") {
+      return (
+        location.pathname === "/stories" ||
+        location.pathname.startsWith("/stories/") ||
+        location.pathname === "/community" ||
+        location.pathname === "/explore"
+      );
+    }
+
+    return (
+      location.pathname === path || location.pathname.startsWith(`${path}/`)
+    );
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -36,7 +56,12 @@ export const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-secondary"
+                className={cn(
+                  "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                  isActiveLink(link.path)
+                    ? "bg-secondary text-primary"
+                    : "text-foreground hover:text-primary hover:bg-secondary"
+                )}
               >
                 {link.name}
               </Link>
@@ -76,7 +101,12 @@ export const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-secondary"
+                className={cn(
+                  "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                  isActiveLink(link.path)
+                    ? "bg-secondary text-primary"
+                    : "text-foreground hover:text-primary hover:bg-secondary"
+                )}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}

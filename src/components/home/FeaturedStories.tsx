@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Camera } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -17,7 +17,6 @@ const stories = [
     location: "Japan",
     excerpt: "24 travelers from Pune discovered the art of slow living in Kyoto, from tea ceremonies to bamboo forests that whispered ancient secrets.",
     image: japanCommunity1,
-    photoCount: 48,
     travelers: 24,
     date: "October 2025",
   },
@@ -27,7 +26,6 @@ const stories = [
     location: "Dubai",
     excerpt: "A family group experienced the magic of desert safaris at golden hour, followed by dinners overlooking the glittering skyline.",
     image: dubaiCommunity1,
-    photoCount: 65,
     travelers: 32,
     date: "September 2025",
   },
@@ -37,7 +35,6 @@ const stories = [
     location: "Bali",
     excerpt: "Sunrise at Uluwatu, offering rituals at water temples, and evenings spent watching traditional Kecak dance under the stars.",
     image: baliCommunity1,
-    photoCount: 52,
     travelers: 18,
     date: "January 2025",
   },
@@ -47,7 +44,6 @@ const stories = [
     location: "Europe",
     excerpt: "From the Eiffel Tower at dusk to gondola rides in Venice — a 15-day journey across 6 countries that felt like a dream.",
     image: europeCommunity1,
-    photoCount: 80,
     travelers: 28,
     date: "August 2025",
   },
@@ -57,7 +53,6 @@ const stories = [
     location: "Australia",
     excerpt: "Koalas, coral reefs, and the vast outback — this group explored the wonders of the land down under with childlike wonder.",
     image: australiaCommunity1,
-    photoCount: 55,
     travelers: 20,
     date: "April 2025",
   },
@@ -67,7 +62,6 @@ const stories = [
     location: "Oman",
     excerpt: "Ancient forts, turquoise wadis, and the warmth of Omani hospitality made this journey one of our most unforgettable.",
     image: omanCommunity1,
-    photoCount: 42,
     travelers: 22,
     date: "June 2025",
   },
@@ -136,9 +130,6 @@ export const FeaturedStories = () => {
                   </p>
                   
                   <div className="flex items-center gap-6">
-                    <span className="flex items-center gap-2 text-white/60 text-sm">
-                      <Camera className="w-4 h-4" /> {featured.photoCount} photos
-                    </span>
                     <span className="text-white/60 text-sm">{featured.travelers} travelers</span>
                     <span className="inline-flex items-center gap-2 text-accent font-medium group-hover:gap-3 transition-all">
                       Read Story <ArrowRight className="w-4 h-4" />
@@ -180,10 +171,7 @@ export const FeaturedStories = () => {
                     <p className="text-white/60 text-xs line-clamp-2 mb-3">
                       {story.excerpt}
                     </p>
-                    <div className="flex items-center justify-between">
-                      <span className="flex items-center gap-1.5 text-white/50 text-xs">
-                        <Camera className="w-3 h-3" /> {story.photoCount}
-                      </span>
+                    <div className="flex justify-end">
                       <span className="text-accent text-xs font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
                         View <ArrowRight className="w-3 h-3" />
                       </span>

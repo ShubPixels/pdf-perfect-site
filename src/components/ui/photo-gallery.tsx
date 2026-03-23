@@ -70,8 +70,10 @@ export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: Phot
             
             {/* Caption */}
             {photos[currentIndex].caption && (
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent rounded-b-lg">
-                <p className="text-white text-center">{photos[currentIndex].caption}</p>
+              <div className="pointer-events-none absolute left-0 right-0 top-4 z-10 flex justify-center px-4">
+                <p className="inline-block max-w-3xl rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-center text-sm leading-relaxed text-white shadow-lg backdrop-blur-md md:px-5 md:text-base">
+                  {photos[currentIndex].caption}
+                </p>
               </div>
             )}
           </div>

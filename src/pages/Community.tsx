@@ -215,7 +215,7 @@ const Stories = () => {
             gallerySection.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <CommunitySection variant="page" />
+          <CommunitySection variant="page" showShareCta={false} />
         </div>
 
         {/* Share Your Story CTA */}
