@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
@@ -19,6 +19,12 @@ interface PhotoGalleryProps {
 export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: PhotoGalleryProps) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentIndex(initialIndex);
+    }
+  }, [initialIndex, isOpen]);
+
   const goNext = () => {
     setCurrentIndex((prev) => (prev + 1) % photos.length);
   };
@@ -38,39 +44,47 @@ export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: Phot
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
-        className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none"
+        className="h-[100dvh] w-screen max-w-[100vw] rounded-none border-none bg-black/95 p-0 sm:h-auto sm:max-h-[95vh] sm:max-w-[95vw] sm:rounded-2xl"
         onKeyDown={handleKeyDown}
       >
-        <div className="relative w-full h-[90vh] flex items-center justify-center">
+        <div className="relative flex h-[100dvh] w-full items-center justify-center overflow-hidden px-3 pb-24 pt-16 sm:h-[90vh] sm:px-0 sm:pb-0 sm:pt-0">
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="absolute right-3 top-3 z-50 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 sm:right-4 sm:top-4 sm:p-2"
           >
-            <X className="w-6 h-6" />
+            <X className="h-6 w-6" />
           </button>
 
           {/* Navigation - Previous */}
           {photos.length > 1 && (
             <button
               onClick={goPrev}
-              className="absolute left-4 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              className="absolute left-2 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 sm:left-4 sm:p-3"
             >
-              <ChevronLeft className="w-8 h-8" />
+              <ChevronLeft className="h-6 w-6 sm:h-8 sm:w-8" />
             </button>
           )}
 
+          {photos[currentIndex].caption && (
+            <div className="pointer-events-none absolute inset-x-0 top-16 z-20 flex justify-center px-12 sm:hidden">
+              <p className="inline-block rounded-2xl border border-white/10 bg-black/65 px-3.5 py-2 text-center text-xs leading-snug text-white shadow-lg backdrop-blur-md">
+                {photos[currentIndex].caption}
+              </p>
+            </div>
+          )}
+
           {/* Main Image */}
-          <div className="relative max-w-full max-h-full px-16">
+          <div className="relative flex w-full items-center justify-center px-10 sm:max-w-full sm:max-h-full sm:px-16">
             <img
               src={photos[currentIndex].src}
               alt={photos[currentIndex].alt}
-              className="max-w-full max-h-[80vh] object-contain rounded-lg"
+              className="max-h-[68vh] max-w-full rounded-xl object-contain sm:max-h-[80vh]"
             />
             
             {/* Caption */}
             {photos[currentIndex].caption && (
-              <div className="pointer-events-none absolute left-0 right-0 top-4 z-10 flex justify-center px-4">
+              <div className="pointer-events-none absolute left-0 right-0 top-4 z-10 hidden justify-center px-4 sm:flex">
                 <p className="inline-block max-w-3xl rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-center text-sm leading-relaxed text-white shadow-lg backdrop-blur-md md:px-5 md:text-base">
                   {photos[currentIndex].caption}
                 </p>
@@ -82,37 +96,39 @@ export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: Phot
           {photos.length > 1 && (
             <button
               onClick={goNext}
-              className="absolute right-4 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              className="absolute right-2 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 sm:right-4 sm:p-3"
             >
-              <ChevronRight className="w-8 h-8" />
+              <ChevronRight className="h-6 w-6 sm:h-8 sm:w-8" />
             </button>
           )}
 
           {/* Thumbnails */}
           {photos.length > 1 && (
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {photos.map((photo, index) => (
-                <button
-                  key={photo.id}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-16 h-12 rounded overflow-hidden transition-all ${
-                    index === currentIndex
-                      ? "ring-2 ring-accent opacity-100"
-                      : "opacity-50 hover:opacity-80"
-                  }`}
-                >
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    className="w-full h-full object-cover"
-                  />
-                </button>
-              ))}
+            <div className="absolute inset-x-0 bottom-3 z-20 overflow-x-auto px-3 [scrollbar-width:none] [-ms-overflow-style:none] sm:bottom-4">
+              <div className="mx-auto flex w-max gap-2">
+                {photos.map((photo, index) => (
+                  <button
+                    key={photo.id}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`h-10 w-14 overflow-hidden rounded transition-all sm:h-12 sm:w-16 ${
+                      index === currentIndex
+                        ? "opacity-100 ring-2 ring-accent"
+                        : "opacity-50 hover:opacity-80"
+                    }`}
+                  >
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="h-full w-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
             </div>
           )}
 
           {/* Counter */}
-          <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/10 text-white text-sm">
+          <div className="absolute left-3 top-3 rounded-full bg-white/10 px-3 py-1 text-sm text-white sm:left-4 sm:top-4">
             {currentIndex + 1} / {photos.length}
           </div>
         </div>

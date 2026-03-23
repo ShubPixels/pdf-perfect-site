@@ -30,16 +30,16 @@ const HOME_SPANS = [
 ];
 
 const PAGE_SPANS = [
-  "col-span-2 row-span-2 md:col-span-3 md:row-span-2",
-  "col-span-2 row-span-2 md:col-span-3 md:row-span-2",
-  "col-span-2 row-span-2 md:col-span-2 md:row-span-2",
-  "col-span-2 row-span-2 md:col-span-2 md:row-span-2",
-  "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
-  "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
-  "col-span-2 row-span-1 md:col-span-3 md:row-span-1",
-  "col-span-2 row-span-1 md:col-span-3 md:row-span-1",
-  "col-span-2 row-span-1 md:col-span-3 md:row-span-1",
-  "col-span-2 row-span-1 md:col-span-3 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-3 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-3 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-2 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-2 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-3 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-3 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-3 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-3 md:row-span-1",
 ];
 
 const getDestinationDateLabel = (destination: StoryDestination) =>
@@ -107,8 +107,12 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
         <div className="max-w-6xl mx-auto mb-12 sm:mb-14 md:mb-16">
           <div
             className={`
-              grid grid-cols-2 gap-3 sm:gap-4 md:gap-4 auto-rows-[165px] sm:auto-rows-[190px] grid-flow-dense
-              ${isPage ? "md:grid-cols-6 md:auto-rows-[260px]" : "md:grid-cols-6 md:auto-rows-[150px]"}
+              grid gap-3 sm:gap-4 md:gap-4 grid-flow-dense
+              ${
+                isPage
+                  ? "grid-cols-1 auto-rows-[240px] sm:grid-cols-2 sm:auto-rows-[250px] md:grid-cols-6 md:auto-rows-[260px]"
+                  : "grid-cols-2 auto-rows-[165px] sm:auto-rows-[190px] md:grid-cols-6 md:auto-rows-[150px]"
+              }
             `}
           >
             {destinations.map((destination, index) => {
@@ -136,9 +140,13 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
 
                   <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 md:p-5 md:p-6">
                     <div className="flex items-end justify-between gap-3 sm:gap-4">
-                      <div className="min-w-0 max-w-[70%]">
+                      <div
+                        className={`min-w-0 ${
+                          isPage ? "max-w-[72%] sm:max-w-[68%]" : "max-w-[70%]"
+                        }`}
+                      >
                         {destinationDateLabel && (
-                          <p className="mb-1 text-xs sm:text-sm md:text-base text-white/75">
+                          <p className="mb-1 text-[11px] sm:text-sm md:text-base text-white/75">
                             {destinationDateLabel}
                           </p>
                         )}
@@ -149,8 +157,8 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
                             ${
                               isPage
                                 ? isTall
-                                  ? "text-lg sm:text-2xl md:text-4xl md:text-5xl"
-                                  : "text-base sm:text-lg md:text-2xl md:text-3xl"
+                                  ? "text-base sm:text-2xl md:text-4xl md:text-5xl"
+                                  : "text-sm sm:text-lg md:text-2xl md:text-3xl"
                                 : isTall
                                   ? "text-base sm:text-lg md:text-3xl md:text-4xl"
                                   : "text-sm sm:text-base md:text-xl md:text-2xl"
@@ -161,7 +169,7 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
                         </h3>
                       </div>
 
-                      <div className="flex items-center gap-1.5 sm:gap-2 text-accent font-medium text-xs sm:text-sm md:text-base whitespace-nowrap shrink-0">
+                      <div className="flex shrink-0 items-center gap-1 text-accent text-[11px] font-medium whitespace-nowrap sm:gap-2 sm:text-sm md:text-base">
                         <span>{getActionLabel(destination)}</span>
                         <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                       </div>

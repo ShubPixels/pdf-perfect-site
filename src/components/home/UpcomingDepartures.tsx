@@ -29,28 +29,30 @@ export const UpcomingDepartures = () => {
         </div>
 
         {/* Month Selector */}
-        <div className="flex justify-center mb-8 sm:mb-10 md:mb-12 overflow-x-auto pb-2">
-          <div className="inline-flex bg-secondary rounded-full p-1 gap-1">
-            {availableMonths.map((month) => (
-              <button
-                key={month}
-                onClick={() => setSelectedMonth(month)}
-                className={`px-3 py-2 sm:px-4 md:px-6 md:py-3 rounded-full text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-                  selectedMonth === month
-                    ? "bg-primary text-white shadow-lg"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {month}
-              </button>
-            ))}
+        <div className="mb-8 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:mb-10 md:mb-12">
+          <div className="flex min-w-max justify-start px-3 sm:justify-center sm:px-0">
+            <div className="inline-flex gap-1 rounded-full bg-secondary p-1">
+              {availableMonths.map((month) => (
+                <button
+                  key={month}
+                  onClick={() => setSelectedMonth(month)}
+                  className={`rounded-full px-3 py-2 text-xs font-medium whitespace-nowrap transition-all sm:px-4 sm:text-sm md:px-6 md:py-3 ${
+                    selectedMonth === month
+                      ? "bg-primary text-white shadow-lg"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {month}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Departures List */}
         <div className="max-w-5xl mx-auto space-y-6">
           {filteredDepartures.map((departure) => {
-            const detailsHref = departure.link ?? `/explore/${departure.tourId}`;
+            const detailsHref = departure.link ?? `/destination/${departure.tourId}`;
             const isExternal = detailsHref.startsWith("http");
 
             return (

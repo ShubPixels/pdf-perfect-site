@@ -69,21 +69,21 @@ const About = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto text-center">
+      <section className="px-4 pb-16 pt-24 sm:pb-20 sm:pt-32">
+        <div className="container mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block px-4 py-2 bg-highlight/10 text-highlight rounded-full text-sm font-medium mb-6">
+            <span className="mb-5 inline-block rounded-full bg-highlight/10 px-4 py-2 text-sm font-medium text-highlight sm:mb-6">
               Our Story
             </span>
-            <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6">
-              Crafting <span className="text-accent">Unforgettable</span>
-              <br />Journeys Since 2007
+            <h1 className="mb-6 font-heading text-[clamp(3.2rem,17vw,4.75rem)] font-bold leading-[0.9] tracking-tight text-foreground sm:text-5xl md:text-7xl">
+              Crafting <span className="text-accent block sm:inline">Unforgettable</span>
+              <span className="block">Journeys Since 2007</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="mx-auto max-w-[22ch] text-base leading-relaxed text-muted-foreground sm:max-w-3xl sm:text-lg md:text-xl">
               What began as a passion to make travel accessible has evolved into Pune's most trusted 
               travel community, connecting families with extraordinary experiences across the globe.
             </p>
@@ -91,7 +91,7 @@ const About = () => {
 
           {/* Animated stats */}
           <motion.div 
-            className="flex flex-wrap justify-center gap-8 md:gap-16 mt-16"
+            className="mt-12 flex flex-wrap justify-center gap-6 sm:mt-16 sm:gap-8 md:gap-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -103,8 +103,8 @@ const About = () => {
               { number: "18+", label: "Years of Experience" }
             ].map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-accent">{stat.number}</div>
-                <div className="text-muted-foreground mt-1">{stat.label}</div>
+                <div className="text-3xl font-bold text-accent sm:text-4xl md:text-5xl">{stat.number}</div>
+                <div className="mt-1 text-sm text-muted-foreground sm:text-base">{stat.label}</div>
               </div>
             ))}
           </motion.div>
