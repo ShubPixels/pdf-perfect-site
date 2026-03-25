@@ -30,7 +30,7 @@ const FirstTimeEuropeTraveler = () => {
 
         <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">1. Understanding Europe's Diversity</h2>
         <p>
-          Europe isn't a single country—it's a continent of 44 countries, each with its own language, currency, culture, and customs. From the romantic canals of Venice to the majestic fjords of Norway, you'll experience incredible diversity in just one trip.
+          Europe isn't a single country-it's a continent of 44 countries, each with its own language, currency, culture, and customs. From the romantic canals of Venice to the majestic fjords of Norway, you'll experience incredible diversity in just one trip.
         </p>
 
         <div className="bg-primary/5 p-6 rounded-lg my-6">
@@ -56,14 +56,14 @@ const FirstTimeEuropeTraveler = () => {
         <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">5. Cultural Etiquette</h2>
         <ul className="list-disc pl-6 space-y-2">
           <li><strong>Greetings:</strong> A handshake or cheek kiss (depending on the country)</li>
-          <li><strong>Meal times:</strong> Europeans eat later than Indians—lunch around 1-3 PM, dinner 8-10 PM</li>
+          <li><strong>Meal times:</strong> Europeans eat later than Indians-lunch around 1-3 PM, dinner 8-10 PM</li>
           <li><strong>Tipping:</strong> Usually 5-10% in restaurants, round up for taxis</li>
           <li><strong>Punctuality:</strong> Being on time is appreciated, especially in Germany and Switzerland</li>
         </ul>
 
         <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">6. Packing Essentials for Europe</h2>
         <p>
-          Pack layers—European weather can change quickly. Comfortable walking shoes are crucial, as you'll do a lot of exploring on foot. Don't forget adapters for European plugs and any necessary medications.
+          Pack layers-European weather can change quickly. Comfortable walking shoes are crucial, as you'll do a lot of exploring on foot. Don't forget adapters for European plugs and any necessary medications.
         </p>
 
         <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">7. Health and Safety</h2>
@@ -73,7 +73,7 @@ const FirstTimeEuropeTraveler = () => {
 
         <div className="bg-green-50 border-l-4 border-green-500 p-6 my-8">
           <h3 className="font-bold text-green-800 mb-2">Remember</h3>
-          <p className="text-green-700">Your first European trip is about experiencing the continent's magic. Don't stress about seeing everything—focus on enjoying the journey and creating memories that will last a lifetime.</p>
+          <p className="text-green-700">Your first European trip is about experiencing the continent's magic. Don't stress about seeing everything-focus on enjoying the journey and creating memories that will last a lifetime.</p>
         </div>
 
         <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Ready for Your European Adventure?</h2>
@@ -82,7 +82,7 @@ const FirstTimeEuropeTraveler = () => {
         </p>
 
         <p className="text-center italic text-muted-foreground mt-8">
-          "Not all those who wander are lost." – J.R.R. Tolkien
+          "Not all those who wander are lost." - J.R.R. Tolkien
         </p>
       </div>
     </BlogPostLayout>

@@ -16,7 +16,7 @@ export default function TourDiary() {
   // Mock data - would come from backend in real app
   const tourData = {
     id: tourId,
-    name: "Japan – Nov 2025 Batch",
+    name: "Japan - Nov 2025 Batch",
     currentDay: 4,
     totalDays: 8,
     departure: "Ex Pune",

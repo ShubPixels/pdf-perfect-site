@@ -73,7 +73,7 @@ export interface Departure {
 export const tours: Tour[] = [
   {
     id: 'dubai-2025',
-    title: 'Dubai Tour Packages 2025 – With Abu Dhabi & Sharjah | Ghar Se Ghar Tak',
+    title: 'Dubai Tour Packages 2025 - With Abu Dhabi & Sharjah | Ghar Se Ghar Tak',
     shortTitle: 'Dubai & Abu Dhabi',
     destination: 'Dubai, Abu Dhabi & Sharjah',
     destinations: ['Dubai', 'Abu Dhabi', 'Sharjah'],
@@ -86,10 +86,10 @@ export const tours: Tour[] = [
     type: 'international',
     categories: ['Adventure tour', 'Ghar se Ghar tak Group Tours', 'International Tours', 'Senior Citizens'],
     accommodation: 'Stay in premium 4-star hotels like Dubai Grand by Fortune or Fortune Atrium, offering comfort, location, and great service.',
-    bestSeason: 'October to February is the ideal time — cool weather, festive vibes, and perfect for sightseeing.',
+    bestSeason: 'October to February is the ideal time - cool weather, festive vibes, and perfect for sightseeing.',
     transportation: 'Travel in style with a 2x2 air-conditioned luxury coach for all sightseeing, plus flights and Ghar Se Ghar Tak transfers included.',
     region: 'Middle East',
-    tagline: 'Luxury, Adventure & Desert Magic – Bling, Burj & Beyond',
+    tagline: 'Luxury, Adventure & Desert Magic - Bling, Burj & Beyond',
     idealFor: ['Families', 'Couples', 'Luxury Seekers', 'First-time Middle East', 'Senior Citizens'],
     highlights: [
       'Burj Khalifa with Gold Coffee',
@@ -107,32 +107,32 @@ export const tours: Tour[] = [
     itinerary: [
       { 
         day: 1, 
-        title: 'Residence – United Arab Emirates', 
-        description: 'Today enter the world of Sun Touriism Internationall Pvt Ltd as you begin your wonderful tour of Dubai. Pickup from your Residence and transfer to Mumbai Airport for your Flight to UAE. On arrival, after clearing immigration formalities, proceed to the hotel in Dubai for check in. Overnight stay in Dubai.',
+        title: 'Residence - United Arab Emirates', 
+        description: 'Today enter the world of Sun Tourism International Pvt. Ltd. as you begin your wonderful tour of Dubai. Pickup from your residence and transfer to Mumbai Airport for your flight to the UAE. On arrival, after clearing immigration formalities, proceed to the hotel in Dubai for check in. Overnight stay in Dubai.',
         meals: 'Dinner'
       },
       { 
         day: 2, 
-        title: 'Dubai – Desert Safari', 
+        title: 'Dubai - Desert Safari', 
         description: 'After breakfast at the hotel, morning free to relax or for personal activities. Roam around the malls nearby hotels to get a feel of this Shopper\'s Paradise. Afternoon, after lunch, proceed for Desert Safari. Experience the magnificence and harmony of the desert in our comfortable 4WD Luxury Vehicles. Enjoy the musical and colorful evening in a VIP Desert Camp. Overnight stay in Dubai.',
         meals: 'Breakfast, Lunch, Dinner'
       },
       { 
         day: 3, 
         title: 'Dubai City Tour', 
-        description: 'Breakfast at the hotel and proceed for Dubai City Tour. Start the tour with a photo stop at Jumeirah Beach, facing the stunning Burj Al Arab. Proceed to Jumeirah, the picturesque palace and residential area of Dubai, also home to the famous Jumeirah Mosque. Enroute to the Palm Island with a stop-over at the Atlantis – The Palm for a photo-shoot followed by a stop at King\'s Palace. We drive past the Creek and the oldest part of the city, Bastakiya – the old wind tower houses with their splendid architecture. Late Afternoon we visit Dubai Mall and the Dubai Aquarium (from outside). Later we shall visit Burj Khalifa and Enjoy the Gold Coffee at Burj Khalifa. Also enjoy the World\'s Biggest Water Fountain. Dinner and Overnight stay in Dubai.',
+        description: 'Breakfast at the hotel and proceed for Dubai City Tour. Start the tour with a photo stop at Jumeirah Beach, facing the stunning Burj Al Arab. Proceed to Jumeirah, the picturesque palace and residential area of Dubai, also home to the famous Jumeirah Mosque. Enroute to the Palm Island with a stop-over at the Atlantis - The Palm for a photo-shoot followed by a stop at King\'s Palace. We drive past the Creek and the oldest part of the city, Bastakiya - the old wind tower houses with their splendid architecture. Late Afternoon we visit Dubai Mall and the Dubai Aquarium (from outside). Later we shall visit Burj Khalifa and Enjoy the Gold Coffee at Burj Khalifa. Also enjoy the World\'s Biggest Water Fountain. Dinner and Overnight stay in Dubai.',
         meals: 'Breakfast, Lunch, Dinner'
       },
       { 
         day: 4, 
-        title: 'Dubai – Sharjah – Dubai (Miracle Garden & Global Village)', 
-        description: 'After breakfast proceed for Sharjah city tour, "The Pearl of the Gulf". One of the many landmarks to see during the tour is King Faisal Mosque, drive via the Sharjah Corniche pass the Al Ittihad Monument, Sharjah Stadium (From Outside) etc. Afternoon transfer to Miracle Garden (If Open), launched on Valentine\'s Day in 2013. It occupies over 72,000 square metres, making it the world\'s largest flower garden, featuring over 50 million flowers and 250 million plants. Evening transfer to Global Village, a cultural destination in the city of Dubai. It has different pavilions to showcase the culture and traditions of each country across the Globe. Enjoy the evening shopping. Overnight stay in Dubai.',
+        title: 'Dubai - Sharjah - Dubai (Miracle Garden & Global Village)', 
+        description: 'After breakfast proceed for the Sharjah city tour, "The Pearl of the Gulf". One of the many landmarks to see during the tour is King Faisal Mosque. Drive via the Sharjah Corniche, pass the Al Ittihad Monument, and Sharjah Stadium (from outside). Afternoon transfer to Miracle Garden (if open), launched on Valentine\'s Day in 2013. It occupies over 72,000 square metres, making it the world\'s largest flower garden, featuring over 50 million flowers and 250 million plants. Evening transfer to Global Village, a cultural destination in the city of Dubai. It has different pavilions showcasing the culture and traditions of each country across the globe. Enjoy the evening shopping. Overnight stay in Dubai.',
         meals: 'Breakfast, Lunch, Dinner'
       },
       { 
         day: 5, 
         title: 'Abu Dhabi Day Trip (BAPS Temple, Sheikh Zayed Mosque, SeaWorld)', 
-        description: 'Morning after breakfast proceed to Abu Dhabi. First visit the newly opened BAPS Hindu Temple in Abu Dhabi. Later proceed to the capital town of the Emirates to enjoy a City Orientation Tour covering photo stops at Sheikh Zayed Grand Mosque followed by a drive along the beautiful Corniche, magnificent view of the Presidential Palace etc. Later transfer to Sea World to enjoy the beautiful Theme Park, covering over 35 interactive experiences and rides. These include attractions like the Manta Coaster, Eel Racer, Hypersphere 360°, Jelly Plunge, and Kelp Climb etc. Evening proceed for a photo stop at Ferrari World. Overnight stay in Dubai.',
+        description: 'Morning after breakfast proceed to Abu Dhabi. First visit the newly opened BAPS Hindu Temple in Abu Dhabi. Later proceed to the capital town of the Emirates to enjoy a City Orientation Tour covering photo stops at Sheikh Zayed Grand Mosque followed by a drive along the beautiful Corniche, magnificent view of the Presidential Palace etc. Later transfer to Sea World to enjoy the beautiful Theme Park, covering over 35 interactive experiences and rides. These include attractions like the Manta Coaster, Eel Racer, Hypersphere 360, Jelly Plunge, and Kelp Climb etc. Evening proceed for a photo stop at Ferrari World. Overnight stay in Dubai.',
         meals: 'Breakfast, Lunch, Dinner'
       },
       { 
@@ -143,13 +143,13 @@ export const tours: Tour[] = [
       },
       { 
         day: 7, 
-        title: 'Mumbai – Pune – Residence', 
+        title: 'Mumbai - Pune - Residence', 
         description: 'Arrive Mumbai. After clearing the Custom and Immigration formalities, complimentary transfer to Pune and to your Residence. Arrive Home and Tour Ends.',
         meals: ''
       }
     ],
     inclusions: [
-      'Residence – Airport - Residence COMPLIMENTARY Transfer (Ghar Se Ghar Tak for Pune, PCMC, Nashik & Mumbai Guests)',
+      'Residence - Airport - Residence COMPLIMENTARY Transfer (Ghar Se Ghar Tak for Pune, PCMC, Nashik & Mumbai Guests)',
       'Return Economy Class Airfare',
       'Breakfast, Lunch, Dinner as per Itinerary',
       'All Sightseeing Entry Charges, Tips, Guide Fee',
@@ -199,7 +199,7 @@ export const tours: Tour[] = [
     type: 'international',
     categories: ['Adventure tour', 'Ghar se Ghar tak Group Tours', 'International Tours', 'Senior Citizens'],
     accommodation: 'Stay in comfortable 3★ & 4★ hotels with twin/triple sharing rooms and one overnight cruise.',
-    bestSeason: 'May departure falls in Europe\'s spring season, with pleasant weather (10°C–20°C) ideal for sightseeing and tulip viewing.',
+    bestSeason: 'May departure falls in Europe\'s spring season, with pleasant weather (10°C-20°C) ideal for sightseeing and tulip viewing.',
     transportation: 'Economy airfare, luxury A/C coaches, overnight cruise, scenic trains, cable cars, boat rides, and city transfers.',
     region: 'Europe',
     tagline: '7 Countries, 16 Days of Culture, History & Breathtaking Landscapes',
@@ -221,22 +221,22 @@ export const tours: Tour[] = [
       { day: 1, title: 'Residence - Pune - Mumbai', description: 'Pick up from your Residence and transfer to Mumbai for flight to London.', meals: '' },
       { day: 2, title: 'London Arrival', description: 'Arrive London. Visit the London Eye - one of the world\'s largest observation wheels offering panoramic views of the city.', meals: 'Dinner' },
       { day: 3, title: 'London City Tour', description: 'Guided City Tour covering Tower Bridge, Big Ben, Buckingham Palace, Tower of London with Crown Jewels, and shopping at Oxford Street.', meals: 'Breakfast, Dinner' },
-      { day: 4, title: 'London – Amsterdam (Overnight Cruise)', description: 'Visit Madame Tussauds Wax Museum with lifelike celebrity figures. Board overnight Cruise to Netherlands.', meals: 'Breakfast, Dinner' },
-      { day: 5, title: 'Amsterdam – Brussels', description: 'Visit Keukenhof Tulip Gardens (seasonal), Wooden Shoe factory, and Cheese Farm. Proceed to Belgium.', meals: 'Breakfast, Dinner' },
-      { day: 6, title: 'Brussels – Paris', description: 'Paris City Tour including Arc De Triomphe, Eiffel Tower 2nd Level, and romantic Seine River Cruise.', meals: 'Breakfast, Dinner' },
-      { day: 7, title: 'Paris – Versailles', description: 'Visit the famous Versailles Palace with its magnificent gardens. Proceed to Strasbourg.', meals: 'Breakfast, Dinner' },
+      { day: 4, title: 'London - Amsterdam (Overnight Cruise)', description: 'Visit Madame Tussauds Wax Museum with lifelike celebrity figures. Board overnight Cruise to Netherlands.', meals: 'Breakfast, Dinner' },
+      { day: 5, title: 'Amsterdam - Brussels', description: 'Visit Keukenhof Tulip Gardens (seasonal), Wooden Shoe factory, and Cheese Farm. Proceed to Belgium.', meals: 'Breakfast, Dinner' },
+      { day: 6, title: 'Brussels - Paris', description: 'Paris City Tour including Arc De Triomphe, Eiffel Tower 2nd Level, and romantic Seine River Cruise.', meals: 'Breakfast, Dinner' },
+      { day: 7, title: 'Paris - Versailles', description: 'Visit the famous Versailles Palace with its magnificent gardens. Proceed to Strasbourg.', meals: 'Breakfast, Dinner' },
       { day: 8, title: 'Switzerland', description: 'Black Forest scenic train journey, visit Rhine Falls - Europe\'s largest waterfall, and Zurich Lake orientation.', meals: 'Breakfast, Dinner' },
       { day: 9, title: 'Jungfraujoch - Top of Europe', description: 'Visit Top of Europe at 11,333 ft via cogwheel train. Explore Sphinx Observatory, Ice Palace, and Alpine snow experience.', meals: 'Breakfast, Dinner' },
       { day: 10, title: 'Mt. Titlis & Lucerne', description: 'Mt. Titlis by Rotair revolving cable car, Ice Grotto, Cliff Walk, and Lake Lucerne cruise with Chapel Bridge.', meals: 'Breakfast, Dinner' },
-      { day: 11, title: 'Vaduz – Innsbruck', description: 'Visit Liechtenstein capital, Swarovski Crystal Showroom, and Innsbruck walking tour with Golden Roof.', meals: 'Breakfast, Dinner' },
+      { day: 11, title: 'Vaduz - Innsbruck', description: 'Visit Liechtenstein capital, Swarovski Crystal Showroom, and Innsbruck walking tour with Golden Roof.', meals: 'Breakfast, Dinner' },
       { day: 12, title: 'Venice Island', description: 'Venice Island tour by water taxi, St. Mark\'s Basilica, Doge\'s Palace, and romantic Gondola Ride through canals.', meals: 'Breakfast, Dinner' },
-      { day: 13, title: 'Pisa – Florence', description: 'Visit the iconic Leaning Tower of Pisa for photos. Florence city tour with Duomo and leather shopping.', meals: 'Breakfast, Dinner' },
+      { day: 13, title: 'Pisa - Florence', description: 'Visit the iconic Leaning Tower of Pisa for photos. Florence city tour with Duomo and leather shopping.', meals: 'Breakfast, Dinner' },
       { day: 14, title: 'Rome City Tour', description: 'Vatican City, St. Peter\'s Basilica, Sistine Chapel views, Colosseum photo stop, and wish at Trevi Fountain.', meals: 'Breakfast, Dinner' },
       { day: 15, title: 'Return Flight', description: 'Transfer to Rome Airport for flight to Mumbai.', meals: 'Breakfast' },
       { day: 16, title: 'Home Sweet Home', description: 'Arrive Mumbai, complimentary transfer to Residence. Tour Ends with beautiful memories.', meals: '' }
     ],
     inclusions: [
-      'Residence – Airport - Residence Transfer (Ghar Se Ghar Tak)',
+      'Residence - Airport - Residence Transfer (Ghar Se Ghar Tak)',
       'Return Economy Class Airfare',
       'All Meals (Breakfast & Dinner) as per Itinerary',
       '3★ & 4★ Hotel Accommodation + Overnight Cruise',
@@ -271,7 +271,7 @@ export const tours: Tour[] = [
   },
   {
     id: 'rajasthan-2025',
-    title: 'Rajasthan Tour Package 2025 – 7 Days Jaipur, Udaipur, Pushkar & Mount Abu',
+    title: 'Rajasthan Tour Package 2025 - 7 Days Jaipur, Udaipur, Pushkar & Mount Abu',
     shortTitle: 'Royal Rajasthan',
     destination: 'Rajasthan',
     destinations: ['Mount Abu', 'Udaipur', 'Chittorgarh', 'Pushkar', 'Jaipur'],
@@ -285,7 +285,7 @@ export const tours: Tour[] = [
     categories: ['Culture and Heritage', 'Domestic Tour', 'Ghar se Ghar tak Group Tours', 'Senior Citizens'],
     accommodation: 'Stay in deluxe & star-rated hotels across Mount Abu, Udaipur, Pushkar, and Jaipur.',
     bestSeason: 'December offers pleasant weather perfect for sightseeing and outdoor exploration.',
-    transportation: 'Flights from Pune–Ahmedabad–Jaipur–Pune with AC coach transfers for all sightseeing.',
+    transportation: 'Flights from Pune-Ahmedabad-Jaipur-Pune with AC coach transfers for all sightseeing.',
     region: 'North India',
     tagline: 'Royal Heritage, Desert Magic & Timeless Culture',
     idealFor: ['Families', 'Culture Lovers', 'Seniors', 'Photography Enthusiasts', 'History Buffs'],
@@ -303,18 +303,18 @@ export const tours: Tour[] = [
     ],
     overview: 'A 7-day journey crafted for December departures, blending the cool hills of Mount Abu with the lakes of Udaipur, the sacred aura of Pushkar, and the royal charm of Jaipur. Experience royal palaces, ancient forts, and vibrant Rajasthani culture.',
     itinerary: [
-      { day: 1, title: 'Residence – Mount Abu', description: 'Flight from Pune to Ahmedabad. Transfer to Mount Abu - the only hill station in Rajasthan. Visit the exquisite Delwara Jain temples known for intricate marble carvings. Evening boat ride at Nakki Lake. Overnight at Mount Abu.', meals: 'Dinner' },
-      { day: 2, title: 'Mount Abu – Udaipur', description: 'After breakfast, visit Haldighati Museum dedicated to Maharana Pratap and the famous war horse Chetak. Visit Chetak Smarak and proceed to Nathdwara for Shrinath Ji Temple darshan. Continue to Udaipur - City of Lakes. Overnight at Udaipur.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 1, title: 'Residence - Mount Abu', description: 'Flight from Pune to Ahmedabad. Transfer to Mount Abu - the only hill station in Rajasthan. Visit the exquisite Delwara Jain temples known for intricate marble carvings. Evening boat ride at Nakki Lake. Overnight at Mount Abu.', meals: 'Dinner' },
+      { day: 2, title: 'Mount Abu - Udaipur', description: 'After breakfast, visit Haldighati Museum dedicated to Maharana Pratap and the famous war horse Chetak. Visit Chetak Smarak and proceed to Nathdwara for Shrinath Ji Temple darshan. Continue to Udaipur - City of Lakes. Overnight at Udaipur.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 3, title: 'Udaipur City Tour', description: 'Full day Udaipur sightseeing. Visit the magnificent City Palace Museum overlooking Lake Pichola. Explore Sahelion-Ki-Bari (Garden of Maidens). Evening enjoy the enchanting folk dance show at Bagore Ki Haveli. Overnight at Udaipur.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 4, title: 'Chittorgarh – Pushkar', description: 'Visit the majestic Chittorgarh Fort - the largest fort in India. See Vijay Stambh, Kirti Stambh, Meera Temple and Khumba Shyam Temple. Transfer to Pushkar - the holy city. Overnight at Pushkar.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 5, title: 'Pushkar – Jaipur', description: 'Morning visit the sacred Brahma Temple - one of the few temples dedicated to Lord Brahma. Take a holy dip at Pushkar Lake and perform pooja. Proceed to Jaipur. Evening experience the magical Light & Sound Show at Amber Fort. Overnight at Jaipur.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 4, title: 'Chittorgarh - Pushkar', description: 'Visit the majestic Chittorgarh Fort - the largest fort in India. See Vijay Stambh, Kirti Stambh, Meera Temple and Khumba Shyam Temple. Transfer to Pushkar - the holy city. Overnight at Pushkar.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 5, title: 'Pushkar - Jaipur', description: 'Morning visit the sacred Brahma Temple - one of the few temples dedicated to Lord Brahma. Take a holy dip at Pushkar Lake and perform pooja. Proceed to Jaipur. Evening experience the magical Light & Sound Show at Amber Fort. Overnight at Jaipur.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 6, title: 'Jaipur City Tour', description: 'Morning visit Birla Mandir. Day free for shopping at famous Jaipur markets for handicrafts, gems, and textiles. Evening experience authentic Rajasthani culture at Chokhi Dhani - a village-themed resort with folk performances and traditional dinner. Overnight at Jaipur.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 7, title: 'Jaipur Sightseeing – Home', description: 'Visit the magnificent Amber Fort by jeep/elephant. Explore City Palace, Jantar Mantar observatory, and the iconic Hawa Mahal (Palace of Winds). Transfer to Jaipur Airport for flight to Pune. Transfer to Residence. Tour Ends.', meals: 'Breakfast, Lunch' }
+      { day: 7, title: 'Jaipur Sightseeing - Home', description: 'Visit the magnificent Amber Fort by jeep/elephant. Explore City Palace, Jantar Mantar observatory, and the iconic Hawa Mahal (Palace of Winds). Transfer to Jaipur Airport for flight to Pune. Transfer to Residence. Tour Ends.', meals: 'Breakfast, Lunch' }
     ],
     inclusions: [
-      'Residence – Airport - Residence Transfer (Ghar Se Ghar Tak)',
+      'Residence - Airport - Residence Transfer (Ghar Se Ghar Tak)',
       'Return Air Fare (Pune-Ahmedabad-Jaipur-Pune)',
-      'All Meals – Breakfast, Lunch, Dinner',
+      'All Meals - Breakfast, Lunch, Dinner',
       'Deluxe & Star Rated Hotels',
       'All Tips - Guide, Driver & Restaurant',
       'A/C Vehicle for all transfers and sightseeing',
@@ -332,7 +332,7 @@ export const tours: Tour[] = [
     ],
     notes: [
       'Booking Amount Rs. 20,000/- per person (NON REFUNDABLE)',
-      'Balance to be paid 45–30 days before departure'
+      'Balance to be paid 45-30 days before departure'
     ],
     bookingAmount: 20000,
     image: '/rajasthan-tour.jpg',
@@ -359,11 +359,11 @@ export const tours: Tour[] = [
     departureLocation: 'Pune',
     type: 'international',
     categories: ['Adventure tour', 'Ghar se Ghar tak Group Tours', 'International Tours', 'Senior Citizens'],
-    accommodation: 'Stay in 3–4 star deluxe hotels across Japan.',
+    accommodation: 'Stay in 3-4 star deluxe hotels across Japan.',
     bestSeason: 'Perfectly timed for cherry blossom (Sakura) viewing in late March 2026.',
     transportation: 'Luxury AC coach,and flights',
     region: 'Asia',
-    tagline: 'Where Ancient Tradition Meets Modern Wonder – Sakura Special',
+    tagline: 'Where Ancient Tradition Meets Modern Wonder - Sakura Special',
     idealFor: ['Families', 'Seniors', 'Culture Lovers', 'First-time Asia Travelers', 'Photography Enthusiasts'],
     highlights: [
       'Tokyo Sky Tree',
@@ -377,19 +377,19 @@ export const tours: Tour[] = [
       'Kinkaku-ji Golden Pavilion',
       'Nara Deer Park'
     ],
-    overview: 'Step into Sun Tourism\'s Japan Cherry Blossom Tour 2026 — an 8-day journey crafted for March departures, blending the vibrant energy of Tokyo with the serenity of Mt. Fuji, the historic spirit of Hiroshima, and the timeless beauty of Kyoto and Nara. From walking under the pink Sakura at Shinjuku Gyoen to riding the world-famous Shinkansen bullet train — this itinerary is designed for travelers who want culture, tradition, and natural beauty in one trip.',
+    overview: 'Step into Sun Tourism\'s Japan Cherry Blossom Tour 2026 - an 8-day journey crafted for March departures, blending the vibrant energy of Tokyo with the serenity of Mt. Fuji, the historic spirit of Hiroshima, and the timeless beauty of Kyoto and Nara. From walking under the pink Sakura at Shinjuku Gyoen to riding the world-famous Shinkansen bullet train - this itinerary is designed for travelers who want culture, tradition, and natural beauty in one trip.',
     itinerary: [
-      { day: 1, title: 'Pune – Mumbai', description: 'Welcome aboard! Today enter the world of Sun Tourism as you begin your memorable journey to Japan. Pick up from your Residence and transfer to Mumbai airport. On arrival check in for your flight to Japan.', meals: '' },
-      { day: 2, title: 'Mumbai – Tokyo', description: 'Arrive Tokyo. After clearing the immigration formalities, enjoy transfer to your hotel. Enroute visit the Tokyo Sky Tree - one of the world\'s tallest towers. Evening free to relax and explore the surroundings. Overnight stay in Tokyo.', meals: 'Lunch, Dinner' },
+      { day: 1, title: 'Pune - Mumbai', description: 'Welcome aboard! Today enter the world of Sun Tourism as you begin your memorable journey to Japan. Pick up from your Residence and transfer to Mumbai airport. On arrival check in for your flight to Japan.', meals: '' },
+      { day: 2, title: 'Mumbai - Tokyo', description: 'Arrive Tokyo. After clearing the immigration formalities, enjoy transfer to your hotel. Enroute visit the Tokyo Sky Tree - one of the world\'s tallest towers. Evening free to relax and explore the surroundings. Overnight stay in Tokyo.', meals: 'Lunch, Dinner' },
       { day: 3, title: 'Tokyo City Tour', description: 'After breakfast transfer to enjoy Tokyo Guided City Tour. Visit the Oldest Temple of Tokyo City - Asakusa Senso-ji Temple. Later visit the Nakamise shopping Street followed by Imperial Palace Garden, Shibuya Crossing, and Shinjuku Gyoen National Garden to see the famous Sakura blooming. Evening visit Akihabara for shopping. Overnight in Tokyo.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 4, title: 'Tokyo – Hakone – Mt. Fuji', description: 'After breakfast transfer to have an amazing and breathtaking view of mighty Mt. Fuji from Mt. Fuji 5th Station. Later enjoy Hakone Ropeway, Owakudani boiling valley for amazing Mt. Fuji views, followed by a lifetime experience of Pirate Cruise in Lake Ashi. Overnight stay in Lake Kawaguchi area.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 5, title: 'Numazu – Hiroshima (Bullet Train)', description: 'After breakfast, proceed to Mishima station to take your first Bullet Train (Shinkansen) to Hiroshima. On arrival transfer to visit Miyajima Island by ferry. Enjoy the picture stop at Itsukushima Shrine and the famous Torii Gate in the water. Evening free to relax. Overnight stay in Hiroshima.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 6, title: 'Hiroshima – Osaka (Bullet Train)', description: 'After breakfast, time to visit the historic Hiroshima Bomb site and monuments. Visit Hiroshima Peace Memorial Museum, Peace Memorial Park, Sadako Monument, Cenotaph Monument, and the Bomb Dome. Later transfer to Hiroshima Station for 2nd Bullet Train Ride to Osaka. On arrival visit Osaka Castle Park to enjoy the Sakura (Cherry Blossom). Later transfer to Shinsaibashi and Dotonbori area for shopping. Overnight stay in Osaka.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 7, title: 'Osaka – Nara – Kyoto – Osaka', description: 'After breakfast checkout and transfer to Nara. On arrival visit the World Heritage Site of Todai-ji Temple housing the Great Buddha. Visit Nara Deer Park with over 1,200 wild Sika Deer. Later transfer to Kyoto. Visit the iconic Kinkaku-ji Temple (Golden Pavilion) and Kiyomizudera Temple, established in 780 AD - one of Japan\'s most celebrated temples. Evening free for shopping. Farewell dinner with your travel companions. Overnight in Osaka.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 8, title: 'Osaka – Mumbai – Home', description: 'After breakfast checkout from hotel and transfer to Osaka Airport for return flight to Mumbai. On arrival in Mumbai, after immigration and customs, transfer to your Residence in Pune. Arrive Home and Tour Ends.', meals: 'Breakfast' }
+      { day: 4, title: 'Tokyo - Hakone - Mt. Fuji', description: 'After breakfast transfer to have an amazing and breathtaking view of mighty Mt. Fuji from Mt. Fuji 5th Station. Later enjoy Hakone Ropeway, Owakudani boiling valley for amazing Mt. Fuji views, followed by a lifetime experience of Pirate Cruise in Lake Ashi. Overnight stay in Lake Kawaguchi area.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 5, title: 'Numazu - Hiroshima (Bullet Train)', description: 'After breakfast, proceed to Mishima station to take your first Bullet Train (Shinkansen) to Hiroshima. On arrival transfer to visit Miyajima Island by ferry. Enjoy the picture stop at Itsukushima Shrine and the famous Torii Gate in the water. Evening free to relax. Overnight stay in Hiroshima.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 6, title: 'Hiroshima - Osaka (Bullet Train)', description: 'After breakfast, time to visit the historic Hiroshima Bomb site and monuments. Visit Hiroshima Peace Memorial Museum, Peace Memorial Park, Sadako Monument, Cenotaph Monument, and the Bomb Dome. Later transfer to Hiroshima Station for 2nd Bullet Train Ride to Osaka. On arrival visit Osaka Castle Park to enjoy the Sakura (Cherry Blossom). Later transfer to Shinsaibashi and Dotonbori area for shopping. Overnight stay in Osaka.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 7, title: 'Osaka - Nara - Kyoto - Osaka', description: 'After breakfast checkout and transfer to Nara. On arrival visit the World Heritage Site of Todai-ji Temple housing the Great Buddha. Visit Nara Deer Park with over 1,200 wild Sika Deer. Later transfer to Kyoto. Visit the iconic Kinkaku-ji Temple (Golden Pavilion) and Kiyomizudera Temple, established in 780 AD - one of Japan\'s most celebrated temples. Evening free for shopping. Farewell dinner with your travel companions. Overnight in Osaka.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 8, title: 'Osaka - Mumbai - Home', description: 'After breakfast checkout from hotel and transfer to Osaka Airport for return flight to Mumbai. On arrival in Mumbai, after immigration and customs, transfer to your Residence in Pune. Arrive Home and Tour Ends.', meals: 'Breakfast' }
     ],
     inclusions: [
-      'Residence – Airport - Residence COMPLIMENTARY Transfer (Ghar Se Ghar Tak for Nashik, Mumbai, Pune, PCMC)',
+      'Residence - Airport - Residence COMPLIMENTARY Transfer (Ghar Se Ghar Tak for Nashik, Mumbai, Pune, PCMC)',
       'Return Economy Class Air Ticket (Cathay Pacific / Singapore Airlines)',
       'Stay in 3/4 star deluxe hotels',
       'Breakfast, Lunch, Dinner as per itinerary',
@@ -428,7 +428,7 @@ export const tours: Tour[] = [
   },
   {
     id: 'singapore-malaysia-2025',
-    title: 'Singapore Malaysia Holiday Package – with Free Sri Lanka',
+    title: 'Singapore Malaysia Holiday Package - with Free Sri Lanka',
     shortTitle: 'Singapore Malaysia',
     destination: 'Singapore, Malaysia & Sri Lanka',
     destinations: ['Singapore', 'Malaysia', 'Sri Lanka'],
@@ -443,7 +443,7 @@ export const tours: Tour[] = [
     bestSeason: 'October to January is the best time for pleasant weather, shopping, and festive vibes.',
     transportation: 'All transfers and sightseeing via luxury 2x2 air-conditioned coach.',
     region: 'Southeast Asia',
-    tagline: '3 Countries, 9 Days – Explore the Best of Southeast Asia',
+    tagline: '3 Countries, 9 Days - Explore the Best of Southeast Asia',
     idealFor: ['Families', 'Couples', 'Honeymooners', 'First-time International Travelers'],
     highlights: [
       'Marina Bay Sands Sky Park',
@@ -457,20 +457,20 @@ export const tours: Tour[] = [
       'KL Tower Observation Deck',
       'Colombo City Tour (FREE)'
     ],
-    overview: 'Experience the ultimate Singapore Malaysia tour package this December 2025 with a surprise twist — a free Sri Lanka trip. Explore 3 stunning countries in just 9 days with world-famous attractions, modern cities, and tropical beauty.',
+    overview: 'Experience the ultimate Singapore Malaysia tour package this December 2025 with a surprise twist - a free Sri Lanka trip. Explore 3 stunning countries in just 9 days with world-famous attractions, modern cities, and tropical beauty.',
     itinerary: [
-      { day: 1, title: 'Residence – Mumbai', description: 'Pick up from Residence, transfer to Mumbai Airport for flight to Colombo.', meals: '' },
-      { day: 2, title: 'Colombo – Singapore', description: 'Colombo City Orientation Tour covering main attractions. Evening flight to Singapore.', meals: 'Breakfast, Dinner' },
-      { day: 3, title: 'Kuala Lumpur – Genting Highlands', description: 'Putrajaya tour visiting the administrative capital. Transfer to Genting Highlands by Asia\'s longest cable car - 3.38 km journey with stunning views.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 4, title: 'Genting – Kuala Lumpur', description: 'Morning free at Genting Outdoor Theme Park. Visit the iconic Batu Caves - limestone caves with Hindu temple.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 1, title: 'Residence - Mumbai', description: 'Pick up from Residence, transfer to Mumbai Airport for flight to Colombo.', meals: '' },
+      { day: 2, title: 'Colombo - Singapore', description: 'Colombo City Orientation Tour covering main attractions. Evening flight to Singapore.', meals: 'Breakfast, Dinner' },
+      { day: 3, title: 'Kuala Lumpur - Genting Highlands', description: 'Putrajaya tour visiting the administrative capital. Transfer to Genting Highlands by Asia\'s longest cable car - 3.38 km journey with stunning views.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 4, title: 'Genting - Kuala Lumpur', description: 'Morning free at Genting Outdoor Theme Park. Visit the iconic Batu Caves - limestone caves with Hindu temple.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 5, title: 'Kuala Lumpur City Tour', description: 'Full day KL city tour. Visit King\'s Palace (Istana Negara), iconic Petronas Twin Towers, KL Tower Observation Deck, and shopping.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 6, title: 'Singapore City Tour', description: 'Transfer to Singapore. Visit Marina Bay Sands Sky Park, Gardens by the Bay with Flower Dome and Cloud Forest.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 7, title: 'Singapore – Universal Studios', description: 'Full day at Universal Studios Singapore. Evening visit SEA Aquarium - one of the world\'s largest.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 8, title: 'Singapore – Sentosa Island', description: 'City Tour, Sentosa Island Cable Car, Madame Tussauds Singapore, Wings of Time spectacular show.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 7, title: 'Singapore - Universal Studios', description: 'Full day at Universal Studios Singapore. Evening visit SEA Aquarium - one of the world\'s largest.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 8, title: 'Singapore - Sentosa Island', description: 'City Tour, Sentosa Island Cable Car, Madame Tussauds Singapore, Wings of Time spectacular show.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 9, title: 'Return Home', description: 'Flight to Mumbai, complimentary transfer to Residence. Tour Ends.', meals: 'Breakfast' }
     ],
     inclusions: [
-      'Residence – Airport - Residence Transfer',
+      'Residence - Airport - Residence Transfer',
       'Return Economy Class Airfare',
       'All Meals as per Itinerary',
       '3-4 Star Hotels',
@@ -503,7 +503,7 @@ export const tours: Tour[] = [
   },
   {
     id: 'kerala-2025',
-    title: 'Kerala Kanyakumari Tour Package 2025 – Sun Tourism',
+    title: 'Kerala Kanyakumari Tour Package 2025 - Sun Tourism',
     shortTitle: 'Kerala Kanyakumari',
     destination: 'Kerala & Kanyakumari',
     destinations: ['Cochin', 'Munnar', 'Thekkady', 'Alleppey', 'Trivandrum', 'Kanyakumari'],
@@ -518,7 +518,7 @@ export const tours: Tour[] = [
     bestSeason: 'December for pleasant post-monsoon weather and ideal sightseeing conditions.',
     transportation: 'AC private vehicle and round-trip flights included.',
     region: 'South India',
-    tagline: 'God\'s Own Country – Hills, Backwaters & Coastal Beauty',
+    tagline: 'God\'s Own Country - Hills, Backwaters & Coastal Beauty',
     idealFor: ['Families', 'Nature Lovers', 'Senior Citizens', 'Spiritual Seekers'],
     highlights: [
       'Munnar Hill Station',
@@ -534,22 +534,22 @@ export const tours: Tour[] = [
     ],
     overview: 'A 10-day journey from Pune to Kerala and Kanyakumari covering iconic destinations like Munnar, Alleppey, Thekkady, Trivandrum, and the southern tip of India. Experience God\'s Own Country with its misty hills, serene backwaters, wildlife, and spiritual heritage.',
     itinerary: [
-      { day: 1, title: 'Residence – Pune Airport', description: 'Today enter the world of Sun Tourism as you begin your wonderful tour of "Kerala - God\'s Own Country". Pick up from your residence and proceed to airport to board the flight to Cochin.', meals: '' },
-      { day: 2, title: 'Pune Airport – Cochin', description: 'Arrive Cochin and check in to hotel. Explore Cochin - the Queen of Arabian Sea. Visit Fort Kochi, Chinese Fishing Nets, St. Francis Church, and Jewish Synagogue.', meals: 'Lunch, Dinner' },
-      { day: 3, title: 'Cochin – Munnar', description: 'After breakfast proceed to Munnar - a beautiful hill station which was once the summer capital of the British Government in India. Enroute witness the beautiful nature, waterfalls. Overnight stay at Munnar.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 1, title: 'Residence - Pune Airport', description: 'Today enter the world of Sun Tourism as you begin your wonderful tour of "Kerala - God\'s Own Country". Pick up from your residence and proceed to airport to board the flight to Cochin.', meals: '' },
+      { day: 2, title: 'Pune Airport - Cochin', description: 'Arrive Cochin and check in to hotel. Explore Cochin - the Queen of Arabian Sea. Visit Fort Kochi, Chinese Fishing Nets, St. Francis Church, and Jewish Synagogue.', meals: 'Lunch, Dinner' },
+      { day: 3, title: 'Cochin - Munnar', description: 'After breakfast proceed to Munnar - a beautiful hill station which was once the summer capital of the British Government in India. Enroute witness the beautiful nature, waterfalls. Overnight stay at Munnar.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 4, title: 'Munnar Sightseeing', description: 'Explore Munnar\'s natural beauty. Visit Rajamala Wildlife Sanctuary (Eravikulam National Park), Echo Point for panoramic views, and Mattupetty Dam. Evening visit the local market. Overnight at Munnar.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 5, title: 'Munnar – Thekkady (Periyar)', description: 'After breakfast, proceed to Thekkady - India\'s largest wildlife reserve. Visit famous Spice Plantations enroute. Post lunch enjoy Boat Ride at Thekkady Wildlife Reserve (or Jeep Safari if boat unavailable). Evening enjoy Kathakali dance show and Kalaripayattu martial arts show. Overnight at Thekkady.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 6, title: 'Thekkady – Vagamon – Alleppey', description: 'After breakfast proceed to Alleppey. Enroute visit the most scenic Glass Bridge at Vagamon for beautiful photos with nature. On arrival in Alleppey enjoy the famous Kerala Backwater ride in Vembanad Lake. Overnight at Alleppey.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 7, title: 'Alleppey – Jatayu – Varkala – Trivandrum', description: 'After breakfast check out and proceed towards Trivandrum. Enroute visit world\'s largest Bird Sculpture - Jatayu Earth\'s Centre. Later visit Varkala Beach - the only beach in southern Kerala with cliffs. Arrive Trivandrum. Overnight stay at Trivandrum.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 5, title: 'Munnar - Thekkady (Periyar)', description: 'After breakfast, proceed to Thekkady - India\'s largest wildlife reserve. Visit famous Spice Plantations enroute. Post lunch enjoy Boat Ride at Thekkady Wildlife Reserve (or Jeep Safari if boat unavailable). Evening enjoy Kathakali dance show and Kalaripayattu martial arts show. Overnight at Thekkady.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 6, title: 'Thekkady - Vagamon - Alleppey', description: 'After breakfast proceed to Alleppey. Enroute visit the most scenic Glass Bridge at Vagamon for beautiful photos with nature. On arrival in Alleppey enjoy the famous Kerala Backwater ride in Vembanad Lake. Overnight at Alleppey.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 7, title: 'Alleppey - Jatayu - Varkala - Trivandrum', description: 'After breakfast check out and proceed towards Trivandrum. Enroute visit world\'s largest Bird Sculpture - Jatayu Earth\'s Centre. Later visit Varkala Beach - the only beach in southern Kerala with cliffs. Arrive Trivandrum. Overnight stay at Trivandrum.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 8, title: 'Trivandrum Sightseeing', description: 'Today after breakfast proceed to Trivandrum sightseeing which includes the ancient Padmanabh Swami Temple (one of the richest temples in the world), Napier Museum, and relaxation at Kovalam Beach. Overnight at Trivandrum.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 9, title: 'Trivandrum – Kanyakumari', description: 'Have breakfast and proceed to Kanyakumari - the southernmost tip of India. On arrival visit the Tri-Samudra Milan (confluence of three seas), Gandhi Mandapam, Swami Vivekananda Rock Memorial, Thiruvalluvar Statue & Kanyakumari Temple. Witness the spectacular sunset. Overnight Stay in Kanyakumari.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 10, title: 'Kanyakumari – Trivandrum – Home', description: 'Early morning optional sunrise viewing. After breakfast check out and proceed towards Trivandrum for your return flight home. Board flight from Trivandrum Airport and return home with wonderful memories. Upon arrival complimentary transfer to your residence.', meals: 'Breakfast' }
+      { day: 9, title: 'Trivandrum - Kanyakumari', description: 'Have breakfast and proceed to Kanyakumari - the southernmost tip of India. On arrival visit the Tri-Samudra Milan (confluence of three seas), Gandhi Mandapam, Swami Vivekananda Rock Memorial, Thiruvalluvar Statue & Kanyakumari Temple. Witness the spectacular sunset. Overnight Stay in Kanyakumari.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 10, title: 'Kanyakumari - Trivandrum - Home', description: 'Early morning optional sunrise viewing. After breakfast check out and proceed towards Trivandrum for your return flight home. Board flight from Trivandrum Airport and return home with wonderful memories. Upon arrival complimentary transfer to your residence.', meals: 'Breakfast' }
     ],
     inclusions: [
-      'Residence – Airport - Residence Complimentary Transfer (Ghar Se Ghar Tak for Pune & PCMC guests)',
+      'Residence - Airport - Residence Complimentary Transfer (Ghar Se Ghar Tak for Pune & PCMC guests)',
       'Return Air Fare',
-      'All Meals – Breakfast, Lunch, Dinner (set menu)',
-      'All Tips – Guide, Driver & Restaurant',
+      'All Meals - Breakfast, Lunch, Dinner (set menu)',
+      'All Tips - Guide, Driver & Restaurant',
       'Entrance fees of all sightseeing places as per itinerary',
       'Accommodation in 3 & 4-star comfortable hotels',
       'A/C Vehicle as per Group Size',
@@ -583,7 +583,7 @@ export const tours: Tour[] = [
   },
   {
     id: 'andaman-2025',
-    title: 'Andaman Tour Packages 2025–2026 from Pune | Sun Tourism',
+    title: 'Andaman Tour Packages 2025-2026 from Pune | Sun Tourism',
     shortTitle: 'Andaman Islands',
     destination: 'Andaman Islands',
     destinations: ['Port Blair', 'Havelock Island', 'Neil Island', 'Ross Island'],
@@ -598,7 +598,7 @@ export const tours: Tour[] = [
     bestSeason: 'October to May for pleasant weather and calm seas, perfect for water activities.',
     transportation: 'Flights, Inter-island cruises (Macruzz/Green/Nautika), private AC vehicles.',
     region: 'Bay of Bengal',
-    tagline: 'Tropical Paradise – Crystal Waters, White Sands & Island Adventures',
+    tagline: 'Tropical Paradise - Crystal Waters, White Sands & Island Adventures',
     idealFor: ['Couples', 'Honeymooners', 'Beach Lovers', 'Adventure Seekers', 'Families'],
     highlights: [
       'Cellular Jail Light & Sound Show',
@@ -612,17 +612,17 @@ export const tours: Tour[] = [
       'Water Sports Activities',
       'Scuba Diving (Optional)'
     ],
-    overview: 'A 6-day group tour covering Andaman\'s best hits — from Port Blair\'s historic Cellular Jail to Havelock\'s crystal blue waters and Neil Island\'s golden hour glow. Experience the pristine beaches, vibrant coral reefs, and rich history of these tropical islands.',
+    overview: 'A 6-day group tour covering Andaman\'s best hits - from Port Blair\'s historic Cellular Jail to Havelock\'s crystal blue waters and Neil Island\'s golden hour glow. Experience the pristine beaches, vibrant coral reefs, and rich history of these tropical islands.',
     itinerary: [
-      { day: 1, title: 'Residence – Port Blair', description: 'Flight from Pune/Mumbai to Port Blair. On arrival, visit the beautiful Corbyn\'s Cove Beach. Evening attend the emotional Light & Sound Show at Cellular Jail - reliving the freedom struggle history. Overnight at Port Blair.', meals: 'Lunch, Dinner' },
-      { day: 2, title: 'Port Blair – Havelock Island', description: 'Morning ferry to Havelock Island - jewel of Andaman. Visit Elephant Beach for optional water sports and snorkeling among vibrant corals. Evening witness spectacular sunset at Radhanagar Beach - rated Asia\'s best beach. Overnight at Havelock.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 3, title: 'Havelock – Neil Island', description: 'Morning ferry to the tranquil Neil Island - the "Vegetable Bowl of Andaman". Visit the Natural Coral Bridge (Howrah Bridge). Experience the breathtaking sunset at Laxmanpur Beach. Overnight at Neil Island beach resort.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 4, title: 'Neil Island – Port Blair', description: 'Early morning sunrise at Bharatpur Beach. After breakfast, ferry back to Port Blair. Visit historic Ross Island - former British administrative headquarters, now reclaimed by nature. Explore the ruins and deer park. Overnight at Port Blair.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 1, title: 'Residence - Port Blair', description: 'Flight from Pune/Mumbai to Port Blair. On arrival, visit the beautiful Corbyn\'s Cove Beach. Evening attend the emotional Light & Sound Show at Cellular Jail - reliving the freedom struggle history. Overnight at Port Blair.', meals: 'Lunch, Dinner' },
+      { day: 2, title: 'Port Blair - Havelock Island', description: 'Morning ferry to Havelock Island - jewel of Andaman. Visit Elephant Beach for optional water sports and snorkeling among vibrant corals. Evening witness spectacular sunset at Radhanagar Beach - rated Asia\'s best beach. Overnight at Havelock.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 3, title: 'Havelock - Neil Island', description: 'Morning ferry to the tranquil Neil Island - the "Vegetable Bowl of Andaman". Visit the Natural Coral Bridge (Howrah Bridge). Experience the breathtaking sunset at Laxmanpur Beach. Overnight at Neil Island beach resort.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 4, title: 'Neil Island - Port Blair', description: 'Early morning sunrise at Bharatpur Beach. After breakfast, ferry back to Port Blair. Visit historic Ross Island - former British administrative headquarters, now reclaimed by nature. Explore the ruins and deer park. Overnight at Port Blair.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 5, title: 'Port Blair City Tour', description: 'Full day Port Blair exploration. Visit Chatham Saw Mill (Asia\'s oldest operating saw mill), Anthropological Museum (tribal heritage), Naval Marine Museum (marine life exhibits). Evening free for shopping at Aberdeen Bazaar. Overnight at Port Blair.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 6, title: 'Return Home', description: 'After breakfast, transfer to Port Blair Airport for flight to Mumbai/Pune. Complimentary transfer to Residence. Tour Ends with beautiful island memories.', meals: 'Breakfast' }
     ],
     inclusions: [
-      'Residence – Airport - Residence Transfer',
+      'Residence - Airport - Residence Transfer',
       'Return Airfare (Mumbai-Port Blair-Mumbai)',
       'All Meals from Day 1 Lunch to Day 6 Breakfast',
       'Deluxe & Star-Rated Hotels',
@@ -659,7 +659,7 @@ export const tours: Tour[] = [
   },
   {
     id: 'nepal-2026',
-    title: 'Nepal Tour Package 2026 – Kathmandu, Chitwan & Pokhara | 8 Days',
+    title: 'Nepal Tour Package 2026 - Kathmandu, Chitwan & Pokhara | 8 Days',
     shortTitle: 'Nepal Himalayan',
     destination: 'Nepal',
     destinations: ['Kathmandu', 'Chitwan', 'Pokhara', 'Manakamana'],
@@ -674,7 +674,7 @@ export const tours: Tour[] = [
     bestSeason: 'March-May and October-November for clear Himalayan views and pleasant weather.',
     transportation: 'Economy flights, domestic flight Pokhara-Kathmandu, AC vehicle for all transfers.',
     region: 'South Asia',
-    tagline: 'Land of the Himalayas – Temples, Tigers & Tranquility',
+    tagline: 'Land of the Himalayas - Temples, Tigers & Tranquility',
     idealFor: ['Spiritual Seekers', 'Nature Lovers', 'Adventure Enthusiasts', 'Families', 'Senior Citizens'],
     highlights: [
       'Pashupatinath Temple',
@@ -689,17 +689,17 @@ export const tours: Tour[] = [
     ],
     overview: 'Experience the spiritual and natural beauty of Nepal with Sun Tourism\'s 8-day journey covering Kathmandu\'s ancient temples, Chitwan\'s wildlife, and Pokhara\'s stunning lake views. From jungle safaris to Himalayan sunrises, this tour offers the complete Nepal experience.',
     itinerary: [
-      { day: 1, title: 'Residence – Kathmandu', description: 'Pick up from Residence and transfer to Mumbai Airport. Flight to Kathmandu. On arrival, transfer to hotel. Evening orientation walk. Overnight in Kathmandu.', meals: 'Dinner' },
+      { day: 1, title: 'Residence - Kathmandu', description: 'Pick up from Residence and transfer to Mumbai Airport. Flight to Kathmandu. On arrival, transfer to hotel. Evening orientation walk. Overnight in Kathmandu.', meals: 'Dinner' },
       { day: 2, title: 'Kathmandu Sightseeing', description: 'Full day Kathmandu Valley tour. Visit Pashupatinath Temple (one of the holiest Hindu shrines), Boudhanath Stupa (largest Buddhist stupa in Nepal), and Swayambhunath Temple (Monkey Temple). Evening visit Thamel for shopping. Overnight in Kathmandu.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 3, title: 'Kathmandu – Chitwan', description: 'After breakfast, scenic drive to Chitwan National Park (UNESCO World Heritage Site). Afternoon Tharu village walk and cultural dance show in evening. Overnight at jungle resort.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 3, title: 'Kathmandu - Chitwan', description: 'After breakfast, scenic drive to Chitwan National Park (UNESCO World Heritage Site). Afternoon Tharu village walk and cultural dance show in evening. Overnight at jungle resort.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 4, title: 'Chitwan Wildlife Safari', description: 'Early morning bird watching. After breakfast, jungle activities including Elephant Safari/Jeep Safari through the jungle to spot one-horned rhinos, deer, and if lucky, the Royal Bengal Tiger. Canoe ride on Rapti River. Overnight at Chitwan.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 5, title: 'Chitwan – Pokhara', description: 'After breakfast, scenic drive to Pokhara - the lake city. Afternoon visit Phewa Lake for boating with views of Machapuchare (Fishtail Mountain). Visit Tal Barahi Temple on the island. Evening free at Lakeside. Overnight in Pokhara.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 5, title: 'Chitwan - Pokhara', description: 'After breakfast, scenic drive to Pokhara - the lake city. Afternoon visit Phewa Lake for boating with views of Machapuchare (Fishtail Mountain). Visit Tal Barahi Temple on the island. Evening free at Lakeside. Overnight in Pokhara.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 6, title: 'Pokhara Sightseeing', description: 'Early morning drive to Sarangkot for spectacular sunrise over Annapurna range. After breakfast, visit Davis Falls, Gupteshwor Cave, and Peace Pagoda. Afternoon free for shopping or paragliding (optional). Overnight in Pokhara.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 7, title: 'Pokhara – Manakamana – Kathmandu', description: 'Morning flight from Pokhara to Kathmandu. Enroute visit Manakamana Temple by cable car (one of Nepal\'s most sacred temples). Continue to Kathmandu. Evening farewell dinner. Overnight in Kathmandu.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 8, title: 'Kathmandu – Home', description: 'After breakfast, transfer to Kathmandu Airport for return flight. Arrive Mumbai and complimentary transfer to Residence. Tour Ends with Himalayan memories.', meals: 'Breakfast' }
+      { day: 7, title: 'Pokhara - Manakamana - Kathmandu', description: 'Morning flight from Pokhara to Kathmandu. Enroute visit Manakamana Temple by cable car (one of Nepal\'s most sacred temples). Continue to Kathmandu. Evening farewell dinner. Overnight in Kathmandu.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 8, title: 'Kathmandu - Home', description: 'After breakfast, transfer to Kathmandu Airport for return flight. Arrive Mumbai and complimentary transfer to Residence. Tour Ends with Himalayan memories.', meals: 'Breakfast' }
     ],
     inclusions: [
-      'Residence – Airport - Residence Transfer (Ghar Se Ghar Tak)',
+      'Residence - Airport - Residence Transfer (Ghar Se Ghar Tak)',
       'Return Economy Class Airfare',
       'Domestic Flight Pokhara-Kathmandu',
       'All Meals as per Itinerary',
@@ -734,7 +734,7 @@ export const tours: Tour[] = [
   },
   {
     id: 'bali-2026',
-    title: 'Bali Tour Package 2026 – Island Paradise | 6 Days',
+    title: 'Bali Tour Package 2026 - Island Paradise | 6 Days',
     shortTitle: 'Bali Paradise',
     destination: 'Bali, Indonesia',
     destinations: ['Ubud', 'Seminyak', 'Nusa Dua', 'Tanah Lot', 'Kintamani'],
@@ -749,7 +749,7 @@ export const tours: Tour[] = [
     bestSeason: 'April-October for dry season with minimal rainfall and perfect beach weather.',
     transportation: 'Private AC vehicle for all transfers and sightseeing.',
     region: 'Southeast Asia',
-    tagline: 'Island of Gods – Temples, Rice Terraces & Tropical Bliss',
+    tagline: 'Island of Gods - Temples, Rice Terraces & Tropical Bliss',
     idealFor: ['Couples', 'Honeymooners', 'Beach Lovers', 'Photography Enthusiasts', 'Adventure Seekers'],
     highlights: [
       'Tegallalang Rice Terraces',
@@ -809,7 +809,7 @@ export const tours: Tour[] = [
   },
   {
     id: 'baku-2026',
-    title: 'Azerbaijan Baku Tour Package 2026 – Land of Fire | 7 Days',
+    title: 'Azerbaijan Baku Tour Package 2026 - Land of Fire | 7 Days',
     shortTitle: 'Azerbaijan Baku',
     destination: 'Azerbaijan Baku',
     destinations: ['Baku', 'Gabala', 'Shahdag', 'Shamakhi'],
@@ -824,7 +824,7 @@ export const tours: Tour[] = [
     bestSeason: 'April-June and September-October for pleasant weather.',
     transportation: 'Private AC vehicle and domestic transfers included.',
     region: 'Caucasus',
-    tagline: 'Land of Fire – Ancient Meets Ultra-Modern',
+    tagline: 'Land of Fire - Ancient Meets Ultra-Modern',
     idealFor: ['Couples', 'Families', 'Photography Enthusiasts', 'First-time Europe-adjacent'],
     highlights: [
       'Flame Towers',
@@ -840,16 +840,16 @@ export const tours: Tour[] = [
     ],
     overview: 'Discover Azerbaijan - the Land of Fire - with Sun Tourism\'s 7-day journey. From Baku\'s stunning modern architecture to ancient fire temples, mud volcanoes, and the mountain resort of Gabala, experience this hidden gem of the Caucasus.',
     itinerary: [
-      { day: 1, title: 'Residence – Baku', description: 'Pick up from Residence and transfer to Mumbai Airport. Flight to Baku. On arrival, transfer to hotel. Evening free to explore the Baku Boulevard along the Caspian Sea. Overnight in Baku.', meals: 'Dinner' },
+      { day: 1, title: 'Residence - Baku', description: 'Pick up from Residence and transfer to Mumbai Airport. Flight to Baku. On arrival, transfer to hotel. Evening free to explore the Baku Boulevard along the Caspian Sea. Overnight in Baku.', meals: 'Dinner' },
       { day: 2, title: 'Baku City Tour', description: 'Full day Baku city tour. Visit the UNESCO World Heritage Old City (Icherisheher), Maiden Tower, Palace of the Shirvanshahs. See the iconic Flame Towers and Heydar Aliyev Center (photo stop). Evening visit Highland Park for panoramic city views. Overnight in Baku.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 3, title: 'Baku Outskirts Tour', description: 'Morning visit Ateshgah Fire Temple (ancient Zoroastrian temple), Yanar Dag (naturally burning hillside), and Bibi-Heybat Mosque. Afternoon visit Gobustan National Park for ancient rock petroglyphs (UNESCO site) and mud volcanoes. Overnight in Baku.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 4, title: 'Baku – Shamakhi – Gabala', description: 'After breakfast, scenic drive to Gabala via Shamakhi. Visit Shamakhi Juma Mosque (one of the oldest mosques in the Caucasus) and Seven Beauties Waterfall. Arrive Gabala - the mountain resort town. Overnight in Gabala.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 4, title: 'Baku - Shamakhi - Gabala', description: 'After breakfast, scenic drive to Gabala via Shamakhi. Visit Shamakhi Juma Mosque (one of the oldest mosques in the Caucasus) and Seven Beauties Waterfall. Arrive Gabala - the mountain resort town. Overnight in Gabala.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 5, title: 'Gabala Exploration', description: 'Full day in Gabala. Ride the Gabala Cable Car for stunning mountain views. Visit Nohur Lake and enjoy the pine forests. Optional activities: shooting range, horse riding, zip-lining. Evening relaxation at resort. Overnight in Gabala.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 6, title: 'Gabala – Baku', description: 'After breakfast, return to Baku. Afternoon free for shopping at Nizami Street and local markets. Evening farewell dinner at a traditional Azerbaijani restaurant with live music. Overnight in Baku.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 6, title: 'Gabala - Baku', description: 'After breakfast, return to Baku. Afternoon free for shopping at Nizami Street and local markets. Evening farewell dinner at a traditional Azerbaijani restaurant with live music. Overnight in Baku.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 7, title: 'Departure', description: 'After breakfast, transfer to Baku Airport for return flight. Arrive Mumbai and complimentary transfer to Residence. Tour Ends.', meals: 'Breakfast' }
     ],
     inclusions: [
-      'Residence – Airport - Residence Transfer',
+      'Residence - Airport - Residence Transfer',
       'Return Economy Class Airfare',
       '6 Nights in 4-Star Hotels/Resorts',
       'All Meals as per Itinerary',
@@ -883,7 +883,7 @@ export const tours: Tour[] = [
   },
   {
     id: 'australia-2026',
-    title: 'Australia Tour Package 2026 – Sydney to Melbourne | 12 Days',
+    title: 'Australia Tour Package 2026 - Sydney to Melbourne | 12 Days',
     shortTitle: 'Australia Adventure',
     destination: 'Australia',
     destinations: ['Sydney', 'Cairns', 'Gold Coast', 'Melbourne'],
@@ -898,7 +898,7 @@ export const tours: Tour[] = [
     bestSeason: 'September-November (Australian Spring) for pleasant weather across all regions.',
     transportation: 'Domestic flights, luxury coach, Great Barrier Reef cruise included.',
     region: 'Oceania',
-    tagline: 'Down Under Dreams – Reefs, Wildlife & Iconic Landmarks',
+    tagline: 'Down Under Dreams - Reefs, Wildlife & Iconic Landmarks',
     idealFor: ['Families', 'Adventure Seekers', 'Nature Lovers', 'First-time Australia'],
     highlights: [
       'Sydney Opera House',
@@ -914,21 +914,21 @@ export const tours: Tour[] = [
     ],
     overview: 'Experience the ultimate Australian adventure with Sun Tourism\'s 12-day comprehensive tour. From Sydney\'s iconic Opera House to the wonders of the Great Barrier Reef, theme park thrills on the Gold Coast, and Melbourne\'s cultural charm - this is Australia at its best.',
     itinerary: [
-      { day: 1, title: 'Residence – Australia', description: 'Pick up from Residence and transfer to Mumbai Airport for your flight to Sydney. Overnight in flight.', meals: '' },
+      { day: 1, title: 'Residence - Australia', description: 'Pick up from Residence and transfer to Mumbai Airport for your flight to Sydney. Overnight in flight.', meals: '' },
       { day: 2, title: 'Arrive Sydney', description: 'Arrive Sydney - Australia\'s vibrant harbor city. Transfer to hotel. Afternoon city orientation tour to get a feel of this beautiful city. Evening free to explore. Overnight in Sydney.', meals: 'Dinner' },
       { day: 3, title: 'Sydney City Tour', description: 'Full day Sydney tour. Visit the iconic Bondi Beach, The Rocks historic area, Harbour Bridge views, Darling Harbour, and Chinatown. Guided tour inside the Sydney Opera House. Visit Sydney Tower for 360-degree city views. Evening Sydney Harbour Dinner Cruise. Overnight in Sydney.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 4, title: 'Sydney – Cairns', description: 'Morning flight to Cairns. Visit Kuranda Rainforest via Skyrail Cableway (7.5 km over tropical rainforest). Experience the WWII Army Duck rainforest tour. Visit Pamagirri Aboriginal Cultural Park for traditional dance and boomerang throwing. Overnight in Cairns.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 4, title: 'Sydney - Cairns', description: 'Morning flight to Cairns. Visit Kuranda Rainforest via Skyrail Cableway (7.5 km over tropical rainforest). Experience the WWII Army Duck rainforest tour. Visit Pamagirri Aboriginal Cultural Park for traditional dance and boomerang throwing. Overnight in Cairns.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 5, title: 'Great Barrier Reef', description: 'Full day Great Barrier Reef tour. Cruise to the Marine National Park - the world\'s largest coral reef system visible from space. Enjoy snorkeling, glass-bottom boat viewing, and underwater observatory. Semi-submersible coral viewing included. Overnight in Cairns.', meals: 'Breakfast, Lunch, Dinner' },
-      { day: 6, title: 'Cairns – Gold Coast', description: 'Flight to Gold Coast - Australia\'s theme park capital. Afternoon at leisure to explore Surfers Paradise beach and shopping areas. Overnight at Gold Coast.', meals: 'Breakfast, Lunch, Dinner' },
+      { day: 6, title: 'Cairns - Gold Coast', description: 'Flight to Gold Coast - Australia\'s theme park capital. Afternoon at leisure to explore Surfers Paradise beach and shopping areas. Overnight at Gold Coast.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 7, title: 'Warner Bros Movie World', description: 'Full day at Warner Bros Movie World. Enjoy thrilling rides, meet your favorite characters, and watch spectacular shows. Experience Hollywood on the Gold Coast. Overnight at Gold Coast.', meals: 'Breakfast, Dinner' },
       { day: 8, title: 'Gold Coast Free Day', description: 'Free day for optional activities - Sea World, Dreamworld, or Wet\'n\'Wild Water World. Alternatively, relax at the beautiful beaches. Evening transfer to Brisbane Airport for flight to Melbourne. Overnight in Melbourne.', meals: 'Breakfast' },
       { day: 9, title: 'Melbourne City Tour', description: 'Full day Melbourne city tour. Visit Federation Square, Flinders Street Station, St. Paul\'s Cathedral, Eureka Skydeck for panoramic views. Explore the famous Melbourne laneways and street art. Evening free at Southbank. Overnight in Melbourne.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 10, title: 'Great Ocean Road', description: 'Full day Great Ocean Road tour - one of the world\'s most scenic coastal drives. Visit the famous Twelve Apostles rock formations, Loch Ard Gorge, and London Bridge. Experience the stunning coastal scenery. Overnight in Melbourne.', meals: 'Breakfast, Lunch, Dinner' },
       { day: 11, title: 'Phillip Island Penguin Parade', description: 'Morning free in Melbourne. Afternoon excursion to Phillip Island. Visit the Koala Conservation Centre. Evening witness the famous Penguin Parade - watch hundreds of little penguins waddle ashore. A once-in-a-lifetime experience. Overnight in Melbourne.', meals: 'Breakfast, Dinner' },
-      { day: 12, title: 'Melbourne – Home', description: 'After breakfast, transfer to Melbourne Airport for your return flight to India. Arrive Mumbai and complimentary transfer to Residence. Tour Ends with incredible Australian memories.', meals: 'Breakfast' }
+      { day: 12, title: 'Melbourne - Home', description: 'After breakfast, transfer to Melbourne Airport for your return flight to India. Arrive Mumbai and complimentary transfer to Residence. Tour Ends with incredible Australian memories.', meals: 'Breakfast' }
     ],
     inclusions: [
-      'Residence – Airport - Residence Transfer (Ghar Se Ghar Tak)',
+      'Residence - Airport - Residence Transfer (Ghar Se Ghar Tak)',
       'Return Economy Class International Airfare',
       'All Domestic Flights within Australia',
       '11 Nights in 3-4 Star Hotels',
@@ -973,7 +973,7 @@ export const tours: Tour[] = [
   // South Africa Tour
   {
     id: 'south-africa-2026',
-    title: 'Sunny South Africa Tour 2026 – 10N/11D Ghar Se Ghar Tak | Cape Town, Sun City & Pilanesberg Safari',
+    title: 'Sunny South Africa Tour 2026 - 10N/11D Ghar Se Ghar Tak | Cape Town, Sun City & Pilanesberg Safari',
     shortTitle: 'Sunny South Africa',
     destination: 'Sunny South Africa',
     destinations: ['Cape Town', 'Hermanus', 'Knysna', 'Mossel Bay', 'Sun City', 'Pilanesberg', 'Johannesburg'],
@@ -988,7 +988,7 @@ export const tours: Tour[] = [
     bestSeason: 'July offers pleasant weather, perfect for safaris and sightseeing.',
     transportation: 'Travel in a spacious, air-conditioned luxury coach for all transfers and excursions.',
     region: 'Africa',
-    tagline: 'Experience Adventure & Luxury with Sun Touriism\'s Sunny South Africa Tour',
+    tagline: 'Experience adventure and luxury with Sun Tourism\'s Sunny South Africa Tour',
     idealFor: ['Families', 'Couples', 'Adventure Seekers', 'Nature Lovers', 'Wildlife Enthusiasts'],
     highlights: [
       'Table Mountain Cable Car Ride',
@@ -1001,7 +1001,7 @@ export const tours: Tour[] = [
       'Sun City Resort & Valley of Waves',
       'Johannesburg City Tour'
     ],
-    overview: 'Step into Sun Touriism\'s Sunny South Africa Tour 2026 — an 11-day July journey that captures the essence of nature, wildlife, and modern marvels. From the breathtaking Table Mountain in Cape Town to the exciting Pilanesberg Safari, and from Hermanus Whale Watching to the luxury of Sun City, this tour blends adventure, comfort, and scenic beauty in one unforgettable experience.',
+    overview: 'Step into Sun Tourism\'s Sunny South Africa Tour 2026 - an 11-day July journey that captures the essence of nature, wildlife, and modern marvels. From the breathtaking Table Mountain in Cape Town to the exciting Pilanesberg Safari, and from Hermanus whale watching to the luxury of Sun City, this tour blends adventure, comfort, and scenic beauty in one unforgettable experience.',
     itinerary: [
       { day: 1, title: 'Pune/Mumbai - Cape Town', description: 'Pickup from residence and transfer to Mumbai for flight to Cape Town. Overnight in flight.' },
       { day: 2, title: 'Cape Town', description: 'Arrival in Cape Town. Guided city tour including Table Mountain cable car, V&A Waterfront, and more. Overnight in Cape Town.' },
@@ -1016,12 +1016,12 @@ export const tours: Tour[] = [
       { day: 11, title: 'Arrival', description: 'Arrive home. Tour ends.' }
     ],
     inclusions: [
-      'Residence – Airport - Residence COMPLIMENTARY Transfer (Ghar Se Ghar Tak)',
+      'Residence - Airport - Residence COMPLIMENTARY Transfer (Ghar Se Ghar Tak)',
       'Return Economy Class Airfare',
       'Breakfast, Lunch, Dinner, Sightseeing Entry Charges, Tips, Guide Fee',
       'All transfers and sightseeing by 2x2 A/C Luxury Coach',
       'Tourist Visa Charges',
-      'Services of Sun Touriism Internationall Pvt. Ltd. Tour Manager',
+      'Services of Sun Tourism International Pvt. Ltd. Tour Manager',
       'A Complimentary Travel Kit',
       'Overseas Travel insurance (Up to 60 Years of age)',
       'Your Tour Photo in Google drive',
@@ -1037,11 +1037,11 @@ export const tours: Tour[] = [
       'Any services or activity charges other than those included'
     ],
     notes: [
-      'Booking Amount Rs. 50,000/- per person (Non – Refundable)',
+      'Booking Amount Rs. 50,000/- per person (Non - Refundable)',
       'Tour cost calculated as 1 ZAR @ 5 INR and 1 USD @ 90 INR',
       'Complete Final payment in INR as per prevailing Market Card Rate',
-      'Balance payment 45 – 30 days before departure',
-      'If balance not paid D – 30 days, booking cancelled and amount forfeited',
+      'Balance payment 45 - 30 days before departure',
+      'If balance not paid D - 30 days, booking cancelled and amount forfeited',
       'Visa rejection: Visa Fee and Hotel/Airline charges chargeable'
     ],
     bookingAmount: 50000,

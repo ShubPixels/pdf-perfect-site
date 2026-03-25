@@ -299,7 +299,7 @@ const PackingLight10DayTours = () => {
         </div>
 
         <p className="text-center italic text-muted-foreground mt-8">
-          "Travel light, live light, spread the light, be the light." – Yogi Bhajan
+          "Travel light, live light, spread the light, be the light." - Yogi Bhajan
         </p>
       </div>
     </BlogPostLayout>

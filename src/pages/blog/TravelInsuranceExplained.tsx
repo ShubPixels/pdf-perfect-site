@@ -171,12 +171,12 @@ const TravelInsuranceExplained = () => {
         <div className="bg-green-50 border-l-4 border-green-500 p-6 my-8">
           <h3 className="font-bold text-green-800 mb-2">Final Thoughts</h3>
           <p className="text-green-700">
-            Travel insurance is not an optional extra—it's an essential part of responsible travel planning. The peace of mind it provides is invaluable, and the cost is minimal compared to the protection it offers. Don't leave home without it!
+            Travel insurance is not an optional extra-it's an essential part of responsible travel planning. The peace of mind it provides is invaluable, and the cost is minimal compared to the protection it offers. Don't leave home without it!
           </p>
         </div>
 
         <p className="text-center italic text-muted-foreground">
-          "Better safe than sorry" – especially when traveling abroad
+          "Better safe than sorry" - especially when traveling abroad
         </p>
       </div>
     </BlogPostLayout>

@@ -138,12 +138,12 @@ const About = () => {
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                 We believe travel should be transformative, not transactional. Every journey 
-                we craft is designed to create meaningful connections—with places, cultures, 
+                we craft is designed to create meaningful connections-with places, cultures, 
                 and fellow travelers.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 Our "Ghar Se Ghar Tak" promise means complete care from your doorstep to your destination 
-                and back—flights, visas, hotels, meals, and memories, all taken care of.
+                and back-flights, visas, hotels, meals, and memories, all taken care of.
               </p>
               <div className="flex flex-wrap gap-3">
                 {["Ghar Se Ghar Tak", "Family-Friendly", "Hassle-Free Travel"].map((tag) => (

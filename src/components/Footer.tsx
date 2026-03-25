@@ -1,42 +1,71 @@
-import { Heart, Phone, Mail, MapPin, Instagram, Facebook, Youtube, Linkedin, MessageCircle, Users } from "lucide-react";
+import {
+  ArrowUpRight,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Users,
+  Youtube,
+} from "lucide-react";
 import { Link } from "react-router-dom";
-import { useVisitorCounter } from "@/hooks/use-visitor-counter";
+
 import { navLinks } from "@/config/navigation";
+import { useVisitorCounter } from "@/hooks/use-visitor-counter";
 
 export const Footer = () => {
   const { count, loading } = useVisitorCounter();
 
   return (
     <footer className="mt-20">
-      {/* Top Yellow Bar */}
       <div className="bg-cta py-3">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-between items-center gap-4">
-            {/* <div className="flex flex-wrap items-center gap-6 text-sm font-medium text-foreground">
-              <span>Rajasthan</span>
-              <span className="hidden sm:inline">|</span>
-              <span>Dubai & Abu Dhabi</span>
-              <span className="hidden sm:inline">|</span>
-              <span>Singapore Malaysia</span>
-              <span className="hidden sm:inline">|</span>
-              <span>Europe</span>
-              <span className="hidden sm:inline">|</span>
-              <span>Japan</span>
-            </div> */}
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="text-sm font-medium text-foreground">
+              Follow Sun Tourism for traveller stories, updates, and fresh inspiration.
+            </div>
+
             <div className="flex items-center gap-4">
-              <a href="https://www.facebook.com/suntouriismpune/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-80 transition-opacity">
+              <a
+                href="https://www.facebook.com/suntouriismpune/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground transition-opacity hover:opacity-80"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="https://www.instagram.com/suntourismpune/" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-80 transition-opacity">
+              <a
+                href="https://www.instagram.com/suntourismpune/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground transition-opacity hover:opacity-80"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="https://www.youtube.com/@suntourismpune6312" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-80 transition-opacity">
+              <a
+                href="https://www.youtube.com/@suntourismpune6312"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground transition-opacity hover:opacity-80"
+              >
                 <Youtube className="h-5 w-5" />
               </a>
-              <a href="https://www.linkedin.com/company/sun-touriism-internationall" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-80 transition-opacity">
+              <a
+                href="https://www.linkedin.com/company/sun-touriism-internationall"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground transition-opacity hover:opacity-80"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="https://wa.link/97984j" target="_blank" rel="noopener noreferrer" className="text-foreground hover:opacity-80 transition-opacity">
+              <a
+                href="https://wa.link/97984j"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground transition-opacity hover:opacity-80"
+              >
                 <MessageCircle className="h-5 w-5" />
               </a>
             </div>
@@ -44,87 +73,77 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Main Footer */}
-      <div className="bg-white border-t border-border">
+      <div className="border-t border-border bg-white">
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* About Section */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div>
-              <div className="flex items-center gap-3 mb-4">
+              <div className="mb-4 flex items-center gap-3">
                 <img src="/logo.png" alt="Sun Tourism" className="h-12 w-auto" />
                 <div>
                   <h3 className="font-bold text-foreground">Sun Tourism</h3>
-                  <p className="text-xs text-muted-foreground italic">Ghar Se Ghar Tak</p>
+                  <p className="text-xs italic text-muted-foreground">Ghar Se Ghar Tak</p>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-                Stories, updates & memories from Sun Tourism travellers – no bookings, just experiences. We have been crafting unforgettable journeys since 2007.
+
+              <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+                Real traveller stories, useful travel guidance, and memorable moments from
+                Sun Tourism journeys since 2007.
               </p>
-              {/* Visitor Counter */}
-              <div className="flex items-center gap-2 p-3 bg-primary/10 rounded-lg border border-primary/20">
+
+              <div className="flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/10 p-3">
                 <Users className="h-5 w-5 text-primary" />
                 <div>
                   <p className="text-xs text-muted-foreground">Total Visitors</p>
-                  <p className="font-bold text-lg text-primary">
+                  <p className="text-lg font-bold text-primary">
                     {loading ? "..." : count?.toLocaleString()}
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Contact - PCMC Office */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+              <h4 className="mb-4 flex items-center gap-2 font-semibold text-foreground">
                 <MapPin className="h-4 w-4 text-accent" />
                 P.C.M.C Head Office
               </h4>
-              <a 
-                href="https://goo.gl/maps/1rQVgrnHGrzCNiWB7" 
-                target="_blank" 
+
+              <a
+                href="https://goo.gl/maps/1rQVgrnHGrzCNiWB7"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors block mb-4"
+                className="mb-4 block text-sm text-muted-foreground transition-colors hover:text-primary"
               >
-                Sun Touriism Internationall Pvt.Ltd, Prestige Plaza, Office No. 3, Ground Floor, Old Mumbai - Pune Hwy, Akurdi, Pune 411035
+                Sun Tourism International Pvt. Ltd., Prestige Plaza, Office No. 3,
+                Ground Floor, Old Mumbai - Pune Hwy, Akurdi, Pune 411035
               </a>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+
+              <div className="mb-2 flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-accent" />
-                <a href="tel:+917722000888" className="hover:text-primary transition-colors">+91 7722000888</a>
+                <a href="tel:+917722000888" className="transition-colors hover:text-primary">
+                  +91 77220 00888
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Mail className="h-4 w-4 text-accent" />
+                <a
+                  href="mailto:enquiry@suntourismpune.com"
+                  className="transition-colors hover:text-primary"
+                >
+                  enquiry@suntourismpune.com
+                </a>
               </div>
             </div>
 
-            {/* Contact - Pune Office */}
-            {/* <div>
-              <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-accent" />
-                Pune Regional Office
-              </h4>
-              <a 
-                href="https://goo.gl/maps/1rQVgrnHGrzCNiWB7" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-sm text-muted-foreground hover:text-primary transition-colors block mb-4"
-              >
-                First Floor, Shop No 4 Pendse Bhuwan, Tilak Road, Sadashiv Peth, Opp Durvankur Dining Hall, Pune 411030
-              </a>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Phone className="h-4 w-4 text-cta" />
-                  <a href="tel:+917776000019" className="hover:text-primary transition-colors">+91 77760 00019</a>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Phone className="h-4 w-4 text-cta" />
-                  <a href="tel:+917602727555" className="hover:text-primary transition-colors">Mumbai: +91 7602727555</a>
-                </div>
-              </div>
-            </div> */}
-
-            {/* Quick Links & Email */}
             <div>
-              <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm mb-6">
+              <h4 className="mb-4 font-semibold text-foreground">Quick Links</h4>
+              <ul className="mb-6 space-y-2 text-sm">
                 {navLinks.map((link) => (
                   <li key={link.path}>
-                    <Link to={link.path} className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link
+                      to={link.path}
+                      className="text-muted-foreground transition-colors hover:text-primary"
+                    >
                       {link.name}
                     </Link>
                   </li>
@@ -134,26 +153,30 @@ export const Footer = () => {
                     href="https://suntourismpune.co.in"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-primary"
                   >
-                    Book Tours →
+                    Book Tours
+                    <ArrowUpRight className="h-4 w-4" />
                   </a>
                 </li>
               </ul>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4 text-accent" />
-                <a href="mailto:enquiry@suntourismpune.com" className="hover:text-primary transition-colors">
-                  enquiry@suntourismpune.com
-                </a>
-              </div>
+
+              <a
+                href="https://wa.link/97984j"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-border/40 bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+              >
+                <MessageCircle className="h-4 w-4 text-accent" />
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
 
-          {/* Disclaimer & Copyright */}
-          <div className="mt-10 pt-6 border-t border-border">
-            <p className="text-xs text-muted-foreground text-center leading-relaxed mb-3">
-              <strong>Disclaimer:</strong> This site is for stories, updates & learning. For tour
-              packages & bookings, please visit{" "}
+          <div className="mt-10 border-t border-border pt-6">
+            <p className="mb-3 text-center text-xs leading-relaxed text-muted-foreground">
+              <strong>Disclaimer:</strong> This site is for stories, updates, and learning.
+              For tour packages and bookings, please visit{" "}
               <a
                 href="https://suntourismpune.co.in"
                 target="_blank"
@@ -163,12 +186,19 @@ export const Footer = () => {
                 suntourismpune.co.in
               </a>
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
-              <p className="flex items-center gap-1">
-                Copyright © 2025 All rights reserved with Sun Touriism Internationall Private Limited.
-              </p>
-              <p className="flex items-center gap-1">
-                Website developed by <a href="https://advybes.in/" target="_blank" rel="noopener noreferrer">Advybes Media LLP</a>
+
+            <div className="flex flex-col items-center justify-between gap-2 text-xs text-muted-foreground sm:flex-row">
+              <p>Copyright &copy; 2025 All rights reserved with Sun Tourism International Private Limited.</p>
+              <p>
+                Website developed by{" "}
+                <a
+                  href="https://advybes.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary"
+                >
+                  Advybes Media LLP
+                </a>
               </p>
             </div>
           </div>

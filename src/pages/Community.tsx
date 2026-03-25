@@ -50,9 +50,9 @@ const featuredStories = [
     title: "Castles, Canals & Cobblestones",
     location: "Europe",
     date: "August 2025",
-    excerpt: "From the Eiffel Tower at dusk to gondola rides in Venice — a 15-day journey across 6 countries that felt like a dream.",
+    excerpt: "From the Eiffel Tower at dusk to gondola rides in Venice - a 15-day journey across 6 countries that felt like a dream.",
     image: europeCommunity1,
-    quote: "Waking up in a different country every few days — that's the kind of life I want.",
+    quote: "Waking up in a different country every few days - that's the kind of life I want.",
     quoteAuthor: "Rajesh Kulkarni",
   },
   {
@@ -60,7 +60,7 @@ const featuredStories = [
     title: "Land of the Southern Cross",
     location: "Australia",
     date: "April 2025",
-    excerpt: "Koalas, coral reefs, and the vast outback — this group explored the wonders of the land down under.",
+    excerpt: "Koalas, coral reefs, and the vast outback - this group explored the wonders of the land down under.",
     image: australiaCommunity1,
     quote: "Holding a koala was a dream I didn't know I had. Thank you Sun Tourism!",
     quoteAuthor: "Anjali Desai",
@@ -190,7 +190,7 @@ const Stories = () => {
                           <p className="text-foreground italic text-sm md:text-base leading-relaxed mb-3">
                             "{story.quote}"
                           </p>
-                          <p className="text-xs text-muted-foreground font-medium">— {story.quoteAuthor}</p>
+                          <p className="text-xs text-muted-foreground font-medium">- {story.quoteAuthor}</p>
                         </div>
                       </div>
                     </div>

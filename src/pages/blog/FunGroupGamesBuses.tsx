@@ -31,7 +31,7 @@ const FunGroupGamesBuses = () => {
         <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">🎲 1. Two Truths and a Lie</h2>
 
         <div className="bg-primary/5 p-6 rounded-lg my-6">
-          <p className="mb-4"><strong>How to play:</strong> Each person shares three statements about themselves—two true, one false. The group guesses which one is the lie.</p>
+          <p className="mb-4"><strong>How to play:</strong> Each person shares three statements about themselves-two true, one false. The group guesses which one is the lie.</p>
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <h4 className="font-bold text-primary mb-2">Why it works on buses:</h4>
@@ -203,14 +203,14 @@ const FunGroupGamesBuses = () => {
 
         <div className="bg-primary/5 p-6 rounded-lg my-8">
           <h3 className="font-bold text-primary mb-3">🎉 The Best Part About Bus Games</h3>
-          <p className="mb-4">These games don't just pass the time—they help you bond with your fellow travelers and create stories that will be retold for years to come. The person who was a stranger at the start of the trip might become your closest friend by journey's end!</p>
+          <p className="mb-4">These games don't just pass the time-they help you bond with your fellow travelers and create stories that will be retold for years to come. The person who was a stranger at the start of the trip might become your closest friend by journey's end!</p>
           <p className="text-sm text-muted-foreground italic">
             Pro tip: Keep some small prizes (like candies or stickers) for game winners to make it even more fun.
           </p>
         </div>
 
         <p className="text-center italic text-muted-foreground mt-8">
-          "The journey of a thousand miles begins with a single step... and a good game!" – Ancient Proverb (adapted)
+          "The journey of a thousand miles begins with a single step... and a good game!" - Ancient Proverb (adapted)
         </p>
       </div>
     </BlogPostLayout>

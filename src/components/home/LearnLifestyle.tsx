@@ -68,7 +68,7 @@ export const LearnLifestyle = () => {
             <span className="text-sm font-medium text-primary">Travel Smarter</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
-            Learn • Plan • <span className="text-primary">Enjoy</span>
+            Learn &bull; Plan &bull; <span className="text-primary">Enjoy</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Whether you're a first-time traveler or a seasoned explorer, there's always something new to learn.

@@ -80,7 +80,7 @@ const Index = () => {
 
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                   Real stories from real travelers. These memories were made
-                  with Sun Touriism.
+                  with Sun Tourism.
                 </p>
               </div>
 
@@ -106,7 +106,7 @@ const Index = () => {
                     <Quote className="h-10 w-10 text-highlight/30 mb-4" />
 
                     <p className="text-xl md:text-2xl font-medium text-foreground mb-6 leading-relaxed">
-                      "We planned a personalized Bali tour and Sun Touriism
+                      "We planned a personalized Bali tour and Sun Tourism
                       helped us plan and execute exactly as we wanted. Once the
                       tour was planned, Sun Tour gave us the experience of
                       sitting back, relaxing, and enjoying. Very clear
@@ -232,7 +232,7 @@ const Index = () => {
 
                     <p className="text-foreground mb-4 leading-relaxed">
                       "As senior citizens, we were worried about long tours, but
-                      Sun Touriism made our Kerala trip so comfortable.
+                      Sun Tourism made our Kerala trip so comfortable.
                       Everything was taken care of."
                     </p>
                   </div>

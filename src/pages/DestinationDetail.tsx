@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, MapPin, Users, Plane, Hotel, Camera, Utensils, Clock, TrendingUp, Check, X } from "lucide-react";
+import { Calendar, MapPin, Users, Plane, Hotel, Camera, Utensils, Clock, Check, X } from "lucide-react";
 import { ImmersiveGallery } from "@/components/destination/ImmersiveGallery";
 import { tours, getDeparturesByTourId, Tour } from "@/data/tours";
 
@@ -362,16 +362,16 @@ export default function DestinationDetail() {
 
   if (!tour) {
     return (
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-primary/10">
         <Navigation />
-        <main className="flex-1 flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Destination Not Found</h1>
-            <p className="text-muted-foreground mb-8">
+        <main className="flex flex-1 items-center justify-center px-4 py-24">
+          <div className="rounded-[2rem] border border-border/30 bg-card/75 p-8 text-center backdrop-blur-sm">
+            <h1 className="mb-4 font-heading text-4xl font-bold text-foreground">Destination Not Found</h1>
+            <p className="mb-8 text-muted-foreground">
               The destination you're looking for doesn't exist.
             </p>
             <Link to="/explore">
-              <Button>Explore All Destinations</Button>
+              <Button className="rounded-full px-6">Explore All Destinations</Button>
             </Link>
           </div>
         </main>
@@ -389,29 +389,66 @@ export default function DestinationDetail() {
   const relatedDestinations = getRelatedDestinations(slug);
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-primary/10">
+      <div className="fixed inset-0 pointer-events-none -z-10">
+        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute left-0 top-1/3 h-80 w-80 rounded-full bg-cta/10 blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-highlight/5 blur-3xl" />
+      </div>
       <Navigation />
       
-      <main className="flex-1">
+      <main className="relative z-10 flex-1">
         {/* Hero Section */}
-        <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
-          <img
-            src={getMainImage(slug)}
-            alt={tour.destination}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-          <div className="absolute inset-0 flex items-end">
-            <div className="container mx-auto px-4 pb-16">
-              <Badge className="mb-4 bg-primary text-primary-foreground">
+        <section className="container mx-auto px-4 pb-10 pt-20 md:pb-12 md:pt-24">
+          <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+            <div className="rounded-[2rem] border border-border/30 bg-card/75 p-8 backdrop-blur-sm md:p-10">
+              <Badge className="mb-5 rounded-full bg-primary/10 px-4 py-2 text-primary hover:bg-primary/10">
                 {tour.region}
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+              <h1 className="mb-4 font-heading text-4xl font-bold leading-tight text-foreground md:text-6xl">
                 {tour.destination}
               </h1>
-              <p className="text-xl text-white/90 max-w-2xl">
+              <p className="text-lg leading-8 text-foreground/80 md:text-xl">
                 {tour.tagline}
               </p>
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground md:text-base">
+                {tour.overview}
+              </p>
+              <div className="mt-8 flex flex-wrap gap-2.5">
+                {tour.departureDates.slice(0, 3).map((date) => (
+                  <span
+                    key={date}
+                    className="rounded-full border border-border/40 bg-background/75 px-3 py-1.5 text-sm text-foreground/80"
+                  >
+                    {date}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button asChild className="rounded-full px-6">
+                  <Link to="/contact">Plan This Tour</Link>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full px-6">
+                  <a href="#tour-details">View Tour Details</a>
+                </Button>
+              </div>
+            </div>
+
+            <div className="group rounded-[2rem] border border-border/30 bg-card/70 p-4 backdrop-blur-sm shadow-[0_24px_80px_-48px_rgba(15,23,42,0.55)]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-white/10 bg-background/40">
+                <img
+                  src={getMainImage(slug)}
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute inset-0 h-full w-full scale-110 object-cover blur-2xl opacity-25"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
+                <img
+                  src={getMainImage(slug)}
+                  alt={tour.destination}
+                  className="relative z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -424,10 +461,10 @@ export default function DestinationDetail() {
               />
             )}
             
-        <div className="container mx-auto px-4 py-12">
+        <div id="tour-details" className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
             {/* Quick Info Bar */}
-            <Card className="mb-12 border-primary/20">
+            <Card className="mb-12 rounded-[2rem] border-border/30 bg-card/75 backdrop-blur-sm">
               <div className="p-6">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
                   <div className="flex flex-col items-center text-center">
@@ -462,12 +499,12 @@ export default function DestinationDetail() {
 
             {/* Main Content Tabs */}
             <Tabs defaultValue="overview" className="mb-12">
-              <TabsList className="grid w-full grid-cols-4">
-                <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="itinerary">Itinerary</TabsTrigger>
+              <TabsList className="flex h-auto w-full flex-wrap justify-start gap-2 rounded-[1.5rem] border border-border/30 bg-card/75 p-2 backdrop-blur-sm">
+                <TabsTrigger value="overview" className="rounded-full px-4 py-2">Overview</TabsTrigger>
+                <TabsTrigger value="itinerary" className="rounded-full px-4 py-2">Itinerary</TabsTrigger>
                 {/* <TabsTrigger value="departures">Departures</TabsTrigger> */}
-                <TabsTrigger value="inclusions">Inclusions</TabsTrigger>
-                <TabsTrigger value="why">Why This?</TabsTrigger>
+                <TabsTrigger value="inclusions" className="rounded-full px-4 py-2">Inclusions</TabsTrigger>
+                <TabsTrigger value="why" className="rounded-full px-4 py-2">Why This Tour</TabsTrigger>
               </TabsList>
 
               <TabsContent value="overview" className="mt-8 space-y-8">
@@ -499,7 +536,7 @@ export default function DestinationDetail() {
                 </div>
 
                 {/* Destinations Covered */}
-                <Card className="bg-accent/10 border-accent">
+                <Card className="rounded-[2rem] border-accent bg-accent/10">
                   <div className="p-6 md:p-8">
                     <div className="flex items-start gap-4">
                       <MapPin className="h-8 w-8 text-accent flex-shrink-0" />
@@ -521,7 +558,7 @@ export default function DestinationDetail() {
 
                 {/* Accommodation & Transport */}
                 <div className="grid md:grid-cols-2 gap-6">
-                  <Card className="p-6">
+                  <Card className="rounded-[2rem] border-border/30 bg-card/75 p-6 backdrop-blur-sm">
                     <div className="flex items-start gap-4">
                       <Hotel className="h-8 w-8 text-primary flex-shrink-0" />
                       <div>
@@ -530,7 +567,7 @@ export default function DestinationDetail() {
                       </div>
                     </div>
                   </Card>
-                  <Card className="p-6">
+                  <Card className="rounded-[2rem] border-border/30 bg-card/75 p-6 backdrop-blur-sm">
                     <div className="flex items-start gap-4">
                       <Plane className="h-8 w-8 text-primary flex-shrink-0" />
                       <div>
@@ -548,7 +585,7 @@ export default function DestinationDetail() {
                 </h2>
                 <div className="space-y-4">
                   {tour.itinerary.map((day, idx) => (
-                    <Card key={idx} className="overflow-hidden hover:border-primary transition-all">
+                    <Card key={idx} className="overflow-hidden rounded-[2rem] border-border/30 bg-card/75 backdrop-blur-sm transition-all hover:border-primary/40">
                       <div className="p-6">
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
@@ -660,7 +697,7 @@ export default function DestinationDetail() {
                       <Check className="h-6 w-6 text-green-500" />
                       What's Included
                     </h2>
-                    <Card className="p-6">
+                    <Card className="rounded-[2rem] border-border/30 bg-card/75 p-6 backdrop-blur-sm">
                       <ul className="space-y-3">
                         {tour.inclusions.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-3">
@@ -680,7 +717,7 @@ export default function DestinationDetail() {
                       <X className="h-6 w-6 text-red-500" />
                       What's Not Included
                     </h2>
-                    <Card className="p-6">
+                    <Card className="rounded-[2rem] border-border/30 bg-card/75 p-6 backdrop-blur-sm">
                       <ul className="space-y-3">
                         {tour.exclusions.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-3">
@@ -700,7 +737,7 @@ export default function DestinationDetail() {
                 <h2 className="text-2xl font-bold text-foreground mb-6">
                   Why Travellers Love This Tour
                 </h2>
-                <Card>
+                <Card className="rounded-[2rem] border-border/30 bg-card/75 backdrop-blur-sm">
                   <div className="p-8">
                     <div className="flex flex-wrap gap-2 mb-6">
                       {tour.idealFor.map((tag, idx) => (
@@ -713,7 +750,7 @@ export default function DestinationDetail() {
                       {tour.whyPopular.map((reason, idx) => (
                         <li key={idx} className="flex items-start gap-3">
                           <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
-                            <span className="text-primary text-sm">✓</span>
+                            <Check className="h-3.5 w-3.5 text-primary" />
                           </div>
                           <span className="text-muted-foreground text-lg">{reason}</span>
                         </li>
@@ -723,7 +760,7 @@ export default function DestinationDetail() {
                 </Card>
 
                 {/* Best Season */}
-                <Card className="mt-6 bg-primary/5 border-primary/20">
+                <Card className="mt-6 rounded-[2rem] border-primary/20 bg-primary/5">
                   <div className="p-6 md:p-8">
                     <div className="flex items-start gap-4">
                       <Calendar className="h-8 w-8 text-primary flex-shrink-0" />
@@ -749,12 +786,12 @@ export default function DestinationDetail() {
               <div className="grid md:grid-cols-2 gap-6">
                 {relatedDestinations.map((related) => (
                   <Link key={related.id} to={`/destination/${related.id}`}>
-                    <Card className="group overflow-hidden cursor-pointer hover:border-primary transition-all">
+                    <Card className="group overflow-hidden cursor-pointer rounded-[2rem] border-border/30 bg-card/75 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
                       <div className="relative h-48 overflow-hidden">
                         <img
                           src={related.image}
                           alt={related.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                         <div className="absolute bottom-4 left-4 right-4 text-white">
@@ -763,8 +800,8 @@ export default function DestinationDetail() {
                         </div>
                       </div>
                       <div className="p-4">
-                        <Button variant="ghost" className="w-full text-primary hover:text-primary-foreground hover:bg-primary">
-                          Explore {related.name} →
+                        <Button variant="ghost" className="w-full rounded-full text-primary hover:bg-primary hover:text-primary-foreground">
+                          Explore {related.name}
                         </Button>
                       </div>
                     </Card>

@@ -1,309 +1,319 @@
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { 
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Backpack,
   Camera,
-  Utensils,
-  ShoppingBag,
-  Heart,
   Coffee,
-  Sparkles,
-  TrendingUp,
-  Clock,
   Gamepad2,
-  Backpack
+  Heart,
+  ShoppingBag,
+  Sparkles,
+  Utensils,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { Footer } from "@/components/Footer";
+import { Navigation } from "@/components/Navigation";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+
+const featuredReads = [
+  {
+    title: "5 veg-friendly dishes in Europe",
+    subtitle: "A simple food guide for travellers who want flavour without compromise.",
+    category: "Food",
+    readTime: "4 min read",
+    slug: "/lifestyle/veg-friendly-dishes-europe",
+    icon: Utensils,
+  },
+  {
+    title: "Fun group games for buses",
+    subtitle: "Easy ways to keep long road stretches light, warm, and memorable.",
+    category: "Fun",
+    readTime: "3 min read",
+    slug: "/lifestyle/fun-group-games-buses",
+    icon: Gamepad2,
+  },
+  {
+    title: "Packing light for 10-day tours",
+    subtitle: "Pack with more clarity so the journey feels easier from day one.",
+    category: "Tips",
+    readTime: "7 min read",
+    slug: "/lifestyle/packing-light-10-day-tours",
+    icon: Backpack,
+  },
+];
+
+const lifestyleThemes = [
+  {
+    icon: Utensils,
+    title: "Food and Culture",
+    description: "Discover how meals, markets, and local flavours become some of the strongest memories on tour.",
+  },
+  {
+    icon: Camera,
+    title: "Photos and Memory-Making",
+    description: "Think beyond snapshots and capture the small emotional moments that make a trip unforgettable.",
+  },
+  {
+    icon: Heart,
+    title: "Comfort and Wellness",
+    description: "Travel better with habits that keep your energy, rhythm, and ease intact on busy itineraries.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Souvenirs and Street Finds",
+    description: "Learn what makes a purchase feel meaningful instead of just another thing in the suitcase.",
+  },
+  {
+    icon: Coffee,
+    title: "Slow Travel Rituals",
+    description: "From a morning walk to an evening tea stop, small rituals shape how a journey feels in hindsight.",
+  },
+  {
+    icon: Sparkles,
+    title: "Special Group Moments",
+    description: "The laughter, shared celebrations, and unexpected conversations that keep groups connected.",
+  },
+];
+
+const inspirationNotes = [
+  {
+    title: "Meeting locals changes the trip",
+    description: "Even a short conversation can turn a sightseeing day into a real story you remember for years.",
+  },
+  {
+    title: "The best photos are rarely the perfect ones",
+    description: "Candid laughter, shared meals, and quiet pauses often carry more feeling than posed frames.",
+  },
+  {
+    title: "Comfort matters more than overpacking",
+    description: "Travellers enjoy more when luggage is lighter, mornings are easier, and the day starts calmly.",
+  },
+  {
+    title: "Food is one of the fastest ways to connect",
+    description: "Trying a local dish or finding a vegetarian favourite can become the highlight of the entire day.",
+  },
+  {
+    title: "Group energy shapes the journey",
+    description: "The right people make the bus ride, the tea stop, and the sightseeing day feel richer and warmer.",
+  },
+  {
+    title: "Travel style is part of the memory",
+    description: "How we move, pause, eat, and notice things often matters just as much as where we go.",
+  },
+];
+
 const Lifestyle = () => {
-  const featuredStories = [
-    {
-      id: 1,
-      title: "How Travel Changed My Life",
-      subtitle: "A personal journey of self-discovery through group tours",
-      category: "Personal Growth",
-      readTime: "8 min read",
-      image: "/placeholder.svg",
-      author: "Priya Sharma",
-      tags: ["Inspiration", "Personal Story"],
-    },
-    {
-      id: 2,
-      title: "Making Friends Over 50: Group Travel Magic",
-      subtitle: "Finding lifelong friendships in unexpected places",
-      category: "Community",
-      readTime: "6 min read",
-      image: "/placeholder.svg",
-      author: "Ramesh Patel",
-      tags: ["Seniors", "Friendship"],
-    },
-    {
-      id: 3,
-      title: "Balancing Work and Wanderlust",
-      subtitle: "How I take 4 international trips every year",
-      category: "Travel Tips",
-      readTime: "5 min read",
-      image: "/placeholder.svg",
-      author: "Anjali Desai",
-      tags: ["Career", "Planning"],
-    },
-  ];
-
-  const lifestyleCategories = [
-    {
-      icon: Utensils,
-      title: "Food & Culture",
-      description: "Culinary adventures and local food experiences from around the world",
-      articleCount: 12,
-      color: "text-orange-500",
-    },
-    {
-      icon: ShoppingBag,
-      title: "Shopping Stories",
-      description: "Best shopping destinations, local markets, and unique souvenirs",
-      articleCount: 8,
-      color: "text-purple-500",
-    },
-    {
-      icon: Camera,
-      title: "Photography Tips",
-      description: "Capture your travel memories like a pro with these simple tips",
-      articleCount: 15,
-      color: "text-blue-500",
-    },
-    {
-      icon: Heart,
-      title: "Wellness Travel",
-      description: "Staying healthy and refreshed while exploring new destinations",
-      articleCount: 10,
-      color: "text-pink-500",
-    },
-    {
-      icon: Coffee,
-      title: "Travel Rituals",
-      description: "Daily routines and habits that make traveling more enjoyable",
-      articleCount: 7,
-      color: "text-amber-500",
-    },
-    {
-      icon: Sparkles,
-      title: "Special Moments",
-      description: "Celebrating birthdays, anniversaries, and special occasions on tour",
-      articleCount: 9,
-      color: "text-cyan-500",
-    },
-  ];
-
-  const recentArticles = [
-    {
-      title: "5 veg-friendly dishes in Europe",
-      description: "Delicious vegetarian options across European countries that will delight your taste buds",
-      category: "Food",
-      readTime: "4 min read",
-      trending: true,
-    },
-    {
-      title: "Fun group games for buses",
-      description: "Keep the group entertained during long bus journeys with these engaging activities",
-      category: "Fun",
-      readTime: "3 min read",
-      trending: false,
-    },
-    {
-      title: "Packing light for 10-day tours",
-      description: "Master the art of packing efficiently for extended trips without the extra baggage",
-      category: "Tips",
-      readTime: "7 min read",
-      trending: true,
-    },
-    {
-      title: "The Art of Slow Travel: Savoring Every Moment",
-      description: "Why taking your time leads to richer travel experiences",
-      category: "Philosophy",
-      readTime: "7 min read",
-      trending: true,
-    },
-    {
-      title: "Local Food Markets: A Sensory Journey",
-      description: "Discovering authentic flavors at bustling markets around the world",
-      category: "Food",
-      readTime: "5 min read",
-      trending: false,
-    },
-    {
-      title: "Sunrise Photography: Chasing Golden Hours",
-      description: "Tips for capturing breathtaking dawn moments during your travels",
-      category: "Photography",
-      readTime: "6 min read",
-      trending: true,
-    },
-    {
-      title: "Travel Journaling: Preserve Your Memories",
-      description: "Creative ways to document your journey beyond photos",
-      category: "Personal Growth",
-      readTime: "4 min read",
-      trending: false,
-    },
-    {
-      title: "Meeting Locals: The Heart of Travel",
-      description: "How genuine connections transform ordinary trips into extraordinary experiences",
-      category: "Community",
-      readTime: "6 min read",
-      trending: true,
-    },
-    {
-      title: "Mindful Travel: Being Present on Your Journey",
-      description: "Practicing mindfulness while exploring new places",
-      category: "Wellness",
-      readTime: "5 min read",
-      trending: false,
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-primary/10">
+      <div className="fixed inset-0 pointer-events-none -z-10">
+        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute left-0 top-1/3 h-80 w-80 rounded-full bg-cta/10 blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-highlight/5 blur-3xl" />
+      </div>
+
       <Navigation />
-      <main>
-        {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-b from-primary/5 to-background">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
-                <Sparkles className="w-5 h-5" />
-                <span className="text-sm font-medium">Lifestyle & Stories</span>
+
+      <main className="relative z-10">
+        <section className="container mx-auto px-4 pb-12 pt-20 md:pb-16 md:pt-24">
+          <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/30 bg-card/70 p-8 backdrop-blur-sm md:p-10">
+            <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+              <div>
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2">
+                  <Sparkles className="h-4 w-4 text-accent" />
+                  <span className="text-sm font-medium text-accent">Travel Lifestyle</span>
+                </div>
+
+                <h1 className="mb-5 font-heading text-4xl font-bold leading-tight text-foreground md:text-6xl">
+                  The softer side of travel deserves a place on the site too.
+                </h1>
+
+                <p className="max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
+                  This page is about the feeling of travel - what we eat, how we pack, what we
+                  notice, and the little rituals that turn a tour into a memory worth keeping.
+                </p>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                Travel & Lifestyle
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Discover inspiring stories, practical tips, and cultural insights that make travel more meaningful. 
-                From food adventures to wellness practices, explore the lifestyle of passionate travelers.
+
+              <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+                <div className="rounded-3xl border border-border/30 bg-background/75 p-5">
+                  <p className="text-3xl font-bold text-foreground">3</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Published lifestyle reads already live on the site.</p>
+                </div>
+                <div className="rounded-3xl border border-border/30 bg-background/75 p-5">
+                  <p className="text-3xl font-bold text-foreground">6</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Travel-life themes that shape how journeys actually feel.</p>
+                </div>
+                <div className="rounded-3xl border border-border/30 bg-background/75 p-5">
+                  <p className="text-3xl font-bold text-foreground">Real</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Insights inspired by group travel, not generic content filler.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-16 md:pb-20">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-6xl">
+              <div className="mb-8 flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.25em] text-accent">Featured Reads</p>
+                  <h2 className="mt-2 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                    Lifestyle stories already worth opening
+                  </h2>
+                </div>
+
+                <Button asChild variant="outline" className="hidden rounded-full px-6 md:inline-flex">
+                  <Link to="/stories">See Traveller Stories</Link>
+                </Button>
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                {featuredReads.map((article, index) => {
+                  const Icon = article.icon;
+
+                  return (
+                    <Link key={article.title} to={article.slug}>
+                      <Card className="group h-full rounded-[2rem] border-border/30 bg-card/75 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+                        <div className="mb-6 flex items-start justify-between">
+                          <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
+                            <Icon className="h-6 w-6 text-primary" />
+                          </div>
+                          <Badge variant="secondary" className="rounded-full">
+                            {article.category}
+                          </Badge>
+                        </div>
+
+                        <p className="mb-3 text-xs uppercase tracking-[0.2em] text-accent">
+                          Feature {index + 1}
+                        </p>
+                        <h3 className="text-2xl font-semibold leading-snug text-foreground">
+                          {article.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                          {article.subtitle}
+                        </p>
+
+                        <div className="mt-6 flex items-center justify-between">
+                          <span className="text-sm text-muted-foreground">{article.readTime}</span>
+                          <span className="inline-flex items-center gap-2 text-sm font-medium text-primary">
+                            Open article
+                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                          </span>
+                        </div>
+                      </Card>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-16 md:pb-20">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/30 bg-card/65 p-6 backdrop-blur-sm md:p-8">
+              <div className="mb-8 text-center">
+                <p className="text-sm uppercase tracking-[0.25em] text-accent">Travel Moods</p>
+                <h2 className="mt-2 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                  The themes that give a trip its personality
+                </h2>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {lifestyleThemes.map((theme) => {
+                  const Icon = theme.icon;
+
+                  return (
+                    <Card
+                      key={theme.title}
+                      className="h-full rounded-[1.75rem] border-border/30 bg-background/80 p-6"
+                    >
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/15">
+                        <Icon className="h-5 w-5 text-accent" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground">{theme.title}</h3>
+                      <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                        {theme.description}
+                      </p>
+                    </Card>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-16 md:pb-20">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-6xl">
+              <div className="mb-8">
+                <p className="text-sm uppercase tracking-[0.25em] text-accent">Fresh Inspiration</p>
+                <h2 className="mt-2 font-heading text-3xl font-bold text-foreground md:text-4xl">
+                  Small observations that make travel feel richer
+                </h2>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                {inspirationNotes.map((note) => (
+                  <Card
+                    key={note.title}
+                    className="rounded-[1.75rem] border-border/30 bg-card/75 p-6 backdrop-blur-sm"
+                  >
+                    <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1.5">
+                      <Sparkles className="h-4 w-4 text-highlight" />
+                      <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                        Travel note
+                      </span>
+                    </div>
+
+                    <h3 className="text-xl font-semibold leading-snug text-foreground">{note.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-muted-foreground">{note.description}</p>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-20 md:pb-24">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-5xl rounded-[2rem] border border-border/30 bg-card/75 p-8 text-center backdrop-blur-sm md:p-12">
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2">
+                <Heart className="h-4 w-4 text-primary" />
+                <span className="text-sm font-medium text-primary">Keep Exploring</span>
+              </div>
+
+              <h2 className="font-heading text-3xl font-bold text-foreground md:text-4xl">
+                Want the real memories behind these travel moments?
+              </h2>
+
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground md:text-base">
+                Browse the Stories page for real traveller galleries, or contact the team if you
+                are ready to plan a journey of your own.
               </p>
-            </div>
-          </div>
-        </section>
 
-        {/* Featured Stories */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">Featured Stories</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl">
-              {featuredStories.map((story) => (
-                <Card
-                  key={story.id}
-                  className="overflow-hidden border-border hover:border-primary transition-all hover:shadow-lg cursor-pointer group"
-                >
-                  <div className="relative h-48 bg-secondary/30 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                    <div className="absolute top-4 right-4 z-20">
-                      <Badge className="bg-primary text-primary-foreground">
-                        {story.category}
-                      </Badge>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      {story.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">{story.subtitle}</p>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">by {story.author}</span>
-                      <div className="flex items-center gap-1 text-muted-foreground">
-                        <Clock className="w-4 h-4" />
-                        <span>{story.readTime}</span>
-                      </div>
-                    </div>
-                  </div>
-                </Card>
-              ))}
+              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+                <Button asChild className="rounded-full px-6">
+                  <Link to="/stories">
+                    Explore Stories
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="rounded-full px-6">
+                  <Link to="/contact">
+                    Contact Sun Tourism
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </div>
-        </section>
-
-        {/* Lifestyle Categories */}
-        <section className="py-16 bg-secondary/30">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-              Explore Topics
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {lifestyleCategories.map((category) => (
-                <Card
-                  key={category.title}
-                  className="p-6 border-border hover:border-primary transition-all hover:shadow-lg cursor-pointer group"
-                >
-                  <div className={`${category.color} mb-4`}>
-                    <category.icon className="w-10 h-10" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {category.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4">{category.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">
-                      {category.articleCount} articles
-                    </span>
-                    <Button variant="ghost" size="sm" className="text-primary">
-                      Explore →
-                    </Button>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Recent Articles */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Recent Articles</h2>
-              <Button variant="outline">View All</Button>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl">
-              {recentArticles.map((article, idx) => (
-                <Card
-                  key={idx}
-                  className="p-6 border-border hover:border-primary transition-all hover:shadow-lg cursor-pointer group"
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <Badge variant="secondary">{article.category}</Badge>
-                    {article.trending && (
-                      <div className="flex items-center gap-1 text-primary">
-                        <TrendingUp className="w-4 h-4" />
-                        <span className="text-xs font-medium">Trending</span>
-                      </div>
-                    )}
-                  </div>
-                  <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {article.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 text-sm">{article.description}</p>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Clock className="w-4 h-4" />
-                    <span>{article.readTime}</span>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Newsletter CTA */}
-        <section className="py-16 bg-gradient-to-b from-background to-primary/5">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Get Inspired Weekly
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Subscribe to receive travel stories, lifestyle tips, and exclusive insights delivered to your inbox.
-            </p>
-            <Button size="lg">Subscribe to Newsletter</Button>
           </div>
         </section>
       </main>
+
       <Footer />
     </div>
   );

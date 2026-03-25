@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -24,60 +25,59 @@ export const Navigation = () => {
       );
     }
 
-    return (
-      location.pathname === path || location.pathname.startsWith(`${path}/`)
-    );
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo and Brand */}
-          <Link to="/" className="flex items-center gap-3 group">
-          <img 
-            src={logo} 
-            alt="Sun Tourism Logo" 
-            className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
-          />
+        <div className="flex h-16 items-center justify-between lg:h-20">
+          <Link to="/" className="group flex items-center gap-3">
+            <img
+              src={logo}
+              alt="Sun Tourism Logo"
+              className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+            />
 
-          <div className="flex flex-col">
-            <span className="font-bold text-foreground text-sm lg:text-base">
-              All Tours Ghar Se Ghar Tak
-            </span>
-            <span className="text-xs text-muted-foreground">by Sun Touriism Pune</span>
-          </div>
-        </Link>
+            <div className="flex flex-col">
+              <span className="text-sm font-bold text-foreground lg:text-base">
+                Sun Tourism Pune
+              </span>
+              <span className="text-xs text-muted-foreground">
+                Ghar Se Ghar Tak journeys
+              </span>
+            </div>
+          </Link>
 
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden items-center gap-2 lg:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                  "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
                   isActiveLink(link.path)
                     ? "bg-secondary text-primary"
-                    : "text-foreground hover:text-primary hover:bg-secondary"
+                    : "text-foreground hover:bg-secondary hover:text-primary",
                 )}
               >
                 {link.name}
               </Link>
             ))}
-            <div className="w-px h-6 bg-border mx-2" />
+
+            <div className="mx-2 h-6 w-px bg-border" />
+
             <a
               href="https://suntourismpune.co.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+              className="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
             >
-              Sun Tourism Tours →
+              Sun Tourism Tours
+              <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
@@ -89,11 +89,10 @@ export const Navigation = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
         <div
           className={cn(
-            "lg:hidden overflow-hidden transition-all duration-300 ease-in-out",
-            isOpen ? "max-h-96 pb-4" : "max-h-0"
+            "overflow-hidden transition-all duration-300 ease-in-out lg:hidden",
+            isOpen ? "max-h-96 pb-4" : "max-h-0",
           )}
         >
           <div className="flex flex-col space-y-2 pt-2">
@@ -102,25 +101,28 @@ export const Navigation = () => {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                  "rounded-lg px-4 py-2 text-sm font-medium transition-colors",
                   isActiveLink(link.path)
                     ? "bg-secondary text-primary"
-                    : "text-foreground hover:text-primary hover:bg-secondary"
+                    : "text-foreground hover:bg-secondary hover:text-primary",
                 )}
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
-            <div className="h-px bg-border my-2" />
+
+            <div className="my-2 h-px bg-border" />
+
             <a
               href="https://suntourismpune.co.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+              className="inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-primary transition-colors hover:text-primary/80"
               onClick={() => setIsOpen(false)}
             >
-              Sun Tourism Tours →
+              Sun Tourism Tours
+              <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
         </div>

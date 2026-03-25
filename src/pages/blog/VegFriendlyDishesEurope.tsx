@@ -179,7 +179,7 @@ const VegFriendlyDishesEurope = () => {
         </div>
 
         <p className="text-center italic text-muted-foreground mt-8">
-          "One cannot think well, love well, sleep well, if one has not dined well." – Virginia Woolf
+          "One cannot think well, love well, sleep well, if one has not dined well." - Virginia Woolf
         </p>
       </div>
     </BlogPostLayout>
