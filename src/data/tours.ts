@@ -1,6 +1,7 @@
 // Tour data extracted from suntourismpune.co.in - the parent website
 // This is the central hub for all tour information
 import amritsarImg from "@/assets/upcoming departure images/amritsar.png";
+import assamTeaEstateImg from "@/assets/upcoming departure images/assam-tea-estate.jpg";
 import baliImg from "@/assets/upcoming departure images/bali.png";
 import dubaiImg from "@/assets/upcoming departure images/dubai.png";
 import europeanGlimpsImg from "@/assets/upcoming departure images/european glimps.png";
@@ -9,13 +10,13 @@ import japanImg from "@/assets/upcoming departure images/japan.png";
 import kashmirImg from "@/assets/upcoming departure images/kashmir.png";
 import restOfEuropeImg from "@/assets/upcoming departure images/rest of europe.png";
 import southAfricaImg from "@/assets/upcoming departure images/south-africa.png";
+import tadobaSafariImg from "@/assets/upcoming departure images/tadoba-safari.jpg";
 import varanasiImg from "@/assets/upcoming departure images/varanasi.png";
 import europeImg from "@/assets/upcoming departure images/europe.png";
 import australiaTourImg from "@/assets/upcoming departure images/australia-tour.png";
 import nepalTourImg from "@/assets/Nepal/nepal-tour.png";
-import assamMeghalayaImg from "@/assets/story-galleries/assam-meghalaya-2023-12/01.jpg";
-import bhutanTourImg from "@/assets/story-galleries/bhutan-2024-03-1/01.jpg";
-import nainitalJimCorbettImg from "@/assets/story-galleries/nainital-jim-corbett-2024-05/01.jpg";
+import bhutanTourImg from "@/assets/upcoming departure images/bhutan-palace.jpg";
+import nainitalJimCorbettImg from "@/assets/upcoming departure images/jim-corbett-tiger.jpg";
 
 import andamanIMg from "@/assets/upcoming departure images/andaman-tour.png";
 
@@ -1162,7 +1163,7 @@ export const upcomingDepartures: Departure[] = [
     departureDate: '15 April 2026',
     departureLocation: 'Ex Pune',
     tags: ['Northeast Escape', 'Nature & Culture'],
-    image: assamMeghalayaImg,
+    image: assamTeaEstateImg,
     month: 'Apr 2026',
     type: 'domestic',
     link: 'https://suntourismpune.co.in/trip/assam-meghalaya-group-tour-from-pune/'
@@ -1268,7 +1269,7 @@ export const upcomingDepartures: Departure[] = [
     departureDate: '05 May 2026',
     departureLocation: 'Ex Pune',
     tags: ['Lake District', 'Wildlife Stay'],
-    image: nainitalJimCorbettImg,
+    image: tadobaSafariImg,
     month: 'May 2026',
     type: 'domestic',
     link: 'https://suntourismpune.co.in/trip/nainital-jim-corbett-tour-from-pune/'
@@ -1484,17 +1485,122 @@ export const getFeaturedTours = (): Tour[] => {
   return tours.filter(tour => tour.featured);
 };
 
+const monthNameToIndex: Record<string, number> = {
+  jan: 0,
+  january: 0,
+  feb: 1,
+  february: 1,
+  mar: 2,
+  march: 2,
+  apr: 3,
+  april: 3,
+  may: 4,
+  jun: 5,
+  june: 5,
+  jul: 6,
+  july: 6,
+  aug: 7,
+  august: 7,
+  sep: 8,
+  sept: 8,
+  september: 8,
+  oct: 9,
+  october: 9,
+  nov: 10,
+  november: 10,
+  dec: 11,
+  december: 11,
+};
+
+const getMonthIndex = (value: string): number | null => {
+  const normalized = value.trim().toLowerCase();
+  return monthNameToIndex[normalized] ?? null;
+};
+
+const parseMonthLabel = (value: string): Date | null => {
+  const match = value.trim().match(/^([A-Za-z]+)\s+(\d{4})$/);
+
+  if (!match) {
+    return null;
+  }
+
+  const monthIndex = getMonthIndex(match[1]);
+  const year = Number(match[2]);
+
+  if (monthIndex === null || Number.isNaN(year)) {
+    return null;
+  }
+
+  return new Date(year, monthIndex, 1);
+};
+
+const parseDepartureDisplayDate = (value: string): Date | null => {
+  const exactDateMatch = value.trim().match(/^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/);
+
+  if (exactDateMatch) {
+    const day = Number(exactDateMatch[1]);
+    const monthIndex = getMonthIndex(exactDateMatch[2]);
+    const year = Number(exactDateMatch[3]);
+
+    if (monthIndex === null || Number.isNaN(day) || Number.isNaN(year)) {
+      return null;
+    }
+
+    return new Date(year, monthIndex, day);
+  }
+
+  const monthOnlyMatch = value.trim().match(/^([A-Za-z]+)\s+(\d{4})$/);
+
+  if (!monthOnlyMatch) {
+    return null;
+  }
+
+  const monthIndex = getMonthIndex(monthOnlyMatch[1]);
+  const year = Number(monthOnlyMatch[2]);
+
+  if (monthIndex === null || Number.isNaN(year)) {
+    return null;
+  }
+
+  // Month-only departures stay visible throughout that month.
+  return new Date(year, monthIndex + 1, 0);
+};
+
+const getDepartureComparisonDate = (departure: Departure): Date | null =>
+  parseDepartureDisplayDate(departure.departureDate) ?? parseMonthLabel(departure.month);
+
+const startOfDay = (value: Date) =>
+  new Date(value.getFullYear(), value.getMonth(), value.getDate());
+
+export const getUpcomingDepartures = (referenceDate: Date = new Date()): Departure[] => {
+  const today = startOfDay(referenceDate);
+
+  return upcomingDepartures.filter((departure) => {
+    const comparisonDate = getDepartureComparisonDate(departure);
+
+    return comparisonDate ? comparisonDate >= today : true;
+  });
+};
+
 // Get departures by month
-export const getDeparturesByMonth = (month: string): Departure[] => {
-  return upcomingDepartures.filter(dep => dep.month === month);
+export const getDeparturesByMonth = (
+  month: string,
+  referenceDate: Date = new Date(),
+): Departure[] => {
+  return getUpcomingDepartures(referenceDate).filter(dep => dep.month === month);
 };
 
 // Get available months
-export const getAvailableMonths = (): string[] => {
-  const months = [...new Set(upcomingDepartures.map(dep => dep.month))];
+export const getAvailableMonths = (referenceDate: Date = new Date()): string[] => {
+  const months = [...new Set(getUpcomingDepartures(referenceDate).map(dep => dep.month))];
   return months.sort((a, b) => {
-    const dateA = new Date(a);
-    const dateB = new Date(b);
+    const dateA = parseMonthLabel(a);
+    const dateB = parseMonthLabel(b);
+
+    if (!dateA || !dateB) {
+      return a.localeCompare(b);
+    }
+
     return dateA.getTime() - dateB.getTime();
   });
 };

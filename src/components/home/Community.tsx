@@ -169,9 +169,14 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
                         </h3>
                       </div>
 
-                      <div className="flex shrink-0 items-center gap-1 text-accent text-[11px] font-medium whitespace-nowrap sm:gap-2 sm:text-sm md:text-base">
-                        <span>{getActionLabel(destination)}</span>
-                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                      <div className="shrink-0">
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/12 text-accent backdrop-blur-sm sm:hidden">
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                        </div>
+                        <div className="hidden items-center gap-2 whitespace-nowrap text-accent text-sm font-medium sm:flex md:text-base">
+                          <span>{getActionLabel(destination)}</span>
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </div>
                       </div>
                     </div>
                   </div>

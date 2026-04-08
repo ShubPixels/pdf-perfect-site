@@ -3,7 +3,6 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/home/Hero";
 import { UpcomingDepartures } from "@/components/home/UpcomingDepartures";
 import { LearnLifestyle } from "@/components/home/LearnLifestyle";
-import { BlogsSection } from "@/components/home/BlogsSection";
 import { PhilosophySection } from "@/components/home/PhilosophySection";
 import { Community } from "@/components/home/Community";
 import { Quote, Star } from "lucide-react";
@@ -17,7 +16,6 @@ const Index = () => {
   const learnLifestyle = useScrollReveal();
   const bridge = useScrollReveal();
   const departures = useScrollReveal();
-  const blogs = useScrollReveal();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-primary/10 relative overflow-hidden">
@@ -405,17 +403,6 @@ const Index = () => {
           }`}
         >
           <UpcomingDepartures />
-        </div>
-
-        <div
-          ref={blogs.ref}
-          className={`transition-all duration-1000 ${
-            blogs.isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-10"
-          }`}
-        >
-          <BlogsSection />
         </div>
       </main>
 

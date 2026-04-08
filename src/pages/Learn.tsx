@@ -39,14 +39,14 @@ const categories = [
         description: "A simple framework for picking a tour that matches your comfort, pace, and interests.",
         readTime: "5 min read",
         tags: ["Beginner", "Planning"],
-        slug: null,
+        slug: "/learn/how-to-choose-your-first-group-tour",
       },
       {
         title: "Best Time to Visit Popular Destinations",
         description: "Season-by-season guidance for choosing the right month, weather, and crowd level.",
         readTime: "8 min read",
         tags: ["Planning", "Seasonal"],
-        slug: null,
+        slug: "/learn/best-time-to-visit-popular-destinations",
       },
     ],
   },
@@ -76,7 +76,7 @@ const categories = [
         description: "A plain-language overview of timelines, forms, and what to prepare in advance.",
         readTime: "10 min read",
         tags: ["Documents", "Visa"],
-        slug: null,
+        slug: "/learn/passport-and-visa-guide-indian-travellers",
       },
     ],
   },
@@ -92,21 +92,21 @@ const categories = [
         description: "A traveller-friendly approach to packing efficiently for longer group trips.",
         readTime: "7 min read",
         tags: ["Packing", "Tips"],
-        slug: "/lifestyle/packing-light-10-day-tours",
+        slug: "/learn/packing-light-10-day-tours",
       },
       {
         title: "Ultimate Packing List for Different Climates",
         description: "Know what changes between tropical escapes, cool weather, and layered itineraries.",
         readTime: "6 min read",
         tags: ["Packing", "Essentials"],
-        slug: null,
+        slug: "/learn/ultimate-packing-list-for-different-climates",
       },
       {
         title: "Carry-on vs Checked Luggage",
         description: "A clearer way to decide what belongs in hand luggage and what can go below.",
         readTime: "5 min read",
         tags: ["Packing", "Flights"],
-        slug: null,
+        slug: "/learn/carry-on-vs-checked-luggage",
       },
     ],
   },
@@ -122,21 +122,44 @@ const categories = [
         description: "Simple habits that help you stay comfortable, aware, and prepared on tour.",
         readTime: "5 min read",
         tags: ["Safety", "Group Travel"],
-        slug: null,
+        slug: "/learn/staying-safe-while-travelling-in-groups",
       },
       {
         title: "Health Precautions for International Travel",
         description: "Vaccinations, food safety, and smart preventive care before you depart.",
         readTime: "8 min read",
         tags: ["Health", "Safety"],
-        slug: null,
+        slug: "/learn/health-precautions-for-international-travel",
       },
       {
         title: "Emergency Contacts and Helplines Abroad",
         description: "What to save before departure so help is easier to access when you need it.",
         readTime: "4 min read",
         tags: ["Emergency", "Planning"],
-        slug: null,
+        slug: "/learn/emergency-contacts-and-helplines-abroad",
+      },
+    ],
+  },
+  {
+    id: "on-tour",
+    name: "On-Tour Comfort",
+    icon: Sparkles,
+    accent: "text-accent",
+    summary: "Add lighter reads on food, group rhythm, and the small details that make journeys feel easier.",
+    articles: [
+      {
+        title: "5 veg-friendly dishes in Europe",
+        description: "A simple food guide for travellers who want flavour, comfort, and easy vegetarian choices abroad.",
+        readTime: "4 min read",
+        tags: ["Food", "Europe"],
+        slug: "/learn/veg-friendly-dishes-europe",
+      },
+      {
+        title: "Fun group games for buses",
+        description: "Easy ideas to keep long road stretches warmer, more social, and more memorable.",
+        readTime: "3 min read",
+        tags: ["Group Travel", "Fun"],
+        slug: "/learn/fun-group-games-buses",
       },
     ],
   },
@@ -202,12 +225,12 @@ const Learn = () => {
 
               <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
                 <div className="rounded-3xl border border-border/30 bg-background/75 p-5">
-                  <p className="text-3xl font-bold text-foreground">4</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Essential learning tracks for planning better trips.</p>
+                  <p className="text-3xl font-bold text-foreground">5</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Practical learning tracks for planning, paperwork, packing, safety, and on-tour comfort.</p>
                 </div>
                 <div className="rounded-3xl border border-border/30 bg-background/75 p-5">
-                  <p className="text-3xl font-bold text-foreground">6+</p>
-                  <p className="mt-2 text-sm text-muted-foreground">Published guides already live, with more topics on the way.</p>
+                  <p className="text-3xl font-bold text-foreground">14</p>
+                  <p className="mt-2 text-sm text-muted-foreground">Clickable guides now available across planning, packing, documents, safety, and lighter travel reads.</p>
                 </div>
                 <div className="rounded-3xl border border-border/30 bg-background/75 p-5">
                   <p className="text-3xl font-bold text-foreground">1 place</p>
@@ -264,14 +287,8 @@ const Learn = () => {
                                   {tag}
                                 </Badge>
                               ))}
-                              <Badge
-                                className={`rounded-full border-0 text-xs ${
-                                  article.slug
-                                    ? "bg-primary/10 text-primary"
-                                    : "bg-secondary text-muted-foreground"
-                                }`}
-                              >
-                                {article.slug ? "Read Article" : "Coming Soon"}
+                              <Badge className="rounded-full border-0 bg-primary/10 text-xs text-primary">
+                                Read Article
                               </Badge>
                             </div>
 
@@ -285,22 +302,18 @@ const Learn = () => {
 
                             <div className="mt-6 flex items-center justify-between">
                               <span className="text-sm text-muted-foreground">{article.readTime}</span>
-                              {article.slug && (
-                                <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                                  Read now
-                                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                </span>
-                              )}
+                              <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+                                Read now
+                                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                              </span>
                             </div>
                           </Card>
                         );
 
-                        return article.slug ? (
+                        return (
                           <Link key={article.title} to={article.slug}>
                             {content}
                           </Link>
-                        ) : (
-                          <div key={article.title}>{content}</div>
                         );
                       })}
                     </div>

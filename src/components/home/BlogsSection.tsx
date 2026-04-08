@@ -1,6 +1,9 @@
-import { ArrowRight, BookOpen, Clock } from "lucide-react";
+import { ArrowRight, BookOpen, Clock, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 const blogs = [
   {
@@ -30,14 +33,14 @@ const blogs = [
     description: "Delicious vegetarian options across European countries",
     category: "Food",
     readTime: "4 min read",
-    slug: "/lifestyle/veg-friendly-dishes-europe",
+    slug: "/learn/veg-friendly-dishes-europe",
   },
   {
     title: "Packing Light for 10-Day Tours",
     description: "Master the art of packing efficiently for extended trips",
     category: "Tips",
     readTime: "7 min read",
-    slug: "/lifestyle/packing-light-10-day-tours",
+    slug: "/learn/packing-light-10-day-tours",
   },
 ];
 
@@ -46,103 +49,133 @@ export const BlogsSection = () => {
   const otherBlogs = blogs.slice(1);
 
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
-              <BookOpen className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Travel Knowledge</span>
+    <section className="relative overflow-hidden py-24">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute right-0 top-1/4 h-80 w-80 rounded-full bg-highlight/5 blur-3xl" />
+        <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-16 text-center">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-highlight/10 px-4 py-2">
+              <BookOpen className="h-4 w-4 text-highlight" />
+              <span className="text-sm font-medium text-highlight">Editorial Picks</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-              From Our <span className="text-highlight">Blog</span>
+
+            <h2 className="mb-6 text-4xl font-heading font-bold text-foreground md:text-5xl">
+              From Our <span className="text-accent">Blog</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Tips, guides, and stories to help you prepare for your next adventure
+
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              Useful reads, planning ideas, and practical travel notes that feel aligned with
+              the journeys Sun Tourism guests actually take.
             </p>
           </div>
 
-          {/* Blog Grid */}
-          <div className="grid lg:grid-cols-2 gap-6 mb-8">
-            {/* Featured Blog */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <Link to={featuredBlog.slug} className="block group">
-                <div className="relative h-full bg-gradient-to-br from-primary/10 via-card to-highlight/10 rounded-3xl p-8 border border-border/30 hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-cta/10 rounded-full blur-2xl" />
-                  <div className="relative">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full">
-                        {featuredBlog.category}
-                      </span>
-                      <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <Clock className="w-3 h-3" />
-                        {featuredBlog.readTime}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                      {featuredBlog.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-6 text-lg">
-                      {featuredBlog.description}
-                    </p>
-                    <span className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
-                      Read Article <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
+          <div className="rounded-[36px] border border-border/30 bg-card/45 p-6 backdrop-blur-sm md:p-8 lg:p-10">
+            <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <Link to={featuredBlog.slug} className="block group h-full">
+                  <div className="relative h-full overflow-hidden rounded-[32px] border border-border/30 bg-gradient-to-br from-card via-card/95 to-highlight/10 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl md:p-8">
+                    <div className="absolute -right-12 top-0 h-40 w-40 rounded-full bg-accent/10 blur-3xl" />
+                    <div className="absolute -left-8 bottom-0 h-32 w-32 rounded-full bg-highlight/10 blur-2xl" />
 
-            {/* Other Blogs Grid */}
-            <div className="grid sm:grid-cols-2 gap-4">
-              {otherBlogs.map((blog, index) => (
-                <motion.div
-                  key={blog.slug}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Link to={blog.slug} className="block group h-full">
-                    <div className="h-full bg-card/60 backdrop-blur-sm rounded-2xl p-5 border border-border/30 hover:border-primary/30 transition-all duration-300 hover:shadow-md flex flex-col">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="px-2 py-0.5 bg-secondary text-secondary-foreground text-xs font-medium rounded-full">
-                          {blog.category}
+                    <div className="relative flex h-full flex-col">
+                      <div className="mb-5 flex flex-wrap items-center gap-2">
+                        <span className="rounded-full bg-highlight/10 px-3 py-1 text-xs font-medium text-highlight">
+                          Featured Read
                         </span>
-                        <span className="text-xs text-muted-foreground">
-                          {blog.readTime}
+                        <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                          {featuredBlog.category}
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                          <Clock className="h-3 w-3" />
+                          {featuredBlog.readTime}
                         </span>
                       </div>
-                      <h4 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                        {blog.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground line-clamp-2 flex-grow">
-                        {blog.description}
-                      </p>
-                      <span className="inline-flex items-center gap-1 text-sm text-primary font-medium mt-3 group-hover:gap-2 transition-all">
-                        Read <ArrowRight className="w-3 h-3" />
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
 
-          {/* View All Link */}
-          <div className="text-center">
-            <Link
-              to="/learn"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-secondary hover:bg-secondary/80 text-secondary-foreground rounded-full font-medium transition-all duration-300 hover:gap-3"
-            >
-              View All Articles <ArrowRight className="w-4 h-4" />
-            </Link>
+                      <h3 className="text-2xl font-semibold leading-tight text-foreground transition-colors group-hover:text-primary md:text-3xl">
+                        {featuredBlog.title}
+                      </h3>
+
+                      <p className="mt-4 max-w-2xl text-base leading-8 text-muted-foreground">
+                        {featuredBlog.description}
+                      </p>
+
+                      <div className="mt-8 flex items-center gap-2 text-sm font-medium text-primary">
+                        Read article
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                {otherBlogs.map((blog, index) => (
+                  <motion.div
+                    key={blog.slug}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                    viewport={{ once: true }}
+                  >
+                    <Link to={blog.slug} className="block group h-full">
+                      <Card className="h-full rounded-[28px] border-border/30 bg-background/75 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-md md:p-6">
+                        <div className="mb-4 flex flex-wrap items-center gap-2">
+                          <span className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-foreground">
+                            {blog.category}
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                            <Clock className="h-3 w-3" />
+                            {blog.readTime}
+                          </span>
+                        </div>
+
+                        <h4 className="text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-primary">
+                          {blog.title}
+                        </h4>
+
+                        <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                          {blog.description}
+                        </p>
+
+                        <div className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary">
+                          Open article
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </div>
+                      </Card>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-col gap-4 rounded-[28px] border border-border/30 bg-background/65 p-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-3 py-1.5">
+                  <Sparkles className="h-4 w-4 text-accent" />
+                  <span className="text-sm font-medium text-accent">Keep Reading</span>
+                </div>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground md:text-base">
+                  Explore more helpful reads, planning guides, and travel-life articles across
+                  the site.
+                </p>
+              </div>
+
+              <Button asChild variant="outline" className="rounded-full px-6 group self-start sm:self-center">
+                <Link to="/learn">
+                  View All Articles
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>

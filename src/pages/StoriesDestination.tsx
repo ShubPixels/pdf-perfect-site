@@ -130,14 +130,14 @@ const StoriesDestination = () => {
                 <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-card via-secondary/35 to-primary/10" />
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-white/10 bg-background/40">
                   <img
-                    src={destination.coverImage}
+                    src={destination.heroImage}
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-25"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
                   <img
-                    src={destination.coverImage}
+                    src={destination.heroImage}
                     alt={destination.name}
                     className="relative z-10 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                     loading="lazy"

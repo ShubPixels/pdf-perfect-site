@@ -13,13 +13,13 @@ const VegFriendlyDishesEurope = () => {
           title: "Fun group games for buses",
           category: "Fun",
           readTime: "3 min read",
-          slug: "/lifestyle/fun-group-games-buses"
+          slug: "/learn/fun-group-games-buses"
         },
         {
           title: "Packing light for 10-day tours",
           category: "Tips",
           readTime: "7 min read",
-          slug: "/lifestyle/packing-light-10-day-tours"
+          slug: "/learn/packing-light-10-day-tours"
         }
       ]}
     >

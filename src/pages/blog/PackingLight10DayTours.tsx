@@ -13,7 +13,7 @@ const PackingLight10DayTours = () => {
           title: "Fun group games for buses",
           category: "Fun",
           readTime: "3 min read",
-          slug: "/lifestyle/fun-group-games-buses"
+          slug: "/learn/fun-group-games-buses"
         },
         {
           title: "Visa documents checklist",

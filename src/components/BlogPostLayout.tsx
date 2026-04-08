@@ -3,7 +3,8 @@ import { Footer } from "@/components/Footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Clock, Share2, Bookmark, Calendar, User, ArrowRight, Sparkles } from "lucide-react";
+import { ArrowLeft, Clock, Share2, Calendar, User, ArrowRight, Sparkles } from "lucide-react";
+import { toast } from "@/components/ui/sonner";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -33,6 +34,34 @@ export const BlogPostLayout = ({
   children,
   relatedArticles = []
 }: BlogPostLayoutProps) => {
+  const handleShare = async () => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const pageUrl = window.location.href;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(pageUrl);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = pageUrl;
+        textArea.setAttribute("readonly", "");
+        textArea.style.position = "absolute";
+        textArea.style.left = "-9999px";
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+      }
+
+      toast.success("Page link copied to clipboard");
+    } catch (error) {
+      toast.error("Couldn't copy the link. Please try again.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-primary/5 relative">
       {/* Background decorations */}
@@ -128,13 +157,14 @@ export const BlogPostLayout = ({
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" className="rounded-full gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="rounded-full gap-2"
+                    onClick={handleShare}
+                  >
                     <Share2 className="w-4 h-4" />
                     Share
-                  </Button>
-                  <Button variant="outline" size="sm" className="rounded-full gap-2">
-                    <Bookmark className="w-4 h-4" />
-                    Save
                   </Button>
                 </div>
               </motion.div>

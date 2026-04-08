@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, Plane, Percent, Users } from "lucide-react";
-import { upcomingDepartures, getAvailableMonths } from "@/data/tours";
+import { getAvailableMonths, getDeparturesByMonth } from "@/data/tours";
 import { Link } from "react-router-dom";
 
 export const UpcomingDepartures = () => {
   const availableMonths = getAvailableMonths();
   const [selectedMonth, setSelectedMonth] = useState(availableMonths[0] || "Dec 2026");
 
-  const filteredDepartures = upcomingDepartures.filter((dep) => dep.month === selectedMonth);
+  const filteredDepartures = getDeparturesByMonth(selectedMonth);
 
   return (
     <section id="upcoming-departures" className="py-12 sm:py-16 md:py-24 scroll-mt-20 overflow-hidden">

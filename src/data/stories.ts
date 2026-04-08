@@ -22,13 +22,20 @@ export interface StoryDestination {
   slug: string;
   name: string;
   coverImage: string;
+  heroImage: string;
   tours: StoryTour[];
 }
 
-const galleryModules = import.meta.glob("../assets/story-galleries/*/*.jpg", {
-  eager: true,
-  import: "default",
-}) as Record<string, string>;
+const galleryModules = import.meta.glob(
+  [
+    "../assets/story-galleries/*/*.jpg",
+    "../assets/story-galleries/*/*.jpeg",
+  ],
+  {
+    eager: true,
+    import: "default",
+  },
+) as Record<string, string>;
 
 const galleryEntries = Object.entries(galleryModules).reduce<
   Record<string, Array<[string, string]>>
@@ -115,6 +122,60 @@ const buildPhotos = (
 const getCoverImage = (images: string[], coverIndex: number) =>
   images[Math.min(Math.max(coverIndex, 0), images.length - 1)] ?? images[0];
 
+const HERO_IMAGE_PREFERRED_INDICES = [2, 3, 4, 5, 6, 7, 8, 9, 1, 0];
+
+const DESTINATION_HERO_OVERRIDES: Record<
+  string,
+  { tourSlug: string; imageIndex: number }
+> = {
+  kashmir: {
+    tourSlug: "2024-04",
+    imageIndex: 2,
+  },
+};
+
+const getDestinationHeroImage = (
+  destinationSlug: string,
+  tours: StoryTour[],
+) => {
+  if (!tours.length) {
+    return "";
+  }
+
+  const heroOverride = DESTINATION_HERO_OVERRIDES[destinationSlug];
+
+  if (heroOverride) {
+    const overrideTour = tours.find((tour) => tour.slug === heroOverride.tourSlug);
+    const explicitHero = overrideTour?.photos[heroOverride.imageIndex]?.src;
+
+    if (explicitHero) {
+      return explicitHero;
+    }
+  }
+
+  const blockedImages = new Set(tours.map((tour) => tour.coverImage));
+
+  for (const preferredIndex of HERO_IMAGE_PREFERRED_INDICES) {
+    for (const tour of tours) {
+      const candidate = tour.photos[preferredIndex]?.src;
+
+      if (candidate && !blockedImages.has(candidate)) {
+        return candidate;
+      }
+    }
+  }
+
+  for (const tour of tours) {
+    for (const photo of tour.photos) {
+      if (!blockedImages.has(photo.src)) {
+        return photo.src;
+      }
+    }
+  }
+
+  return tours[0].photos[0]?.src ?? tours[0].coverImage;
+};
+
 const sortToursByDate = (left: StoryManifestTour, right: StoryManifestTour) =>
   right.sortDate.localeCompare(left.sortDate);
 
@@ -152,6 +213,7 @@ export const storyDestinations: StoryDestination[] = storyManifest.map(
       slug: destination.slug,
       name: destination.name,
       coverImage: tours[0].coverImage,
+      heroImage: getDestinationHeroImage(destination.slug, tours),
       tours,
     };
   },

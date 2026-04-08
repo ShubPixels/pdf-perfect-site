@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PageTransition } from "@/components/PageTransition";
@@ -12,16 +12,23 @@ import DestinationDetail from "./pages/DestinationDetail";
 import Community from "./pages/Community";
 import StoriesDestination from "./pages/StoriesDestination";
 import Learn from "./pages/Learn";
-import Lifestyle from "./pages/Lifestyle";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import FirstTimeEuropeTraveler from "./pages/blog/FirstTimeEuropeTraveler";
+import HowToChooseYourFirstGroupTour from "./pages/blog/HowToChooseYourFirstGroupTour";
+import BestTimeToVisitPopularDestinations from "./pages/blog/BestTimeToVisitPopularDestinations";
 import VisaDocumentsChecklist from "./pages/blog/VisaDocumentsChecklist";
 import TravelInsuranceExplained from "./pages/blog/TravelInsuranceExplained";
+import PassportAndVisaGuideIndianTravellers from "./pages/blog/PassportAndVisaGuideIndianTravellers";
 import VegFriendlyDishesEurope from "./pages/blog/VegFriendlyDishesEurope";
 import FunGroupGamesBuses from "./pages/blog/FunGroupGamesBuses";
 import PackingLight10DayTours from "./pages/blog/PackingLight10DayTours";
+import UltimatePackingListForDifferentClimates from "./pages/blog/UltimatePackingListForDifferentClimates";
+import CarryOnVsCheckedLuggage from "./pages/blog/CarryOnVsCheckedLuggage";
+import StayingSafeWhileTravellingInGroups from "./pages/blog/StayingSafeWhileTravellingInGroups";
+import HealthPrecautionsForInternationalTravel from "./pages/blog/HealthPrecautionsForInternationalTravel";
+import EmergencyContactsAndHelplinesAbroad from "./pages/blog/EmergencyContactsAndHelplinesAbroad";
 
 const queryClient = new QueryClient();
 
@@ -41,12 +48,23 @@ const AnimatedRoutes = () => {
         <Route path="/community" element={<PageTransition><Community /></PageTransition>} />
         <Route path="/learn" element={<PageTransition><Learn /></PageTransition>} />
         <Route path="/learn/first-time-europe-traveler" element={<PageTransition><FirstTimeEuropeTraveler /></PageTransition>} />
+        <Route path="/learn/how-to-choose-your-first-group-tour" element={<PageTransition><HowToChooseYourFirstGroupTour /></PageTransition>} />
+        <Route path="/learn/best-time-to-visit-popular-destinations" element={<PageTransition><BestTimeToVisitPopularDestinations /></PageTransition>} />
         <Route path="/learn/visa-documents-checklist" element={<PageTransition><VisaDocumentsChecklist /></PageTransition>} />
         <Route path="/learn/travel-insurance-explained" element={<PageTransition><TravelInsuranceExplained /></PageTransition>} />
-        <Route path="/lifestyle" element={<PageTransition><Lifestyle /></PageTransition>} />
-        <Route path="/lifestyle/veg-friendly-dishes-europe" element={<PageTransition><VegFriendlyDishesEurope /></PageTransition>} />
-        <Route path="/lifestyle/fun-group-games-buses" element={<PageTransition><FunGroupGamesBuses /></PageTransition>} />
-        <Route path="/lifestyle/packing-light-10-day-tours" element={<PageTransition><PackingLight10DayTours /></PageTransition>} />
+        <Route path="/learn/passport-and-visa-guide-indian-travellers" element={<PageTransition><PassportAndVisaGuideIndianTravellers /></PageTransition>} />
+        <Route path="/learn/veg-friendly-dishes-europe" element={<PageTransition><VegFriendlyDishesEurope /></PageTransition>} />
+        <Route path="/learn/fun-group-games-buses" element={<PageTransition><FunGroupGamesBuses /></PageTransition>} />
+        <Route path="/learn/packing-light-10-day-tours" element={<PageTransition><PackingLight10DayTours /></PageTransition>} />
+        <Route path="/learn/ultimate-packing-list-for-different-climates" element={<PageTransition><UltimatePackingListForDifferentClimates /></PageTransition>} />
+        <Route path="/learn/carry-on-vs-checked-luggage" element={<PageTransition><CarryOnVsCheckedLuggage /></PageTransition>} />
+        <Route path="/learn/staying-safe-while-travelling-in-groups" element={<PageTransition><StayingSafeWhileTravellingInGroups /></PageTransition>} />
+        <Route path="/learn/health-precautions-for-international-travel" element={<PageTransition><HealthPrecautionsForInternationalTravel /></PageTransition>} />
+        <Route path="/learn/emergency-contacts-and-helplines-abroad" element={<PageTransition><EmergencyContactsAndHelplinesAbroad /></PageTransition>} />
+        <Route path="/lifestyle" element={<Navigate replace to="/learn" />} />
+        <Route path="/lifestyle/veg-friendly-dishes-europe" element={<Navigate replace to="/learn/veg-friendly-dishes-europe" />} />
+        <Route path="/lifestyle/fun-group-games-buses" element={<Navigate replace to="/learn/fun-group-games-buses" />} />
+        <Route path="/lifestyle/packing-light-10-day-tours" element={<Navigate replace to="/learn/packing-light-10-day-tours" />} />
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
