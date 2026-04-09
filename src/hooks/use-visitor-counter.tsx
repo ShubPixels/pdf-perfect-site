@@ -1,51 +1,124 @@
-import { useEffect, useState } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { createContext, type ReactNode, useContext, useEffect, useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
-export const useVisitorCounter = () => {
+const VISITOR_SESSION_KEY = "visitor_counted";
+
+type VisitorCounterContextValue = {
+  count: number | null;
+  didIncrement: boolean;
+  loading: boolean;
+};
+
+const VisitorCounterContext = createContext<VisitorCounterContextValue | null>(null);
+
+export const VisitorCounterProvider = ({ children }: { children: ReactNode }) => {
   const [count, setCount] = useState<number | null>(null);
+  const [didIncrement, setDidIncrement] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const incrementAndFetchCount = async () => {
+    let isMounted = true;
+
+    if (!supabase) {
+      console.error("Visitor counter is disabled because Supabase environment variables are missing.");
+      setLoading(false);
+
+      return () => {
+        isMounted = false;
+      };
+    }
+
+    const counterChannel = supabase
+      .channel("visitor-counter-live")
+      .on(
+        "postgres_changes",
+        {
+          event: "UPDATE",
+          schema: "public",
+          table: "visitor_counter",
+        },
+        (payload) => {
+          if (!isMounted) {
+            return;
+          }
+
+          const nextCount = payload.new.count;
+          if (typeof nextCount === "number") {
+            setCount(nextCount);
+          }
+        },
+      )
+      .subscribe((status) => {
+        if (status === "CHANNEL_ERROR") {
+          console.error("Visitor counter realtime subscription failed.");
+        }
+      });
+
+    const syncCounter = async () => {
       try {
-        // Check if this session already incremented
-        const hasVisited = sessionStorage.getItem('visitor_counted');
-        
-        // Fetch current count
+        const hasVisited = sessionStorage.getItem(VISITOR_SESSION_KEY) === "true";
         const { data, error } = await supabase
-          .from('visitor_counter')
-          .select('id, count')
+          .from("visitor_counter")
+          .select("id, count")
+          .order("created_at", { ascending: true })
           .limit(1)
-          .single();
+          .maybeSingle();
 
         if (error) throw error;
+        if (!data) {
+          throw new Error("Visitor counter row not found.");
+        }
+        if (!isMounted) return;
 
-        if (!hasVisited && data) {
-          // Increment the counter
-          const { error: updateError } = await supabase
-            .from('visitor_counter')
-            .update({ count: data.count + 1 })
-            .eq('id', data.id);
+        setCount(data.count);
 
-          if (!updateError) {
-            sessionStorage.setItem('visitor_counted', 'true');
-            setCount(data.count + 1);
+        if (!hasVisited) {
+          const { data: nextCount, error: incrementError } = await supabase.rpc(
+            "increment_visitor_counter",
+          );
+
+          if (!isMounted) return;
+
+          if (!incrementError) {
+            sessionStorage.setItem(VISITOR_SESSION_KEY, "true");
+            if (typeof nextCount === "number") {
+              setCount(nextCount);
+            }
+            setDidIncrement(true);
           } else {
-            setCount(data.count);
+            throw incrementError;
           }
-        } else if (data) {
-          setCount(data.count);
         }
       } catch (error) {
-        console.error('Error with visitor counter:', error);
-        setCount(12547); // Fallback
+        console.error("Error with visitor counter:", error);
       } finally {
-        setLoading(false);
+        if (isMounted) {
+          setLoading(false);
+        }
       }
     };
 
-    incrementAndFetchCount();
+    void syncCounter();
+
+    return () => {
+      isMounted = false;
+      void counterChannel.unsubscribe();
+    };
   }, []);
 
-  return { count, loading };
+  return (
+    <VisitorCounterContext.Provider value={{ count, didIncrement, loading }}>
+      {children}
+    </VisitorCounterContext.Provider>
+  );
+};
+
+export const useVisitorCounter = () => {
+  const context = useContext(VisitorCounterContext);
+
+  if (!context) {
+    throw new Error("useVisitorCounter must be used within a VisitorCounterProvider.");
+  }
+
+  return context;
 };

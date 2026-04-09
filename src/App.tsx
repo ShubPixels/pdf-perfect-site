@@ -29,6 +29,7 @@ import CarryOnVsCheckedLuggage from "./pages/blog/CarryOnVsCheckedLuggage";
 import StayingSafeWhileTravellingInGroups from "./pages/blog/StayingSafeWhileTravellingInGroups";
 import HealthPrecautionsForInternationalTravel from "./pages/blog/HealthPrecautionsForInternationalTravel";
 import EmergencyContactsAndHelplinesAbroad from "./pages/blog/EmergencyContactsAndHelplinesAbroad";
+import { VisitorCounterProvider } from "@/hooks/use-visitor-counter";
 
 const queryClient = new QueryClient();
 
@@ -77,12 +78,14 @@ const AnimatedRoutes = () => {
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <AnimatedRoutes />
-      </BrowserRouter>
+      <VisitorCounterProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <AnimatedRoutes />
+        </BrowserRouter>
+      </VisitorCounterProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

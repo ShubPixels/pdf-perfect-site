@@ -6,20 +6,20 @@ import { MapPin, ArrowRight, Globe } from "lucide-react";
 import { tours } from "@/data/tours";
 
 // placeholder images (swap later)
-import japanImage from "@/assets/japan-tour.jpg";
-import dubaiImage from "@/assets/dubai-tour.jpg";
-import europeImage from "@/assets/europe-tour.jpg";
-import baliImage from "@/assets/bali-tour.jpg";
-import southaftricaImage from "@/assets/upcoming departure images/south-africa.png";
-import andamanIMg from "@/assets/upcoming departure images/andaman-tour.png";
-import australiaImg from "@/assets/upcoming departure images/australia-tour.png";
-import bakuImg from "@/assets/upcoming departure images/baku-tour.png";
-import baliImg from "@/assets/upcoming departure images/bali-tour.png";
-import keralaImg from "@/assets/upcoming departure images/kerala-tour.png";
-import nepalImg from "@/assets/Nepal/nepal-tour.png";
-import japanImg from "@/assets/upcoming departure images/japan.png";
-import dubaiImg from "@/assets/upcoming departure images/dubai.png";
-import europeImg from "@/assets/Europe/europe-tour.png";
+import japanImage from "@/assets/destinations/japan/covers/japan-tour.jpg";
+import dubaiImage from "@/assets/destinations/dubai/covers/dubai-tour.jpg";
+import europeImage from "@/assets/destinations/europe/covers/europe-tour.jpg";
+import baliImage from "@/assets/destinations/bali/covers/bali-tour.jpg";
+import southaftricaImage from "@/assets/tours/upcoming-departures/south-africa.png";
+import andamanIMg from "@/assets/tours/upcoming-departures/andaman-tour.png";
+import australiaImg from "@/assets/tours/upcoming-departures/australia-tour.png";
+import bakuImg from "@/assets/tours/upcoming-departures/baku-tour.png";
+import baliImg from "@/assets/tours/upcoming-departures/bali-tour.png";
+import keralaImg from "@/assets/tours/upcoming-departures/kerala-tour.png";
+import nepalImg from "@/assets/destinations/nepal/gallery/nepal-tour.png";
+import japanImg from "@/assets/tours/upcoming-departures/japan.png";
+import dubaiImg from "@/assets/tours/upcoming-departures/dubai.png";
+import europeImg from "@/assets/destinations/europe/gallery/europe-tour.png";
 
 const destinationImages: Record<string, string> = {
   "japan-2026": japanImg,

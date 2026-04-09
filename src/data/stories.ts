@@ -28,8 +28,8 @@ export interface StoryDestination {
 
 const galleryModules = import.meta.glob(
   [
-    "../assets/story-galleries/*/*.jpg",
-    "../assets/story-galleries/*/*.jpeg",
+    "../assets/stories/galleries/*/*.jpg",
+    "../assets/stories/galleries/*/*.jpeg",
   ],
   {
     eager: true,
@@ -40,7 +40,7 @@ const galleryModules = import.meta.glob(
 const galleryEntries = Object.entries(galleryModules).reduce<
   Record<string, Array<[string, string]>>
 >((collections, [path, src]) => {
-  const match = path.match(/story-galleries\/([^/]+)\//);
+  const match = path.match(/stories\/galleries\/([^/]+)\//);
 
   if (!match) {
     return collections;

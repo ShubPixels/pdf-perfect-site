@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Clock, Quote } from "lucide-react";
-import japanImage from "@/assets/japan-tour.jpg";
+import japanImage from "@/assets/destinations/japan/covers/japan-tour.jpg";
 
 export default function TourDiary() {
   const { tourId } = useParams();

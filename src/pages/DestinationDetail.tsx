@@ -10,138 +10,138 @@ import { ImmersiveGallery } from "@/components/destination/ImmersiveGallery";
 import { tours, getDeparturesByTourId, Tour } from "@/data/tours";
 
 // Image imports
-import japanImage from "@/assets/japan-tour.jpg";
-import dubaiImage from "@/assets/hero-travel.jpg";
+import japanImage from "@/assets/destinations/japan/covers/japan-tour.jpg";
+import dubaiImage from "@/assets/shared/placeholders/hero-travel.jpg";
 
 //dubai gallery images
-import Onedubai from "@/assets/Dubai/1.png";
-import Twodubai from "@/assets/Dubai/2.png";
-import Threedubai from "@/assets/Dubai/3.png";
-import Fourdubai from "@/assets/Dubai/4.png";
-import Fivedubai from "@/assets/Dubai/5.png";
-import Sixdubai from "@/assets/Dubai/6.png";
-import Eightdubai from "@/assets/Dubai/8.png";
-import Tendubai from "@/assets/Dubai/10.png";
-import Elevendubai from "@/assets/Dubai/11.png";
-import Ninedubai from "@/assets/Dubai/9.png";
-import Thirteendubai from "@/assets/Dubai/13.png";
+import Onedubai from "@/assets/destinations/dubai/gallery/1.png";
+import Twodubai from "@/assets/destinations/dubai/gallery/2.png";
+import Threedubai from "@/assets/destinations/dubai/gallery/3.png";
+import Fourdubai from "@/assets/destinations/dubai/gallery/4.png";
+import Fivedubai from "@/assets/destinations/dubai/gallery/5.png";
+import Sixdubai from "@/assets/destinations/dubai/gallery/6.png";
+import Eightdubai from "@/assets/destinations/dubai/gallery/8.png";
+import Tendubai from "@/assets/destinations/dubai/gallery/10.png";
+import Elevendubai from "@/assets/destinations/dubai/gallery/11.png";
+import Ninedubai from "@/assets/destinations/dubai/gallery/9.png";
+import Thirteendubai from "@/assets/destinations/dubai/gallery/13.png";
 
 // Japan gallery images
-import Onejapan from "@/assets/japan/1.png";
-import Twojapan from "@/assets/japan/2.png";
-import Threejapan from "@/assets/japan/3.png";
-import Fourjapan from "@/assets/japan/4.png";
-import Fivejapan from "@/assets/japan/5.png";
-import Sixjapan from "@/assets/japan/6.png";
-import Sevenjapan from "@/assets/japan/7.png";
-import Eightjapan from "@/assets/japan/8.png";
-import Ninejapan from "@/assets/japan/9.png";
+import Onejapan from "@/assets/destinations/japan/gallery/1.png";
+import Twojapan from "@/assets/destinations/japan/gallery/2.png";
+import Threejapan from "@/assets/destinations/japan/gallery/3.png";
+import Fourjapan from "@/assets/destinations/japan/gallery/4.png";
+import Fivejapan from "@/assets/destinations/japan/gallery/5.png";
+import Sixjapan from "@/assets/destinations/japan/gallery/6.png";
+import Sevenjapan from "@/assets/destinations/japan/gallery/7.png";
+import Eightjapan from "@/assets/destinations/japan/gallery/8.png";
+import Ninejapan from "@/assets/destinations/japan/gallery/9.png";
 
 // Europe gallery images
-import Oneeurope from "@/assets/Europe/1.png";
-import Twoeurope from "@/assets/Europe/2.png";
-import Threeeurope from "@/assets/Europe/3.png";
-import Fourope from "@/assets/Europe/4.png";
-import Fiveeurope from "@/assets/Europe/5.png";
-import Sixeurope from "@/assets/Europe/6.png";
-import Seveneurope from "@/assets/Europe/7.png";
-import Eighteurope from "@/assets/Europe/8.png";
-import Nineeurope from "@/assets/Europe/9.png";
+import Oneeurope from "@/assets/destinations/europe/gallery/1.png";
+import Twoeurope from "@/assets/destinations/europe/gallery/2.png";
+import Threeeurope from "@/assets/destinations/europe/gallery/3.png";
+import Fourope from "@/assets/destinations/europe/gallery/4.png";
+import Fiveeurope from "@/assets/destinations/europe/gallery/5.png";
+import Sixeurope from "@/assets/destinations/europe/gallery/6.png";
+import Seveneurope from "@/assets/destinations/europe/gallery/7.png";
+import Eighteurope from "@/assets/destinations/europe/gallery/8.png";
+import Nineeurope from "@/assets/destinations/europe/gallery/9.png";
 
 //baku gallery images
-import Twobaku  from "@/assets/Baku/20250215_091615.jpg";
-import Onebaku from "@/assets/Baku/20250215_153534.jpg";
-import Threebaku from "@/assets/Baku/20250215_153822.jpg";
-import Fourbaku from "@/assets/Baku/20250216_134848.jpg";
-import Fivebaku from "@/assets/Baku/20250218_123633.jpg";
-import Sixbaku from "@/assets/Baku/20250218_125325.jpg";
-import Sevenbaku from "@/assets/Baku/20250218_131641.jpg";
-import Eightbaku from "@/assets/Baku/20250223_114453.jpg";
-import Ninebaku from "@/assets/Baku/20250223_123401.jpg";
-import Tenbaku from "@/assets/Baku/20250223_135311.jpg";
+import Twobaku  from "@/assets/destinations/baku/gallery/20250215_091615.jpg";
+import Onebaku from "@/assets/destinations/baku/gallery/20250215_153534.jpg";
+import Threebaku from "@/assets/destinations/baku/gallery/20250215_153822.jpg";
+import Fourbaku from "@/assets/destinations/baku/gallery/20250216_134848.jpg";
+import Fivebaku from "@/assets/destinations/baku/gallery/20250218_123633.jpg";
+import Sixbaku from "@/assets/destinations/baku/gallery/20250218_125325.jpg";
+import Sevenbaku from "@/assets/destinations/baku/gallery/20250218_131641.jpg";
+import Eightbaku from "@/assets/destinations/baku/gallery/20250223_114453.jpg";
+import Ninebaku from "@/assets/destinations/baku/gallery/20250223_123401.jpg";
+import Tenbaku from "@/assets/destinations/baku/gallery/20250223_135311.jpg";
 
 
 // Bali gallery images
-import Onebali from "@/assets/Bali/1.png";
-import Twobali from "@/assets/Bali/2.png";
-import Threebali from "@/assets/Bali/3.png";
-import Fourbali from "@/assets/Bali/4.png";
-import Fivebali from "@/assets/Bali/5.png";
-import Sixbali from "@/assets/Bali/6.png";
-import Sevenbali from "@/assets/Bali/7.png";
-import Eightbali from "@/assets/Bali/8.png";
-import Ninebali from "@/assets/Bali/9.png";
+import Onebali from "@/assets/destinations/bali/gallery/1.png";
+import Twobali from "@/assets/destinations/bali/gallery/2.png";
+import Threebali from "@/assets/destinations/bali/gallery/3.png";
+import Fourbali from "@/assets/destinations/bali/gallery/4.png";
+import Fivebali from "@/assets/destinations/bali/gallery/5.png";
+import Sixbali from "@/assets/destinations/bali/gallery/6.png";
+import Sevenbali from "@/assets/destinations/bali/gallery/7.png";
+import Eightbali from "@/assets/destinations/bali/gallery/8.png";
+import Ninebali from "@/assets/destinations/bali/gallery/9.png";
 
 // Andaman gallery images
-import Oneandaman from "@/assets/Andaman/1.png";
-import Twoandaman from "@/assets/Andaman/2.png";
-import Threeandaman from "@/assets/Andaman/3.png";
-import Fourandaman from "@/assets/Andaman/4.png";
-import Fiveandaman from "@/assets/Andaman/5.png";
-import Sixandaman from "@/assets/Andaman/6.png";
-import Sevenandaman from "@/assets/Andaman/7.png";
-import Eightandaman from "@/assets/Andaman/8.png";
+import Oneandaman from "@/assets/destinations/andaman/gallery/1.png";
+import Twoandaman from "@/assets/destinations/andaman/gallery/2.png";
+import Threeandaman from "@/assets/destinations/andaman/gallery/3.png";
+import Fourandaman from "@/assets/destinations/andaman/gallery/4.png";
+import Fiveandaman from "@/assets/destinations/andaman/gallery/5.png";
+import Sixandaman from "@/assets/destinations/andaman/gallery/6.png";
+import Sevenandaman from "@/assets/destinations/andaman/gallery/7.png";
+import Eightandaman from "@/assets/destinations/andaman/gallery/8.png";
 
 // Kerala gallery images
-import Onekerala from "@/assets/kerala/1.png";
-import Twokerala from "@/assets/kerala/2.png";
-import Threekerala from "@/assets/kerala/3.png";
-import Fourkerala from "@/assets/kerala/4.png";
-import Fivekerala from "@/assets/kerala/5.png";
-import Sixkerala from "@/assets/kerala/6.png";
-import Sevenkerala from "@/assets/kerala/7.png";
-import Eightkerala from "@/assets/kerala/8.png";
-import Ninekerala from "@/assets/kerala/9.png";
+import Onekerala from "@/assets/destinations/kerala/gallery/1.png";
+import Twokerala from "@/assets/destinations/kerala/gallery/2.png";
+import Threekerala from "@/assets/destinations/kerala/gallery/3.png";
+import Fourkerala from "@/assets/destinations/kerala/gallery/4.png";
+import Fivekerala from "@/assets/destinations/kerala/gallery/5.png";
+import Sixkerala from "@/assets/destinations/kerala/gallery/6.png";
+import Sevenkerala from "@/assets/destinations/kerala/gallery/7.png";
+import Eightkerala from "@/assets/destinations/kerala/gallery/8.png";
+import Ninekerala from "@/assets/destinations/kerala/gallery/9.png";
 
 // Nepal gallery images
-import Onenepal from "@/assets/Nepal/1.png";
-import Twonepal from "@/assets/Nepal/2.png";
-import Threenepal from "@/assets/Nepal/3.png";
-import Fournepal from "@/assets/Nepal/4.png";
-import Fivenepal from "@/assets/Nepal/5.png";
-import Sixnepal from "@/assets/Nepal/6.png";
-import Sevennepal from "@/assets/Nepal/7.png";
-import Eightnepal from "@/assets/Nepal/8.png";
-import Ninenepal from "@/assets/Nepal/9.png";
+import Onenepal from "@/assets/destinations/nepal/gallery/1.png";
+import Twonepal from "@/assets/destinations/nepal/gallery/2.png";
+import Threenepal from "@/assets/destinations/nepal/gallery/3.png";
+import Fournepal from "@/assets/destinations/nepal/gallery/4.png";
+import Fivenepal from "@/assets/destinations/nepal/gallery/5.png";
+import Sixnepal from "@/assets/destinations/nepal/gallery/6.png";
+import Sevennepal from "@/assets/destinations/nepal/gallery/7.png";
+import Eightnepal from "@/assets/destinations/nepal/gallery/8.png";
+import Ninenepal from "@/assets/destinations/nepal/gallery/9.png";
 
 // South Africa gallery images
-import Onesouthafrica from "@/assets/SA/1.png";
-import Twosouthafrica from "@/assets/SA/2.png";
-import Threesouthafrica from "@/assets/SA/3.png";
-import Foursouthafrica from "@/assets/SA/4.png";
-import Fivesouthafrica from "@/assets/SA/5.png";
-import Sixsouthafrica from "@/assets/SA/6.png";
-import Sevensouthafrica from "@/assets/SA/7.png";
-import Eightsouthafrica from "@/assets/SA/8.png";
-import Ninesouthafrica from "@/assets/SA/9.png";
-import Tensouthafrica from "@/assets/SA/10.png";
+import Onesouthafrica from "@/assets/destinations/south-africa/gallery/1.png";
+import Twosouthafrica from "@/assets/destinations/south-africa/gallery/2.png";
+import Threesouthafrica from "@/assets/destinations/south-africa/gallery/3.png";
+import Foursouthafrica from "@/assets/destinations/south-africa/gallery/4.png";
+import Fivesouthafrica from "@/assets/destinations/south-africa/gallery/5.png";
+import Sixsouthafrica from "@/assets/destinations/south-africa/gallery/6.png";
+import Sevensouthafrica from "@/assets/destinations/south-africa/gallery/7.png";
+import Eightsouthafrica from "@/assets/destinations/south-africa/gallery/8.png";
+import Ninesouthafrica from "@/assets/destinations/south-africa/gallery/9.png";
+import Tensouthafrica from "@/assets/destinations/south-africa/gallery/10.png";
 
 // Australia gallery images
-import Oneaustralia from "@/assets/Australia/1.png";
-import Twoaustralia from "@/assets/Australia/2.png";
-import Threeaustralia from "@/assets/Australia/3.png";
-import Fouraustralia from "@/assets/Australia/4.png";
-import Fiveaustralia from "@/assets/Australia/5.png";
-import Sixaustralia from "@/assets/Australia/6.png";
-import Sevenaustralia from "@/assets/Australia/7.png";
-import Eightaustralia from "@/assets/Australia/8.png";
-import Nineaustralia from "@/assets/Australia/9.png";
+import Oneaustralia from "@/assets/destinations/australia/gallery/1.png";
+import Twoaustralia from "@/assets/destinations/australia/gallery/2.png";
+import Threeaustralia from "@/assets/destinations/australia/gallery/3.png";
+import Fouraustralia from "@/assets/destinations/australia/gallery/4.png";
+import Fiveaustralia from "@/assets/destinations/australia/gallery/5.png";
+import Sixaustralia from "@/assets/destinations/australia/gallery/6.png";
+import Sevenaustralia from "@/assets/destinations/australia/gallery/7.png";
+import Eightaustralia from "@/assets/destinations/australia/gallery/8.png";
+import Nineaustralia from "@/assets/destinations/australia/gallery/9.png";
 
 // Singapore gallery images
-import Onesingapore from "@/assets/Singapore/1.png";
+import Onesingapore from "@/assets/destinations/singapore/gallery/1.png";
 
-import southAfricaImg from "@/assets/upcoming departure images/south-africa.png";
-import europeImage from "@/assets/Europe/europe-tour.png";
-import baliImage from "@/assets/bali-tour.jpg";
-import heroImage from "@/assets/hero-travel.jpg";
-import communityImage from "@/assets/community-1.jpg";
-import andamanIMg from "@/assets/upcoming departure images/andaman-tour.png";
-import southAfricaGalleryImg from "@/assets/SA/1.png";
-import australiaImg from "@/assets/upcoming departure images/australia-tour.png";
-import bakuImg from "@/assets/upcoming departure images/baku-tour.png";
-import baliImg from "@/assets/upcoming departure images/bali-tour.png";
-import keralaImg from "@/assets/upcoming departure images/kerala-tour.png";
-import nepalImg from "@/assets/Nepal/nepal-tour.png";
+import southAfricaImg from "@/assets/tours/upcoming-departures/south-africa.png";
+import europeImage from "@/assets/destinations/europe/gallery/europe-tour.png";
+import baliImage from "@/assets/destinations/bali/covers/bali-tour.jpg";
+import heroImage from "@/assets/shared/placeholders/hero-travel.jpg";
+import communityImage from "@/assets/shared/placeholders/community-1.jpg";
+import andamanIMg from "@/assets/tours/upcoming-departures/andaman-tour.png";
+import southAfricaGalleryImg from "@/assets/destinations/south-africa/gallery/1.png";
+import australiaImg from "@/assets/tours/upcoming-departures/australia-tour.png";
+import bakuImg from "@/assets/tours/upcoming-departures/baku-tour.png";
+import baliImg from "@/assets/tours/upcoming-departures/bali-tour.png";
+import keralaImg from "@/assets/tours/upcoming-departures/kerala-tour.png";
+import nepalImg from "@/assets/destinations/nepal/gallery/nepal-tour.png";
 
 // Map tour IDs to destination slugs
 const tourIdToSlug: Record<string, string> = {

@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/home/Hero";
+import { HomeVisitorCapsule } from "@/components/home/HomeVisitorCapsule";
 import { UpcomingDepartures } from "@/components/home/UpcomingDepartures";
 import { LearnLifestyle } from "@/components/home/LearnLifestyle";
 import { PhilosophySection } from "@/components/home/PhilosophySection";
@@ -38,6 +39,7 @@ const Index = () => {
       <Navigation />
 
       <main className="relative z-10">
+        <HomeVisitorCapsule />
         <Hero />
 
         <div

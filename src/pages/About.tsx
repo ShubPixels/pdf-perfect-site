@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import Ashoksir from "@/assets/Ashok Sir.jpg";
-import Nishitamaam from "@/assets/Nishita Maam.jpg";
-import SunTeam from "@/assets/sun team.png";
+import Ashoksir from "@/assets/about/Ashok Sir.jpg";
+import Nishitamaam from "@/assets/about/Nishita Maam.jpg";
+import SunTeam from "@/assets/about/sun team.png";
 import { MapPin, Users, Globe, Award, Linkedin, Mail, Briefcase, GraduationCap, Heart, Quote, Star, Calendar, Plane } from "lucide-react";
 
 const About = () => {

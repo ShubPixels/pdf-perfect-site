@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
-import Ashoksir from "@/assets/Ashok Sir.jpg";
-import Nishitamaam from "@/assets/Nishita Maam.jpg";
+import Ashoksir from "@/assets/about/Ashok Sir.jpg";
+import Nishitamaam from "@/assets/about/Nishita Maam.jpg";
 
 const visionaries = [
   {

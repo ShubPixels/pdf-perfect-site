@@ -3,12 +3,12 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
-import japanCommunity1 from "@/assets/japan community/20250328_105134.jpg";
-import dubaiCommunity1 from "@/assets/dubai community/IMG_0068.jpg";
-import baliCommunity1 from "@/assets/bali community/WhatsApp Image 2025-01-04 at 18.34.46.jpeg";
-import europeCommunity1 from "@/assets/europe community/WhatsApp Image 2024-05-08 at 03.09.00.jpeg";
-import australiaCommunity1 from "@/assets/australia community/20171031_095347.jpg";
-import omanCommunity1 from "@/assets/oman community/WhatsApp Image 2025-10-25 at 1.12.45 PM.jpeg";
+import japanCommunity1 from "@/assets/destinations/japan/community/20250328_105134.jpg";
+import dubaiCommunity1 from "@/assets/destinations/dubai/community/IMG_0068.jpg";
+import baliCommunity1 from "@/assets/destinations/bali/community/WhatsApp Image 2025-01-04 at 18.34.46.jpeg";
+import europeCommunity1 from "@/assets/destinations/europe/community/WhatsApp Image 2024-05-08 at 03.09.00.jpeg";
+import australiaCommunity1 from "@/assets/destinations/australia/community/20171031_095347.jpg";
+import omanCommunity1 from "@/assets/destinations/oman/community/WhatsApp Image 2025-10-25 at 1.12.45 PM.jpeg";
 
 const stories = [
   {

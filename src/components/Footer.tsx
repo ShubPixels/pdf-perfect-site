@@ -7,17 +7,13 @@ import {
   MapPin,
   MessageCircle,
   Phone,
-  Users,
   Youtube,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { navLinks } from "@/config/navigation";
-import { useVisitorCounter } from "@/hooks/use-visitor-counter";
 
 export const Footer = () => {
-  const { count, loading } = useVisitorCounter();
-
   return (
     <footer className="mt-20">
       <div className="bg-cta py-3">
@@ -78,7 +74,7 @@ export const Footer = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div>
               <div className="mb-4 flex items-center gap-3">
-                <img src="/logo.png" alt="Sun Tourism" className="h-12 w-auto" />
+                <img src="/brand/logo.png" alt="Sun Tourism" className="h-12 w-auto" />
                 <div>
                   <h3 className="font-bold text-foreground">Sun Tourism</h3>
                   <p className="text-xs italic text-muted-foreground">Ghar Se Ghar Tak</p>
@@ -89,16 +85,6 @@ export const Footer = () => {
                 Real traveller stories, useful travel guidance, and memorable moments from
                 Sun Tourism journeys since 2007.
               </p>
-
-              <div className="flex items-center gap-2 rounded-lg border border-primary/20 bg-primary/10 p-3">
-                <Users className="h-5 w-5 text-primary" />
-                <div>
-                  <p className="text-xs text-muted-foreground">Total Visitors</p>
-                  <p className="text-lg font-bold text-primary">
-                    {loading ? "..." : count?.toLocaleString()}
-                  </p>
-                </div>
-              </div>
             </div>
 
             <div>

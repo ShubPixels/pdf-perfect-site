@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { MapPin, Plane, Users } from "lucide-react";
-import japanImage from "@/assets/japan-tour.jpg";
-import dubaiImage from "@/assets/Dubai/12.png";
-import europeImage from "@/assets/europe-tour.png";
+import japanImage from "@/assets/destinations/japan/covers/japan-tour.jpg";
+import dubaiImage from "@/assets/destinations/dubai/gallery/12.png";
+import europeImage from "@/assets/destinations/europe/covers/home-europe-tour.png";
 
 const destinations = [
   { name: "Japan", image: japanImage, tagline: "Where tradition meets tomorrow" },

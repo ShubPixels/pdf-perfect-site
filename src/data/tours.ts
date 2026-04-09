@@ -1,24 +1,24 @@
 // Tour data extracted from suntourismpune.co.in - the parent website
 // This is the central hub for all tour information
-import amritsarImg from "@/assets/upcoming departure images/amritsar.png";
-import assamTeaEstateImg from "@/assets/upcoming departure images/assam-tea-estate.jpg";
-import baliImg from "@/assets/upcoming departure images/bali.png";
-import dubaiImg from "@/assets/upcoming departure images/dubai.png";
-import europeanGlimpsImg from "@/assets/upcoming departure images/european glimps.png";
-import hongKongImg from "@/assets/upcoming departure images/hong kong.png";
-import japanImg from "@/assets/upcoming departure images/japan.png";
-import kashmirImg from "@/assets/upcoming departure images/kashmir.png";
-import restOfEuropeImg from "@/assets/upcoming departure images/rest of europe.png";
-import southAfricaImg from "@/assets/upcoming departure images/south-africa.png";
-import tadobaSafariImg from "@/assets/upcoming departure images/tadoba-safari.jpg";
-import varanasiImg from "@/assets/upcoming departure images/varanasi.png";
-import europeImg from "@/assets/upcoming departure images/europe.png";
-import australiaTourImg from "@/assets/upcoming departure images/australia-tour.png";
-import nepalTourImg from "@/assets/Nepal/nepal-tour.png";
-import bhutanTourImg from "@/assets/upcoming departure images/bhutan-palace.jpg";
-import nainitalJimCorbettImg from "@/assets/upcoming departure images/jim-corbett-tiger.jpg";
+import amritsarImg from "@/assets/tours/upcoming-departures/amritsar.png";
+import assamTeaEstateImg from "@/assets/tours/upcoming-departures/assam-tea-estate.jpg";
+import baliImg from "@/assets/tours/upcoming-departures/bali.png";
+import dubaiImg from "@/assets/tours/upcoming-departures/dubai.png";
+import europeanGlimpsImg from "@/assets/tours/upcoming-departures/european glimps.png";
+import hongKongImg from "@/assets/tours/upcoming-departures/hong kong.png";
+import japanImg from "@/assets/tours/upcoming-departures/japan.png";
+import kashmirImg from "@/assets/tours/upcoming-departures/kashmir.png";
+import restOfEuropeImg from "@/assets/tours/upcoming-departures/rest of europe.png";
+import southAfricaImg from "@/assets/tours/upcoming-departures/south-africa.png";
+import tadobaSafariImg from "@/assets/tours/upcoming-departures/tadoba-safari.jpg";
+import varanasiImg from "@/assets/tours/upcoming-departures/varanasi.png";
+import europeImg from "@/assets/tours/upcoming-departures/europe.png";
+import australiaTourImg from "@/assets/tours/upcoming-departures/australia-tour.png";
+import nepalTourImg from "@/assets/destinations/nepal/gallery/nepal-tour.png";
+import bhutanTourImg from "@/assets/tours/upcoming-departures/bhutan-palace.jpg";
+import nainitalJimCorbettImg from "@/assets/tours/upcoming-departures/jim-corbett-tiger.jpg";
 
-import andamanIMg from "@/assets/upcoming departure images/andaman-tour.png";
+import andamanIMg from "@/assets/tours/upcoming-departures/andaman-tour.png";
 
 
 export interface Tour {

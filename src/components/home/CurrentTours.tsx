@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, Radio, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import japanImage from "@/assets/japan-tour.jpg";
+import japanImage from "@/assets/destinations/japan/covers/japan-tour.jpg";
 
 export const CurrentTours = () => {
   const currentTours = [

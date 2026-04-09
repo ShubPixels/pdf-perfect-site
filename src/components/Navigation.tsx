@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
-import logo from "@/assets/logo.png";
+import logo from "@/assets/brand/logo.png";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { navLinks } from "@/config/navigation";
@@ -39,12 +39,12 @@ export const Navigation = () => {
               className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
             />
 
-            <div className="flex flex-col">
-              <span className="text-sm font-bold text-foreground lg:text-base">
-                Sun Tourism Pune
+            <div className="flex flex-col leading-tight">
+              <span className="whitespace-nowrap text-[11px] font-bold text-foreground sm:text-xs lg:text-sm">
+                All Tours Ghar Se Ghar Tak
               </span>
-              <span className="text-xs text-muted-foreground">
-                Ghar Se Ghar Tak journeys
+              <span className="text-[11px] text-muted-foreground sm:text-xs">
+                Sun Touriism Pune
               </span>
             </div>
           </Link>
