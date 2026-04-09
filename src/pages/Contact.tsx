@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { z } from "zod";
 import {
@@ -49,6 +50,9 @@ const officeEmail = "enquiry@suntourismpune.com";
 const mapLink = "https://goo.gl/maps/1rQVgrnHGrzCNiWB7";
 const whatsappNumber = "917722000888";
 const whatsappLink = `https://wa.me/${whatsappNumber}`;
+const emailJsServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const emailJsTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
   const { toast } = useToast();
@@ -78,14 +82,39 @@ const Contact = () => {
 
     try {
       const validatedData = contactSchema.parse(formData);
+      if (!emailJsServiceId || !emailJsTemplateId || !emailJsPublicKey) {
+        toast({
+          title: "Email Setup Incomplete",
+          description: "The contact form email service is not configured yet. Please try again shortly.",
+          variant: "destructive",
+        });
+        return;
+      }
 
-      const message = `*New Tour Enquiry*%0A%0A*Name:* ${encodeURIComponent(validatedData.name)}%0A*Email:* ${encodeURIComponent(validatedData.email)}%0A*Phone:* ${encodeURIComponent(validatedData.phone)}%0A${validatedData.destination ? `*Destination:* ${encodeURIComponent(validatedData.destination)}%0A` : ""}${validatedData.travelMonth ? `*Travel Month:* ${encodeURIComponent(validatedData.travelMonth)}%0A` : ""}${validatedData.groupSize ? `*Group Size:* ${encodeURIComponent(validatedData.groupSize)}%0A` : ""}${validatedData.message ? `%0A*Message:*%0A${encodeURIComponent(validatedData.message)}` : ""}`;
-
-      window.open(`${whatsappLink}?text=${message}`, "_blank");
+      await emailjs.send(
+        emailJsServiceId,
+        emailJsTemplateId,
+        {
+          name: validatedData.name,
+          email: validatedData.email,
+          phone: validatedData.phone,
+          destination: validatedData.destination || "Not specified",
+          travelMonth: validatedData.travelMonth || "Not specified",
+          groupSize: validatedData.groupSize || "Not specified",
+          message: validatedData.message || "No additional requirements provided.",
+        },
+        {
+          publicKey: emailJsPublicKey,
+          limitRate: {
+            id: "contact-form",
+            throttle: 10000,
+          },
+        },
+      );
 
       toast({
         title: "Enquiry Sent!",
-        description: "We will get back to you shortly. Thank you for reaching out.",
+        description: "Your enquiry has been emailed to our team. We will get back to you shortly.",
       });
 
       setFormData({
@@ -106,6 +135,12 @@ const Contact = () => {
           }
         });
         setErrors(fieldErrors);
+      } else {
+        toast({
+          title: "Could Not Send Enquiry",
+          description: "Please try again in a moment or contact us directly by phone or WhatsApp.",
+          variant: "destructive",
+        });
       }
     } finally {
       setIsSubmitting(false);
@@ -159,7 +194,7 @@ const Contact = () => {
                 <div className="rounded-3xl border border-border/30 bg-background/70 p-4">
                   <p className="text-xs uppercase tracking-[0.2em] text-accent">Fast replies</p>
                   <p className="mt-2 text-sm leading-6 text-foreground">
-                    WhatsApp-first support for quicker answers and smoother trip planning.
+                    Email-first enquiries with WhatsApp support whenever you want a quicker follow-up.
                   </p>
                 </div>
                 <div className="rounded-3xl border border-border/30 bg-background/70 p-4">
@@ -408,7 +443,7 @@ const Contact = () => {
                   ) : (
                     <>
                       <Send className="h-4 w-4" />
-                      Send Enquiry via WhatsApp
+                      Send Enquiry by Email
                     </>
                   )}
                 </Button>
