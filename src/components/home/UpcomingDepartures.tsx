@@ -2,14 +2,131 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, ArrowRight, Plane, Percent, Users } from "lucide-react";
-import { getAvailableMonths, getDeparturesByMonth } from "@/data/tours";
+import { getAvailableMonths, getDeparturesByMonth, type Departure } from "@/data/tours";
 import { Link } from "react-router-dom";
+
+const monthNameToIndex: Record<string, number> = {
+  jan: 0,
+  january: 0,
+  feb: 1,
+  february: 1,
+  mar: 2,
+  march: 2,
+  apr: 3,
+  april: 3,
+  may: 4,
+  jun: 5,
+  june: 5,
+  jul: 6,
+  july: 6,
+  aug: 7,
+  august: 7,
+  sep: 8,
+  sept: 8,
+  september: 8,
+  oct: 9,
+  october: 9,
+  nov: 10,
+  november: 10,
+  dec: 11,
+  december: 11,
+};
+
+const parseDepartureDate = (value: string) => {
+  const exactDateMatch = value.trim().match(/^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/);
+
+  if (!exactDateMatch) {
+    return null;
+  }
+
+  const day = Number(exactDateMatch[1]);
+  const monthIndex = monthNameToIndex[exactDateMatch[2].toLowerCase()];
+  const year = Number(exactDateMatch[3]);
+
+  if (monthIndex === undefined || Number.isNaN(day) || Number.isNaN(year)) {
+    return null;
+  }
+
+  return new Date(year, monthIndex, day);
+};
+
+const joinDepartureLabels = (labels: string[]) => {
+  if (labels.length <= 1) {
+    return labels[0] ?? "";
+  }
+
+  if (labels.length === 2) {
+    return `${labels[0]} & ${labels[1]}`;
+  }
+
+  return `${labels.slice(0, -1).join(", ")} & ${labels.at(-1)}`;
+};
+
+const formatDepartureDates = (dates: string[]) => {
+  const uniqueDates = [...new Set(dates)];
+  const exactDates = uniqueDates
+    .filter((date) => parseDepartureDate(date))
+    .sort((left, right) => {
+      const leftDate = parseDepartureDate(left);
+      const rightDate = parseDepartureDate(right);
+
+      if (!leftDate || !rightDate) {
+        return left.localeCompare(right);
+      }
+
+      return leftDate.getTime() - rightDate.getTime();
+    });
+
+  if (exactDates.length > 0) {
+    return joinDepartureLabels(exactDates);
+  }
+
+  return joinDepartureLabels(uniqueDates);
+};
+
+const groupDepartures = (departures: Departure[]) => {
+  const grouped = new Map<string, Departure & { departureDates: string[] }>();
+
+  for (const departure of departures) {
+    const existing = grouped.get(departure.tourId);
+
+    if (!existing) {
+      grouped.set(departure.tourId, {
+        ...departure,
+        departureDates: [departure.departureDate],
+      });
+      continue;
+    }
+
+    existing.departureDates.push(departure.departureDate);
+    existing.tags = [...new Set([...existing.tags, ...departure.tags])];
+
+    if (departure.discountPercent) {
+      existing.discountPercent = Math.max(
+        existing.discountPercent ?? 0,
+        departure.discountPercent,
+      );
+    }
+
+    if (departure.spotsLeft) {
+      existing.spotsLeft =
+        existing.spotsLeft === undefined
+          ? departure.spotsLeft
+          : Math.min(existing.spotsLeft, departure.spotsLeft);
+    }
+  }
+
+  return [...grouped.values()].map((departure) => ({
+    ...departure,
+    departureDate: formatDepartureDates(departure.departureDates),
+  }));
+};
 
 export const UpcomingDepartures = () => {
   const availableMonths = getAvailableMonths();
   const [selectedMonth, setSelectedMonth] = useState(availableMonths[0] || "Dec 2026");
 
-  const filteredDepartures = getDeparturesByMonth(selectedMonth);
+  const filteredDepartures = groupDepartures(getDeparturesByMonth(selectedMonth));
 
   return (
     <section id="upcoming-departures" className="py-12 sm:py-16 md:py-24 scroll-mt-20 overflow-hidden">

@@ -22,7 +22,9 @@ export interface StoryDestination {
   slug: string;
   name: string;
   coverImage: string;
+  coverImagePosition?: string;
   heroImage: string;
+  heroImagePosition?: string;
   tours: StoryTour[];
 }
 
@@ -122,16 +124,75 @@ const buildPhotos = (
 const getCoverImage = (images: string[], coverIndex: number) =>
   images[Math.min(Math.max(coverIndex, 0), images.length - 1)] ?? images[0];
 
+type StoryImageOverride = {
+  tourSlug: string;
+  imageIndex: number;
+  objectPosition?: string;
+};
+
 const HERO_IMAGE_PREFERRED_INDICES = [2, 3, 4, 5, 6, 7, 8, 9, 1, 0];
 
-const DESTINATION_HERO_OVERRIDES: Record<
-  string,
-  { tourSlug: string; imageIndex: number }
-> = {
+const DESTINATION_CARD_OVERRIDES: Record<string, StoryImageOverride> = {
   kashmir: {
     tourSlug: "2024-04",
-    imageIndex: 2,
+    imageIndex: 7,
+    objectPosition: "center center",
   },
+};
+
+const DESTINATION_HERO_OVERRIDES: Record<string, StoryImageOverride> = {
+  kashmir: {
+    tourSlug: "2024-04",
+    imageIndex: 7,
+    objectPosition: "center center",
+  },
+};
+
+const getImageFromOverride = (
+  tours: StoryTour[],
+  override?: StoryImageOverride,
+) => {
+  if (!override) {
+    return null;
+  }
+
+  const overrideTour = tours.find((tour) => tour.slug === override.tourSlug);
+  const src = overrideTour?.photos[override.imageIndex]?.src;
+
+  if (!src) {
+    return null;
+  }
+
+  return {
+    src,
+    objectPosition: override.objectPosition,
+  };
+};
+
+const getDestinationCoverImage = (
+  destinationSlug: string,
+  tours: StoryTour[],
+) => {
+  if (!tours.length) {
+    return {
+      src: "",
+      objectPosition: undefined,
+    };
+  }
+
+  const explicitCover = getImageFromOverride(
+    tours,
+    DESTINATION_CARD_OVERRIDES[destinationSlug],
+  );
+
+  if (explicitCover) {
+    return explicitCover;
+  }
+
+  return {
+    src: tours[0].coverImage,
+    objectPosition: undefined,
+  };
 };
 
 const getDestinationHeroImage = (
@@ -139,18 +200,19 @@ const getDestinationHeroImage = (
   tours: StoryTour[],
 ) => {
   if (!tours.length) {
-    return "";
+    return {
+      src: "",
+      objectPosition: undefined,
+    };
   }
 
-  const heroOverride = DESTINATION_HERO_OVERRIDES[destinationSlug];
+  const explicitHero = getImageFromOverride(
+    tours,
+    DESTINATION_HERO_OVERRIDES[destinationSlug],
+  );
 
-  if (heroOverride) {
-    const overrideTour = tours.find((tour) => tour.slug === heroOverride.tourSlug);
-    const explicitHero = overrideTour?.photos[heroOverride.imageIndex]?.src;
-
-    if (explicitHero) {
-      return explicitHero;
-    }
+  if (explicitHero) {
+    return explicitHero;
   }
 
   const blockedImages = new Set(tours.map((tour) => tour.coverImage));
@@ -160,7 +222,10 @@ const getDestinationHeroImage = (
       const candidate = tour.photos[preferredIndex]?.src;
 
       if (candidate && !blockedImages.has(candidate)) {
-        return candidate;
+        return {
+          src: candidate,
+          objectPosition: undefined,
+        };
       }
     }
   }
@@ -168,12 +233,18 @@ const getDestinationHeroImage = (
   for (const tour of tours) {
     for (const photo of tour.photos) {
       if (!blockedImages.has(photo.src)) {
-        return photo.src;
+        return {
+          src: photo.src,
+          objectPosition: undefined,
+        };
       }
     }
   }
 
-  return tours[0].photos[0]?.src ?? tours[0].coverImage;
+  return {
+    src: tours[0].photos[0]?.src ?? tours[0].coverImage,
+    objectPosition: undefined,
+  };
 };
 
 const sortToursByDate = (left: StoryManifestTour, right: StoryManifestTour) =>
@@ -207,13 +278,17 @@ export const storyDestinations: StoryDestination[] = storyManifest.map(
     const tours = [...destination.tours]
       .sort(sortToursByDate)
       .map((tour) => buildTour(destination.name, tour));
+    const destinationCoverImage = getDestinationCoverImage(destination.slug, tours);
+    const destinationHeroImage = getDestinationHeroImage(destination.slug, tours);
 
     return {
       id: destination.id,
       slug: destination.slug,
       name: destination.name,
-      coverImage: tours[0].coverImage,
-      heroImage: getDestinationHeroImage(destination.slug, tours),
+      coverImage: destinationCoverImage.src,
+      coverImagePosition: destinationCoverImage.objectPosition,
+      heroImage: destinationHeroImage.src,
+      heroImagePosition: destinationHeroImage.objectPosition,
       tours,
     };
   },

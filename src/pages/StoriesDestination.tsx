@@ -51,7 +51,7 @@ const StoriesDestination = () => {
 
   if (!destination) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-primary/10 relative overflow-hidden">
+      <div className="min-h-screen bg-white">
         <Navigation />
         <main className="container mx-auto px-4 py-24 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Story destination not found</h1>
@@ -71,16 +71,10 @@ const StoriesDestination = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-primary/10 relative overflow-hidden">
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 left-0 w-80 h-80 bg-cta/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-      </div>
-
+    <div className="min-h-screen bg-white">
       <Navigation />
 
-      <main className="relative z-10">
+      <main>
         <section className="container mx-auto px-4 pt-20 pb-8 md:pt-24 md:pb-12">
           <div className="max-w-6xl mx-auto">
             <Button asChild variant="ghost" className="rounded-full px-0 hover:bg-transparent mb-6 text-foreground">
@@ -134,6 +128,11 @@ const StoriesDestination = () => {
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-25"
+                    style={
+                      destination.heroImagePosition
+                        ? { objectPosition: destination.heroImagePosition }
+                        : undefined
+                    }
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
                   <img
@@ -141,6 +140,11 @@ const StoriesDestination = () => {
                     alt={destination.name}
                     className="relative z-10 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                     loading="lazy"
+                    style={
+                      destination.heroImagePosition
+                        ? { objectPosition: destination.heroImagePosition }
+                        : undefined
+                    }
                   />
                 </div>
               </div>

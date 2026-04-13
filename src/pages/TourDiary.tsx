@@ -132,7 +132,7 @@ export default function TourDiary() {
   const selectedDayData = days.find(d => d.day === selectedDay) || days[0];
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navigation />
       
       <main className="flex-1 pt-20">

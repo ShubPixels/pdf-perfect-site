@@ -362,7 +362,7 @@ export default function DestinationDetail() {
 
   if (!tour) {
     return (
-      <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-primary/10">
+      <div className="min-h-screen bg-white">
         <Navigation />
         <main className="flex flex-1 items-center justify-center px-4 py-24">
           <div className="rounded-[2rem] border border-border/30 bg-card/75 p-8 text-center backdrop-blur-sm">
@@ -389,15 +389,10 @@ export default function DestinationDetail() {
   const relatedDestinations = getRelatedDestinations(slug);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-secondary/30 via-background to-primary/10">
-      <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-        <div className="absolute left-0 top-1/3 h-80 w-80 rounded-full bg-cta/10 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-highlight/5 blur-3xl" />
-      </div>
+    <div className="min-h-screen bg-white">
       <Navigation />
       
-      <main className="relative z-10 flex-1">
+      <main className="flex-1">
         {/* Hero Section */}
         <section className="container mx-auto px-4 pb-10 pt-20 md:pb-12 md:pt-24">
           <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">

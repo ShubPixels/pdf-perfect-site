@@ -19,26 +19,10 @@ const Index = () => {
   const departures = useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-primary/10 relative overflow-hidden">
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 left-0 w-80 h-80 bg-cta/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cta/5 rounded-full blur-3xl" />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
-      </div>
-
+    <div className="min-h-screen bg-white">
       <Navigation />
 
-      <main className="relative z-10">
+      <main>
         <HomeVisitorCapsule />
         <Hero />
 
@@ -66,7 +50,7 @@ const Index = () => {
               <div className="text-center mb-16">
                 <div className="relative inline-block mb-8">
                   <div className="absolute inset-0 bg-gradient-to-r from-highlight/20 to-cta/20 rounded-full blur-xl" />
-                  <div className="relative bg-card/50 backdrop-blur-sm border border-border/30 rounded-full px-6 py-3">
+                  <div className="relative rounded-full border border-border/30 bg-card/55 px-6 py-3 backdrop-blur-sm">
                     <span className="text-sm font-medium text-muted-foreground">
                       100K+ Happy Travellers
                     </span>

@@ -43,11 +43,11 @@ export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: Phot
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent 
+      <DialogContent
         className="h-[100dvh] w-screen max-w-[100vw] rounded-none border-none bg-black/95 p-0 sm:h-auto sm:max-h-[95vh] sm:max-w-[95vw] sm:rounded-2xl"
         onKeyDown={handleKeyDown}
       >
-        <div className="relative flex h-[100dvh] w-full items-center justify-center overflow-hidden px-3 pb-24 pt-16 sm:h-[90vh] sm:px-0 sm:pb-0 sm:pt-0">
+        <div className="relative flex h-[100dvh] w-full flex-col overflow-hidden px-3 pt-16 sm:h-[90vh] sm:px-0 sm:pt-0">
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -56,55 +56,46 @@ export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: Phot
             <X className="h-6 w-6" />
           </button>
 
-          {/* Navigation - Previous */}
-          {photos.length > 1 && (
-            <button
-              onClick={goPrev}
-              className="absolute left-2 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 sm:left-4 sm:p-3"
-            >
-              <ChevronLeft className="h-6 w-6 sm:h-8 sm:w-8" />
-            </button>
-          )}
-
-          {photos[currentIndex].caption && (
-            <div className="pointer-events-none absolute inset-x-0 top-16 z-20 flex justify-center px-12 sm:hidden">
-              <p className="inline-block rounded-2xl border border-white/10 bg-black/65 px-3.5 py-2 text-center text-xs leading-snug text-white shadow-lg backdrop-blur-md">
-                {photos[currentIndex].caption}
-              </p>
-            </div>
-          )}
-
           {/* Main Image */}
-          <div className="relative flex w-full items-center justify-center px-10 sm:max-w-full sm:max-h-full sm:px-16">
+          <div className="relative flex min-h-0 flex-1 items-center justify-center px-10 pb-4 sm:px-16 sm:pb-6">
+            {/* Navigation - Previous */}
+            {photos.length > 1 && (
+              <button
+                onClick={goPrev}
+                className="absolute left-2 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 sm:left-4 sm:p-3"
+              >
+                <ChevronLeft className="h-6 w-6 sm:h-8 sm:w-8" />
+              </button>
+            )}
+
             <img
               src={photos[currentIndex].src}
               alt={photos[currentIndex].alt}
-              className="max-h-[68vh] max-w-full rounded-xl object-contain sm:max-h-[80vh]"
+              className="max-h-full max-w-full rounded-xl object-contain"
             />
-            
-            {/* Caption */}
-            {photos[currentIndex].caption && (
-              <div className="pointer-events-none absolute left-0 right-0 top-4 z-10 hidden justify-center px-4 sm:flex">
-                <p className="inline-block max-w-3xl rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-center text-sm leading-relaxed text-white shadow-lg backdrop-blur-md md:px-5 md:text-base">
-                  {photos[currentIndex].caption}
-                </p>
-              </div>
+
+            {/* Navigation - Next */}
+            {photos.length > 1 && (
+              <button
+                onClick={goNext}
+                className="absolute right-2 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 sm:right-4 sm:p-3"
+              >
+                <ChevronRight className="h-6 w-6 sm:h-8 sm:w-8" />
+              </button>
             )}
           </div>
 
-          {/* Navigation - Next */}
-          {photos.length > 1 && (
-            <button
-              onClick={goNext}
-              className="absolute right-2 top-1/2 z-50 -translate-y-1/2 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 sm:right-4 sm:p-3"
-            >
-              <ChevronRight className="h-6 w-6 sm:h-8 sm:w-8" />
-            </button>
+          {photos[currentIndex].caption && (
+            <div className="shrink-0 px-4 pb-3 sm:px-6">
+              <div className="mx-auto max-w-3xl rounded-2xl border border-white/10 bg-black/60 px-4 py-3 text-center text-sm leading-relaxed text-white shadow-lg backdrop-blur-md md:px-5 md:text-base">
+                {photos[currentIndex].caption}
+              </div>
+            </div>
           )}
 
           {/* Thumbnails */}
           {photos.length > 1 && (
-            <div className="absolute inset-x-0 bottom-3 z-20 overflow-x-auto px-3 [scrollbar-width:none] [-ms-overflow-style:none] sm:bottom-4">
+            <div className="shrink-0 overflow-x-auto px-3 pb-3 [scrollbar-width:none] [-ms-overflow-style:none] sm:px-4 sm:pb-4">
               <div className="mx-auto flex w-max gap-2">
                 {photos.map((photo, index) => (
                   <button

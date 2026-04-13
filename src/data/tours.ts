@@ -1143,26 +1143,26 @@ export const upcomingDepartures: Departure[] = [
     link: 'https://suntourismpune.co.in/trip/kashmir-tour-packages/'
   },
   {
-    id: 'dep-dubai-apr-15',
+    id: 'dep-dubai-apr',
     tourId: 'dubai-2026',
     destination: 'Dubai with Abu Dhabi & Sharjah',
     duration: '7 Days',
     departureDate: '15 April 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Skyline Break', 'Luxury Leisure'],
+    tags: ['City Break', 'Mid-April Batch'],
     image: dubaiImg,
     month: 'Apr 2026',
     type: 'international',
     link: 'https://suntourismpune.co.in/trip/dubai-tour-packages-2025-26-flights-visa-ghar-se-ghar-tak/'
   },
   {
-    id: 'dep-assam-apr-15',
+    id: 'dep-assam-apr',
     tourId: 'assam-meghalaya-2026',
     destination: 'Assam & Meghalaya',
     duration: '7 Days',
     departureDate: '15 April 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Northeast Escape', 'Nature & Culture'],
+    tags: ['Northeast Escape', 'Mid-April Batch'],
     image: assamTeaEstateImg,
     month: 'Apr 2026',
     type: 'domestic',
@@ -1182,32 +1182,18 @@ export const upcomingDepartures: Departure[] = [
     link: 'https://suntourismpune.co.in/trip/shimla-manali-tour-2026/'
   },
   {
-    id: 'dep-phuket-apr',
-    tourId: 'phuket-krabi-2026',
-    destination: 'Phuket & Krabi',
-    duration: '6 Days',
-    departureDate: 'April 2026',
-    departureLocation: 'Ex Pune',
-    tags: ['Island Escape', 'Beach Holiday'],
-    image: baliImg,
-    month: 'Apr 2026',
-    type: 'international',
-    link: 'https://suntourismpune.co.in/trip/phuket-krabi-tour-from-pune/'
-  },
-  {
-    id: 'dep-nepal-apr-26',
-    tourId: 'nepal-2026',
-    destination: 'Nepal',
-    duration: '8 Days',
+    id: 'dep-shimla-apr-26',
+    tourId: 'shimla-manali-2026',
+    destination: 'Shimla & Manali',
+    duration: '7 Days',
     departureDate: '26 April 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Himalayan Views', 'Spiritual Journey'],
-    image: nepalTourImg,
+    tags: ['Hill Escape', 'Late April Batch'],
+    image: kashmirImg,
     month: 'Apr 2026',
-    type: 'international',
-    link: 'https://suntourismpune.co.in/trip/nepal-tour-from-pune-8-days-ghar-se-ghar-tak-group-tour-2026/'
+    type: 'domestic',
+    link: 'https://suntourismpune.co.in/trip/shimla-manali-tour-2026/'
   },
-
   // May 2026
   {
     id: 'dep-grand-europe-may-03',
@@ -1223,50 +1209,50 @@ export const upcomingDepartures: Departure[] = [
     link: 'https://suntourismpune.co.in/trip/europe-tour-packages/'
   },
   {
-    id: 'dep-malaysia-may-04',
+    id: 'dep-malaysia-may',
     tourId: 'malaysia-singapore-2026',
-    destination: 'Malaysia & Singapore',
+    destination: 'Malaysia, Singapore & Sri Lanka',
     duration: '9 Days',
-    departureDate: '04 May 2026',
+    departureDate: 'May 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Twin Cities', 'Family Favorite'],
+    tags: ['Sri Lanka Free', 'Family Favorite'],
     image: hongKongImg,
     month: 'May 2026',
     type: 'international',
     link: 'https://suntourismpune.co.in/trip/malaysia-singapore-group-tour-from-pune/'
   },
   {
-    id: 'dep-sikkim-may-05',
+    id: 'dep-sikkim-may',
     tourId: 'sikkim-darjeeling-2026',
     destination: 'Sikkim & Darjeeling',
     duration: '8 Days',
-    departureDate: '05 May 2026',
+    departureDate: 'May 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Tea Trails', 'Mountain Calm'],
+    tags: ['Tea Trails', 'May Departures'],
     image: nepalTourImg,
     month: 'May 2026',
     type: 'domestic',
     link: 'https://suntourismpune.co.in/trip/sikkim-darjeeling-tour-from-pune-group-tour-with-ghar-se-ghar-tak/'
   },
   {
-    id: 'dep-bhutan-may-05',
+    id: 'dep-bhutan-may',
     tourId: 'bhutan-2026',
     destination: 'Bhutan',
     duration: '8 Days',
-    departureDate: '05 May 2026',
+    departureDate: 'May 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Peaceful Kingdom', 'Cultural Escape'],
+    tags: ['Peaceful Kingdom', 'May Departures'],
     image: bhutanTourImg,
     month: 'May 2026',
     type: 'international',
     link: 'https://suntourismpune.co.in/trip/bhutan-group-tour-from-pune-ghar-se-ghar-tak-holiday-package/'
   },
   {
-    id: 'dep-nainital-may-05',
+    id: 'dep-nainital-may',
     tourId: 'nainital-jim-corbett-2026',
-    destination: 'Nainital & Jim Corbett',
+    destination: 'Nainital, Mussoorie & Jim Corbett',
     duration: '7 Days',
-    departureDate: '05 May 2026',
+    departureDate: 'May 2026',
     departureLocation: 'Ex Pune',
     tags: ['Lake District', 'Wildlife Stay'],
     image: tadobaSafariImg,
@@ -1275,30 +1261,43 @@ export const upcomingDepartures: Departure[] = [
     link: 'https://suntourismpune.co.in/trip/nainital-jim-corbett-tour-from-pune/'
   },
   {
-    id: 'dep-hong-kong-may-05',
+    id: 'dep-hong-kong-may',
     tourId: 'hong-kong-macau-shenzhen-2026',
     destination: 'Hong Kong, Macau & Shenzhen',
     duration: '8 Days',
-    departureDate: '05 May 2026',
+    departureDate: 'May 2026',
     departureLocation: 'Ex Pune',
-    tags: ['City Lights', 'Multi-City Asia'],
+    tags: ['City Lights', 'May Departures'],
     image: hongKongImg,
     month: 'May 2026',
     type: 'international',
     link: 'https://suntourismpune.co.in/trip/hong-kong-macau-shenzhen-tour-package-from-india/'
   },
   {
-    id: 'dep-dubai-may-05',
+    id: 'dep-dubai-may',
     tourId: 'dubai-2026',
     destination: 'Dubai with Abu Dhabi & Sharjah',
     duration: '7 Days',
-    departureDate: '05 May 2026',
+    departureDate: 'May 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Shopping Season', 'Gulf Highlights'],
+    tags: ['Shopping Season', 'May Departures'],
     image: dubaiImg,
     month: 'May 2026',
     type: 'international',
     link: 'https://suntourismpune.co.in/trip/dubai-tour-packages-2025-26-flights-visa-ghar-se-ghar-tak/'
+  },
+  {
+    id: 'dep-nepal-may',
+    tourId: 'nepal-2026',
+    destination: 'Nepal',
+    duration: '8 Days',
+    departureDate: 'May 2026',
+    departureLocation: 'Ex Pune',
+    tags: ['Himalayan Views', 'May Departure'],
+    image: nepalTourImg,
+    month: 'May 2026',
+    type: 'international',
+    link: 'https://suntourismpune.co.in/trip/nepal-tour-from-pune-8-days-ghar-se-ghar-tak-group-tour-2026/'
   },
   {
     id: 'dep-tadoba-may-09',
@@ -1314,13 +1313,26 @@ export const upcomingDepartures: Departure[] = [
     link: 'https://suntourismpune.co.in/trip/tadoba-jungle-safari-tour-pune/'
   },
   {
-    id: 'dep-bangkok-may-09',
+    id: 'dep-tadoba-may-11',
+    tourId: 'tadoba-2026',
+    destination: 'Tadoba Jungle Safari',
+    duration: '3 Days',
+    departureDate: '11 May 2026',
+    departureLocation: 'Ex Pune',
+    tags: ['Wildlife Escape', 'Weekend Batch'],
+    image: nainitalJimCorbettImg,
+    month: 'May 2026',
+    type: 'domestic',
+    link: 'https://suntourismpune.co.in/trip/tadoba-jungle-safari-tour-pune/'
+  },
+  {
+    id: 'dep-bangkok-may',
     tourId: 'bangkok-pattaya-2026',
     destination: 'Bangkok & Pattaya',
     duration: '7 Days',
-    departureDate: '09 May 2026',
+    departureDate: 'May 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Urban Fun', 'Beach Nights'],
+    tags: ['Urban Fun', 'May Departures'],
     image: hongKongImg,
     month: 'May 2026',
     type: 'international',
@@ -1366,43 +1378,32 @@ export const upcomingDepartures: Departure[] = [
     link: 'https://suntourismpune.co.in/trip/shimla-manali-tour-2026/'
   },
   {
-    id: 'dep-sikkim-may-14',
-    tourId: 'sikkim-darjeeling-2026',
-    destination: 'Sikkim & Darjeeling',
-    duration: '8 Days',
-    departureDate: '14 May 2026',
+    id: 'dep-shimla-may-17',
+    tourId: 'shimla-manali-2026',
+    destination: 'Shimla & Manali',
+    duration: '7 Days',
+    departureDate: '17 May 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Hill Retreat', 'Tea Garden Views'],
-    image: nepalTourImg,
+    tags: ['Summer Hills', 'Late May Batch'],
+    image: kashmirImg,
     month: 'May 2026',
     type: 'domestic',
-    link: 'https://suntourismpune.co.in/trip/sikkim-darjeeling-tour-from-pune-group-tour-with-ghar-se-ghar-tak/'
+    link: 'https://suntourismpune.co.in/trip/shimla-manali-tour-2026/'
   },
+
+  // June 2026
   {
-    id: 'dep-bhutan-may-14',
-    tourId: 'bhutan-2026',
-    destination: 'Bhutan',
-    duration: '8 Days',
-    departureDate: '14 May 2026',
+    id: 'dep-bali-jun',
+    tourId: 'bali-2026',
+    destination: 'Bali',
+    duration: '6 Days',
+    departureDate: 'June 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Monastery Trails', 'Serene Landscapes'],
-    image: bhutanTourImg,
-    month: 'May 2026',
+    tags: ['Island Escape', 'June Departure'],
+    image: baliImg,
+    month: 'Jun 2026',
     type: 'international',
-    link: 'https://suntourismpune.co.in/trip/bhutan-group-tour-from-pune-ghar-se-ghar-tak-holiday-package/'
-  },
-  {
-    id: 'dep-hong-kong-may-15',
-    tourId: 'hong-kong-macau-shenzhen-2026',
-    destination: 'Hong Kong, Macau & Shenzhen',
-    duration: '8 Days',
-    departureDate: '15 May 2026',
-    departureLocation: 'Ex Pune',
-    tags: ['Modern Asia', 'City Break'],
-    image: hongKongImg,
-    month: 'May 2026',
-    type: 'international',
-    link: 'https://suntourismpune.co.in/trip/hong-kong-macau-shenzhen-tour-package-from-india/'
+    link: 'https://suntourismpune.co.in/trip/bali-group-tour-from-pune/'
   },
 
   // July 2026
@@ -1437,13 +1438,13 @@ export const upcomingDepartures: Departure[] = [
 
   // October 2026
   {
-    id: 'dep-australia-oct-23',
+    id: 'dep-australia-oct',
     tourId: 'australia-2026',
     destination: 'Australian Delight',
     duration: '12 Days',
-    departureDate: '23 October 2026',
+    departureDate: 'Oct 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Down Under', 'Signature Long Haul'],
+    tags: ['Down Under', 'Oct Departure'],
     image: australiaTourImg,
     month: 'Oct 2026',
     type: 'international',
@@ -1452,17 +1453,30 @@ export const upcomingDepartures: Departure[] = [
 
   // November 2026
   {
-    id: 'dep-china-nov-18',
+    id: 'dep-china-nov',
     tourId: 'china-2026',
     destination: 'Wonderful China',
     duration: '11 Days',
-    departureDate: '18 November 2026',
+    departureDate: 'Nov 2026',
     departureLocation: 'Ex Pune',
-    tags: ['Far East Explorer', 'Big Journey'],
+    tags: ['Far East Explorer', 'Nov Departure'],
     image: hongKongImg,
     month: 'Nov 2026',
     type: 'international',
     link: 'https://suntourismpune.co.in/trip/china-tour-package-2026/'
+  },
+  {
+    id: 'dep-phuket-nov',
+    tourId: 'phuket-krabi-2026',
+    destination: 'Phuket & Krabi',
+    duration: '6 Days',
+    departureDate: 'November 2026',
+    departureLocation: 'Ex Pune',
+    tags: ['Island Escape', 'Nov Departure'],
+    image: baliImg,
+    month: 'Nov 2026',
+    type: 'international',
+    link: 'https://suntourismpune.co.in/trip/phuket-krabi-tour-from-pune/'
   }
 ];
 

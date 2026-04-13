@@ -63,17 +63,10 @@ export const BlogPostLayout = ({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-primary/5 relative">
-      {/* Background decorations */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
-        <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-highlight/5 rounded-full blur-3xl -translate-x-1/2" />
-        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-cta/5 rounded-full blur-3xl" />
-      </div>
-
+    <div className="min-h-screen bg-white">
       <Navigation />
 
-      <main className="pt-16 relative z-10">
+      <main className="pt-16">
         {/* Hero Section */}
         <motion.section 
           initial={{ opacity: 0 }}

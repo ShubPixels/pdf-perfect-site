@@ -9,7 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Warm, welcoming travel-themed colors */
-    --background: 40 20% 97%;
+    --background: 0 0% 100%;
     --foreground: 25 35% 20%;
 
     --card: 0 0% 100%;
@@ -140,7 +140,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-foreground;
   }
 }
 

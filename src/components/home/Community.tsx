@@ -134,6 +134,11 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
                     alt={destination.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
+                    style={
+                      destination.coverImagePosition
+                        ? { objectPosition: destination.coverImagePosition }
+                        : undefined
+                    }
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />

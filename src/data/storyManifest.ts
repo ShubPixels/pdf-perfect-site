@@ -144,6 +144,31 @@ export const storyManifest: StoryManifestDestination[] = [
     ],
   },
   {
+    id: "ayodhya-varanasi",
+    slug: "ayodhya-varanasi",
+    name: "Ayodhya \u0026 Varanasi",
+    tours: [
+      {
+        id: "ayodhya-varanasi-2026-03",
+        slug: "2026-03",
+        title: "March 2026 Batch",
+        dateLabel: "March 2026",
+        galleryFolder: "ayodhya-varanasi-2026-3",
+        coverIndex: 0,
+        sortDate: "2026-03-01",
+      },
+      {
+        id: "ayodhya-varanasi-2026-02",
+        slug: "2026-02",
+        title: "February 2026 Batch",
+        dateLabel: "February 2026",
+        galleryFolder: "ayodhya-varanasi-2026-2",
+        coverIndex: 0,
+        sortDate: "2026-02-01",
+      },
+    ],
+  },
+  {
     id: "bali",
     slug: "bali",
     name: "Bali",

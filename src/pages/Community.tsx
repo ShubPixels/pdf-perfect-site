@@ -82,17 +82,9 @@ const Stories = () => {
   const ctaSection = useScrollReveal();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-secondary/30 via-background to-primary/10 relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 left-0 w-80 h-80 bg-cta/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-      </div>
-
+    <div className="min-h-screen bg-white">
       <Navigation />
-      <main className="relative z-10">
+      <main>
         {/* Cinematic Hero */}
         <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
           {/* Background collage */}

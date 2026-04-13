@@ -12,6 +12,11 @@ import DestinationDetail from "./pages/DestinationDetail";
 import Community from "./pages/Community";
 import StoriesDestination from "./pages/StoriesDestination";
 import Learn from "./pages/Learn";
+import LearnReviewIndex from "./pages/learn-review/LearnReviewIndex";
+import Option1WarmGuidance from "./pages/learn-review/Option1WarmGuidance";
+import Option2TravelHandbook from "./pages/learn-review/Option2TravelHandbook";
+import Option3FamilyJourneyBoard from "./pages/learn-review/Option3FamilyJourneyBoard";
+import Option4ModernEditorial from "./pages/learn-review/Option4ModernEditorial";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -32,6 +37,7 @@ import EmergencyContactsAndHelplinesAbroad from "./pages/blog/EmergencyContactsA
 import { VisitorCounterProvider } from "@/hooks/use-visitor-counter";
 
 const queryClient = new QueryClient();
+const isLearnReviewEnabled = import.meta.env.VITE_ENABLE_LEARN_REVIEW === "true";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -48,6 +54,15 @@ const AnimatedRoutes = () => {
         <Route path="/explore" element={<PageTransition><Community /></PageTransition>} />
         <Route path="/community" element={<PageTransition><Community /></PageTransition>} />
         <Route path="/learn" element={<PageTransition><Learn /></PageTransition>} />
+        {isLearnReviewEnabled && (
+          <>
+            <Route path="/learn-review" element={<PageTransition><LearnReviewIndex /></PageTransition>} />
+            <Route path="/learn-review/option-1" element={<PageTransition><Option1WarmGuidance /></PageTransition>} />
+            <Route path="/learn-review/option-2" element={<PageTransition><Option2TravelHandbook /></PageTransition>} />
+            <Route path="/learn-review/option-3" element={<PageTransition><Option3FamilyJourneyBoard /></PageTransition>} />
+            <Route path="/learn-review/option-4" element={<PageTransition><Option4ModernEditorial /></PageTransition>} />
+          </>
+        )}
         <Route path="/learn/first-time-europe-traveler" element={<PageTransition><FirstTimeEuropeTraveler /></PageTransition>} />
         <Route path="/learn/how-to-choose-your-first-group-tour" element={<PageTransition><HowToChooseYourFirstGroupTour /></PageTransition>} />
         <Route path="/learn/best-time-to-visit-popular-destinations" element={<PageTransition><BestTimeToVisitPopularDestinations /></PageTransition>} />

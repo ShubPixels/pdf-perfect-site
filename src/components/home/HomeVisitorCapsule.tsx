@@ -1,28 +1,36 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useVisitorCounter } from "@/hooks/use-visitor-counter";
 
 const INCREMENT_BADGE_DURATION_MS = 1800;
 const INTRO_OPEN_DELAY_MS = 180;
 const INTRO_VISIBLE_DURATION_MS = 1800;
+const MOBILE_DISMISS_DELAY_MS = 280;
 const COLLAPSED_SIZE = 60;
 const EXPANDED_WIDTH = 288;
 const SHELL_HEIGHT = 64;
 const ICON_SIZE = 40;
 const ICON_OFFSET = 10;
+const DESKTOP_TOP_OFFSET = 96;
+const DESKTOP_BOTTOM_OFFSET = 24;
 
 export const HomeVisitorCapsule = () => {
   const { count, didIncrement, loading } = useVisitorCounter();
+  const isMobile = useIsMobile();
   const prefersReducedMotion = useReducedMotion();
   const [isIntroActive, setIsIntroActive] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [showIncrementBadge, setShowIncrementBadge] = useState(false);
+  const [isDismissedOnMobile, setIsDismissedOnMobile] = useState(false);
+  const [desktopDockOffsetY, setDesktopDockOffsetY] = useState(0);
   const hasPlayedIntroRef = useRef(false);
   const hasPlayedIncrementRef = useRef(false);
   const introOpenTimerRef = useRef<number | null>(null);
   const introCloseTimerRef = useRef<number | null>(null);
   const incrementTimerRef = useRef<number | null>(null);
+  const mobileDismissTimerRef = useRef<number | null>(null);
 
   useEffect(() => {
     return () => {
@@ -37,6 +45,10 @@ export const HomeVisitorCapsule = () => {
       if (incrementTimerRef.current !== null) {
         window.clearTimeout(incrementTimerRef.current);
       }
+
+      if (mobileDismissTimerRef.current !== null) {
+        window.clearTimeout(mobileDismissTimerRef.current);
+      }
     };
   }, []);
 
@@ -46,6 +58,7 @@ export const HomeVisitorCapsule = () => {
     }
 
     hasPlayedIntroRef.current = true;
+    setIsDismissedOnMobile(false);
 
     introOpenTimerRef.current = window.setTimeout(() => {
       setIsIntroActive(true);
@@ -85,17 +98,79 @@ export const HomeVisitorCapsule = () => {
     };
   }, [count, didIncrement, loading]);
 
-  if (loading || count === null) {
+  useEffect(() => {
+    if (isMobile) {
+      setDesktopDockOffsetY(0);
+      return;
+    }
+
+    const updateDesktopDockOffset = () => {
+      setDesktopDockOffsetY(
+        Math.max(
+          0,
+          window.innerHeight - DESKTOP_TOP_OFFSET - DESKTOP_BOTTOM_OFFSET - SHELL_HEIGHT,
+        ),
+      );
+    };
+
+    updateDesktopDockOffset();
+    window.addEventListener("resize", updateDesktopDockOffset);
+
+    return () => {
+      window.removeEventListener("resize", updateDesktopDockOffset);
+    };
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (!isMobile) {
+      setIsDismissedOnMobile(false);
+
+      if (mobileDismissTimerRef.current !== null) {
+        window.clearTimeout(mobileDismissTimerRef.current);
+        mobileDismissTimerRef.current = null;
+      }
+
+      return;
+    }
+
+    if (
+      loading ||
+      count === null ||
+      isIntroActive ||
+      !hasPlayedIntroRef.current ||
+      isDismissedOnMobile
+    ) {
+      return;
+    }
+
+    mobileDismissTimerRef.current = window.setTimeout(() => {
+      setIsDismissedOnMobile(true);
+      mobileDismissTimerRef.current = null;
+    }, MOBILE_DISMISS_DELAY_MS);
+
+    return () => {
+      if (mobileDismissTimerRef.current !== null) {
+        window.clearTimeout(mobileDismissTimerRef.current);
+        mobileDismissTimerRef.current = null;
+      }
+    };
+  }, [count, isDismissedOnMobile, isIntroActive, isMobile, loading]);
+
+  if (loading || count === null || (isMobile && isDismissedOnMobile)) {
     return null;
   }
 
   const isExpanded = isIntroActive || isHovered;
+  const isDockedDesktop = !isMobile && !isIntroActive;
   const shellTransition = prefersReducedMotion
     ? { duration: 0 }
     : { type: "spring" as const, stiffness: 240, damping: 28, mass: 0.88 };
   const contentTransition = prefersReducedMotion
     ? { duration: 0 }
     : { duration: 0.24, ease: [0.22, 1, 0.36, 1] as const };
+  const dockTransition = prefersReducedMotion
+    ? { duration: 0 }
+    : { type: "spring" as const, stiffness: 170, damping: 24, mass: 0.95 };
 
   const handleExpand = () => {
     setIsHovered(true);
@@ -122,7 +197,13 @@ export const HomeVisitorCapsule = () => {
   };
 
   return (
-    <div className="pointer-events-none fixed left-4 top-20 z-40 md:left-6 md:top-24">
+    <motion.div
+      animate={{
+        y: isDockedDesktop ? desktopDockOffsetY : 0,
+      }}
+      transition={dockTransition}
+      className="pointer-events-none fixed left-4 top-20 z-40 md:left-6 md:top-24"
+    >
       <motion.div
         onHoverStart={handleExpand}
         onHoverEnd={handleCollapse}
@@ -205,6 +286,6 @@ export const HomeVisitorCapsule = () => {
           </div>
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
