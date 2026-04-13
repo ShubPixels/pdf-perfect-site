@@ -185,6 +185,7 @@ export const UpcomingDepartures = () => {
                       alt={departure.destination}
                       className="w-full h-full object-cover"
                       loading="lazy"
+                      decoding="async"
                     />
 
                     {/* Discount Badge */}

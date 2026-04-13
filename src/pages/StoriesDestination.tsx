@@ -1,16 +1,21 @@
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, CalendarDays, Camera } from "lucide-react";
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { PhotoGallery } from "@/components/ui/photo-gallery";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
   getStoryDestinationBySlug,
   type StoryTour,
 } from "@/data/stories";
+
+const PhotoGallery = lazy(() =>
+  import("@/components/ui/photo-gallery").then((module) => ({
+    default: module.PhotoGallery,
+  })),
+);
 
 const StoriesDestination = () => {
   const { destinationSlug } = useParams<{ destinationSlug: string }>();
@@ -128,6 +133,8 @@ const StoriesDestination = () => {
                     alt=""
                     aria-hidden="true"
                     className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-25"
+                    loading="lazy"
+                    decoding="async"
                     style={
                       destination.heroImagePosition
                         ? { objectPosition: destination.heroImagePosition }
@@ -140,6 +147,7 @@ const StoriesDestination = () => {
                     alt={destination.name}
                     className="relative z-10 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                     loading="lazy"
+                    decoding="async"
                     style={
                       destination.heroImagePosition
                         ? { objectPosition: destination.heroImagePosition }
@@ -189,6 +197,7 @@ const StoriesDestination = () => {
                         alt={tour.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
+                        decoding="async"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
 
@@ -215,14 +224,16 @@ const StoriesDestination = () => {
       <Footer />
 
       {selectedTour && (
-        <PhotoGallery
-          photos={selectedTour.photos}
-          isOpen={galleryOpen}
-          onClose={() => {
-            setGalleryOpen(false);
-            setSelectedTour(null);
-          }}
-        />
+        <Suspense fallback={null}>
+          <PhotoGallery
+            photos={selectedTour.photos}
+            isOpen={galleryOpen}
+            onClose={() => {
+              setGalleryOpen(false);
+              setSelectedTour(null);
+            }}
+          />
+        </Suspense>
       )}
     </div>
   );

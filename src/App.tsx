@@ -1,3 +1,4 @@
+import { Suspense, lazy, type ComponentType } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -6,38 +7,58 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-route
 import { AnimatePresence } from "framer-motion";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PageTransition } from "@/components/PageTransition";
-import Index from "./pages/Index";
-import TourDiary from "./pages/TourDiary";
-import DestinationDetail from "./pages/DestinationDetail";
-import Community from "./pages/Community";
-import StoriesDestination from "./pages/StoriesDestination";
-import Learn from "./pages/Learn";
-import LearnReviewIndex from "./pages/learn-review/LearnReviewIndex";
-import Option1WarmGuidance from "./pages/learn-review/Option1WarmGuidance";
-import Option2TravelHandbook from "./pages/learn-review/Option2TravelHandbook";
-import Option3FamilyJourneyBoard from "./pages/learn-review/Option3FamilyJourneyBoard";
-import Option4ModernEditorial from "./pages/learn-review/Option4ModernEditorial";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
-import FirstTimeEuropeTraveler from "./pages/blog/FirstTimeEuropeTraveler";
-import HowToChooseYourFirstGroupTour from "./pages/blog/HowToChooseYourFirstGroupTour";
-import BestTimeToVisitPopularDestinations from "./pages/blog/BestTimeToVisitPopularDestinations";
-import VisaDocumentsChecklist from "./pages/blog/VisaDocumentsChecklist";
-import TravelInsuranceExplained from "./pages/blog/TravelInsuranceExplained";
-import PassportAndVisaGuideIndianTravellers from "./pages/blog/PassportAndVisaGuideIndianTravellers";
-import VegFriendlyDishesEurope from "./pages/blog/VegFriendlyDishesEurope";
-import FunGroupGamesBuses from "./pages/blog/FunGroupGamesBuses";
-import PackingLight10DayTours from "./pages/blog/PackingLight10DayTours";
-import UltimatePackingListForDifferentClimates from "./pages/blog/UltimatePackingListForDifferentClimates";
-import CarryOnVsCheckedLuggage from "./pages/blog/CarryOnVsCheckedLuggage";
-import StayingSafeWhileTravellingInGroups from "./pages/blog/StayingSafeWhileTravellingInGroups";
-import HealthPrecautionsForInternationalTravel from "./pages/blog/HealthPrecautionsForInternationalTravel";
-import EmergencyContactsAndHelplinesAbroad from "./pages/blog/EmergencyContactsAndHelplinesAbroad";
 import { VisitorCounterProvider } from "@/hooks/use-visitor-counter";
 
 const queryClient = new QueryClient();
 const isLearnReviewEnabled = import.meta.env.VITE_ENABLE_LEARN_REVIEW === "true";
+
+const Index = lazy(() => import("./pages/Index"));
+const TourDiary = lazy(() => import("./pages/TourDiary"));
+const DestinationDetail = lazy(() => import("./pages/DestinationDetail"));
+const Community = lazy(() => import("./pages/Community"));
+const StoriesDestination = lazy(() => import("./pages/StoriesDestination"));
+const Learn = lazy(() => import("./pages/Learn"));
+const LearnReviewIndex = lazy(() => import("./pages/learn-review/LearnReviewIndex"));
+const Option1WarmGuidance = lazy(() => import("./pages/learn-review/Option1WarmGuidance"));
+const Option2TravelHandbook = lazy(() => import("./pages/learn-review/Option2TravelHandbook"));
+const Option3FamilyJourneyBoard = lazy(() => import("./pages/learn-review/Option3FamilyJourneyBoard"));
+const Option4ModernEditorial = lazy(() => import("./pages/learn-review/Option4ModernEditorial"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const FirstTimeEuropeTraveler = lazy(() => import("./pages/blog/FirstTimeEuropeTraveler"));
+const HowToChooseYourFirstGroupTour = lazy(() => import("./pages/blog/HowToChooseYourFirstGroupTour"));
+const BestTimeToVisitPopularDestinations = lazy(() => import("./pages/blog/BestTimeToVisitPopularDestinations"));
+const VisaDocumentsChecklist = lazy(() => import("./pages/blog/VisaDocumentsChecklist"));
+const TravelInsuranceExplained = lazy(() => import("./pages/blog/TravelInsuranceExplained"));
+const PassportAndVisaGuideIndianTravellers = lazy(() => import("./pages/blog/PassportAndVisaGuideIndianTravellers"));
+const VegFriendlyDishesEurope = lazy(() => import("./pages/blog/VegFriendlyDishesEurope"));
+const FunGroupGamesBuses = lazy(() => import("./pages/blog/FunGroupGamesBuses"));
+const PackingLight10DayTours = lazy(() => import("./pages/blog/PackingLight10DayTours"));
+const UltimatePackingListForDifferentClimates = lazy(() => import("./pages/blog/UltimatePackingListForDifferentClimates"));
+const CarryOnVsCheckedLuggage = lazy(() => import("./pages/blog/CarryOnVsCheckedLuggage"));
+const StayingSafeWhileTravellingInGroups = lazy(() => import("./pages/blog/StayingSafeWhileTravellingInGroups"));
+const HealthPrecautionsForInternationalTravel = lazy(() => import("./pages/blog/HealthPrecautionsForInternationalTravel"));
+const EmergencyContactsAndHelplinesAbroad = lazy(() => import("./pages/blog/EmergencyContactsAndHelplinesAbroad"));
+
+const RouteFallback = () => (
+  <div className="min-h-[45vh] bg-white">
+    <div className="container mx-auto flex min-h-[45vh] items-center justify-center px-4">
+      <div className="inline-flex items-center gap-3 rounded-full border border-border bg-card px-5 py-3 text-sm text-muted-foreground shadow-sm">
+        <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-accent" />
+        Loading page
+      </div>
+    </div>
+  </div>
+);
+
+const renderLazyRoute = (Component: ComponentType) => (
+  <PageTransition>
+    <Suspense fallback={<RouteFallback />}>
+      <Component />
+    </Suspense>
+  </PageTransition>
+);
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -45,46 +66,46 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageTransition><Index /></PageTransition>} />
-        <Route path="/tour-diary/:tourId" element={<PageTransition><TourDiary /></PageTransition>} />
-        <Route path="/destination/:destinationId" element={<PageTransition><DestinationDetail /></PageTransition>} />
-        <Route path="/stories" element={<PageTransition><Community /></PageTransition>} />
-        <Route path="/stories/:destinationSlug" element={<PageTransition><StoriesDestination /></PageTransition>} />
+        <Route path="/" element={renderLazyRoute(Index)} />
+        <Route path="/tour-diary/:tourId" element={renderLazyRoute(TourDiary)} />
+        <Route path="/destination/:destinationId" element={renderLazyRoute(DestinationDetail)} />
+        <Route path="/stories" element={renderLazyRoute(Community)} />
+        <Route path="/stories/:destinationSlug" element={renderLazyRoute(StoriesDestination)} />
         {/* Redirects for old routes */}
-        <Route path="/explore" element={<PageTransition><Community /></PageTransition>} />
-        <Route path="/community" element={<PageTransition><Community /></PageTransition>} />
-        <Route path="/learn" element={<PageTransition><Learn /></PageTransition>} />
+        <Route path="/explore" element={renderLazyRoute(Community)} />
+        <Route path="/community" element={renderLazyRoute(Community)} />
+        <Route path="/learn" element={renderLazyRoute(Learn)} />
         {isLearnReviewEnabled && (
           <>
-            <Route path="/learn-review" element={<PageTransition><LearnReviewIndex /></PageTransition>} />
-            <Route path="/learn-review/option-1" element={<PageTransition><Option1WarmGuidance /></PageTransition>} />
-            <Route path="/learn-review/option-2" element={<PageTransition><Option2TravelHandbook /></PageTransition>} />
-            <Route path="/learn-review/option-3" element={<PageTransition><Option3FamilyJourneyBoard /></PageTransition>} />
-            <Route path="/learn-review/option-4" element={<PageTransition><Option4ModernEditorial /></PageTransition>} />
+            <Route path="/learn-review" element={renderLazyRoute(LearnReviewIndex)} />
+            <Route path="/learn-review/option-1" element={renderLazyRoute(Option1WarmGuidance)} />
+            <Route path="/learn-review/option-2" element={renderLazyRoute(Option2TravelHandbook)} />
+            <Route path="/learn-review/option-3" element={renderLazyRoute(Option3FamilyJourneyBoard)} />
+            <Route path="/learn-review/option-4" element={renderLazyRoute(Option4ModernEditorial)} />
           </>
         )}
-        <Route path="/learn/first-time-europe-traveler" element={<PageTransition><FirstTimeEuropeTraveler /></PageTransition>} />
-        <Route path="/learn/how-to-choose-your-first-group-tour" element={<PageTransition><HowToChooseYourFirstGroupTour /></PageTransition>} />
-        <Route path="/learn/best-time-to-visit-popular-destinations" element={<PageTransition><BestTimeToVisitPopularDestinations /></PageTransition>} />
-        <Route path="/learn/visa-documents-checklist" element={<PageTransition><VisaDocumentsChecklist /></PageTransition>} />
-        <Route path="/learn/travel-insurance-explained" element={<PageTransition><TravelInsuranceExplained /></PageTransition>} />
-        <Route path="/learn/passport-and-visa-guide-indian-travellers" element={<PageTransition><PassportAndVisaGuideIndianTravellers /></PageTransition>} />
-        <Route path="/learn/veg-friendly-dishes-europe" element={<PageTransition><VegFriendlyDishesEurope /></PageTransition>} />
-        <Route path="/learn/fun-group-games-buses" element={<PageTransition><FunGroupGamesBuses /></PageTransition>} />
-        <Route path="/learn/packing-light-10-day-tours" element={<PageTransition><PackingLight10DayTours /></PageTransition>} />
-        <Route path="/learn/ultimate-packing-list-for-different-climates" element={<PageTransition><UltimatePackingListForDifferentClimates /></PageTransition>} />
-        <Route path="/learn/carry-on-vs-checked-luggage" element={<PageTransition><CarryOnVsCheckedLuggage /></PageTransition>} />
-        <Route path="/learn/staying-safe-while-travelling-in-groups" element={<PageTransition><StayingSafeWhileTravellingInGroups /></PageTransition>} />
-        <Route path="/learn/health-precautions-for-international-travel" element={<PageTransition><HealthPrecautionsForInternationalTravel /></PageTransition>} />
-        <Route path="/learn/emergency-contacts-and-helplines-abroad" element={<PageTransition><EmergencyContactsAndHelplinesAbroad /></PageTransition>} />
+        <Route path="/learn/first-time-europe-traveler" element={renderLazyRoute(FirstTimeEuropeTraveler)} />
+        <Route path="/learn/how-to-choose-your-first-group-tour" element={renderLazyRoute(HowToChooseYourFirstGroupTour)} />
+        <Route path="/learn/best-time-to-visit-popular-destinations" element={renderLazyRoute(BestTimeToVisitPopularDestinations)} />
+        <Route path="/learn/visa-documents-checklist" element={renderLazyRoute(VisaDocumentsChecklist)} />
+        <Route path="/learn/travel-insurance-explained" element={renderLazyRoute(TravelInsuranceExplained)} />
+        <Route path="/learn/passport-and-visa-guide-indian-travellers" element={renderLazyRoute(PassportAndVisaGuideIndianTravellers)} />
+        <Route path="/learn/veg-friendly-dishes-europe" element={renderLazyRoute(VegFriendlyDishesEurope)} />
+        <Route path="/learn/fun-group-games-buses" element={renderLazyRoute(FunGroupGamesBuses)} />
+        <Route path="/learn/packing-light-10-day-tours" element={renderLazyRoute(PackingLight10DayTours)} />
+        <Route path="/learn/ultimate-packing-list-for-different-climates" element={renderLazyRoute(UltimatePackingListForDifferentClimates)} />
+        <Route path="/learn/carry-on-vs-checked-luggage" element={renderLazyRoute(CarryOnVsCheckedLuggage)} />
+        <Route path="/learn/staying-safe-while-travelling-in-groups" element={renderLazyRoute(StayingSafeWhileTravellingInGroups)} />
+        <Route path="/learn/health-precautions-for-international-travel" element={renderLazyRoute(HealthPrecautionsForInternationalTravel)} />
+        <Route path="/learn/emergency-contacts-and-helplines-abroad" element={renderLazyRoute(EmergencyContactsAndHelplinesAbroad)} />
         <Route path="/lifestyle" element={<Navigate replace to="/learn" />} />
         <Route path="/lifestyle/veg-friendly-dishes-europe" element={<Navigate replace to="/learn/veg-friendly-dishes-europe" />} />
         <Route path="/lifestyle/fun-group-games-buses" element={<Navigate replace to="/learn/fun-group-games-buses" />} />
         <Route path="/lifestyle/packing-light-10-day-tours" element={<Navigate replace to="/learn/packing-light-10-day-tours" />} />
-        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
-        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+        <Route path="/about" element={renderLazyRoute(About)} />
+        <Route path="/contact" element={renderLazyRoute(Contact)} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+        <Route path="*" element={renderLazyRoute(NotFound)} />
       </Routes>
     </AnimatePresence>
   );

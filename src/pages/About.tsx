@@ -61,7 +61,7 @@ const About = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="px-4 pb-16 pt-24 sm:pb-20 sm:pt-32">
+      <section className="px-4 pb-14 pt-20 sm:pb-20 sm:pt-28 md:pt-32">
         <div className="container mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -71,11 +71,13 @@ const About = () => {
             <span className="mb-5 inline-block rounded-full bg-highlight/10 px-4 py-2 text-sm font-medium text-highlight sm:mb-6">
               Our Story
             </span>
-            <h1 className="mb-6 font-heading text-[clamp(3.2rem,17vw,4.75rem)] font-bold leading-[0.9] tracking-tight text-foreground sm:text-5xl md:text-7xl">
-              Crafting <span className="text-accent block sm:inline">Unforgettable</span>
-              <span className="block">Journeys Since 2007</span>
+            <h1 className="mx-auto mb-6 max-w-[10ch] font-heading text-[clamp(2.45rem,13vw,4.75rem)] font-bold leading-[0.95] tracking-tight text-foreground sm:max-w-none sm:text-5xl sm:leading-[0.92] md:text-7xl">
+              <span className="block">Crafting</span>
+              <span className="block text-accent">Unforgettable</span>
+              <span className="block">Journeys</span>
+              <span className="block">Since 2007</span>
             </h1>
-            <p className="mx-auto max-w-[22ch] text-base leading-relaxed text-muted-foreground sm:max-w-3xl sm:text-lg md:text-xl">
+            <p className="mx-auto max-w-[30ch] text-sm leading-8 text-muted-foreground sm:max-w-3xl sm:text-lg md:text-xl">
               What began as a passion to make travel accessible has evolved into Pune's most trusted 
               travel community, connecting families with extraordinary experiences across the globe.
             </p>
@@ -104,22 +106,24 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section ref={missionRef} className="py-20 px-4">
+      <section ref={missionRef} className="px-4 py-16 sm:py-20">
         <div className="container mx-auto">
           <div 
             className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-1000 ${
               missionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="relative">
+            <div className="relative mb-6 md:mb-0">
               <div className="absolute -inset-4 bg-gradient-to-r from-highlight/20 to-cta/20 rounded-3xl blur-2xl" />
               <img 
                 src={SunTeam}
                 alt="Sun Tourism Team"
-                className="relative rounded-3xl w-full h-[400px] object-cover"
+                className="relative h-[320px] w-full rounded-3xl object-cover sm:h-[400px]"
+                loading="lazy"
+                decoding="async"
               />
-              <div className="absolute -bottom-6 -right-6 bg-cta text-foreground p-6 rounded-2xl shadow-xl">
-                <div className="text-3xl font-bold">2007</div>
+              <div className="absolute bottom-4 right-4 rounded-2xl bg-cta p-4 text-foreground shadow-xl sm:-bottom-6 sm:-right-6 sm:p-6">
+                <div className="text-2xl font-bold sm:text-3xl">2007</div>
                 <div className="text-sm">Founded</div>
               </div>
             </div>
@@ -153,7 +157,7 @@ const About = () => {
       </section>
 
       {/* Leaders Section - Enhanced with Career Timeline */}
-      <section ref={leadersRef} className="py-20 px-4">
+      <section ref={leadersRef} className="px-4 py-16 sm:py-20">
         <div className="container mx-auto">
           <div className={`text-center mb-16 transition-all duration-1000 ${
             leadersVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -195,6 +199,8 @@ const About = () => {
                                 src={leader.img} 
                                 alt={leader.name}
                                 className="w-full h-full object-cover"
+                                loading="lazy"
+                                decoding="async"
                               />
                             </div>
                             <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-cta rounded-full flex items-center justify-center">
@@ -271,7 +277,7 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section ref={valuesRef} className="py-20 px-4">
+      <section ref={valuesRef} className="px-4 py-16 sm:py-20">
         <div className="container mx-auto">
           <div className={`text-center mb-12 transition-all duration-1000 ${
             valuesVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -301,9 +307,9 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="px-4 py-16 sm:py-20">
         <div className="container mx-auto">
-          <div className="relative bg-gradient-to-r from-highlight to-highlight/80 rounded-3xl p-12 text-center overflow-hidden">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-highlight to-highlight/80 p-8 text-center sm:p-10 md:p-12">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full -translate-x-1/2 -translate-y-1/2" />
               <div className="absolute bottom-0 right-0 w-60 h-60 bg-white rounded-full translate-x-1/4 translate-y-1/4" />
@@ -312,12 +318,12 @@ const About = () => {
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
                 Ready to Start Your Journey?
               </h2>
-              <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+              <p className="mx-auto mb-8 max-w-2xl text-base text-white/90 sm:text-lg">
                 Join thousands of travelers who have discovered the world with us.
               </p>
               <a 
                 href="/explore" 
-                className="inline-block bg-cta text-foreground font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+                className="inline-block rounded-full bg-cta px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg sm:px-8 sm:py-4 sm:text-base"
               >
                 Explore Our Tours
               </a>

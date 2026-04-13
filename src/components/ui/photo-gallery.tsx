@@ -16,6 +16,29 @@ interface PhotoGalleryProps {
   initialIndex?: number;
 }
 
+const getVisibleThumbnails = <T,>(
+  items: T[],
+  currentIndex: number,
+  windowSize = 7,
+) => {
+  if (items.length <= windowSize) {
+    return items.map((item, index) => ({ item, index }));
+  }
+
+  const radius = Math.floor(windowSize / 2);
+  const visibleItems: Array<{ item: T; index: number }> = [];
+
+  for (let offset = -radius; offset <= radius; offset += 1) {
+    const index = (currentIndex + offset + items.length) % items.length;
+
+    if (!visibleItems.some((entry) => entry.index === index)) {
+      visibleItems.push({ item: items[index], index });
+    }
+  }
+
+  return visibleItems;
+};
+
 export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: PhotoGalleryProps) => {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
@@ -72,6 +95,8 @@ export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: Phot
               src={photos[currentIndex].src}
               alt={photos[currentIndex].alt}
               className="max-h-full max-w-full rounded-xl object-contain"
+              decoding="async"
+              fetchPriority="high"
             />
 
             {/* Navigation - Next */}
@@ -97,7 +122,7 @@ export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: Phot
           {photos.length > 1 && (
             <div className="shrink-0 overflow-x-auto px-3 pb-3 [scrollbar-width:none] [-ms-overflow-style:none] sm:px-4 sm:pb-4">
               <div className="mx-auto flex w-max gap-2">
-                {photos.map((photo, index) => (
+                {getVisibleThumbnails(photos, currentIndex).map(({ item: photo, index }) => (
                   <button
                     key={photo.id}
                     onClick={() => setCurrentIndex(index)}
@@ -111,6 +136,8 @@ export const PhotoGallery = ({ photos, isOpen, onClose, initialIndex = 0 }: Phot
                       src={photo.src}
                       alt={photo.alt}
                       className="h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </button>
                 ))}
@@ -153,6 +180,8 @@ export const PhotoGrid = ({ photos, columns = 4, onPhotoClick }: PhotoGridProps)
             src={photo.src}
             alt={photo.alt}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
             <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />

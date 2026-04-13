@@ -141,6 +141,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-white text-foreground;
+    overflow-x: clip;
   }
 }
 

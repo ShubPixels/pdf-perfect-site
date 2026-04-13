@@ -79,6 +79,7 @@ export const PhilosophySection = () => {
                       alt={leader.name}
                       className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
                     <div className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full bg-white/12 px-3 py-1.5 backdrop-blur-md">

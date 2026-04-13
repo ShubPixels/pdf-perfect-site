@@ -1,14 +1,42 @@
+import { Suspense, lazy } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/home/Hero";
 import { HomeVisitorCapsule } from "@/components/home/HomeVisitorCapsule";
-import { UpcomingDepartures } from "@/components/home/UpcomingDepartures";
-import { LearnLifestyle } from "@/components/home/LearnLifestyle";
-import { PhilosophySection } from "@/components/home/PhilosophySection";
-import { Community } from "@/components/home/Community";
 import { Quote, Star } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { motion } from "framer-motion";
+import { DeferredSection } from "@/components/DeferredSection";
+
+const Community = lazy(() =>
+  import("@/components/home/Community").then((module) => ({
+    default: module.Community,
+  })),
+);
+const UpcomingDepartures = lazy(() =>
+  import("@/components/home/UpcomingDepartures").then((module) => ({
+    default: module.UpcomingDepartures,
+  })),
+);
+const LearnLifestyle = lazy(() =>
+  import("@/components/home/LearnLifestyle").then((module) => ({
+    default: module.LearnLifestyle,
+  })),
+);
+const PhilosophySection = lazy(() =>
+  import("@/components/home/PhilosophySection").then((module) => ({
+    default: module.PhilosophySection,
+  })),
+);
+
+const HomeSectionFallback = ({ minHeight }: { minHeight: number }) => (
+  <div
+    className="container mx-auto px-4"
+    style={{ minHeight: `${minHeight}px` }}
+  >
+    <div className="h-full min-h-full rounded-[2rem] border border-border/40 bg-secondary/30" />
+  </div>
+);
 
 const Index = () => {
   const community = useScrollReveal();
@@ -34,7 +62,14 @@ const Index = () => {
               : "opacity-0 translate-y-10"
           }`}
         >
-          <Community />
+          <DeferredSection
+            minHeight={720}
+            fallback={<HomeSectionFallback minHeight={720} />}
+          >
+            <Suspense fallback={<HomeSectionFallback minHeight={720} />}>
+              <Community />
+            </Suspense>
+          </DeferredSection>
         </div>
 
         <div
@@ -324,7 +359,14 @@ const Index = () => {
               : "opacity-0 translate-y-10"
           }`}
         >
-          <PhilosophySection />
+          <DeferredSection
+            minHeight={460}
+            fallback={<HomeSectionFallback minHeight={460} />}
+          >
+            <Suspense fallback={<HomeSectionFallback minHeight={460} />}>
+              <PhilosophySection />
+            </Suspense>
+          </DeferredSection>
         </div>
 
         <div
@@ -335,7 +377,14 @@ const Index = () => {
               : "opacity-0 translate-y-10"
           }`}
         >
-          <LearnLifestyle />
+          <DeferredSection
+            minHeight={680}
+            fallback={<HomeSectionFallback minHeight={680} />}
+          >
+            <Suspense fallback={<HomeSectionFallback minHeight={680} />}>
+              <LearnLifestyle />
+            </Suspense>
+          </DeferredSection>
         </div>
 
         <div
@@ -388,7 +437,14 @@ const Index = () => {
               : "opacity-0 translate-y-10"
           }`}
         >
-          <UpcomingDepartures />
+          <DeferredSection
+            minHeight={820}
+            fallback={<HomeSectionFallback minHeight={820} />}
+          >
+            <Suspense fallback={<HomeSectionFallback minHeight={820} />}>
+              <UpcomingDepartures />
+            </Suspense>
+          </DeferredSection>
         </div>
       </main>
 

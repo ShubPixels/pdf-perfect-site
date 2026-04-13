@@ -91,7 +91,13 @@ const Stories = () => {
           <div className="absolute inset-0 grid grid-cols-3 gap-1 opacity-30">
             {featuredStories.map((story) => (
               <div key={story.id} className="relative overflow-hidden">
-                <img src={story.image} alt="" className="w-full h-full object-cover" />
+                <img
+                  src={story.image}
+                  alt=""
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             ))}
           </div>
@@ -143,6 +149,7 @@ const Stories = () => {
                             alt={story.title}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             loading="lazy"
+                            decoding="async"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                           <div className="absolute bottom-4 left-4 flex items-center gap-2">

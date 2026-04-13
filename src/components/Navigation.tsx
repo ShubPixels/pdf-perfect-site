@@ -31,19 +31,19 @@ export const Navigation = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between lg:h-20">
-          <Link to="/" className="group flex items-center gap-3">
+        <div className="flex h-16 items-center justify-between gap-3 lg:h-20">
+          <Link to="/" className="group flex min-w-0 items-center gap-2 sm:gap-3">
             <img
               src={logo}
               alt="Sun Tourism Logo"
-              className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-9 w-auto object-contain transition-transform group-hover:scale-105 sm:h-10"
             />
 
-            <div className="flex flex-col leading-tight">
-              <span className="whitespace-nowrap text-[11px] font-bold text-foreground sm:text-xs lg:text-sm">
+            <div className="min-w-0 flex flex-col leading-[1.05]">
+              <span className="whitespace-nowrap text-[10px] font-bold tracking-[-0.01em] text-foreground sm:text-xs lg:text-sm">
                 All Tours Ghar Se Ghar Tak
               </span>
-              <span className="text-[11px] text-muted-foreground sm:text-xs">
+              <span className="text-[10px] text-muted-foreground sm:text-xs">
                 Sun Touriism Pune
               </span>
             </div>
@@ -81,7 +81,7 @@ export const Navigation = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className="shrink-0 lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >

@@ -15,6 +15,29 @@ interface ImmersiveGalleryProps {
   destinationName: string;
 }
 
+const getVisibleThumbnails = <T,>(
+  items: T[],
+  currentIndex: number,
+  windowSize = 7,
+) => {
+  if (items.length <= windowSize) {
+    return items.map((item, index) => ({ item, index }));
+  }
+
+  const radius = Math.floor(windowSize / 2);
+  const visibleItems: Array<{ item: T; index: number }> = [];
+
+  for (let offset = -radius; offset <= radius; offset += 1) {
+    const index = (currentIndex + offset + items.length) % items.length;
+
+    if (!visibleItems.some((entry) => entry.index === index)) {
+      visibleItems.push({ item: items[index], index });
+    }
+  }
+
+  return visibleItems;
+};
+
 export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryProps) => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -45,6 +68,9 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
   };
 
   const selectedImageData = images.find((img) => img.id === selectedImage);
+  const selectedFilteredIndex = selectedImage !== null
+    ? filteredImages.findIndex((img) => img.id === selectedImage)
+    : 0;
 
   return (
     <section className="py-16">
@@ -116,6 +142,7 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
                   ${isHovered ? "scale-110 brightness-110" : "scale-100"}
                 `}
                 loading="lazy"
+                decoding="async"
               />
 
               <div
@@ -194,6 +221,7 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
                   src={selectedImageData.src}
                   alt={selectedImageData.alt}
                   className="max-w-full max-h-[76vh] object-contain rounded-lg shadow-2xl"
+                  decoding="async"
                 />
 
                 <div className="absolute bottom-0 left-6 right-6 md:left-8 md:right-8 p-6 bg-gradient-to-t from-black/90 to-transparent rounded-b-lg">
@@ -209,7 +237,10 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
 
             {/* thumbs (kept) */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 p-2 bg-black/50 backdrop-blur-sm rounded-full max-w-[88vw] overflow-x-auto">
-              {filteredImages.slice(0, 12).map((img) => (
+              {getVisibleThumbnails(
+                filteredImages,
+                selectedFilteredIndex >= 0 ? selectedFilteredIndex : 0,
+              ).map(({ item: img }) => (
                 <button
                   key={img.id}
                   onClick={() => setSelectedImage(img.id)}
@@ -218,7 +249,13 @@ export const ImmersiveGallery = ({ images, destinationName }: ImmersiveGalleryPr
                     ${selectedImage === img.id ? "border-cta scale-110" : "border-transparent opacity-60 hover:opacity-100"}
                   `}
                 >
-                  <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </button>
               ))}
             </div>

@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Camera, MessageCircle } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { PhotoGallery } from "@/components/ui/photo-gallery";
 import {
   sortedStoryDestinations,
   type StoryDestination,
   type StoryTour,
 } from "@/data/stories";
+
+const PhotoGallery = lazy(() =>
+  import("@/components/ui/photo-gallery").then((module) => ({
+    default: module.PhotoGallery,
+  })),
+);
 
 type CommunityVariant = "home" | "page";
 
@@ -134,6 +139,7 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
                     alt={destination.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
+                    decoding="async"
                     style={
                       destination.coverImagePosition
                         ? { objectPosition: destination.coverImagePosition }
@@ -222,15 +228,17 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
       </div>
 
       {selectedTour && (
-        <PhotoGallery
-          photos={selectedTour.photos}
-          isOpen={galleryOpen}
-          onClose={() => {
-            setGalleryOpen(false);
-            setSelectedTour(null);
-          }}
-          initialIndex={photoIndex}
-        />
+        <Suspense fallback={null}>
+          <PhotoGallery
+            photos={selectedTour.photos}
+            isOpen={galleryOpen}
+            onClose={() => {
+              setGalleryOpen(false);
+              setSelectedTour(null);
+            }}
+            initialIndex={photoIndex}
+          />
+        </Suspense>
       )}
     </section>
   );

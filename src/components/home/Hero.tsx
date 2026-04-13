@@ -59,6 +59,9 @@ export const Hero = () => {
             src={dest.image}
             alt={dest.name}
             className="w-full h-full object-cover scale-105"
+            loading={index === 0 ? "eager" : "lazy"}
+            decoding={index === 0 ? "sync" : "async"}
+            fetchPriority={index === 0 ? "high" : "low"}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/85" />
         </div>

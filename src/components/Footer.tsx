@@ -18,7 +18,7 @@ export const Footer = () => {
     <footer className="mt-20">
       <div className="bg-cta py-3">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-sm font-medium text-foreground">
               Follow Sun Tourism for traveller stories, updates, and fresh inspiration.
             </div>
@@ -74,7 +74,13 @@ export const Footer = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div>
               <div className="mb-4 flex items-center gap-3">
-                <img src="/brand/logo.png" alt="Sun Tourism" className="h-12 w-auto" />
+                <img
+                  src="/brand/logo.png"
+                  alt="Sun Tourism"
+                  className="h-12 w-auto"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div>
                   <h3 className="font-bold text-foreground">Sun Tourism</h3>
                   <p className="text-xs italic text-muted-foreground">Ghar Se Ghar Tak</p>
