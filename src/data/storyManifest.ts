@@ -5,6 +5,7 @@ export interface StoryManifestTour {
   dateLabel: string;
   galleryFolder: string;
   coverIndex: number;
+  coverImagePosition?: string;
   sortDate: string;
 }
 
@@ -338,7 +339,8 @@ export const storyManifest: StoryManifestDestination[] = [
         title: "April 2025 Batch",
         dateLabel: "April 2025",
         galleryFolder: "kashmir-2025-04",
-        coverIndex: 4,
+        coverIndex: 1,
+        coverImagePosition: "center center",
         sortDate: "2025-04-07",
       },
       {

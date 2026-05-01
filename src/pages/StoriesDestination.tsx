@@ -1,5 +1,5 @@
 import { Suspense, lazy, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, CalendarDays, Camera } from "lucide-react";
 
 import { Navigation } from "@/components/Navigation";
@@ -19,10 +19,24 @@ const PhotoGallery = lazy(() =>
 
 const StoriesDestination = () => {
   const { destinationSlug } = useParams<{ destinationSlug: string }>();
+  const navigate = useNavigate();
+  const location = useLocation();
   const destination = getStoryDestinationBySlug(destinationSlug || "");
 
   const [selectedTour, setSelectedTour] = useState<StoryTour | null>(null);
   const [galleryOpen, setGalleryOpen] = useState(false);
+  const cameFromStories =
+    typeof location.state === "object" &&
+    location.state !== null &&
+    "fromStories" in location.state &&
+    location.state.fromStories === true;
+  const storiesScrollY =
+    typeof location.state === "object" &&
+    location.state !== null &&
+    "storiesScrollY" in location.state &&
+    typeof location.state.storiesScrollY === "number"
+      ? location.state.storiesScrollY
+      : null;
 
   const openGallery = (tour: StoryTour) => {
     setSelectedTour(tour);
@@ -54,6 +68,19 @@ const StoriesDestination = () => {
     return "max-w-6xl md:grid-cols-2 xl:grid-cols-3";
   };
 
+  const handleBackToStories = () => {
+    if (storiesScrollY !== null) {
+      sessionStorage.setItem("storiesRestoreScrollY", String(storiesScrollY));
+    }
+
+    if (cameFromStories) {
+      navigate(-1);
+      return;
+    }
+
+    navigate("/stories");
+  };
+
   if (!destination) {
     return (
       <div className="min-h-screen bg-white">
@@ -82,11 +109,13 @@ const StoriesDestination = () => {
       <main>
         <section className="container mx-auto px-4 pt-20 pb-8 md:pt-24 md:pb-12">
           <div className="max-w-6xl mx-auto">
-            <Button asChild variant="ghost" className="rounded-full px-0 hover:bg-transparent mb-6 text-foreground">
-              <Link to="/stories">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to all stories
-              </Link>
+            <Button
+              type="button"
+              onClick={handleBackToStories}
+              className="mb-6 rounded-full border border-border/60 bg-white px-5 py-2.5 text-foreground shadow-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent hover:text-white hover:shadow-[0_14px_30px_rgba(224,90,49,0.24)]"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to all stories
             </Button>
 
             <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] items-center">
@@ -195,19 +224,22 @@ const StoriesDestination = () => {
                       <img
                         src={tour.coverImage}
                         alt={tour.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
                         decoding="async"
+                        style={
+                          tour.coverImagePosition
+                            ? { objectPosition: tour.coverImagePosition }
+                            : undefined
+                        }
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
-
-                      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/35 backdrop-blur-sm px-3 py-2 text-white/90 text-sm">
+                      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-sm px-3 py-2 text-foreground/80 text-sm shadow-lg">
                         <CalendarDays className="w-4 h-4 text-accent" />
                         {tour.dateLabel}
                       </div>
 
                       <div className="absolute bottom-4 left-4 right-4 flex items-center justify-end">
-                        <div className="inline-flex items-center gap-2 rounded-full bg-white/12 backdrop-blur-sm px-4 py-2 text-accent font-medium">
+                        <div className="inline-flex items-center gap-2 rounded-full bg-white/95 backdrop-blur-sm px-4 py-2 text-accent font-medium shadow-lg">
                           <span>Open Gallery</span>
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </div>

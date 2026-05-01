@@ -1,16 +1,21 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigationType } from "react-router-dom";
 import { ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const ScrollToTop = () => {
   const { pathname } = useLocation();
+  const navigationType = useNavigationType();
   const [showButton, setShowButton] = useState(false);
 
-  // Scroll to top on route change
+  // Let browser history restore the previous scroll position on back/forward.
   useEffect(() => {
+    if (navigationType === "POP") {
+      return;
+    }
+
     window.scrollTo({ top: 0, behavior: "instant" });
-  }, [pathname]);
+  }, [navigationType, pathname]);
 
   // Show/hide back to top button
   useEffect(() => {

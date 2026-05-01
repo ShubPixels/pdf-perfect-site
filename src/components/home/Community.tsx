@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight, Camera, MessageCircle } from "lucide-react";
 
@@ -27,9 +27,9 @@ const HOME_SPANS = [
   "col-span-2 row-span-2 md:col-span-3 md:row-span-3",
   "col-span-1 row-span-1 md:col-span-3 md:row-span-2",
   "col-span-1 row-span-1 md:col-span-3 md:row-span-2",
-  "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
-  "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
-  "col-span-1 row-span-1 md:col-span-2 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-3 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-3 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-3 md:row-span-2",
   "col-span-1 row-span-1 md:col-span-3 md:row-span-2",
   "col-span-1 row-span-1 md:col-span-3 md:row-span-2",
 ];
@@ -52,6 +52,30 @@ const getDestinationDateLabel = (destination: StoryDestination) =>
 
 const getActionLabel = (_destination: StoryDestination) => "View Gallery";
 
+const DESTINATION_CROP_POSITIONS: Record<string, string> = {
+  andaman: "center 42%",
+  "assam-meghalaya": "center 38%",
+  australia: "center 45%",
+  "ayodhya-varanasi": "center 38%",
+  bali: "center 42%",
+  bhutan: "center 44%",
+  dubai: "center 42%",
+  kerala: "center 34%",
+  "nainital-jim-corbett": "center 34%",
+  nepal: "center 35%",
+  oman: "center 42%",
+  orissa: "center 38%",
+  "scotland-london": "center 42%",
+  "south-africa": "center 42%",
+};
+
+const getCoverImageStyle = (destination: StoryDestination) => ({
+  objectPosition:
+    destination.coverImagePosition ??
+    DESTINATION_CROP_POSITIONS[destination.slug] ??
+    "center 40%",
+});
+
 export const Community = ({ variant = "home", showShareCta = true }: CommunityProps) => {
   const navigate = useNavigate();
   const [selectedTour, setSelectedTour] = useState<StoryTour | null>(null);
@@ -65,6 +89,22 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
   const spansPattern = variant === "home" ? HOME_SPANS : PAGE_SPANS;
   const isPage = variant === "page";
 
+  useEffect(() => {
+    if (!isPage) {
+      return;
+    }
+
+    const restoreScrollY = sessionStorage.getItem("storiesRestoreScrollY");
+    if (!restoreScrollY) {
+      return;
+    }
+
+    sessionStorage.removeItem("storiesRestoreScrollY");
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: Number(restoreScrollY), behavior: "instant" });
+    });
+  }, [isPage]);
+
   const openGallery = (tour: StoryTour, index = 0) => {
     setSelectedTour(tour);
     setPhotoIndex(index);
@@ -77,7 +117,9 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
       return;
     }
 
-    navigate(`/stories/${destination.slug}`);
+    navigate(`/stories/${destination.slug}`, {
+      state: { fromStories: true, storiesScrollY: window.scrollY },
+    });
   };
 
   return (
@@ -118,7 +160,7 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
               grid gap-3 sm:gap-4 md:gap-4 grid-flow-dense
               ${
                 isPage
-                  ? "grid-cols-1 auto-rows-[240px] sm:grid-cols-2 sm:auto-rows-[250px] md:grid-cols-6 md:auto-rows-[260px]"
+                  ? "grid-cols-1 auto-rows-[280px] sm:grid-cols-2 sm:auto-rows-[290px] md:grid-cols-6 md:auto-rows-[310px]"
                   : "grid-cols-2 auto-rows-[165px] sm:auto-rows-[190px] md:grid-cols-6 md:auto-rows-[150px]"
               }
             `}
@@ -135,63 +177,50 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
                 <button
                   key={destination.id}
                   onClick={() => handleDestinationClick(destination)}
-                  className={`group relative rounded-2xl overflow-hidden cursor-pointer text-left ${span}`}
+                  aria-label={`${getActionLabel(destination)}: ${destination.name}`}
+                  className={`group flex h-full flex-col overflow-hidden rounded-2xl border border-border/30 bg-card text-left shadow-xl transition-all duration-300 hover:-translate-y-1 ${span}`}
                 >
-                  <img
-                    src={destination.coverImage}
-                    alt={destination.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                    style={
-                      destination.coverImagePosition
-                        ? { objectPosition: destination.coverImagePosition }
-                        : undefined
-                    }
-                  />
+                  <div className="relative m-2 mb-0 min-h-0 flex-1 overflow-hidden rounded-xl">
+                    <img
+                      src={destination.coverImage}
+                      alt={destination.name}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
+                      style={getCoverImageStyle(destination)}
+                    />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute right-3 top-3 z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 sm:right-4 sm:top-4">
+                      <div className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/80 bg-white/95 text-accent shadow-xl backdrop-blur-md transition-all duration-300 group-hover:-translate-y-0.5 group-hover:bg-accent group-hover:text-white sm:h-10 sm:w-10">
+                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                      </div>
+                    </div>
+                  </div>
 
-                  <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 md:p-5 md:p-6">
-                    <div className="flex items-end justify-between gap-3 sm:gap-4">
-                      <div
-                        className={`min-w-0 ${
-                          isPage ? "max-w-[72%] sm:max-w-[68%]" : "max-w-[70%]"
-                        }`}
-                      >
-                        {destinationDateLabel && (
-                          <p className="mb-1 text-[11px] sm:text-sm md:text-base text-white/75">
-                            {destinationDateLabel}
-                          </p>
-                        )}
+                  <div className="shrink-0 px-3 py-2.5 sm:px-4 md:px-4">
+                    <div className="min-w-0">
+                      {destinationDateLabel && (
+                        <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent/90 sm:text-[11px]">
+                          {destinationDateLabel}
+                        </p>
+                      )}
 
-                        <h3
-                          className={`
-                            font-bold text-white leading-tight drop-shadow
+                      <h3
+                        className={`
+                            font-bold text-foreground leading-tight line-clamp-2
                             ${
                               isPage
                                 ? isTall
-                                  ? "text-base sm:text-2xl md:text-4xl md:text-5xl"
-                                  : "text-sm sm:text-lg md:text-2xl md:text-3xl"
+                                  ? "text-base sm:text-lg md:text-xl"
+                                  : "text-sm sm:text-base md:text-lg"
                                 : isTall
-                                  ? "text-base sm:text-lg md:text-3xl md:text-4xl"
-                                  : "text-sm sm:text-base md:text-xl md:text-2xl"
+                                  ? "text-base sm:text-lg md:text-xl"
+                                  : "text-sm sm:text-base"
                             }
                           `}
-                        >
-                          {destination.name}
-                        </h3>
-                      </div>
-
-                      <div className="shrink-0">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/12 text-accent backdrop-blur-sm sm:hidden">
-                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                        </div>
-                        <div className="hidden items-center gap-2 whitespace-nowrap text-accent text-sm font-medium sm:flex md:text-base">
-                          <span>{getActionLabel(destination)}</span>
-                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                        </div>
-                      </div>
+                      >
+                        {destination.name}
+                      </h3>
                     </div>
                   </div>
                 </button>

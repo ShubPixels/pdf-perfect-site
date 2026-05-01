@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, Clock, Share2, Calendar, User, ArrowRight, Sparkles } from "lucide-react";
 import { toast } from "@/components/ui/sonner";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 interface BlogPostLayoutProps {
@@ -34,6 +34,8 @@ export const BlogPostLayout = ({
   children,
   relatedArticles = []
 }: BlogPostLayoutProps) => {
+  const navigate = useNavigate();
+
   const handleShare = async () => {
     if (typeof window === "undefined") {
       return;
@@ -81,13 +83,14 @@ export const BlogPostLayout = ({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <Link 
-                  to="/learn" 
+                <button
+                  type="button"
+                  onClick={() => navigate(-1)}
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary mb-6 group text-sm font-medium bg-card/50 backdrop-blur-sm px-4 py-2 rounded-full border border-border/30 hover:border-primary/30 transition-all"
                 >
                   <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                  Back to Learn
-                </Link>
+                  Back
+                </button>
               </motion.div>
 
               <motion.div

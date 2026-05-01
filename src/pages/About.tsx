@@ -61,103 +61,137 @@ const About = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="px-4 pb-14 pt-20 sm:pb-20 sm:pt-28 md:pt-32">
-        <div className="container mx-auto max-w-5xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <span className="mb-5 inline-block rounded-full bg-highlight/10 px-4 py-2 text-sm font-medium text-highlight sm:mb-6">
-              Our Story
-            </span>
-            <h1 className="mx-auto mb-6 max-w-[10ch] font-heading text-[clamp(2.45rem,13vw,4.75rem)] font-bold leading-[0.95] tracking-tight text-foreground sm:max-w-none sm:text-5xl sm:leading-[0.92] md:text-7xl">
-              <span className="block">Crafting</span>
-              <span className="block text-accent">Unforgettable</span>
-              <span className="block">Journeys</span>
-              <span className="block">Since 2007</span>
-            </h1>
-            <p className="mx-auto max-w-[30ch] text-sm leading-8 text-muted-foreground sm:max-w-3xl sm:text-lg md:text-xl">
-              What began as a passion to make travel accessible has evolved into Pune's most trusted 
-              travel community, connecting families with extraordinary experiences across the globe.
-            </p>
-          </motion.div>
+      <section className="px-4 pb-14 pt-2 sm:pb-20 sm:pt-28 md:pt-12">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-highlight/10 px-4 py-2 text-sm font-medium text-highlight sm:mb-6">
+                <Plane className="h-4 w-4" />
+                Since 2007
+              </span>
 
-          {/* Animated stats */}
-          <motion.div 
-            className="mt-12 flex flex-wrap justify-center gap-6 sm:mt-16 sm:gap-8 md:gap-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-          >
-            {[
-              { number: "30+", label: "Destinations" },
-              { number: "100K+", label: "Happy Travellers" },
-              { number: "15K+", label: "Tours Completed" },
-              { number: "18+", label: "Years of Experience" }
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-3xl font-bold text-accent sm:text-4xl md:text-5xl">{stat.number}</div>
-                <div className="mt-1 text-sm text-muted-foreground sm:text-base">{stat.label}</div>
+              <h1 className="mb-6 max-w-3xl font-heading text-[clamp(2.55rem,10vw,4.75rem)] font-bold leading-[0.95] tracking-tight text-foreground sm:text-5xl sm:leading-[0.92] md:text-7xl">
+                Built by people who <span className="text-accent">travel with you</span>
+              </h1>
+
+              <p className="max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg md:text-xl">
+                Sun Tourism is led by hands-on travel specialists who plan with care, stay close
+                to the details, and make group journeys feel personal from the first call to the
+                final return.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                {["100K+ Happy Travellers", "30+ Destinations", "Family-Led Planning"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-border/50 bg-card px-4 py-2 text-sm font-medium text-foreground shadow-xl"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
-            ))}
-          </motion.div>
+
+              <div className="mt-8">
+                <a
+                  href="#leadership"
+                  className="inline-flex items-center rounded-full bg-accent px-6 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(224,90,49,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[hsl(15_75%_48%)] hover:shadow-[0_14px_30px_rgba(224,90,49,0.34)]"
+                >
+                  Meet Our Leadership
+                  <Users className="ml-2 h-4 w-4" />
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.18, duration: 0.8 }}
+              className="relative"
+            >
+              <div className="overflow-hidden rounded-[2rem] border border-border/30 bg-card p-3 shadow-xl">
+                <img
+                  src={SunTeam}
+                  alt="Sun Tourism team"
+                  className="h-[320px] w-full rounded-[1.5rem] object-cover object-center sm:h-[420px] lg:h-[520px]"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+
+              <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/80 bg-white/[0.94] p-4 shadow-xl backdrop-blur-md sm:left-8 sm:right-auto sm:max-w-sm sm:p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">
+                  Trusted Travel Companions
+                </p>
+                <p className="mt-2 text-sm leading-6 text-foreground sm:text-base">
+                  A team that plans, coordinates, and supports every journey with familiar care.
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Mission Section */}
       <section ref={missionRef} className="px-4 py-16 sm:py-20">
         <div className="container mx-auto">
-          <div 
-            className={`grid md:grid-cols-2 gap-12 items-center transition-all duration-1000 ${
+          <div
+            className={`mx-auto max-w-4xl text-center transition-all duration-1000 ${
               missionVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="relative mb-6 md:mb-0">
-              <div className="absolute -inset-4 bg-gradient-to-r from-highlight/20 to-cta/20 rounded-3xl blur-2xl" />
-              <img 
-                src={SunTeam}
-                alt="Sun Tourism Team"
-                className="relative h-[320px] w-full rounded-3xl object-cover sm:h-[400px]"
-                loading="lazy"
-                decoding="async"
-              />
-              <div className="absolute bottom-4 right-4 rounded-2xl bg-cta p-4 text-foreground shadow-xl sm:-bottom-6 sm:-right-6 sm:p-6">
-                <div className="text-2xl font-bold sm:text-3xl">2007</div>
-                <div className="text-sm">Founded</div>
-              </div>
+            <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-highlight/10 px-4 py-2 text-sm font-semibold text-highlight">
+              <Heart className="h-4 w-4" />
+              What We Stand For
+            </span>
+            <h2 className="mx-auto mb-6 max-w-3xl font-heading text-4xl font-bold leading-tight text-foreground md:text-6xl">
+              Our <span className="text-accent">Mission</span>
+            </h2>
+            <p className="mx-auto mb-6 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
+              We believe travel should be transformative, not transactional. Every journey
+              we craft is designed to create meaningful connections-with places, cultures,
+              and fellow travelers.
+            </p>
+            <p className="mx-auto max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
+              Our "Ghar Se Ghar Tak" promise means complete care from your doorstep to your destination
+              and back-flights, visas, hotels, meals, and memories, all taken care of.
+            </p>
+
+            <div className="mx-auto mt-10 grid max-w-3xl gap-4 sm:grid-cols-3">
+              {[
+                { label: "Doorstep Care", desc: "Support from the first call to your return home." },
+                { label: "Family-Friendly", desc: "Journeys planned with comfort, pace, and clarity." },
+                { label: "Hassle-Free Travel", desc: "Flights, visas, stays, meals, and timing handled." },
+              ].map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-border/40 bg-card p-5 shadow-xl"
+                >
+                  <h3 className="font-heading text-lg font-bold text-foreground">{item.label}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{item.desc}</p>
+                </div>
+              ))}
             </div>
 
-            <div>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Our <span className="text-accent">Mission</span>
-              </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                We believe travel should be transformative, not transactional. Every journey 
-                we craft is designed to create meaningful connections-with places, cultures, 
-                and fellow travelers.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Our "Ghar Se Ghar Tak" promise means complete care from your doorstep to your destination 
-                and back-flights, visas, hotels, meals, and memories, all taken care of.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["Ghar Se Ghar Tak", "Family-Friendly", "Hassle-Free Travel"].map((tag) => (
-                  <span 
-                    key={tag}
-                    className="px-4 py-2 bg-highlight/10 text-highlight rounded-full text-sm font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {["Ghar Se Ghar Tak", "Trusted Guidance", "Thoughtful Planning"].map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-highlight/10 px-4 py-2 text-sm font-semibold text-highlight"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
-          </div>
+              </div>
         </div>
       </section>
 
       {/* Leaders Section - Enhanced with Career Timeline */}
-      <section ref={leadersRef} className="px-4 py-16 sm:py-20">
+      <section id="leadership" ref={leadersRef} className="px-4 py-16 sm:py-20">
         <div className="container mx-auto">
           <div className={`text-center mb-16 transition-all duration-1000 ${
             leadersVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -210,14 +244,14 @@ const About = () => {
                           <div>
                             <h3 className="font-heading text-2xl font-bold text-foreground">{leader.name}</h3>
                             <p className="text-highlight font-medium mb-2">{leader.role}</p>
-                            <div className="flex gap-3">
+                            {/* <div className="flex gap-3">
                               <a href={leader.linkedin} className="text-muted-foreground hover:text-highlight transition-colors">
                                 <Linkedin className="w-5 h-5" />
                               </a>
                               <a href={`mailto:${leader.email}`} className="text-muted-foreground hover:text-highlight transition-colors">
                                 <Mail className="w-5 h-5" />
                               </a>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
 
@@ -227,7 +261,7 @@ const About = () => {
 
                         {/* Thoughts/Philosophy */}
                         <div className="bg-highlight/5 border-l-4 border-cta rounded-r-xl p-5">
-                          <p className="text-sm uppercase tracking-wider text-muted-foreground mb-2">Their Philosophy</p>
+                          <p className="text-sm uppercase tracking-wider text-muted-foreground mb-2">The Philosophy</p>
                           <blockquote className="italic text-foreground leading-relaxed">
                             "{leader.thoughts}"
                           </blockquote>

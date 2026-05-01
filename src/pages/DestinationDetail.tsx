@@ -788,10 +788,11 @@ export default function DestinationDetail() {
                           alt={related.name}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                        <div className="absolute bottom-4 left-4 right-4 text-white">
-                          <h3 className="font-bold text-xl mb-1">{related.name}</h3>
-                          <div className="text-sm">{related.duration}</div>
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="inline-flex max-w-full flex-col rounded-2xl bg-white/95 px-4 py-3 text-foreground shadow-lg backdrop-blur-sm">
+                            <h3 className="font-bold text-xl mb-1">{related.name}</h3>
+                            <div className="text-sm text-muted-foreground">{related.duration}</div>
+                          </div>
                         </div>
                       </div>
                       <div className="p-4">

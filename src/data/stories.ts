@@ -14,6 +14,7 @@ export interface StoryTour {
   title: string;
   dateLabel: string;
   coverImage: string;
+  coverImagePosition?: string;
   photos: StoryPhoto[];
 }
 
@@ -264,6 +265,7 @@ const buildTour = (
     title: tour.title,
     dateLabel,
     coverImage,
+    coverImagePosition: tour.coverImagePosition,
     photos: buildPhotos(
       destinationName,
       dateLabel,

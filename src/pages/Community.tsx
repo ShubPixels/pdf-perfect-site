@@ -151,15 +151,14 @@ const Stories = () => {
                             loading="lazy"
                             decoding="async"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                          <div className="absolute bottom-4 left-4 flex items-center gap-2">
+                          <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-white/95 px-3 py-1.5 shadow-lg backdrop-blur-sm">
                             <MapPin className="w-4 h-4 text-accent" />
-                            <span className="text-white font-medium text-sm">{story.location}</span>
+                            <span className="text-foreground font-medium text-sm">{story.location}</span>
                           </div>
                           <div className="absolute top-4 right-4">
-                            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-black/30 backdrop-blur-sm rounded-full">
-                              <Camera className="w-3 h-3 text-white/70" />
-                              <span className="text-white/70 text-xs">{story.date}</span>
+                            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full shadow-lg">
+                              <Camera className="w-3 h-3 text-accent" />
+                              <span className="text-foreground/70 text-xs">{story.date}</span>
                             </div>
                           </div>
                         </div>
