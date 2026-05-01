@@ -9,50 +9,6 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (!id.includes("node_modules")) {
-            return;
-          }
-
-          if (id.includes("react-router")) {
-            return "router";
-          }
-
-          if (id.includes("framer-motion")) {
-            return "motion";
-          }
-
-          if (id.includes("@radix-ui")) {
-            return "radix";
-          }
-
-          if (id.includes("@supabase")) {
-            return "supabase";
-          }
-
-          if (id.includes("@tanstack/react-query")) {
-            return "query";
-          }
-
-          if (id.includes("lucide-react")) {
-            return "icons";
-          }
-
-          if (
-            id.includes("/react/") ||
-            id.includes("\\react\\") ||
-            id.includes("react-dom") ||
-            id.includes("scheduler")
-          ) {
-            return "react-vendor";
-          }
-        },
-      },
-    },
-  },
   assetsInclude: ["**/*.HEIC", "**/*.heic"],
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
