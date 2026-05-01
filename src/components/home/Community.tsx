@@ -99,12 +99,15 @@ export const Community = ({ variant = "home", showShareCta = true }: CommunityPr
 
           {variant === "home" && (
             <div className="flex justify-center mt-4 sm:mt-6">
-              <Link to="/stories">
-                <Button variant="outline" className="rounded-full px-4 py-2 sm:px-6 sm:py-3 group text-black text-sm sm:text-base">
+              <Button
+                asChild
+                className="group rounded-full border border-accent bg-accent px-4 py-2 text-sm font-bold text-white shadow-[0_10px_24px_rgba(224,90,49,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[hsl(15_75%_48%)] hover:text-white hover:shadow-[0_14px_30px_rgba(224,90,49,0.34)] active:translate-y-0 active:shadow-[0_7px_16px_rgba(224,90,49,0.24)] sm:px-6 sm:py-3 sm:text-base"
+              >
+                <Link to="/stories">
                   View All Stories
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+                  <ArrowRight className="ml-1 h-3 w-3 text-white transition-transform duration-300 group-hover:translate-x-1 sm:ml-2 sm:h-4 sm:w-4" />
+                </Link>
+              </Button>
             </div>
           )}
         </div>

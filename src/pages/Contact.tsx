@@ -169,7 +169,7 @@ const Contact = () => {
       <main>
         <section className="container mx-auto px-4 pb-10 pt-20 md:pb-14 md:pt-24">
           <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="rounded-[2rem] border border-border/30 bg-card/75 p-8 backdrop-blur-sm md:p-10">
+            <div className="rounded-[2rem] border border-border/30 bg-card/75 p-8 shadow-xl backdrop-blur-sm md:p-10">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2">
                 <Plane className="h-4 w-4 text-primary" />
                 <span className="text-sm font-medium text-primary">Plan Your Next Journey</span>
@@ -185,13 +185,13 @@ const Contact = () => {
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-3xl border border-border/30 bg-background/70 p-4">
+                <div className="rounded-3xl border border-border/30 bg-background/70 p-4 shadow-xl">
                   <p className="text-xs uppercase tracking-[0.2em] text-accent">Fast replies</p>
                   <p className="mt-2 text-sm leading-6 text-foreground">
                     Email-first enquiries with WhatsApp support whenever you want a quicker follow-up.
                   </p>
                 </div>
-                <div className="rounded-3xl border border-border/30 bg-background/70 p-4">
+                <div className="rounded-3xl border border-border/30 bg-background/70 p-4 shadow-xl">
                   <p className="text-xs uppercase tracking-[0.2em] text-accent">Trusted guidance</p>
                   <p className="mt-2 text-sm leading-6 text-foreground">
                     Talk to a team that handles departures, documents, and guest care every day.
@@ -200,7 +200,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="rounded-[2rem] border border-border/30 bg-card/70 p-8 backdrop-blur-sm md:p-10">
+            <div className="rounded-[2rem] border border-border/30 bg-card/70 p-8 shadow-xl backdrop-blur-sm md:p-10">
               <div className="mb-8">
                 <p className="text-sm uppercase tracking-[0.25em] text-accent">Akurdi Office</p>
                 <h2 className="mt-2 text-3xl font-heading font-bold text-foreground">
@@ -286,7 +286,7 @@ const Contact = () => {
 
         <section className="pb-20 md:pb-24">
           <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/30 bg-card/80 p-6 backdrop-blur-sm md:p-10">
+            <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/30 bg-card/80 p-6 shadow-xl backdrop-blur-sm md:p-10">
               <div className="mb-8 grid gap-6 border-b border-border/30 pb-8 lg:grid-cols-[0.75fr_1.25fr]">
                 <div>
                   <p className="text-sm uppercase tracking-[0.25em] text-accent">Booking Enquiry</p>
@@ -296,13 +296,13 @@ const Contact = () => {
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-3xl border border-border/30 bg-background/70 p-4">
+                  <div className="rounded-3xl border border-border/30 bg-background/70 p-4 shadow-xl">
                     <ShieldCheck className="mb-3 h-5 w-5 text-primary" />
                     <p className="text-sm leading-6 text-muted-foreground">
                       Your details stay private and are only used to help with your enquiry.
                     </p>
                   </div>
-                  <div className="rounded-3xl border border-border/30 bg-background/70 p-4">
+                  <div className="rounded-3xl border border-border/30 bg-background/70 p-4 shadow-xl">
                     <Send className="mb-3 h-5 w-5 text-primary" />
                     <p className="text-sm leading-6 text-muted-foreground">
                       Share your destination, timing, and preferences so we can guide you faster.

@@ -72,7 +72,7 @@ export const PhilosophySection = () => {
                 viewport={{ once: true }}
                 className="group h-full"
               >
-                <div className="flex h-full flex-col overflow-hidden rounded-[32px] border border-border/30 bg-card/70 backdrop-blur-sm transition-all duration-500 hover:border-primary/30 hover:shadow-xl">
+                <div className="flex h-full flex-col overflow-hidden rounded-[32px] border border-border/30 bg-card/70 shadow-xl backdrop-blur-sm transition-all duration-500 hover:border-primary/30">
                   <div className="relative aspect-[5/6] overflow-hidden">
                     <img
                       src={leader.image}
@@ -127,7 +127,7 @@ export const PhilosophySection = () => {
             viewport={{ once: true }}
             className="mt-12 text-center"
           >
-            <div className="inline-flex flex-col items-center gap-4 rounded-[28px] border border-border/30 bg-card/45 px-6 py-6 backdrop-blur-sm sm:px-8">
+            <div className="inline-flex flex-col items-center gap-4 rounded-[28px] border border-border/30 bg-card/45 px-6 py-6 shadow-xl backdrop-blur-sm sm:px-8">
               <div className="inline-flex items-center gap-2 rounded-full bg-highlight/10 px-3 py-1.5">
                 <Sparkles className="h-4 w-4 text-highlight" />
                 <span className="text-sm font-medium text-highlight">Our Story Continues</span>
@@ -136,10 +136,13 @@ export const PhilosophySection = () => {
                 Discover the full Sun Tourism story, the values behind our journeys, and the
                 leadership philosophy that shapes every tour we create.
               </p>
-              <Button asChild variant="outline" className="rounded-full px-6 group">
+              <Button
+                asChild
+                className="group rounded-full border border-accent bg-accent px-6 font-bold text-white shadow-[0_10px_24px_rgba(224,90,49,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[hsl(15_75%_48%)] hover:text-white hover:shadow-[0_14px_30px_rgba(224,90,49,0.34)] active:translate-y-0 active:shadow-[0_7px_16px_rgba(224,90,49,0.24)]"
+              >
                 <Link to="/about">
                   Explore Our Story
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-4 w-4 text-white transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>

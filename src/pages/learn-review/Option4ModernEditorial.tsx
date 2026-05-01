@@ -96,7 +96,7 @@ const Option4ModernEditorial = () => {
 
                 <div className="grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
                   <Link to={leadArticle.slug}>
-                    <Card className="group h-full rounded-[1.75rem] border-border/60 bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl md:p-7">
+                    <Card className="group h-full rounded-[1.75rem] border-border/60 bg-card p-6 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 md:p-7">
                       <div className="mb-4 flex flex-wrap gap-2">
                         <Badge className="rounded-full border-0 bg-primary text-primary-foreground">
                           Lead story
@@ -127,7 +127,7 @@ const Option4ModernEditorial = () => {
                   <div className="grid gap-4">
                     {secondaryArticles.map((article) => (
                       <Link key={article.title} to={article.slug}>
-                        <Card className="group rounded-[1.5rem] border-border/60 bg-card p-5 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-lg">
+                        <Card className="group rounded-[1.5rem] border-border/60 bg-card p-5 shadow-xl transition-all duration-300 hover:border-primary/40">
                           <div className="mb-3 flex flex-wrap gap-2">
                             {article.tags.map((tag) => (
                               <Badge key={tag} variant="secondary" className="rounded-full text-xs">
@@ -161,7 +161,7 @@ const Option4ModernEditorial = () => {
       </section>
 
       <section className="container mx-auto px-4 pb-24">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/60 bg-card p-6 shadow-sm md:p-8">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/60 bg-card p-6 shadow-xl md:p-8">
           <div className="grid gap-5 md:grid-cols-3">
             {learnNextSteps.map((item) => {
               const Icon = item.icon;

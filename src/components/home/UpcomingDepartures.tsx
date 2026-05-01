@@ -175,7 +175,7 @@ export const UpcomingDepartures = () => {
             return (
               <div
                 key={departure.id}
-                className="group relative bg-card rounded-3xl overflow-hidden border border-border hover:border-primary transition-all duration-500 hover:shadow-xl"
+                className="group relative bg-card rounded-3xl overflow-hidden border border-border shadow-xl transition-all duration-500 hover:border-primary"
               >
                 <div className="flex flex-col md:flex-row">
                   {/* Image */}
@@ -285,14 +285,18 @@ export const UpcomingDepartures = () => {
         {/* View All CTA */}
         <div className="text-center mt-8 sm:mt-10 md:mt-12">
           
-            <Button asChild variant="outline" size="lg" className="rounded-full px-6 py-3 sm:px-8 sm:py-4 group text-sm sm:text-base">
+            <Button
+              asChild
+              size="lg"
+              className="group rounded-full border border-accent bg-accent px-6 py-3 text-sm font-bold text-white shadow-[0_10px_24px_rgba(224,90,49,0.24)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[hsl(15_75%_48%)] hover:text-white hover:shadow-[0_14px_30px_rgba(224,90,49,0.34)] active:translate-y-0 active:shadow-[0_7px_16px_rgba(224,90,49,0.24)] sm:px-8 sm:py-4 sm:text-base"
+            >
               <a
                 href="https://suntourismpune.co.in/trip-types/ghar-se-ghar-tak-group-tours/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 View All Tour Packages
-                <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-1 h-3 w-3 text-white transition-transform duration-300 group-hover:translate-x-1 sm:ml-2 sm:h-4 sm:w-4" />
               </a>
             </Button>
         </div>

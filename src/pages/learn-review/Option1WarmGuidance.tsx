@@ -81,7 +81,7 @@ const Option1WarmGuidance = () => {
               <section
                 key={category.id}
                 id={category.id}
-                className={`rounded-[2rem] border border-border/50 p-6 shadow-sm md:p-8 ${bandClasses[index]}`}
+                className={`rounded-[2rem] border border-border/50 p-6 shadow-xl md:p-8 ${bandClasses[index]}`}
               >
                 <div className="mb-8 border-t-4 border-primary/60 pt-6">
                   <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
@@ -175,7 +175,7 @@ const Option1WarmGuidance = () => {
       </section>
 
       <section className="container mx-auto px-4 pb-24">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/50 bg-card p-6 shadow-sm md:p-8">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/50 bg-card p-6 shadow-xl md:p-8">
           <div className="flex flex-col gap-4 border-b border-border/60 pb-5 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-highlight">

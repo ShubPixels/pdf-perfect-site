@@ -117,7 +117,7 @@ export const LearnLifestyle = () => {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-            <article className="rounded-[32px] border border-border/30 bg-gradient-to-br from-card/90 via-card/75 to-highlight/10 p-6 backdrop-blur-sm md:p-8">
+            <article className="rounded-[32px] border border-border/30 bg-gradient-to-br from-card/90 via-card/75 to-highlight/10 p-6 shadow-xl backdrop-blur-sm md:p-8">
               <div className="mb-8 flex items-start justify-between gap-4">
                 <div className="max-w-xl">
                   <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-primary">
@@ -144,7 +144,7 @@ export const LearnLifestyle = () => {
                   return (
                     <div
                       key={track.title}
-                      className="flex items-start gap-4 rounded-[24px] border border-border/30 bg-background/75 p-4"
+                      className="flex items-start gap-4 rounded-[24px] border border-border/30 bg-background/75 p-4 shadow-xl"
                     >
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                         <TrackIcon className="h-5 w-5" />

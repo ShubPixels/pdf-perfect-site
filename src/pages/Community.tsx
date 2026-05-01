@@ -143,7 +143,7 @@ const Stories = () => {
                     <div className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${isReversed ? 'md:[direction:rtl]' : ''}`}>
                       {/* Image */}
                       <div className={`${isReversed ? 'md:[direction:ltr]' : ''}`}>
-                        <div className="relative rounded-3xl overflow-hidden h-[300px] sm:h-[380px] md:h-[450px] group">
+                        <div className="relative rounded-3xl overflow-hidden h-[300px] shadow-xl sm:h-[380px] md:h-[450px] group">
                           <img
                             src={story.image}
                             alt={story.title}
@@ -184,7 +184,7 @@ const Stories = () => {
                         </p>
 
                         {/* Inline quote */}
-                        <div className="relative bg-card/50 backdrop-blur-sm border border-border/30 rounded-2xl p-5">
+                        <div className="relative bg-card/50 backdrop-blur-sm border border-border/30 rounded-2xl p-5 shadow-xl">
                           <Quote className="w-6 h-6 text-accent/30 mb-2" />
                           <p className="text-foreground italic text-sm md:text-base leading-relaxed mb-3">
                             "{story.quote}"
@@ -226,7 +226,7 @@ const Stories = () => {
         >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto relative">
-              <div className="relative bg-card backdrop-blur-xl border border-border/30 rounded-3xl p-10 md:p-16 text-center overflow-hidden">
+              <div className="relative bg-card backdrop-blur-xl border border-border/30 rounded-3xl p-10 md:p-16 text-center overflow-hidden shadow-xl">
                 <div className="absolute top-0 left-0 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-0 right-0 w-48 h-48 bg-highlight/10 rounded-full blur-3xl" />
                 

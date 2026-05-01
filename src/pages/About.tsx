@@ -188,7 +188,7 @@ const About = () => {
                   <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                     <div className="relative group">
                       <div className="absolute -inset-2 bg-gradient-to-r from-highlight/30 to-cta/30 rounded-3xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8">
+                      <div className="relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-3xl p-8 shadow-xl">
                         {/* Quote mark */}
                         <Quote className="absolute top-6 right-8 h-16 w-16 text-highlight/10" />
                         
@@ -259,7 +259,7 @@ const About = () => {
                                 <item.icon className="h-4 w-4 text-highlight group-hover:text-cta transition-colors" />
                               </div>
                               
-                              <div className="bg-card/30 backdrop-blur-sm rounded-xl p-4 border border-border/30 group-hover:border-highlight/30 transition-all duration-300">
+                              <div className="bg-card/30 backdrop-blur-sm rounded-xl p-4 border border-border/30 shadow-xl group-hover:border-highlight/30 transition-all duration-300">
                                 <span className="text-xs font-bold text-accent">{item.year}</span>
                                 <p className="text-foreground text-sm mt-1">{item.milestone}</p>
                               </div>
@@ -293,7 +293,7 @@ const About = () => {
             {values.map((value, index) => (
               <div 
                 key={value.title}
-                className="group relative bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl p-6 text-center hover:border-highlight/50 transition-all duration-300"
+                className="group relative bg-card/30 backdrop-blur-sm border border-border/30 rounded-2xl p-6 text-center shadow-xl hover:border-highlight/50 transition-all duration-300"
               >
                 <div className="w-16 h-16 mx-auto mb-4 bg-highlight/10 rounded-2xl flex items-center justify-center group-hover:bg-highlight/20 transition-colors">
                   <value.icon className="w-8 h-8 text-highlight" />

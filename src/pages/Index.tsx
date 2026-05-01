@@ -108,7 +108,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="md:col-span-2 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/30 rounded-3xl p-8 relative overflow-hidden"
+                  className="md:col-span-2 bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-xl border border-border/30 rounded-3xl p-8 relative overflow-hidden shadow-xl"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-cta/10 rounded-full blur-2xl" />
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-highlight/10 rounded-full blur-xl" />
@@ -125,28 +125,29 @@ const Index = () => {
                     <Quote className="h-10 w-10 text-highlight/30 mb-4" />
 
                     <p className="text-xl md:text-2xl font-medium text-foreground mb-6 leading-relaxed">
-                      "We planned a personalized Bali tour and Sun Tourism
-                      helped us plan and execute exactly as we wanted. Once the
-                      tour was planned, Sun Tour gave us the experience of
-                      sitting back, relaxing, and enjoying. Very clear
-                      communication and very good execution."
+                      "I had an excellent experience with Sun Tourism
+                      International Pvt. Ltd. during my Dubai trip. The entire
+                      tour was very well planned, smooth, and stress-free from
+                      start to finish. All arrangements - hotels, sightseeing,
+                      transportation, and scheduling - were well organized and
+                      delivered exactly as promised."
                     </p>
 
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 rounded-full bg-gradient-to-br from-highlight to-cta p-0.5">
                         <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
                           <span className="text-xl font-bold text-highlight">
-                            MP
+                            MG
                           </span>
                         </div>
                       </div>
 
                       <div>
                         <p className="font-semibold text-foreground">
-                          Mandar Patil
+                          Madhavi Gaikwad
                         </p>
                         <p className="text-sm text-muted-foreground">
-                          Bali Customized Tour - 2024
+                          Dubai Trip - Google Review, 3 months ago
                         </p>
                       </div>
                     </div>
@@ -157,7 +158,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between"
+                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between shadow-xl"
                 >
                   <div>
                     <div className="flex items-center gap-1 mb-3">
@@ -170,23 +171,24 @@ const Index = () => {
                     </div>
 
                     <p className="text-foreground mb-4 leading-relaxed">
-                      "Best tour experience ever. The Ghar Se Ghar Tak service
-                      is absolutely amazing. No stress from start to end. Highly
-                      recommended for families."
+                      "Had made a trip plan to Bali at the last moment to
+                      surprise my wife and did not get disappointed at all. The
+                      team was really helpful, explained everything in detail,
+                      and updated every day's plan."
                     </p>
                   </div>
 
                   <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/30">
                     <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span className="font-bold text-primary text-sm">SJ</span>
+                      <span className="font-bold text-primary text-sm">OS</span>
                     </div>
 
                     <div>
                       <p className="font-medium text-foreground text-sm">
-                        Suresh Joshi
+                        Omkar Satav
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        Dubai Tour - Dec 2024
+                        Bali Trip - Google Review, 6 months ago
                       </p>
                     </div>
                   </div>
@@ -196,7 +198,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between"
+                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between shadow-xl"
                 >
                   <div>
                     <div className="flex items-center gap-1 mb-3">
@@ -209,25 +211,26 @@ const Index = () => {
                     </div>
 
                     <p className="text-foreground mb-4 leading-relaxed">
-                      "Tour managers did not just show us places, they taught us
-                      how to travel smart. Now I feel confident exploring on my
-                      own too."
+                      "We have now engaged Sun Tourism twice in the last 12
+                      months for our Rotary Club group tours to Baku and Oman.
+                      Both destinations were offbeat, yet the team planned and
+                      executed both trips to perfection."
                     </p>
                   </div>
 
                   <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/30">
                     <div className="w-10 h-10 rounded-full bg-highlight/20 flex items-center justify-center">
                       <span className="font-bold text-highlight text-sm">
-                        RK
+                        JY
                       </span>
                     </div>
 
                     <div>
                       <p className="font-medium text-foreground text-sm">
-                        Rajesh Kulkarni
+                        Jayant Yewale
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        Europe Tour - Aug 2024
+                        Baku & Oman Group Tours - Google Review, 6 months ago
                       </p>
                     </div>
                   </div>
@@ -237,7 +240,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between"
+                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between shadow-xl"
                 >
                   <div>
                     <div className="flex items-center gap-1 mb-3">
@@ -250,23 +253,24 @@ const Index = () => {
                     </div>
 
                     <p className="text-foreground mb-4 leading-relaxed">
-                      "As senior citizens, we were worried about long tours, but
-                      Sun Tourism made our Kerala trip so comfortable.
-                      Everything was taken care of."
+                      "The Sri Lanka, Malaysia, Singapore trip was well managed
+                      and well organised. Each place and guide was knowledgeable,
+                      local guides were provided, and senior citizens were
+                      attended personally."
                     </p>
                   </div>
 
                   <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/30">
                     <div className="w-10 h-10 rounded-full bg-cta/20 flex items-center justify-center">
-                      <span className="font-bold text-cta text-sm">PD</span>
+                      <span className="font-bold text-cta text-sm">VK</span>
                     </div>
 
                     <div>
                       <p className="font-medium text-foreground text-sm">
-                        Prakash & Deepa
+                        Vishakha Kulkarni
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        Kerala Tour - Jan 2025
+                        Sri Lanka Malaysia Singapore - Google Review, 3 months ago
                       </p>
                     </div>
                   </div>
@@ -276,7 +280,7 @@ const Index = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between"
+                  className="bg-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-6 flex flex-col justify-between shadow-xl"
                 >
                   <div>
                     <div className="flex items-center gap-1 mb-3">
@@ -289,23 +293,24 @@ const Index = () => {
                     </div>
 
                     <p className="text-foreground mb-4 leading-relaxed">
-                      "Singapore Malaysia with a free Sri Lanka add-on felt like
-                      unbelievable value. Three countries, zero hassle. We will
-                      definitely book again."
+                      "Had a wonderful trip to Singapore and Malaysia with Sun
+                      Tourism. Everything was perfectly planned and
+                      well-coordinated - from travel to stay and sightseeing.
+                      Truly a memorable and hassle-free holiday."
                     </p>
                   </div>
 
                   <div className="flex items-center gap-3 mt-4 pt-4 border-t border-border/30">
                     <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                      <span className="font-bold text-primary text-sm">AM</span>
+                      <span className="font-bold text-primary text-sm">SN</span>
                     </div>
 
                     <div>
                       <p className="font-medium text-foreground text-sm">
-                        Amit Mehta
+                        Sajitha Nair
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        Singapore Malaysia - 2024
+                        Singapore Malaysia - Google Review, 5 months ago
                       </p>
                     </div>
                   </div>
@@ -313,7 +318,7 @@ const Index = () => {
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
+                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center shadow-xl">
                   <p className="text-3xl md:text-4xl font-bold text-highlight mb-1">
                     100K+
                   </p>
@@ -322,7 +327,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
+                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center shadow-xl">
                   <p className="text-3xl md:text-4xl font-bold text-accent mb-1">
                     18+
                   </p>
@@ -331,7 +336,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
+                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center shadow-xl">
                   <p className="text-3xl md:text-4xl font-bold text-primary mb-1">
                     30+
                   </p>
@@ -340,7 +345,7 @@ const Index = () => {
                   </p>
                 </div>
 
-                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center">
+                <div className="bg-card/40 backdrop-blur-sm border border-border/20 rounded-2xl p-6 text-center shadow-xl">
                   <p className="text-3xl md:text-4xl font-bold text-highlight mb-1">
                     4.7
                   </p>

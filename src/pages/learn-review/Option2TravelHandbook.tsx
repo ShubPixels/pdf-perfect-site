@@ -50,7 +50,7 @@ const Option2TravelHandbook = () => {
       <section className="container mx-auto px-4 pb-20">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.34fr_0.66fr]">
           <aside className="lg:sticky lg:top-28 lg:self-start">
-            <Card className="rounded-[1.75rem] border-border/70 bg-card p-5 shadow-sm">
+            <Card className="rounded-[1.75rem] border-border/70 bg-card p-5 shadow-xl">
               <div className="flex items-center gap-2 text-foreground">
                 <Bookmark className="h-4 w-4 text-primary" />
                 <h2 className="text-base font-semibold">Contents</h2>
@@ -83,7 +83,7 @@ const Option2TravelHandbook = () => {
 
               return (
                 <section key={category.id} id={category.id}>
-                  <div className="rounded-[2rem] border border-border/70 bg-card p-6 shadow-sm md:p-8">
+                  <div className="rounded-[2rem] border border-border/70 bg-card p-6 shadow-xl md:p-8">
                     <div className="border-b border-border/70 pb-5">
                       <div className="grid gap-5 md:grid-cols-[0.7fr_1.3fr] md:items-end">
                         <div>
@@ -145,7 +145,7 @@ const Option2TravelHandbook = () => {
               );
             })}
 
-            <Card className="rounded-[2rem] border-border/70 bg-card p-6 shadow-sm md:p-8">
+            <Card className="rounded-[2rem] border-border/70 bg-card p-6 shadow-xl md:p-8">
               <h2 className="text-2xl font-semibold text-foreground">After the handbook</h2>
               <div className="mt-5 grid gap-3">
                 {learnNextSteps.map((item) => {

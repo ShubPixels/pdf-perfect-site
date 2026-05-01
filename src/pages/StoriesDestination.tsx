@@ -189,7 +189,7 @@ const StoriesDestination = () => {
                   <button
                     key={tour.id}
                     onClick={() => openGallery(tour)}
-                    className="group text-left rounded-[2rem] overflow-hidden border border-border/40 bg-card/80 backdrop-blur-sm shadow-sm transition-transform duration-300 hover:-translate-y-1"
+                    className="group text-left rounded-[2rem] overflow-hidden border border-border/40 bg-card/80 backdrop-blur-sm shadow-xl transition-transform duration-300 hover:-translate-y-1"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden">
                       <img

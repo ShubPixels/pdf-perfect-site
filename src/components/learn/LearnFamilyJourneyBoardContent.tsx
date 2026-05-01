@@ -73,7 +73,7 @@ export const LearnFamilyJourneyBoardContent = () => {
             return (
               <section
                 key={category.id}
-                className={`rounded-[2rem] border p-6 shadow-sm md:p-8 ${zoneClasses[index % zoneClasses.length]}`}
+                className={`rounded-[2rem] border p-6 shadow-xl md:p-8 ${zoneClasses[index % zoneClasses.length]}`}
               >
                 <div className="mb-6 flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
                   <div className="max-w-2xl">
@@ -139,7 +139,7 @@ export const LearnFamilyJourneyBoardContent = () => {
       </section>
 
       <section className="container mx-auto px-4 pb-24">
-        <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/50 bg-card p-6 shadow-sm md:p-8">
+        <div className="mx-auto max-w-6xl rounded-[2rem] border border-border/50 bg-card p-6 shadow-xl md:p-8">
           <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-highlight">
