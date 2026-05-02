@@ -7,73 +7,73 @@ import { BookOpen, Camera, ArrowRight, Quote, MapPin, Sparkles } from "lucide-re
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
-import japanCommunity1 from "@/assets/destinations/japan/community/20250328_105134.jpg";
-import dubaiCommunity1 from "@/assets/destinations/dubai/community/IMG_0068.jpg";
-import baliCommunity1 from "@/assets/destinations/bali/community/WhatsApp Image 2025-01-04 at 18.34.46.jpeg";
-import europeCommunity1 from "@/assets/destinations/europe/community/WhatsApp Image 2024-05-08 at 03.09.00.jpeg";
-import australiaCommunity1 from "@/assets/destinations/australia/community/20171031_095347.jpg";
-import omanCommunity1 from "@/assets/destinations/oman/community/WhatsApp Image 2025-10-25 at 1.12.45 PM.jpeg";
+import keralaCommunity1 from "@/assets/stories/featured/kerala-nanda.webp";
+import japanCommunity1 from "@/assets/stories/featured/japan-sheetal.webp";
+import dubaiCommunity1 from "@/assets/stories/featured/dubai-poonam.webp";
+import kashmirCommunity1 from "@/assets/stories/featured/kashmir-arunansu.webp";
+import bhutanCommunity1 from "@/assets/stories/featured/bhutan-bhal.webp";
+import singaporeCommunity1 from "@/assets/stories/featured/singapore-akanksha.webp";
 
 const featuredStories = [
   {
     id: 1,
-    title: "Cherry Blossoms & Temple Bells",
-    location: "Japan",
-    date: "October 2025",
-    excerpt: "24 travelers from Pune discovered the art of slow living in Kyoto, from tea ceremonies to bamboo forests that whispered ancient secrets.",
-    image: japanCommunity1,
-    quote: "I've never felt more at peace than standing under the cherry blossoms in Kyoto.",
-    quoteAuthor: "Priya Sharma",
+    title: "God's Own Country",
+    location: "Kerala",
+    date: "Traveler Story",
+    excerpt: "A Kerala journey remembered for thoughtful planning, smooth arrangements, and the beauty that makes the state live up to its name.",
+    image: keralaCommunity1,
+    quote: "Kerala truly lives up to its name, God's Own Country. The entire program was well planned and smoothly arranged.",
+    quoteAuthor: "Nanda Kundnani",
   },
   {
     id: 2,
-    title: "Desert Sunsets & City Lights",
-    location: "Dubai",
-    date: "September 2025",
-    excerpt: "A family group experienced the magic of desert safaris at golden hour, followed by dinners overlooking the glittering skyline.",
-    image: dubaiCommunity1,
-    quote: "The desert safari at sunset was the most beautiful thing I've ever seen.",
-    quoteAuthor: "Suresh Joshi",
+    title: "A Lifetime Experience",
+    location: "Japan",
+    date: "26 March 2025",
+    excerpt: "A Japan journey with Sun Tourism remembered as a once-in-a-lifetime travel experience.",
+    image: japanCommunity1,
+    quote: "We recently travelled to Japan (26th March 2025) with Sun Touriisum and I must say, it was a Lifetime experience !!!",
+    quoteAuthor: "Sheetal Somwanshi",
   },
   {
     id: 3,
-    title: "Temples, Rice Fields & Ocean Waves",
-    location: "Bali",
-    date: "January 2025",
-    excerpt: "Sunrise at Uluwatu, offering rituals at water temples, and evenings spent watching traditional Kecak dance under the stars.",
-    image: baliCommunity1,
-    quote: "Bali changed how I see the world. The culture, the people, everything was magical.",
-    quoteAuthor: "Mandar Patil",
+    title: "Excellent Dubai Memories",
+    location: "Dubai",
+    date: "Traveler Story",
+    excerpt: "A Dubai trip remembered as a fabulous, superlative experience enjoyed from the first day to the end.",
+    image: dubaiCommunity1,
+    quote: "Dubai Trip was excellent. Superlative to be precise. Fabulous experience. We all enjoyed at core. Right from day 01 to end of trip.",
+    quoteAuthor: "Poonam Singh",
   },
   {
     id: 4,
-    title: "Castles, Canals & Cobblestones",
-    location: "Europe",
-    date: "August 2025",
-    excerpt: "From the Eiffel Tower at dusk to gondola rides in Venice - a 15-day journey across 6 countries that felt like a dream.",
-    image: europeCommunity1,
-    quote: "Waking up in a different country every few days - that's the kind of life I want.",
-    quoteAuthor: "Rajesh Kulkarni",
+    title: "Culture Without the Rush",
+    location: "Kashmir",
+    date: "Traveler Story",
+    excerpt: "A Kashmir itinerary planned with balance, giving travelers time to rest while still enjoying local culture.",
+    image: kashmirCommunity1,
+    quote: "The itinerary was planned in such a professional manner, it was not at all hectic and we got proper resting time and enjoyed the cities local culture too.",
+    quoteAuthor: "Arunansu Sen",
   },
   {
     id: 5,
-    title: "Land of the Southern Cross",
-    location: "Australia",
-    date: "April 2025",
-    excerpt: "Koalas, coral reefs, and the vast outback - this group explored the wonders of the land down under.",
-    image: australiaCommunity1,
-    quote: "Holding a koala was a dream I didn't know I had. Thank you Sun Tourism!",
-    quoteAuthor: "Anjali Desai",
+    title: "Ghar Se Ghar Tak",
+    location: "Bhutan",
+    date: "Traveler Story",
+    excerpt: "A Bhutan tour remembered for the care behind Sun Tourism's Ghar Se Ghar Tak promise.",
+    image: bhutanCommunity1,
+    quote: 'Above all, "GHAR SE GHAR TAK" tagline & its implementation in true spirit makes the way of joy in the minds of each tourist and it automatically becomes "DIL SE DIL TAK" tour.',
+    quoteAuthor: "Bhal Kulkarni",
   },
   {
     id: 6,
-    title: "Frankincense Trails & Fjords",
-    location: "Oman",
-    date: "June 2025",
-    excerpt: "Ancient forts, turquoise wadis, and the warmth of Omani hospitality made this journey unforgettable.",
-    image: omanCommunity1,
-    quote: "Oman surprised us at every turn. A hidden gem we're so glad we discovered.",
-    quoteAuthor: "Prakash & Deepa",
+    title: "A Worry-Free Honeymoon",
+    location: "Singapore",
+    date: "Traveler Story",
+    excerpt: "A customised Singapore honeymoon package that was smoothly managed from start to finish.",
+    image: singaporeCommunity1,
+    quote: "Though it was a customised package this time for me and Rohit for our honeymoon, it was well managed and we didn't have to worry for anything",
+    quoteAuthor: "Akanksha Jamdar",
   },
 ];
 
