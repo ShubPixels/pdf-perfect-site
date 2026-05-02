@@ -7,7 +7,7 @@ const Learn = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      <main className="pt-20 md:pt-24">
+      <main className="pt-8 md:pt-10">
         <LearnFamilyJourneyBoardContent />
       </main>
 

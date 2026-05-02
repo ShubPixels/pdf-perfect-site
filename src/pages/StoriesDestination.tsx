@@ -107,7 +107,7 @@ const StoriesDestination = () => {
       <Navigation />
 
       <main>
-        <section className="container mx-auto px-4 pt-20 pb-8 md:pt-24 md:pb-12">
+        <section className="container mx-auto px-4 pt-8 pb-8 md:pt-10 md:pb-12">
           <div className="max-w-6xl mx-auto">
             <Button
               type="button"

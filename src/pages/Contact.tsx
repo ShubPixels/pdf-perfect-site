@@ -167,7 +167,7 @@ const Contact = () => {
       <Navigation />
 
       <main>
-        <section className="container mx-auto px-4 pb-10 pt-20 md:pb-14 md:pt-24">
+        <section className="container mx-auto px-4 pb-10 pt-8 md:pb-14 md:pt-10">
           <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="rounded-[2rem] border border-border/30 bg-card/75 p-8 shadow-xl backdrop-blur-sm md:p-10">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2">

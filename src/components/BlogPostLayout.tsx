@@ -68,13 +68,13 @@ export const BlogPostLayout = ({
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      <main className="pt-16">
+      <main className="pt-0 md:pt-2">
         {/* Hero Section */}
         <motion.section 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="py-12 md:py-20"
+          className="py-8 md:py-10"
         >
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
